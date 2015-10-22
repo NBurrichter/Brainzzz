@@ -1,0 +1,136 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class Grapple : MonoBehaviour
+{
+
+	private float fGrappleForce;
+	public GameObject goPlayer;
+	private GameObject goBlopOne;
+	private GameObject goBlopTwo;
+	public static Grapple Si_Grappple;
+
+
+	private IEnumerator grappleCoroutine;
+
+	void Start ()
+	{
+		Si_Grappple = this;
+		goPlayer = GameObject.FindGameObjectWithTag ("Player"); 
+	}
+
+	void Update ()
+	{
+		SearchBlops ();
+		int i = GetBlopToDragTo();
+
+		if (Input.GetButtonDown ("Grapple")) 
+		{
+
+			//start grappeling
+
+			if(i!=0)
+			{
+				grappleCoroutine = DragToBlop(i);
+				goPlayer.GetComponent<Player_control>().SetGrapple(true);
+				StartCoroutine(grappleCoroutine);
+			}
+		}
+
+		if(i==0)
+		{
+			if(grappleCoroutine!=null)
+			{
+				goPlayer.GetComponent<Player_control>().SetGrapple(false);
+			StopCoroutine(grappleCoroutine);
+			}
+		}
+
+	}
+
+	private void SearchBlops ()
+	{
+		try 
+		{
+			goBlopOne = GameObject.FindGameObjectWithTag ("Blop1");
+		} 
+		catch (UnityException e) 
+		{
+			goBlopOne = null;
+		}
+
+		try 
+		{
+			goBlopTwo = GameObject.FindGameObjectWithTag ("Blop2");
+		} 
+		catch (UnityException e) 
+		{
+			goBlopOne = null;
+		}
+	}
+
+	private int GetBlopToDragTo ()
+	{
+		if (goBlopOne != null && goBlopTwo == null) 
+		{
+			return 1;
+		} 
+		else 
+		{
+			if (goBlopOne == null && goBlopTwo != null) 
+			{
+				return 2;
+			} 
+			else 
+			{
+				return 0;
+			}
+		}
+
+	}
+
+
+	IEnumerator DragToBlop (int i)
+	{
+		float timeSinceStart = 1f;
+
+		while (true) 
+		{
+
+
+			timeSinceStart += Time.deltaTime;
+			if(i==1)
+			{
+
+				goPlayer.GetComponent<Rigidbody>().AddForce(0,0,1);
+
+
+				//goPlayer.transform.position += new Vector3(0,0,4f*Time.deltaTime);
+
+
+				// let the player move to the position of the blop
+			}
+			else{
+				// let the player move to the position of the blop
+			}
+			
+			yield return new WaitForSeconds(0.1f);
+		}
+	}
+
+	void OnCollisionEnter (Collision col)
+	{
+		if(col.gameObject.tag == "Blop1" || col.gameObject.tag == "Blop2"||
+		   col.gameObject.tag == "Blop1_Attachment" || col.gameObject.tag == "Blop2_Attachment")
+		{
+			if (grappleCoroutine != null)
+			{
+				StopCoroutine(grappleCoroutine);
+			}
+			goPlayer.GetComponent<Player_control>().SetGrapple(false);
+			grappleCoroutine = null;
+
+		}
+	}
+
+}
