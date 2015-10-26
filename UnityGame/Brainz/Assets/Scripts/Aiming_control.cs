@@ -5,10 +5,13 @@ public class Aiming_control : MonoBehaviour {
 
 
 	RaycastHit hit;
+    private GameObject goPlayer;
+    public static Aiming_control aimingControlSingleton;
 
 	// Use this for initialization
 	void Start () {
-	
+        goPlayer = GameObject.FindGameObjectWithTag("Player");
+        aimingControlSingleton = this;
 	}
 	
 	// Update is called once per frame
@@ -22,4 +25,12 @@ public class Aiming_control : MonoBehaviour {
 		Debug.DrawLine(Camera.main.transform.position,hit.point,Color.green);
         
 	}
+
+    public Vector3 GetHitDirection()
+    {
+        Vector3 vHitDirection = hit.point - goPlayer.transform.position;
+        vHitDirection = vHitDirection * 2;
+
+        return vHitDirection;
+    }
 }
