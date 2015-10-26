@@ -26,33 +26,67 @@ public class Player_control : MonoBehaviour {
 	void Update () {
 
 		// check if mouse is out of screen
-
+            
+        
 			fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
 
 			fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime *-1.0f;
 
+	    	qRotation = Quaternion.Euler(fYRotation,fXRotation,0);
 
 
-		/*
-		qRotation[1] += fXRotation;
-		fXRotation = 0;
-		qRotation[0] += fYRotation;
-		fYRotation = 0;
-		*/
+        // check if Player is moving forward
+        if(Input.GetAxis("Vertical")>0)
+        {
+            vPosition.x = player.transform.position.x + player.transform.forward.x * Time.deltaTime * fMovementSpeed;
+            vPosition.z = player.transform.position.z + player.transform.forward.z * Time.deltaTime * fMovementSpeed;
+        }
 
-		qRotation = Quaternion.Euler(fYRotation,fXRotation,0);
+        if (isGrappling == false)
+        {
+            player.transform.rotation = qRotation;
+            player.transform.position = vPosition;
 
-		vPosition.x += Input.GetAxis("Horizontal") * fMovementSpeed * Time.deltaTime;
-		vPosition.z += Input.GetAxis("Vertical") * fMovementSpeed * Time.deltaTime;
+        }
 
-		if(isGrappling==false)
-		{
-		player.transform.rotation = qRotation;
-		player.transform.position = vPosition;
-		}
+        if (Input.GetAxis("Vertical")<0)
+        {
+            vPosition.x = player.transform.position.x + (player.transform.forward.x * (-1)) * Time.deltaTime * fMovementSpeed;
+            vPosition.z = player.transform.position.z + (player.transform.forward.z * (-1)) * Time.deltaTime * fMovementSpeed;
+        }
+
+        if (isGrappling == false)
+        {
+            player.transform.rotation = qRotation;
+            player.transform.position = vPosition;
+        }
+
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            vPosition.x = player.transform.position.x + player.transform.right.x * Time.deltaTime * fMovementSpeed;
+            vPosition.z = player.transform.position.z + player.transform.right.z * Time.deltaTime * fMovementSpeed;
+        }
+
+        if (isGrappling == false)
+        {
+            player.transform.rotation = qRotation;
+            player.transform.position = vPosition;
+        }
+
+        if (Input.GetAxis("Horizontal") <0)
+        {
+            vPosition.x = player.transform.position.x + (player.transform.right.x * (-1)) * Time.deltaTime * fMovementSpeed;
+            vPosition.z = player.transform.position.z + (player.transform.right.z * (-1)) * Time.deltaTime * fMovementSpeed;
+        }
+
+        if (isGrappling == false)
+        {
+            player.transform.rotation = qRotation;
+            player.transform.position = vPosition;
+        }
 
 
-	}
+    }
 
 	public void SetGrapple(bool b)
 	{

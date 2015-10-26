@@ -20,5 +20,6 @@ public class Aiming_control : MonoBehaviour {
 
 		}
 		Debug.DrawLine(Camera.main.transform.position,hit.point,Color.green);
+        
 	}
 }

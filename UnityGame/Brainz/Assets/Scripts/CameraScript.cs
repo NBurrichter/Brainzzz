@@ -10,7 +10,7 @@ public class CameraScript : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		offset = new Vector3(0,2,-5);
+		offset = new Vector3(0,1,0);
 		/*cameraArray = Camera.allCameras;
 		Camera.main.enabled=false;
 		for(int i=0;i<cameraArray.Length;i++)
