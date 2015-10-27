@@ -8,6 +8,7 @@ public class Grapple : MonoBehaviour
 	public GameObject goPlayer;
 	private GameObject goBlopOne;
 	private GameObject goBlopTwo;
+    private Rigidbody rb;
 	public static Grapple Si_Grappple;
 
 
@@ -16,7 +17,9 @@ public class Grapple : MonoBehaviour
 	void Start ()
 	{
 		Si_Grappple = this;
-		goPlayer = GameObject.FindGameObjectWithTag ("Player"); 
+        goPlayer = this.gameObject;
+        rb = GetComponent<Rigidbody>();
+
 	}
 
 	void Update ()
@@ -42,7 +45,7 @@ public class Grapple : MonoBehaviour
 			if(grappleCoroutine!=null)
 			{
 				goPlayer.GetComponent<Player_control>().SetGrapple(false);
-			StopCoroutine(grappleCoroutine);
+			    StopCoroutine(grappleCoroutine);
 			}
 		}
 
@@ -102,17 +105,16 @@ public class Grapple : MonoBehaviour
 			if(i==1)
 			{
 
-				goPlayer.GetComponent<Rigidbody>().AddForce(0,0,1);
-
-
-				//goPlayer.transform.position += new Vector3(0,0,4f*Time.deltaTime);
-
-
-				// let the player move to the position of the blop
+                //Drag to Blop1
+                Vector3 dir = goBlopOne.transform.position - goPlayer.transform.position;
+                rb.velocity=dir;
+                Debug.DrawLine(goPlayer.transform.position, goBlopOne.transform.position + dir, Color.red);
 			}
 			else{
-				// let the player move to the position of the blop
-			}
+                // let the player move to the position of the blop2
+                Vector3 dir = goBlopOne.transform.position - goPlayer.transform.position;
+                rb.AddForce(dir*100,ForceMode.VelocityChange);
+            }
 			
 			yield return new WaitForSeconds(0.1f);
 		}

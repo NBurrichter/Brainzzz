@@ -89,6 +89,12 @@ public class Player_control : MonoBehaviour {
 
     void FixedUpdate()
     {
+
+        if (isGrappling)
+        {
+            return;
+        }
+
         if (grounded)
         {
             // Calculate how fast we should be moving
@@ -112,6 +118,7 @@ public class Player_control : MonoBehaviour {
         }
 
         // We apply gravity manually for more tuning control
+        if(!isGrappling)
         rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
 
         grounded = false;
