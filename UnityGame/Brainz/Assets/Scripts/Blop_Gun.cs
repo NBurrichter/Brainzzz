@@ -17,6 +17,7 @@ public class Blop_Gun : MonoBehaviour {
 	void Update () {
 
 		vPlayerPos = this.gameObject.transform.position;
+        vPlayerPos += this.gameObject.transform.forward;
 
 		if(Input.GetButtonDown("Fire1"))
 		{

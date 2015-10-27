@@ -25,4 +25,5 @@ public class Attachment : MonoBehaviour
 		//Do this last
 		lastFramePosition = PseudoParent.position;
 	}
+
 }
