@@ -7,11 +7,9 @@ using System.Collections;
 //----http://wiki.unity3d.com/index.php?title=RigidbodyFPSWalker---
 public class Player_control : MonoBehaviour {
 
-	private float fMovementSpeed = 4.0f;
 	public float fRotationSpeed = 40.0f;
 	private float fXRotation;
 	private float fYRotation;
-	private Vector3 vPosition;
 	private Quaternion qRotation;
 	private GameObject player;
 
@@ -49,7 +47,6 @@ public class Player_control : MonoBehaviour {
 	void Start ()
     {
 		player = this.gameObject;
-		vPosition = player.transform.position;
 		qRotation = player.transform.rotation;
 		isGrappling=false;
 		print (""+Screen.height + "  " + Screen.width);

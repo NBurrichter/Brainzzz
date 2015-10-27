@@ -687,6 +687,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fRotationSpeed: 40
+  speed: 10
+  gravity: 10
+  maxVelocityChange: 10
+  canJump: 1
+  jumpHeight: 2
 --- !u!114 &1115198451
 MonoBehaviour:
   m_ObjectHideFlags: 0

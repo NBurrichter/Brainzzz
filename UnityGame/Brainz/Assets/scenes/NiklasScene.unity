@@ -158,7 +158,7 @@ GameObject:
   - 23: {fileID: 698307200}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -229,6 +229,7 @@ GameObject:
   - 33: {fileID: 923029655}
   - 65: {fileID: 923029654}
   - 23: {fileID: 923029653}
+  - 114: {fileID: 923029657}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -291,6 +292,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &923029657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923029652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa4820683e69d1479e3b29c50ef5916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &931596252
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +387,7 @@ GameObject:
   - 33: {fileID: 991569774}
   - 65: {fileID: 991569773}
   - 23: {fileID: 991569772}
+  - 114: {fileID: 991569776}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -437,6 +450,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &991569776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 991569771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa4820683e69d1479e3b29c50ef5916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1528690062
 GameObject:
   m_ObjectHideFlags: 0
@@ -485,7 +509,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fRotationSpeed: 40
-  acceleration: 100
   speed: 10
   gravity: 10
   maxVelocityChange: 10
@@ -598,6 +621,7 @@ GameObject:
   - 33: {fileID: 1937727265}
   - 65: {fileID: 1937727264}
   - 23: {fileID: 1937727263}
+  - 114: {fileID: 1937727267}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -660,6 +684,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &1937727267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1937727262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa4820683e69d1479e3b29c50ef5916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2062702131
 GameObject:
   m_ObjectHideFlags: 0
