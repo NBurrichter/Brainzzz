@@ -92,6 +92,7 @@ public class PlayerControl : MonoBehaviour {
 
         if (isGrappling)
         {
+            grounded = false;
             return;
         }
 
