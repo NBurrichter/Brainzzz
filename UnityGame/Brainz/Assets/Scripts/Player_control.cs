@@ -1,6 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+//Requirements
+[RequireComponent(typeof(Rigidbody))]
+
+//----http://wiki.unity3d.com/index.php?title=RigidbodyFPSWalker---
 public class Player_control : MonoBehaviour {
 
 	private float fMovementSpeed = 4.0f;
@@ -11,10 +15,39 @@ public class Player_control : MonoBehaviour {
 	private Quaternion qRotation;
 	private GameObject player;
 
-	private bool isGrappling;
+    private bool isGrappling;
 
-	// Use this for initialization
-	void Start () {
+    //Player Rigidbody
+    private Rigidbody rb;
+
+    //Rigidbody movement
+    private Vector3 force;
+
+    public float speed = 10.0f;
+    public float gravity = 10.0f;
+    public float maxVelocityChange = 10.0f;
+    public bool canJump = true;
+    public float jumpHeight = 2.0f;
+    private bool grounded = false;
+
+    //Character Controller vars
+    /*
+    float speed = 5; // units per second
+    float turnSpeed = 90; // degrees per second
+    float jumpSpeed = 8;
+    float gravity = 9.8f;
+    private float vSpeed = 0; // current vertical velocity
+    */
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        rb.freezeRotation = true;
+        rb.useGravity = false;
+    }
+
+	void Start ()
+    {
 		player = this.gameObject;
 		vPosition = player.transform.position;
 		qRotation = player.transform.rotation;
@@ -22,73 +55,84 @@ public class Player_control : MonoBehaviour {
 		print (""+Screen.height + "  " + Screen.width);
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 
 		// check if mouse is out of screen
-            
-        
-			fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
+		fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
+		fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime *-1.0f;
+ 
+        //Mouse rotation moveement
+	    qRotation = Quaternion.Euler(fYRotation,fXRotation,0);
 
-			fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime *-1.0f;
+        player.transform.rotation = qRotation;
 
-	    	qRotation = Quaternion.Euler(fYRotation,fXRotation,0);
-
-
-        // check if Player is moving forward
-        if(Input.GetAxis("Vertical")>0)
+        //Character Controller Script
+        /*
+        Vector3 vVel = transform.forward * Input.GetAxis("Vertical") * speed;
+        Vector3 hVel = transform.right * Input.GetAxis("Horizontal") * speed;
+        var controller = GetComponent<CharacterController>();
+        if (controller.isGrounded)
         {
-            vPosition.x = player.transform.position.x + player.transform.forward.x * Time.deltaTime * fMovementSpeed;
-            vPosition.z = player.transform.position.z + player.transform.forward.z * Time.deltaTime * fMovementSpeed;
+            vSpeed = 0; // grounded character has vSpeed = 0...
+            if (Input.GetKeyDown("space"))
+            { // unless it jumps:
+                vSpeed = jumpSpeed;
+            }
         }
-
-        if (isGrappling == false)
-        {
-            player.transform.rotation = qRotation;
-            player.transform.position = vPosition;
-
-        }
-
-        if (Input.GetAxis("Vertical")<0)
-        {
-            vPosition.x = player.transform.position.x + (player.transform.forward.x * (-1)) * Time.deltaTime * fMovementSpeed;
-            vPosition.z = player.transform.position.z + (player.transform.forward.z * (-1)) * Time.deltaTime * fMovementSpeed;
-        }
-
-        if (isGrappling == false)
-        {
-            player.transform.rotation = qRotation;
-            player.transform.position = vPosition;
-        }
-
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            vPosition.x = player.transform.position.x + player.transform.right.x * Time.deltaTime * fMovementSpeed;
-            vPosition.z = player.transform.position.z + player.transform.right.z * Time.deltaTime * fMovementSpeed;
-        }
-
-        if (isGrappling == false)
-        {
-            player.transform.rotation = qRotation;
-            player.transform.position = vPosition;
-        }
-
-        if (Input.GetAxis("Horizontal") <0)
-        {
-            vPosition.x = player.transform.position.x + (player.transform.right.x * (-1)) * Time.deltaTime * fMovementSpeed;
-            vPosition.z = player.transform.position.z + (player.transform.right.z * (-1)) * Time.deltaTime * fMovementSpeed;
-        }
-
-        if (isGrappling == false)
-        {
-            player.transform.rotation = qRotation;
-            player.transform.position = vPosition;
-        }
-
+        // apply gravity acceleration to vertical speed:
+        vSpeed -= gravity * Time.deltaTime;
+        vVel.y = vSpeed; // include vertical speed in vel
+                        // convert vel to displacement and Move the character:
+        controller.Move(vVel * Time.deltaTime);
+        controller.Move(hVel * Time.deltaTime);
+        */
 
     }
 
-	public void SetGrapple(bool b)
+    void FixedUpdate()
+    {
+        if (grounded)
+        {
+            // Calculate how fast we should be moving
+            Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            targetVelocity = transform.TransformDirection(targetVelocity);
+            targetVelocity *= speed;
+
+            // Apply a force that attempts to reach our target velocity
+            Vector3 velocity = rb.velocity;
+            Vector3 velocityChange = (targetVelocity - velocity);
+            velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+            velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+            velocityChange.y = 0;
+            rb.AddForce(velocityChange, ForceMode.VelocityChange);
+
+            // Jumping
+            if (canJump && Input.GetButton("Jump"))
+            {
+                rb.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
+            }
+        }
+
+        // We apply gravity manually for more tuning control
+        rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
+
+        grounded = false;
+    }
+
+    void OnCollisionStay()
+    {
+        grounded = true;
+    }
+
+    float CalculateJumpVerticalSpeed()
+    {
+        // From the jump height and gravity we deduce the upwards speed 
+        // for the character to reach at the apex.
+        return Mathf.Sqrt(2 * jumpHeight * gravity);
+    }
+
+    public void SetGrapple(bool b)
 	{
 		isGrappling = b;
 	}
