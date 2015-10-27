@@ -1,0 +1,45 @@
+Man soll mehrere Blops desselben Typen schießen können, doch wenn einer einen Gegenstand trifft und an diesem haftet,
+sollen alle Blops des Types die vorher geschossen wurden zerstört werden.
+
+1. Destroy function für alle Blops, die die attachments freigibt und alle veränderungen rückgängig macht ( StopMergin()?????????)
+2. Jeder Blop muss wissen welche Blops vor ihm geschossen wurden, und dann im Fall eines Treffers ie Destroy-funktion für diese aufrufen
+3. nur der Blop, der ein attachment hat, soll aktiv für das mergin verfügbar sein, alle die evenuell erst nacher geschossen wurden, sollen nicht
+   vom Mergin beinflusst werden, oder diesen beeinflussen.
+
+Zu 1:
+Die StopMergin()-funktion scheint für diese Aufgabe passen genug.
+
+Zu 2:
+Beim erzeugen des Blops ruft dieser die FindObjectsssWithTag-funktion auf und listet so alle Blops auf, die vor ihm geschossen wurden.
+Trifft er einen Gegenstand, geht er das Array durch und ruft bei jedem die StopMergin()-funktion auf, muss jedoch rehctzeitig stoppen, 
+sodass er sich nicht selbst zerstört, bspw indem man Array.lenght()-2 benutzt.
+
+Schwierigkeiten:
+Man muss nicht nur schauen das man alle Blops findet, die vorher geschossen wurden, sondern auch aufpassen, dass man sich nicht selbst zerstört
+Auch ist dr dynamische punkt des Spiels ein Problem. So wäre es unpassend wenn ein Blop gelöscht wird, während er beispielsweise gerade
+geGrappelt oder gemerged wird. Man muss also Blops, die gerade von einer solchen funktion benutzt werden besonders schützen, sodass es nicht passiert, 
+dass einer während er gerade beutzt wird zerstört wird
+
+Zu3:
+Jeder Blop muss überprüfen, ob er ein attachment hat. Hat er dieses wird er für das Mergin aktive geschaltet bspw durch eine bool-variable "HasAttachment"
+Hat man die beiden aktiven Blops gefunden, wird mit diesen die Mergin()-funktion ausgeführt.
+
+
+Schwierigkeiten:
+Schwierig wird den richtigen Blop zu finden, und für die Mergin()-funktion verfügbar zu machen, und zeitgleich alle anderen 
+Blops "auszusvhalten" für die Mergin()-funktion. Ein weiters Problem tritt dadurch auf, dass das Spiel dynamisch ist, d.h heißt sich
+während des Merginvorgans ein anderer blop aktiv schalten kann, da er einen Gegenstand trifft, und dadurch den anderen löscht, und
+deshalb zu verschiedenen Problemen führen kann.
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-Jeder Blop muss wissen, welche Blops for ihm waren -> FindObjectsWithTag()->Zersöre alle die vorher stehen (Array.Length-2)
+-Jeder Blop muss wissen, ob er ein Attachment hat und dies am besten mithilfe einer bool-variablen angeben->bool bHasAttachment
+-Jeder Blop muss eine Funktion haben, die ihn zerstört, und eventuel sein attachment freigeben -> StopMergin()
+-Blops die gerade aktiv sind, dürfen nicht zerstört werden, und müssen deshalb eine variable haben, die anziegt, ob sie gerade benutzt werden ->bool bIsUsedByFunction
+-Die Mergin und Grapple- funktionen, müssen wissen, mit welchen Blops sie arbeiten sollen, und dürfen diese dann nicht ändern, während die Funktion aktiv ist.
+(zusätzliche Tags?? // evtl. schon gelöst?)
