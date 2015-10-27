@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Cursor_control : MonoBehaviour {
+public class CursorControl : MonoBehaviour {
 
 
     private bool bIsCursorLocked=false;

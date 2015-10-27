@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Blop2_control : MonoBehaviour
+public class Blop2Control : MonoBehaviour
 {
 	Rigidbody rb;
 
@@ -12,7 +12,7 @@ public class Blop2_control : MonoBehaviour
 	{
 		this.gameObject.tag = "Blop2";
 		rb = GetComponent<Rigidbody> ();
-        rb.velocity = Aiming_control.aimingControlSingleton.GetHitDirection();
+        rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection();
     }
 	
 	// Update is called once per frame
@@ -20,7 +20,7 @@ public class Blop2_control : MonoBehaviour
 	{
         if (attachedObject != null)
         {
-            if (attachedObject.GetComponent<cube_control>().StopMergin() == true)
+            if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
                 StopMergin();
         }
 	}
@@ -38,7 +38,7 @@ public class Blop2_control : MonoBehaviour
 
 			// Add Tag and Components to the attachement
 			c.gameObject.tag = "Blop2_Attachment";
-            c.gameObject.GetComponent<cube_control>().SetMergin(true);
+            c.gameObject.GetComponent<CubeControl>().SetMergin(true);
             Rigidbody otherBody;
 
 			// check if There is already a Rigidbody
@@ -92,7 +92,7 @@ public class Blop2_control : MonoBehaviour
         {
             StopMergin();
             GameObject go = GameObject.FindGameObjectWithTag("Blop1");
-            go.GetComponent<Blop1_Control>().StopMergin();
+            go.GetComponent<Blop1Control>().StopMergin();
         }
     }
 }

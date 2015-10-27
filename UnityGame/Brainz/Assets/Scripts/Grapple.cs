@@ -11,6 +11,7 @@ public class Grapple : MonoBehaviour
     private Rigidbody rb;
 	public static Grapple Si_Grappple;
 
+    private bool isGrappling;
 
 	private IEnumerator grappleCoroutine;
 
@@ -19,7 +20,7 @@ public class Grapple : MonoBehaviour
 		Si_Grappple = this;
         goPlayer = this.gameObject;
         rb = GetComponent<Rigidbody>();
-
+        isGrappling = false;
 	}
 
 	void Update ()
@@ -32,19 +33,27 @@ public class Grapple : MonoBehaviour
 
 			//start grappeling
 
-			if(i!=0)
+			if(i!=0 && !isGrappling)
 			{
 				grappleCoroutine = DragToBlop(i);
-				goPlayer.GetComponent<Player_control>().SetGrapple(true);
+				goPlayer.GetComponent<PlayerControl>().SetGrapple(true);
 				StartCoroutine(grappleCoroutine);
+                isGrappling = true;
 			}
+            else
+            {
+                goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
+                StopCoroutine(grappleCoroutine);
+                isGrappling = false;
+            }
+
 		}
 
 		if(i==0)
 		{
 			if(grappleCoroutine!=null)
 			{
-				goPlayer.GetComponent<Player_control>().SetGrapple(false);
+				goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
 			    StopCoroutine(grappleCoroutine);
 			}
 		}
@@ -128,8 +137,9 @@ public class Grapple : MonoBehaviour
 			if (grappleCoroutine != null)
 			{
 				StopCoroutine(grappleCoroutine);
+                isGrappling = false;
 			}
-			goPlayer.GetComponent<Player_control>().SetGrapple(false);
+			goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
 			grappleCoroutine = null;
 
 		}

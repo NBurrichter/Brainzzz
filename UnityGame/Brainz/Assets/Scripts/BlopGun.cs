@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Blop_Gun : MonoBehaviour {
+public class BlopGun : MonoBehaviour {
 
 	public GameObject Blop1Prefab;
 	public GameObject Blop2Prefab;

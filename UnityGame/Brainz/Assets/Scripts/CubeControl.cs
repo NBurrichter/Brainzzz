@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class cube_control : MonoBehaviour {
+public class CubeControl : MonoBehaviour {
 
 
     private bool bIsMergin;

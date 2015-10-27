@@ -5,7 +5,7 @@ using System.Collections;
 [RequireComponent(typeof(Rigidbody))]
 
 //----http://wiki.unity3d.com/index.php?title=RigidbodyFPSWalker---
-public class Player_control : MonoBehaviour {
+public class PlayerControl : MonoBehaviour {
 
 	public float fRotationSpeed = 40.0f;
 	private float fXRotation;

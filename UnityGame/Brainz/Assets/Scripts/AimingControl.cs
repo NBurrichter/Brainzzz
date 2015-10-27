@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Aiming_control : MonoBehaviour {
+public class AimingControl : MonoBehaviour {
 
 
 	RaycastHit hit;
     private GameObject goPlayer;
-    public static Aiming_control aimingControlSingleton;
+    public static AimingControl aimingControlSingleton;
 
 	// Use this for initialization
 	void Start () {
