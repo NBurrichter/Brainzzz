@@ -64,6 +64,11 @@ public class PlayerControl : MonoBehaviour {
 
         player.transform.rotation = qRotation;
 
+        if(Input.GetButtonDown("Restart"))
+        {
+            Application.LoadLevel("NiklasScene");
+        }
+
         //Character Controller Script
         /*
         Vector3 vVel = transform.forward * Input.GetAxis("Vertical") * speed;
@@ -141,6 +146,5 @@ public class PlayerControl : MonoBehaviour {
 	{
 		isGrappling = b;
 	}
-
 
 }
