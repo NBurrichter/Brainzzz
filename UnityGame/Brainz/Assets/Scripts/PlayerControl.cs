@@ -60,7 +60,7 @@ public class PlayerControl : MonoBehaviour {
 		fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime *-1.0f;
  
         //Mouse rotation moveement
-	    qRotation = Quaternion.Euler(fYRotation,fXRotation,0);
+	    qRotation = Quaternion.Euler(/*fYRotation*/0,fXRotation,0);
 
         player.transform.rotation = qRotation;
 

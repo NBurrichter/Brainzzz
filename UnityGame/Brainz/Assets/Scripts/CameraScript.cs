@@ -3,26 +3,28 @@ using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 
-	public GameObject player;
-	private Vector3 offset;
-	private Camera[] cameraArray;
-	
-	// Use this for initialization
+    private float fXRotation;
+    private float fYRotation;
+    public float fRotationSpeed;
+
+    private Quaternion qRotation;
+
 	void Start ()
 	{
-		offset = new Vector3(0,1,0);
-		/*cameraArray = Camera.allCameras;
-		Camera.main.enabled=false;
-		for(int i=0;i<cameraArray.Length;i++)
-		{
-			if(cameraArray[i].tag=="PlayerCamera")
-			{
-				cameraArray[i].enabled=true;
-			}
-		}
-		*/
-		transform.position = player.transform.position + offset;
+
 	}
+
+    void Update()
+    {
+        // check if mouse is out of screen
+        fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
+        fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime * -1.0f;
+
+        //Mouse rotation moveement
+        qRotation = Quaternion.Euler(fYRotation, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
+
+        transform.rotation = qRotation;
+    }
 
 
 }
