@@ -7,6 +7,9 @@ using System.Collections;
 //----http://wiki.unity3d.com/index.php?title=RigidbodyFPSWalker---
 public class PlayerControl : MonoBehaviour {
 
+    //momentarily public, later may be calculated automaticaly
+    public float playerHeight;
+
 	public float fRotationSpeed = 40.0f;
 	private float fXRotation;
 	private float fYRotation;
@@ -60,7 +63,7 @@ public class PlayerControl : MonoBehaviour {
 		fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime *-1.0f;
  
         //Mouse rotation moveement
-	    qRotation = Quaternion.Euler(/*fYRotation*/0,fXRotation,0);
+	    qRotation = Quaternion.Euler(0,fXRotation,0);
 
         player.transform.rotation = qRotation;
 
@@ -101,6 +104,11 @@ public class PlayerControl : MonoBehaviour {
             return;
         }
 
+        if (Physics.Raycast(transform.position, Vector3.down, playerHeight))
+        {
+            grounded = true;
+        }
+
         if (grounded)
         {
             // Calculate how fast we should be moving
@@ -132,7 +140,7 @@ public class PlayerControl : MonoBehaviour {
 
     void OnCollisionStay()
     {
-        grounded = true;
+        //grounded = true;
     }
 
     float CalculateJumpVerticalSpeed()
