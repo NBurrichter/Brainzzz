@@ -441,7 +441,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 429542015}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .460000008, y: .50999999, z: -1.40999997}
+  m_LocalPosition: {x: .850000024, y: 1.26999998, z: -2.56999993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1115198455}
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d55fe4d67a5cfb4a9ee8dd5d10c5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fRotationSpeed: 0
+  fRotationSpeed: 40
 --- !u!114 &429542022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1115198455}
   - 33: {fileID: 1115198454}
-  - 135: {fileID: 1115198453}
   - 23: {fileID: 1115198452}
   - 114: {fileID: 1115198451}
   - 54: {fileID: 1115198449}
@@ -1140,6 +1139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca81524f46c6714286695781d55b783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerHeight: 1.10000002
   fRotationSpeed: 40
   speed: 10
   gravity: 10
@@ -1183,25 +1183,13 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!135 &1115198453
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1115198448}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: .5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1115198454
 MeshFilter:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115198448}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!4 &1115198455
 Transform:
   m_ObjectHideFlags: 0
@@ -1209,7 +1197,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1115198448}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .5, z: 0}
+  m_LocalPosition: {x: 0, y: 1.28999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 429542020}
@@ -1237,7 +1225,7 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
-  m_Height: 1
+  m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1118387240
