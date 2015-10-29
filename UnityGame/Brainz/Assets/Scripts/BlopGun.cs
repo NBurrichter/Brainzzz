@@ -21,14 +21,14 @@ public class BlopGun : MonoBehaviour {
 
 		if(Input.GetButtonDown("Fire1"))
 		{
-			if(GameObject.FindGameObjectWithTag("Blop1") == false)
+
 				Instantiate(Blop1Prefab,vPlayerPos,Quaternion.identity);
 
 		}
 
 		if(Input.GetButtonDown("Fire2"))
 		   {
-			if(GameObject.FindGameObjectWithTag("Blop2") == false)
+
 			Instantiate(Blop2Prefab, vPlayerPos,Quaternion.identity);
 		}
 	}
