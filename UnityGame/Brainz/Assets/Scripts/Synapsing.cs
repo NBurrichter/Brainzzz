@@ -34,7 +34,12 @@ public class Synapsing : MonoBehaviour
 		{
 			SearchForBlops();
 
-			if (bMergeEnabled == false) {
+            LifetimeAdjust part1 = Blop1.GetComponentInChildren<LifetimeAdjust>();
+            part1.target = Blop2;
+            LifetimeAdjust part2 = Blop2.GetComponentInChildren<LifetimeAdjust>();
+            part2.target = Blop1;
+
+            if (bMergeEnabled == false) {
 				Debug.Log ("Start Mergin");
 				bMergeEnabled = true;
 			}

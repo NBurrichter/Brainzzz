@@ -3895,6 +3895,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd25de5d809ae740ae62d32f8ac5bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  t2DCrosshair: {fileID: 0}
 --- !u!114 &2062702133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3918,6 +3919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57911669962db8c41a09f879a0e94677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fShotSpeed: 22
 --- !u!114 &2062702135
 MonoBehaviour:
   m_ObjectHideFlags: 0
