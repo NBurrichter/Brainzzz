@@ -3,34 +3,35 @@ using System.Collections;
 
 public class Blop2Control : MonoBehaviour
 {
-	Rigidbody rb;
+    Rigidbody rb;
     private GameObject[] goBlop2Array;
     private FixedJoint attachedObject;
 
-	// Use this for initialization
-	void Start ()
-	{
-		this.gameObject.tag = "Blop2";
-		rb = GetComponent<Rigidbody> ();
+    // Use this for initialization
+    void Start()
+    {
+        this.gameObject.tag = "Blop2";
+        rb = GetComponent<Rigidbody>();
         rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection();
         goBlop2Array = GameObject.FindGameObjectsWithTag("Blop2");
     }
-	
-	// Update is called once per frame
-	void Update ()
-	{
+
+    // Update is called once per frame
+    void Update()
+    {
         if (attachedObject != null)
         {
             if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
                 StopMergin();
         }
-	}
+    }
 
 
 
-	void OnCollisionEnter (Collision c)
-	{
-		if (!attachedObject && !c.gameObject.CompareTag ("Player") && !c.gameObject.CompareTag ("Ground")) {
+    void OnCollisionEnter(Collision c)
+    {
+        if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground"))
+        {
 
             DeletePreviousBlops();
 
@@ -40,33 +41,34 @@ public class Blop2Control : MonoBehaviour
             c.gameObject.GetComponent<CubeControl>().SetMergin(true);
             Rigidbody otherBody;
 
-			// check if There is already a Rigidbody
-			if(c.gameObject.GetComponent<Rigidbody>())
-			{
-				otherBody = c.gameObject.GetComponent<Rigidbody>();
-			}
-			else{
-			otherBody = c.gameObject.AddComponent<Rigidbody> ();
-			}
-			attachedObject = c.gameObject.AddComponent<FixedJoint> ();
-			attachedObject.connectedBody = rb;
-			
-			/*Set layer so it cannot collide with other attached object(s)
+            // check if There is already a Rigidbody
+            if (c.gameObject.GetComponent<Rigidbody>())
+            {
+                otherBody = c.gameObject.GetComponent<Rigidbody>();
+            }
+            else
+            {
+                otherBody = c.gameObject.AddComponent<Rigidbody>();
+            }
+            attachedObject = c.gameObject.AddComponent<FixedJoint>();
+            attachedObject.connectedBody = rb;
+
+            /*Set layer so it cannot collide with other attached object(s)
 			c.gameObject.layer = Synapsing.Singleton.noCollisionLayer;*/
 
-			//Set physic material of other collider
-			c.gameObject.GetComponent<Collider> ().material = Synapsing.Singleton.noFrictionMaterial;
+            //Set physic material of other collider
+            c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
 
-			//Set drag to 0
-			rb.drag = 0;
-			rb.mass = 0;
-			otherBody.drag = 0;
+            //Set drag to 0
+            rb.drag = 0;
+            rb.mass = 0;
+            otherBody.drag = 0;
 
-			otherBody.mass = Synapsing.Singleton.blopMass;
-		}
+            otherBody.mass = Synapsing.Singleton.blopMass;
+        }
 
-        
-	}
+
+    }
 
     public void StopMergin()
     {
@@ -80,12 +82,13 @@ public class Blop2Control : MonoBehaviour
         attachedObject.gameObject.layer = 0;
     }
 
-	void OnTriggerEnter (Collider collider)
-	{
+    void OnTriggerEnter(Collider collider)
+    {
 
-		if (collider.gameObject.tag == "Blop1") {
+        if (collider.gameObject.tag == "Blop1")
+        {
             StopMergin();
-		}
+        }
 
         if (collider.gameObject.tag == "Blop1_Attachment")
         {
