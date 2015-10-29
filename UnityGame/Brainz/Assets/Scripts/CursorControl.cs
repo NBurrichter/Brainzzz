@@ -6,10 +6,14 @@ public class CursorControl : MonoBehaviour {
 
     private bool bIsCursorLocked=false;
     private CursorLockMode wantedMode;
+    public Texture2D t2DCrosshair;
+    private Vector2 vTextureOffset = new Vector2(30, 60);
 
     // Use this for initialization
     void Start () {
         wantedMode = CursorLockMode.Locked;
+        Cursor.SetCursor(t2DCrosshair, vTextureOffset, CursorMode.Auto);
+        
 	}
 	
 	// Update is called once per frame
