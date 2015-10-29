@@ -4,8 +4,8 @@ using System.Collections;
 public class Blop2Control : MonoBehaviour
 {
 	Rigidbody rb;
-
-	private FixedJoint attachedObject;
+    private GameObject[] goBlop2Array;
+    private FixedJoint attachedObject;
 
 	// Use this for initialization
 	void Start ()
@@ -13,6 +13,7 @@ public class Blop2Control : MonoBehaviour
 		this.gameObject.tag = "Blop2";
 		rb = GetComponent<Rigidbody> ();
         rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection();
+        goBlop2Array = GameObject.FindGameObjectsWithTag("Blop2");
     }
 	
 	// Update is called once per frame
@@ -30,14 +31,12 @@ public class Blop2Control : MonoBehaviour
 	void OnCollisionEnter (Collision c)
 	{
 		if (!attachedObject && !c.gameObject.CompareTag ("Player") && !c.gameObject.CompareTag ("Ground")) {
-			//Attachment att = c.gameObject.AddComponent<Attachment>();
-			//att.PseudoParent = transform;
-			//rb.isKinematic = true;
+
+            DeletePreviousBlops();
 
 
-
-			// Add Tag and Components to the attachement
-			c.gameObject.tag = "Blop2_Attachment";
+            // Add Tag and Components to the attachement
+            c.gameObject.tag = "Blop2_Attachment";
             c.gameObject.GetComponent<CubeControl>().SetMergin(true);
             Rigidbody otherBody;
 
@@ -94,5 +93,29 @@ public class Blop2Control : MonoBehaviour
             GameObject go = GameObject.FindGameObjectWithTag("Blop1");
             go.GetComponent<Blop1Control>().StopMergin();
         }
+    }
+
+
+    private void DeletePreviousBlops()
+    {
+        for (int i = 0; i <= goBlop2Array.Length - 2; i++)
+        {
+            goBlop2Array[i].GetComponent<Blop2Control>().FreeOtherBlops();
+        }
+    }
+
+    public void FreeOtherBlops()
+    {
+        this.gameObject.transform.DetachChildren();
+        Destroy(this.gameObject);
+        if (attachedObject)
+        {
+            attachedObject.tag = "Untagged";
+            Destroy(attachedObject);
+
+            //Re-enable collision between attached objects
+            attachedObject.gameObject.layer = 0;
+        }
+
     }
 }

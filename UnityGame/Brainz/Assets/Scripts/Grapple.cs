@@ -121,8 +121,9 @@ public class Grapple : MonoBehaviour
 			}
 			else{
                 // let the player move to the position of the blop2
-                Vector3 dir = goBlopOne.transform.position - goPlayer.transform.position;
-                rb.AddForce(dir*100,ForceMode.VelocityChange);
+                Vector3 dir = goBlopTwo.transform.position - goPlayer.transform.position;
+                rb.velocity = dir;
+                Debug.DrawLine(goPlayer.transform.position, goBlopTwo.transform.position + dir, Color.red);
             }
 			
 			yield return new WaitForSeconds(0.1f);
