@@ -484,6 +484,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57911669962db8c41a09f879a0e94677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fShotSpeed: 22
 --- !u!114 &429542024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,6 +496,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd25de5d809ae740ae62d32f8ac5bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  t2DCrosshair: {fileID: 2800000, guid: 4dbf1f12050c0a74784e65d4d7cd6833, type: 3}
 --- !u!1 &527668287
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +510,7 @@ GameObject:
   - 23: {fileID: 527668289}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -581,7 +583,7 @@ GameObject:
   - 23: {fileID: 761148988}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -739,7 +741,7 @@ GameObject:
   - 23: {fileID: 918717636}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1336,7 +1338,7 @@ GameObject:
   - 23: {fileID: 1188805508}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

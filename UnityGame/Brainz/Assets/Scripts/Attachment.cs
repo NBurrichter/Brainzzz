@@ -1,29 +1,29 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Attachment : MonoBehaviour 
+public class Attachment : MonoBehaviour
 {
-	public Transform PseudoParent {get; set;}
-	private Vector3 lastFramePosition;
+    public Transform PseudoParent { get; set; }
+    private Vector3 lastFramePosition;
 
 
-	private void Start()
-	{
-		lastFramePosition = PseudoParent.position;
-	}
+    private void Start()
+    {
+        lastFramePosition = PseudoParent.position;
+    }
 
-	private void LateUpdate()
-	{
-		if (!PseudoParent)
-		{
-			Destroy(gameObject);
-			return;
-		}
+    private void LateUpdate()
+    {
+        if (!PseudoParent)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-		transform.Translate(PseudoParent.position - lastFramePosition);
+        transform.Translate(PseudoParent.position - lastFramePosition);
 
-		//Do this last
-		lastFramePosition = PseudoParent.position;
-	}
+        //Do this last
+        lastFramePosition = PseudoParent.position;
+    }
 
 }

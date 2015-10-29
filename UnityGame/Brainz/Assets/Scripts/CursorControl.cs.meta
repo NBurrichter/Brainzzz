@@ -1,10 +1,11 @@
 fileFormatVersion: 2
 guid: 6cd25de5d809ae740ae62d32f8ac5bd2
-timeCreated: 1445593818
+timeCreated: 1446122490
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - t2DCrosshair: {fileID: 2800000, guid: 4dbf1f12050c0a74784e65d4d7cd6833, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

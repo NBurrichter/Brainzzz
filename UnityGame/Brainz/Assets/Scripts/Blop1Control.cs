@@ -5,7 +5,7 @@ public class Blop1Control : MonoBehaviour
 {
 	
 	public GameObject Blop;
-
+    private GameObject[] goBlop1Array;
 	private FixedJoint attachedObject;
 	
 	Rigidbody rb;
@@ -17,6 +17,7 @@ public class Blop1Control : MonoBehaviour
 		rb = GetComponent<Rigidbody> ();
         rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection(); 
 		Blop.tag = "Blop1";
+        goBlop1Array = GameObject.FindGameObjectsWithTag("Blop1");
 	}
 
     // Update is called once per frame
@@ -27,19 +28,22 @@ public class Blop1Control : MonoBehaviour
             if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
                 StopMergin();
         }
+
     }
 
     void OnCollisionEnter(Collision c)
 	{
 		if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground"))
 		{
-			//Attachment att = c.gameObject.AddComponent<Attachment>();
-			//att.PseudoParent = transform;
-			//rb.isKinematic = true;
+            DeletePreviousBlops();
+
+            //Attachment att = c.gameObject.AddComponent<Attachment>();
+            //att.PseudoParent = transform;
+            //rb.isKinematic = true;
 
 
-			// Add Tag and Components to the attachement
-			c.gameObject.tag = "Blop1_Attachment";
+            // Add Tag and Components to the attachement
+            c.gameObject.tag = "Blop1_Attachment";
             c.gameObject.GetComponent<CubeControl>().SetMergin(true);
 			Rigidbody otherBody;
 			
@@ -67,6 +71,8 @@ public class Blop1Control : MonoBehaviour
 			otherBody.drag = 0;
 
 			otherBody.mass = Synapsing.Singleton.blopMass;
+
+            
 		}
 	}
 
@@ -97,4 +103,27 @@ public class Blop1Control : MonoBehaviour
             go.GetComponent<Blop2Control>().StopMergin();
         }
 	}
+
+    private void DeletePreviousBlops()
+    {
+        for(int i = 0;i<=goBlop1Array.Length-2;i++)
+        {
+            goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
+        }
+    }
+
+    public void FreeOtherBlops()
+    {
+        this.gameObject.transform.DetachChildren();
+        Destroy(this.gameObject);
+        if (attachedObject)
+        {
+            attachedObject.tag = "Untagged";
+            Destroy(attachedObject);
+            //Re-enable collision between attached objects
+            attachedObject.gameObject.layer = 0;
+        }
+
+
+    }
 }
