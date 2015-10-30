@@ -30,7 +30,7 @@ public class Synapsing : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetButtonDown ("Jump")) 
+		if (Input.GetButtonDown ("Mergin")) 
 		{
 			SearchForBlops();
 
@@ -69,6 +69,7 @@ public class Synapsing : MonoBehaviour
 		} catch (UnityException e) {
 			Blop1 = null;
 			Blop2 = null;
+
 			print ("No two Blops");
 		}
 	}
