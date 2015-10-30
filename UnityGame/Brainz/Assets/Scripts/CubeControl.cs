@@ -26,7 +26,7 @@ public class CubeControl : MonoBehaviour {
 		if(this.gameObject.GetComponent<Rigidbody>())
 		{
 			Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-			rb.mass=10;
+			rb.mass=1000;
 		}
 	}
 
