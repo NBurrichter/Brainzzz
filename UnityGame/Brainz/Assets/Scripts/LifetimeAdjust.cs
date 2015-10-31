@@ -19,38 +19,47 @@ public class LifetimeAdjust : MonoBehaviour {
     {
         if (target != null)
         {
+            //calculate Lifetime of Particle 
             dist = Vector3.Distance(transform.position, target.transform.position);
-            pSystem.startLifetime = dist / pSystem.startSpeed;
+            float lifetime = dist / pSystem.startSpeed;
+            pSystem.startLifetime = lifetime;
             transform.LookAt(target.transform.position);
-        }
-        
-        
-        if (Application.isPlaying)
-        {
-            /*
-            // GetParticles is allocation free because we reuse the m_Particles buffer between updates
-            ParticleSystem.Particle[] numParticlesAlive = pSystem.GetParticles(particles);
 
-            // Change only the particles that are alive
-            for (var i = 0; i < numParticlesAlive; i++)
+            if (Application.isPlaying)
             {
-                m_Particles[i].velocity += Vector3.up * m_Drift;
-            }
-            // Apply the particle changes to the particle system
-            m_System.SetParticles(m_Particles, numParticlesAlive);
+                ParticleSystem.Particle[] particleList = new ParticleSystem.Particle[pSystem.particleCount];
+                pSystem.GetParticles(particleList);
 
-            for (int i = 0; i < particles.Length; i++)
-            {
-                if (Vector3.Distance(particles[i].position, transform.position) > dist)
+                for (int i = 0; i < particleList.Length; i++)
                 {
-                    particles[i].lifetime = 0;
+                    if (Vector3.Distance(particleList[i].position,transform.position) > dist )
+                    {
+                        particleList[i].startLifetime = lifetime;
+                    }
+                    particleList[i].color = new Color(Random.Range(0.0f,1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
                 }
+
+                pSystem.SetParticles(particleList, pSystem.particleCount);
             }
+        }
+
+        //---TestCode---
+         /*
+         ParticleSystem m_currentParticleEffect = (ParticleSystem)GetComponent("ParticleSystem");
+         ParticleSystem.Particle []ParticleList = new    ParticleSystem.Particle[m_currentParticleEffect.particleCount];
+         m_currentParticleEffect.GetParticles(ParticleList);
+         for(int i = 0; i < ParticleList.Length; ++i)
+         {
+             float LifeProcentage = (ParticleList[i].lifetime / ParticleList[i].startLifetime);
+             ParticleList[i].color = Color.Lerp(Color.clear, Color.red, LifeProcentage);
+         }   
+         
+         m_currentParticleEffect.SetParticles(ParticleList, m_currentParticleEffect.particleCount);
             */
 
 
-            
-        }
+
+        
         /*
         foreach (ParticleSystem.Particle particle in particles)
         {
