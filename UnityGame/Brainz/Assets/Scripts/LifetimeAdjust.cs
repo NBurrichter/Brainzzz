@@ -2,9 +2,12 @@
 using System.Collections;
 
 [ExecuteInEditMode()]
-public class LifetimeAdjust : MonoBehaviour {
+public class LifetimeAdjust : MonoBehaviour
+{
 
     public GameObject target;
+
+    public ParticleSystem.Particle[] gizmoSpherePositions;
 
     private ParticleSystem pSystem;
     private ParticleSystem.Particle[] particles;
@@ -13,9 +16,9 @@ public class LifetimeAdjust : MonoBehaviour {
     void Awake()
     {
         pSystem = GetComponent<ParticleSystem>();
-	}
-	
-	void Update ()
+    }
+
+    void Update()
     {
         if (target != null)
         {
@@ -32,34 +35,47 @@ public class LifetimeAdjust : MonoBehaviour {
 
                 for (int i = 0; i < particleList.Length; i++)
                 {
-                    if (Vector3.Distance(particleList[i].position,transform.position) > dist )
+                    particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+
+                    if (Vector3.Distance(transform.TransformPoint(particleList[i].position), transform.position) > dist)
                     {
-                        particleList[i].startLifetime = lifetime;
+                        particleList[i].size = 0;
+                        //Debug.DrawLine(transform.TransformPoint(particleList[i].position) / transform.lossyScale.x, Vector3.zero, Color.red);
+                        //Gizmos.color = Color.red;
+                        //Gizmos.DrawSphere(transform.TransformPoint(particleList[i].position) / transform.lossyScale.x,0.1f);
                     }
-                    particleList[i].color = new Color(Random.Range(0.0f,1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+                    else
+                    {
+                        //Debug.DrawLine(transform.TransformPoint(particleList[i].position) / transform.lossyScale.x, Vector3.zero, Color.green);
+                        //Gizmos.color = Color.green;
+                        //Gizmos.DrawSphere(transform.TransformPoint(particleList[i].position) / transform.lossyScale.x, 0.1f);
+                    }
+
                 }
+
+                GiveGizmoSpheres(particleList);
 
                 pSystem.SetParticles(particleList, pSystem.particleCount);
             }
         }
 
         //---TestCode---
-         /*
-         ParticleSystem m_currentParticleEffect = (ParticleSystem)GetComponent("ParticleSystem");
-         ParticleSystem.Particle []ParticleList = new    ParticleSystem.Particle[m_currentParticleEffect.particleCount];
-         m_currentParticleEffect.GetParticles(ParticleList);
-         for(int i = 0; i < ParticleList.Length; ++i)
-         {
-             float LifeProcentage = (ParticleList[i].lifetime / ParticleList[i].startLifetime);
-             ParticleList[i].color = Color.Lerp(Color.clear, Color.red, LifeProcentage);
-         }   
-         
-         m_currentParticleEffect.SetParticles(ParticleList, m_currentParticleEffect.particleCount);
-            */
+        /*
+        ParticleSystem m_currentParticleEffect = (ParticleSystem)GetComponent("ParticleSystem");
+        ParticleSystem.Particle []ParticleList = new    ParticleSystem.Particle[m_currentParticleEffect.particleCount];
+        m_currentParticleEffect.GetParticles(ParticleList);
+        for(int i = 0; i < ParticleList.Length; ++i)
+        {
+            float LifeProcentage = (ParticleList[i].lifetime / ParticleList[i].startLifetime);
+            ParticleList[i].color = Color.Lerp(Color.clear, Color.red, LifeProcentage);
+        }   
+
+        m_currentParticleEffect.SetParticles(ParticleList, m_currentParticleEffect.particleCount);
+           */
 
 
 
-        
+
         /*
         foreach (ParticleSystem.Particle particle in particles)
         {
@@ -70,4 +86,32 @@ public class LifetimeAdjust : MonoBehaviour {
         }
         */
     }
+
+    void OnDrawGizmos()
+    {
+        if (target != null)
+        {
+            for (int i = 0; i < gizmoSpherePositions.Length; i++)
+            {
+                Gizmos.DrawSphere(transform.TransformPoint(gizmoSpherePositions[i].position), 0.1f);
+            }
+        }
+    }
+
+    void GiveGizmoSpheres(ParticleSystem.Particle[] sphereArray)
+    {
+        gizmoSpherePositions = sphereArray;
+    }
+
+    /*private Vector3 VectorMultiplication(Vector3 vec1, Vector3 vec2)
+    {
+        Vector3 product;
+
+        product.x = vec1.x * vec2.x;
+        product.x = vec1.y * vec2.y;
+        product.x = vec1.z * vec2.z;
+
+        return produ/ct;
+    }*/
+
 }

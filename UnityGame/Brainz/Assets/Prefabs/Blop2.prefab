@@ -47,7 +47,7 @@ Transform:
   m_GameObject: {fileID: 104618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 481584}
   m_RootOrder: 0
@@ -207,7 +207,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 10
+      scalar: 5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -367,16 +367,11 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startRotation:
-      scalar: 0
+      scalar: 6.28318501
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -391,14 +386,9 @@ ParticleSystem:
           inSlope: 0
           outSlope: 0
           tangentMode: 0
-        - time: 1
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 0
+      minMaxState: 3
     gravityModifier: 0
     inheritVelocity: 0
     maxNumParticles: 1000
@@ -420,7 +410,7 @@ ParticleSystem:
     enabled: 1
     m_Type: 0
     rate:
-      scalar: 100
+      scalar: 10
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1225,7 +1215,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a78a6351bebf66c40a609f18883546a0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1263,12 +1253,20 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: InitialModule.startRotation.maxCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startRotation.minCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: m_UseGravity
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: EmissionModule.rate.scalar
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: playOnAwake
@@ -1304,11 +1302,51 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: InitialModule.startSpeed.scalar
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: InitialModule.startColor.maxColor.rgba
       value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a78a6351bebf66c40a609f18883546a0, type: 2}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 6.28318501
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startRotation.maxCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startRotation.maxCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startRotation.maxCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startRotation.minCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startRotation.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.z
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
