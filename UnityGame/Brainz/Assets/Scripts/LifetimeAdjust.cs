@@ -5,11 +5,11 @@ using System.Collections;
 public class LifetimeAdjust : MonoBehaviour
 {
 
-    public enum ColorMode { RandomColor, PresetColor };
+    public enum ColorMode { RandomColorEveryFrame, RandomStartColor, PresetColor, };
 
     public GameObject target;
 
-    public ColorMode colorMode = ColorMode.RandomColor;
+    public ColorMode colorMode = ColorMode.RandomColorEveryFrame;
 
     public Color[] presetColors;
 
@@ -42,7 +42,7 @@ public class LifetimeAdjust : MonoBehaviour
                 {
                     switch (colorMode)
                     {
-                        case ColorMode.RandomColor:
+                        case ColorMode.RandomColorEveryFrame:
                             {
                                 particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
                                 break;
@@ -51,7 +51,17 @@ public class LifetimeAdjust : MonoBehaviour
                             {
                                 if (particleList[i].color == Color.white)
                                 {
+                                    //particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
                                     particleList[i].color = presetColors[Random.Range(0,presetColors.Length)];                            
+                                }
+                                break;
+                            }
+                        case ColorMode.RandomStartColor:
+                            {
+                                if (particleList[i].color == Color.white)
+                                {
+                                    particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+                                    //particleList[i].color = presetColors[Random.Range(0,presetColors.Length)];                            
                                 }
                                 break;
                             }
