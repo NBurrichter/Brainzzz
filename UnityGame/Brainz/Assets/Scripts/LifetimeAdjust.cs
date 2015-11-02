@@ -5,10 +5,15 @@ using System.Collections;
 public class LifetimeAdjust : MonoBehaviour
 {
 
+    public enum ColorMode { RandomColor, PresetColor };
+
     public GameObject target;
 
-    public ParticleSystem.Particle[] gizmoSpherePositions;
+    public ColorMode colorMode = ColorMode.RandomColor;
 
+    public Color[] presetColors;
+
+    private ParticleSystem.Particle[] gizmoSpherePositions;
     private ParticleSystem pSystem;
     private ParticleSystem.Particle[] particles;
     private float dist;
@@ -35,7 +40,22 @@ public class LifetimeAdjust : MonoBehaviour
 
                 for (int i = 0; i < particleList.Length; i++)
                 {
-                    particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+                    switch (colorMode)
+                    {
+                        case ColorMode.RandomColor:
+                            {
+                                particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+                                break;
+                            }
+                        case ColorMode.PresetColor:
+                            {
+                                if (particleList[i].color == Color.white)
+                                {
+                                    particleList[i].color = presetColors[Random.Range(0,presetColors.Length)];                            
+                                }
+                                break;
+                            }
+                    }
 
                     if (Vector3.Distance(transform.TransformPoint(particleList[i].position), transform.position) > dist)
                     {
