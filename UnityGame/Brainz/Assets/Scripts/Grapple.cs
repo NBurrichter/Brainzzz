@@ -15,12 +15,25 @@ public class Grapple : MonoBehaviour
 
     private IEnumerator grappleCoroutine;
 
+    //grapple Particles
+    private ParticleSystem grapplePaticleSystem;
+    private GameObject grappleParticleObject;
+
     void Start()
     {
         Si_Grappple = this;
         goPlayer = this.gameObject;
         rb = GetComponent<Rigidbody>();
         isGrappling = false;
+
+        foreach (Transform child in transform)
+        {
+            if (child.name == "GrappleParticle")
+            {
+                grappleParticleObject = child.gameObject;
+            }
+        }
+        grapplePaticleSystem = grappleParticleObject.GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -45,8 +58,30 @@ public class Grapple : MonoBehaviour
                 goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
                 StopCoroutine(grappleCoroutine);
                 isGrappling = false;
+                grapplePaticleSystem.Stop();
+                grapplePaticleSystem.Clear();
             }
 
+        }
+
+        if(isGrappling)
+        {
+            if (i == 1)
+            {
+                grappleParticleObject.transform.LookAt(goBlopOne.transform.position);
+                float dist = Vector3.Distance(transform.position, goBlopOne.transform.position);
+                float lifetime = dist / grapplePaticleSystem.startSpeed;
+                grapplePaticleSystem.startLifetime = lifetime;
+                grapplePaticleSystem.Play(true);
+            }
+            if (i == 2)
+            {
+                grappleParticleObject.transform.LookAt(goBlopTwo.transform.position);
+                float dist = Vector3.Distance(transform.position, goBlopTwo.transform.position);
+                float lifetime = dist / grapplePaticleSystem.startSpeed;
+                grapplePaticleSystem.startLifetime = lifetime;
+                grapplePaticleSystem.Play(true);
+            }
         }
 
         if (i == 0)
@@ -140,6 +175,8 @@ public class Grapple : MonoBehaviour
             {
                 StopCoroutine(grappleCoroutine);
                 isGrappling = false;
+                grapplePaticleSystem.Stop();
+                grapplePaticleSystem.Clear();
             }
             goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
             grappleCoroutine = null;
