@@ -40,6 +40,11 @@ public class LifetimeAdjust : MonoBehaviour
 
                 for (int i = 0; i < particleList.Length; i++)
                 {
+
+                    //particleList[i].size = Random.Range(0.0f, 5.5f);
+                    particleList[i].size = Mathf.Sin( ((Mathf.PI)/dist) * (Vector3.Distance(target.transform.position, transform.TransformPoint(particleList[i].position))) );
+
+                    //change colors
                     switch (colorMode)
                     {
                         case ColorMode.RandomColorEveryFrame:
@@ -51,8 +56,7 @@ public class LifetimeAdjust : MonoBehaviour
                             {
                                 if (particleList[i].color == Color.white)
                                 {
-                                    //particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-                                    particleList[i].color = presetColors[Random.Range(0,presetColors.Length)];                            
+                                     particleList[i].color = presetColors[Random.Range(0,presetColors.Length)];                            
                                 }
                                 break;
                             }
@@ -61,24 +65,16 @@ public class LifetimeAdjust : MonoBehaviour
                                 if (particleList[i].color == Color.white)
                                 {
                                     particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
-                                    //particleList[i].color = presetColors[Random.Range(0,presetColors.Length)];                            
                                 }
                                 break;
                             }
                     }
 
+                    //Test Distance
                     if (Vector3.Distance(transform.TransformPoint(particleList[i].position), transform.position) > dist)
                     {
-                        particleList[i].size = 0;
-                        //Debug.DrawLine(transform.TransformPoint(particleList[i].position) / transform.lossyScale.x, Vector3.zero, Color.red);
-                        //Gizmos.color = Color.red;
-                        //Gizmos.DrawSphere(transform.TransformPoint(particleList[i].position) / transform.lossyScale.x,0.1f);
-                    }
-                    else
-                    {
-                        //Debug.DrawLine(transform.TransformPoint(particleList[i].position) / transform.lossyScale.x, Vector3.zero, Color.green);
-                        //Gizmos.color = Color.green;
-                        //Gizmos.DrawSphere(transform.TransformPoint(particleList[i].position) / transform.lossyScale.x, 0.1f);
+                        particleList[i].lifetime = 0;
+
                     }
 
                 }
@@ -121,6 +117,7 @@ public class LifetimeAdjust : MonoBehaviour
     {
         if (target != null)
         {
+            //shows the position of the particles
             for (int i = 0; i < gizmoSpherePositions.Length; i++)
             {
                 Gizmos.DrawSphere(transform.TransformPoint(gizmoSpherePositions[i].position), 0.1f);
