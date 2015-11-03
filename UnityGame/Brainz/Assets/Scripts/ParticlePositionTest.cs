@@ -18,7 +18,7 @@ public class ParticlePositionTest : MonoBehaviour
 
         for (int i = 0; i < particleList.Length; i++)
         {
-            Debug.DrawLine(transform.TransformPoint(particleList[i].position)/transform.lossyScale.x, transform.position, Color.red);
+            Debug.DrawLine(transform.TransformPoint(particleList[i].position)/transform.lossyScale.x, Vector3.zero, Color.red);
 
             pSystem.SetParticles(particleList, pSystem.particleCount);
         }

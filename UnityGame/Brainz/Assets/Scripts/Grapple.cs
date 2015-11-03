@@ -18,6 +18,7 @@ public class Grapple : MonoBehaviour
     //grapple Particles
     private ParticleSystem grapplePaticleSystem;
     private GameObject grappleParticleObject;
+    private float dist = 0;
 
     void Start()
     {
@@ -69,7 +70,7 @@ public class Grapple : MonoBehaviour
             if (i == 1)
             {
                 grappleParticleObject.transform.LookAt(goBlopOne.transform.position);
-                float dist = Vector3.Distance(transform.position, goBlopOne.transform.position);
+                dist = Vector3.Distance(transform.position, goBlopOne.transform.position);
                 float lifetime = dist / grapplePaticleSystem.startSpeed;
                 grapplePaticleSystem.startLifetime = lifetime;
                 grapplePaticleSystem.Play(true);
@@ -77,11 +78,28 @@ public class Grapple : MonoBehaviour
             if (i == 2)
             {
                 grappleParticleObject.transform.LookAt(goBlopTwo.transform.position);
-                float dist = Vector3.Distance(transform.position, goBlopTwo.transform.position);
+                dist = Vector3.Distance(transform.position, goBlopTwo.transform.position);
                 float lifetime = dist / grapplePaticleSystem.startSpeed;
                 grapplePaticleSystem.startLifetime = lifetime;
                 grapplePaticleSystem.Play(true);
             }
+
+            
+            ParticleSystem.Particle[] particleList = new ParticleSystem.Particle[grapplePaticleSystem.particleCount];
+            grapplePaticleSystem.GetParticles(particleList);
+            for (int n = 0; n < particleList.Length; n++)
+            {
+                Debug.DrawLine(grappleParticleObject.transform.TransformPoint(particleList[n].position), Vector3.zero);
+                if (Vector3.Distance(grappleParticleObject.transform.TransformPoint(particleList[n].position), transform.position) > dist)
+                {
+                    
+                    particleList[n].size = 0;
+
+                }
+            }
+
+            grapplePaticleSystem.SetParticles(particleList, grapplePaticleSystem.particleCount);
+
         }
 
         if (i == 0)
