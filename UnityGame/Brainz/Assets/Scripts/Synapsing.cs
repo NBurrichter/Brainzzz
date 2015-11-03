@@ -34,10 +34,15 @@ public class Synapsing : MonoBehaviour
 		{
 			SearchForBlops();
 
-            LifetimeAdjust part1 = Blop1.GetComponentInChildren<LifetimeAdjust>();
-            part1.target = Blop2;
-            LifetimeAdjust part2 = Blop2.GetComponentInChildren<LifetimeAdjust>();
-            part2.target = Blop1;
+            LifetimeAdjust particleScript1 = Blop1.GetComponentInChildren<LifetimeAdjust>();
+            particleScript1.target = Blop2;
+            LifetimeAdjust particleScript2 = Blop2.GetComponentInChildren<LifetimeAdjust>();
+            particleScript2.target = Blop1;
+            ParticleSystem particleSystem1 = Blop1.GetComponentInChildren<ParticleSystem>();
+            particleSystem1.Play();
+            ParticleSystem particleSystem2 = Blop2.GetComponentInChildren<ParticleSystem>();
+            particleSystem2.Play();
+
 
             if (bMergeEnabled == false) {
 				Debug.Log ("Start Mergin");
