@@ -18,8 +18,9 @@ public class CameraScript : MonoBehaviour {
     void Update()
     {
         // check if mouse is out of screen
-        fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
+        // fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
         fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime * -1.0f;
+        fYRotation += Input.GetAxis("Joystick Camera Y") * fRotationSpeed * Time.deltaTime * -1.0f;
 
         //Clamp rotation
         fYRotation = Mathf.Clamp(fYRotation,-90,90);

@@ -5,6 +5,8 @@ public class CubeControl : MonoBehaviour {
 
 
     private bool bIsMergin;
+    public enum BlockType {Cube,Ramp };
+    public BlockType blocktype;
 
 	// Use this for initialization
 	void Start () {
@@ -26,14 +28,24 @@ public class CubeControl : MonoBehaviour {
 		if(this.gameObject.GetComponent<Rigidbody>())
 		{
 			Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-			rb.mass=10;
+			rb.mass=1000;
 		}
 	}
 
     public bool StopMergin()
     {
         if (bIsMergin == false)
+        {
+            Debug.Log("mergin is false");
+            if (blocktype == BlockType.Ramp)
+            {
+                Debug.Log("Remove Joint");
+                this.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+                
+            }
+            this.gameObject.GetComponent<Rigidbody>().useGravity = true;
             return true;
+        }
 
         return false;
     }

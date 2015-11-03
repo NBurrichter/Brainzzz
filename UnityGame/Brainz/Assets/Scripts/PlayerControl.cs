@@ -61,9 +61,12 @@ public class PlayerControl : MonoBehaviour {
 		// check if mouse is out of screen
 		fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
 		fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime *-1.0f;
- 
+
+        fXRotation += Input.GetAxis("Joystick Camera X") * fRotationSpeed * Time.deltaTime;
+
+
         //Mouse rotation moveement
-	    qRotation = Quaternion.Euler(0,fXRotation,0);
+        qRotation = Quaternion.Euler(0,fXRotation,0);
 
         player.transform.rotation = qRotation;
 
@@ -104,11 +107,11 @@ public class PlayerControl : MonoBehaviour {
             return;
         }
 
-        if (Physics.Raycast(transform.position, Vector3.down, playerHeight))
+       /* if (Physics.Raycast(transform.position, Vector3.down, playerHeight))
         {
             grounded = true;
         }
-
+        */
         if (grounded)
         {
             // Calculate how fast we should be moving
@@ -140,7 +143,7 @@ public class PlayerControl : MonoBehaviour {
 
     void OnCollisionStay()
     {
-        //grounded = true;
+        grounded = true;
     }
 
     float CalculateJumpVerticalSpeed()
