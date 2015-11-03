@@ -22,14 +22,14 @@ public class BlopGun : MonoBehaviour {
 		if(Input.GetButtonDown("Fire1"))
 		{
 
-            Instantiate(Blop1Prefab, vPlayerPos + AimingControl.aimingControlSingleton.GetSpawnPosition(),Quaternion.identity);
+            Instantiate(Blop1Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(),Quaternion.identity);
 
 		}
 
 		if(Input.GetButtonDown("Fire2"))
 		   {
 
-			Instantiate(Blop2Prefab, vPlayerPos + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
+			Instantiate(Blop2Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
 		}
 	}
 }
