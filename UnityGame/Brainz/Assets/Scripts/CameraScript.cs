@@ -7,12 +7,19 @@ public class CameraScript : MonoBehaviour {
     private float fYRotation;
     public float fRotationSpeed;
 
+    public GameObject focusPoint;
+    public Vector3 cameraOffset;
+
     private Quaternion qRotation;
     private Vector3 startPos;
 
+    private float maxCameraDistance;
+
 	void Start ()
 	{
-        startPos = transform.localPosition;
+        startPos = focusPoint.transform.localPosition + cameraOffset;
+        transform.localPosition = startPos;
+        maxCameraDistance = Vector3.Distance(transform.position,focusPoint.transform.position);
 	}
 
     void Update()
@@ -41,7 +48,17 @@ public class CameraScript : MonoBehaviour {
             movedist = Mathf.Abs(movedist);
             transform.localPosition = Vector3.Lerp(startPos, startPos + Vector3.forward * 2 + Vector3.down, movedist);
         }
-    }
+
+        //Test if camera is occupied
+        RaycastHit cameraHit;
+        if (Physics.Raycast(focusPoint.transform.position,transform.position - focusPoint.transform.position, out cameraHit, maxCameraDistance))
+        {
+            Debug.DrawLine(focusPoint.transform.position,cameraHit.point);
+            Vector3 dist = (cameraHit.point - focusPoint.transform.position) * 0.9f;
+            transform.position = dist + focusPoint.transform.position;
+        }
+
+    }   
 
 
 }
