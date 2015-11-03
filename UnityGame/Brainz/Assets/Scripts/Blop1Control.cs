@@ -7,7 +7,9 @@ public class Blop1Control : MonoBehaviour
 	public GameObject Blop;
     private GameObject[] goBlop1Array;
 	private FixedJoint attachedObject;
-	
+
+    private GameObject particleObject;
+
 	Rigidbody rb;
 	
 	// Use this for initialization
@@ -18,7 +20,14 @@ public class Blop1Control : MonoBehaviour
         rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection(); 
 		Blop.tag = "Blop1";
         goBlop1Array = GameObject.FindGameObjectsWithTag("Blop1");
-	}
+        foreach (Transform child in transform)
+        {
+            if (child.name == "LineEffect")
+            {
+                particleObject = child.gameObject;
+            }
+        }
+    }
 
     // Update is called once per frame
     void Update()
@@ -125,5 +134,10 @@ public class Blop1Control : MonoBehaviour
         }
 
 
+    }
+
+    void OnDestroy()
+    {
+        Destroy(particleObject);
     }
 }

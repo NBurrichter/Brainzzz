@@ -2,10 +2,18 @@
 using System.Collections;
 
 [ExecuteInEditMode()]
-public class LifetimeAdjust : MonoBehaviour {
+public class LifetimeAdjust : MonoBehaviour
+{
+
+    public enum ColorMode { RandomColorEveryFrame, RandomStartColor, PresetColor, };
 
     public GameObject target;
 
+    public ColorMode colorMode = ColorMode.RandomColorEveryFrame;
+
+    public Color[] presetColors;
+
+    private ParticleSystem.Particle[] gizmoSpherePositions;
     private ParticleSystem pSystem;
     private ParticleSystem.Particle[] particles;
     private float dist;
@@ -13,44 +21,87 @@ public class LifetimeAdjust : MonoBehaviour {
     void Awake()
     {
         pSystem = GetComponent<ParticleSystem>();
-	}
-	
-	void Update ()
+    }
+
+    void Update()
     {
         if (target != null)
         {
+            //calculate Lifetime of Particle 
             dist = Vector3.Distance(transform.position, target.transform.position);
-            pSystem.startLifetime = dist / pSystem.startSpeed;
+            float lifetime = dist / pSystem.startSpeed;
+            pSystem.startLifetime = lifetime;
             transform.LookAt(target.transform.position);
-        }
-        
-        
-        if (Application.isPlaying)
-        {
-            /*
-            // GetParticles is allocation free because we reuse the m_Particles buffer between updates
-            ParticleSystem.Particle[] numParticlesAlive = pSystem.GetParticles(particles);
 
-            // Change only the particles that are alive
-            for (var i = 0; i < numParticlesAlive; i++)
+            if (Application.isPlaying)
             {
-                m_Particles[i].velocity += Vector3.up * m_Drift;
-            }
-            // Apply the particle changes to the particle system
-            m_System.SetParticles(m_Particles, numParticlesAlive);
+                ParticleSystem.Particle[] particleList = new ParticleSystem.Particle[pSystem.particleCount];
+                pSystem.GetParticles(particleList);
 
-            for (int i = 0; i < particles.Length; i++)
-            {
-                if (Vector3.Distance(particles[i].position, transform.position) > dist)
+                for (int i = 0; i < particleList.Length; i++)
                 {
-                    particles[i].lifetime = 0;
+
+                    //particleList[i].size = Random.Range(0.0f, 5.5f);
+                    particleList[i].size = Mathf.Sin( ((Mathf.PI)/dist) * (Vector3.Distance(target.transform.position, transform.TransformPoint(particleList[i].position))) );
+
+                    //change colors
+                    switch (colorMode)
+                    {
+                        case ColorMode.RandomColorEveryFrame:
+                            {
+                                particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+                                break;
+                            }
+                        case ColorMode.PresetColor:
+                            {
+                                if (particleList[i].color == Color.white)
+                                {
+                                     particleList[i].color = presetColors[Random.Range(0,presetColors.Length)];                            
+                                }
+                                break;
+                            }
+                        case ColorMode.RandomStartColor:
+                            {
+                                if (particleList[i].color == Color.white)
+                                {
+                                    particleList[i].color = new Color(Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f), Random.Range(0.0f, 1.0f));
+                                }
+                                break;
+                            }
+                    }
+
+                    //Test Distance
+                    if (Vector3.Distance(transform.TransformPoint(particleList[i].position), transform.position) > dist)
+                    {
+                        particleList[i].lifetime = 0;
+
+                    }
+
                 }
+
+                GiveGizmoSpheres(particleList);
+
+                pSystem.SetParticles(particleList, pSystem.particleCount);
             }
-            */
-
-
-            
         }
+
+        //---TestCode---
+        /*
+        ParticleSystem m_currentParticleEffect = (ParticleSystem)GetComponent("ParticleSystem");
+        ParticleSystem.Particle []ParticleList = new    ParticleSystem.Particle[m_currentParticleEffect.particleCount];
+        m_currentParticleEffect.GetParticles(ParticleList);
+        for(int i = 0; i < ParticleList.Length; ++i)
+        {
+            float LifeProcentage = (ParticleList[i].lifetime / ParticleList[i].startLifetime);
+            ParticleList[i].color = Color.Lerp(Color.clear, Color.red, LifeProcentage);
+        }   
+
+        m_currentParticleEffect.SetParticles(ParticleList, m_currentParticleEffect.particleCount);
+           */
+
+
+
+
         /*
         foreach (ParticleSystem.Particle particle in particles)
         {
@@ -61,4 +112,33 @@ public class LifetimeAdjust : MonoBehaviour {
         }
         */
     }
+
+    void OnDrawGizmos()
+    {
+        if (target != null)
+        {
+            //shows the position of the particles
+            for (int i = 0; i < gizmoSpherePositions.Length; i++)
+            {
+                Gizmos.DrawSphere(transform.TransformPoint(gizmoSpherePositions[i].position), 0.1f);
+            }
+        }
+    }
+
+    void GiveGizmoSpheres(ParticleSystem.Particle[] sphereArray)
+    {
+        gizmoSpherePositions = sphereArray;
+    }
+
+    /*private Vector3 VectorMultiplication(Vector3 vec1, Vector3 vec2)
+    {
+        Vector3 product;
+
+        product.x = vec1.x * vec2.x;
+        product.x = vec1.y * vec2.y;
+        product.x = vec1.z * vec2.z;
+
+        return produ/ct;
+    }*/
+
 }
