@@ -107,11 +107,11 @@ public class PlayerControl : MonoBehaviour {
             return;
         }
 
-        if (Physics.Raycast(transform.position, Vector3.down, playerHeight))
+       /* if (Physics.Raycast(transform.position, Vector3.down, playerHeight))
         {
             grounded = true;
         }
-
+        */
         if (grounded)
         {
             // Calculate how fast we should be moving
@@ -143,7 +143,7 @@ public class PlayerControl : MonoBehaviour {
 
     void OnCollisionStay()
     {
-        //grounded = true;
+        grounded = true;
     }
 
     float CalculateJumpVerticalSpeed()

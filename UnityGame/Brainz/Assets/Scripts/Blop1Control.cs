@@ -26,7 +26,10 @@ public class Blop1Control : MonoBehaviour
         if (attachedObject != null)
         {
             if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
+            {
+                Debug.Log("Stop Mergin");
                 StopMergin();
+            }
         }
 
     }

@@ -1144,8 +1144,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 696829817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.8999996, y: 2.5, z: 145.600006}
-  m_LocalScale: {x: 12.754446, y: 5.83970785, z: 14.0350056}
+  m_LocalPosition: {x: -16.1000004, y: 2.5, z: 145.419998}
+  m_LocalScale: {x: 12.754446, y: 5.83970785, z: 14.9209623}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -2735,8 +2735,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1578520246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.8999996, y: 2.5, z: 145.600006}
-  m_LocalScale: {x: 12.754446, y: 5.83970785, z: 14.0350056}
+  m_LocalPosition: {x: 14.6300001, y: 2.5, z: 145.419998}
+  m_LocalScale: {x: 12.754446, y: 5.83970785, z: 14.9121971}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -2751,6 +2751,7 @@ GameObject:
   - 33: {fileID: 1685054625}
   - 64: {fileID: 1685054624}
   - 23: {fileID: 1685054623}
+  - 54: {fileID: 1685054626}
   m_Layer: 0
   m_Name: Plane (1)
   m_TagString: Ground
@@ -2813,6 +2814,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1685054621}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &1685054626
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1685054621}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1750155885
 GameObject:
   m_ObjectHideFlags: 0
