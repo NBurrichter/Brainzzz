@@ -33,6 +33,15 @@ public class Blop2Control : MonoBehaviour
             if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
                 StopMergin();
         }
+
+        if (Input.GetAxis("XBox Trigger") == 1)
+        {
+            for (int i = 0; i <= goBlop2Array.Length - 1; i++)
+            {
+                if (goBlop2Array[i] != null)
+                    goBlop2Array[i].GetComponent<Blop2Control>().FreeOtherBlops();
+            }
+        }
     }
 
 
@@ -112,7 +121,9 @@ public class Blop2Control : MonoBehaviour
     {
         for (int i = 0; i <= goBlop2Array.Length - 2; i++)
         {
+            if(goBlop2Array[i]!=null)
             goBlop2Array[i].GetComponent<Blop2Control>().FreeOtherBlops();
+            
         }
     }
 
@@ -123,7 +134,7 @@ public class Blop2Control : MonoBehaviour
         if (attachedObject)
         {
             attachedObject.tag = "Untagged";
-            Destroy(attachedObject);
+            // Destroy(attachedObject);
 
             //Re-enable collision between attached objects
             attachedObject.gameObject.layer = 0;
