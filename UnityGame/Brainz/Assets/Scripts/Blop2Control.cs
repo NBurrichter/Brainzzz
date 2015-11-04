@@ -146,4 +146,11 @@ public class Blop2Control : MonoBehaviour
     {
         Destroy(particleObject);
     }
+
+    public bool HasAttachedObject()
+    {
+        if (attachedObject != null)
+            return true;
+        return false;
+    }
 }

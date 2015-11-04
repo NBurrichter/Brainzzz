@@ -138,13 +138,15 @@ public class Grapple : MonoBehaviour
 
     private int GetBlopToDragTo()
     {
-        if (goBlopOne != null && goBlopTwo == null)
+        // check for Blop one and if he has an attachment
+        if (goBlopOne != null && goBlopTwo == null && goBlopOne.GetComponent<Blop1Control>().HasAttachedObject() == true)
         {
             return 1;
         }
         else
         {
-            if (goBlopOne == null && goBlopTwo != null)
+            // check for Blop two and if he hsa an attachment
+            if (goBlopOne == null && goBlopTwo != null && goBlopTwo.GetComponent<Blop2Control>().HasAttachedObject() == true)
             {
                 return 2;
             }
