@@ -12,6 +12,10 @@ public class Synapsing : MonoBehaviour
 
 	GameObject Blop1;
 	GameObject Blop2;
+
+    Blop1Control Blop1Script;
+    Blop2Control Blop2Script;
+
 	private bool bMergeEnabled;
 	private IEnumerator merginCoroutine;
 
@@ -68,6 +72,9 @@ public class Synapsing : MonoBehaviour
 			Blop1 = GameObject.FindGameObjectWithTag ("Blop1");
 			Blop2 = GameObject.FindGameObjectWithTag ("Blop2");
 
+            Blop1Script = Blop1.GetComponent<Blop1Control>();
+            Blop2Script = Blop2.GetComponent<Blop2Control>();
+
 			blopOneBody = Blop1.GetComponent<Rigidbody>();
 			blopTwoBody = Blop2.GetComponent<Rigidbody>();
 			
@@ -87,8 +94,9 @@ public class Synapsing : MonoBehaviour
 		{
 			timeSinceStart += Time.deltaTime;
 
-			if (Blop1 != null && Blop2 != null) {
-
+            // check if Blops are existing and they have an attachment
+			if (Blop1 != null && Blop2 != null && Blop1Script.HasAttachedObject() == true && Blop2Script.HasAttachedObject() == true  ) {
+            
 
 				Vector3 dir = Blop1.transform.position - Blop2.transform.position;
 

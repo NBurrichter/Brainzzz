@@ -41,7 +41,18 @@ public class Blop1Control : MonoBehaviour
             }
         }
 
+        if (Input.GetAxis("XBox Trigger") == -1)
+        {
+            for (int i = 0; i <= goBlop1Array.Length - 1; i++)
+            {
+                if (goBlop1Array[i] != null)
+                    goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
+            }
+        }
     }
+          
+
+    
 
     void OnCollisionEnter(Collision c)
 	{
@@ -120,7 +131,8 @@ public class Blop1Control : MonoBehaviour
     {
         for(int i = 0;i<=goBlop1Array.Length-2;i++)
         {
-            goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
+            if (goBlop1Array[i] != null)
+                goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
         }
     }
 
@@ -142,5 +154,12 @@ public class Blop1Control : MonoBehaviour
     void OnDestroy()
     {
         Destroy(particleObject);
+    }
+
+    public bool HasAttachedObject()
+    {
+        if (attachedObject != null)
+            return true;
+        return false;
     }
 }
