@@ -84,7 +84,11 @@ public class Blop1Control : MonoBehaviour
 
 			otherBody.mass = Synapsing.Singleton.blopMass;
 
-            
+            //Check if Block is a NPC
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.Cube)
+            {
+                c.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(false);
+            }
 		}
 	}
 

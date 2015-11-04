@@ -5,12 +5,20 @@ public class CubeControl : MonoBehaviour {
 
 
     private bool bIsMergin;
-    public enum BlockType {Cube,Ramp };
+    public enum  BlockType {Cube,Ramp,NPC };
     public BlockType blocktype;
+
+    //Only needed for NPC
+    private NavmeshTestNavigation navigation;
 
 	// Use this for initialization
 	void Start () {
         bIsMergin = true;
+
+        if (blocktype == BlockType.NPC)
+        {
+            navigation = GetComponent<NavmeshTestNavigation>();
+        }
 	}
 	
 	// Update is called once per frame
@@ -63,6 +71,7 @@ public class CubeControl : MonoBehaviour {
         {
             Debug.Log("Stop Mergin");
             bIsMergin = false;
+
         }
 
         if (this.gameObject.tag == "Blop2_Attachment" && c.gameObject.tag=="Blop1_Attachment")
