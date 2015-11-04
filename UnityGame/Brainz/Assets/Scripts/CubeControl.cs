@@ -59,8 +59,14 @@ public class CubeControl : MonoBehaviour {
                 this.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                 
             }
+
+            if (blocktype == BlockType.NPC)
+            {
+                navigation.SetActivationMode(true);
+            }
+
             this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-      
+             
     }
 
     public bool GetMerginStatus()

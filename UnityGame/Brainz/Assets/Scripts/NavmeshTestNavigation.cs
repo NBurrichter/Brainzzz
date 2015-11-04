@@ -7,9 +7,12 @@ public class NavmeshTestNavigation : MonoBehaviour {
     private bool active;
     private int nextWaypointNumber;
     private Rigidbody rb;
+    public bool grounded;
+
+    public GameObject visualizer;
 
     public GameObject[] waypoints;
-    
+
     //public GameObject target;
 
 	void Start ()
@@ -18,15 +21,32 @@ public class NavmeshTestNavigation : MonoBehaviour {
         active = true;
         nextWaypointNumber = 0;
         rb = GetComponent<Rigidbody>();
+        grounded = true;
 	}
 
     void Update()
     {
+        //Check for grounded
+        if (Physics.Raycast(transform.position, Vector3.down,0.55f))
+        {
+            grounded = true;
+            //agent.enabled = true;
+        }
+        else
+        {
+            grounded = false;
+            //agent.enabled = false;
+        }
+
         if (active)
         {
             //agent.destination = target.transform.position;
-            agent.SetDestination(waypoints[nextWaypointNumber].transform.position);
+            if (grounded)
+            {
+                agent.SetDestination(waypoints[nextWaypointNumber].transform.position);
+            }
         }
+        visualizer.transform.LookAt(waypoints[nextWaypointNumber].transform.position);
     }
 
     public void SetActivationMode(bool status)
