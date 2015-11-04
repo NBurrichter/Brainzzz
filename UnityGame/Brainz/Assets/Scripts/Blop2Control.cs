@@ -78,8 +78,6 @@ public class Blop2Control : MonoBehaviour
             attachedObject = c.gameObject.AddComponent<FixedJoint>();
             attachedObject.connectedBody = rb;
 
-            /*Set layer so it cannot collide with other attached object(s)
-			c.gameObject.layer = Synapsing.Singleton.noCollisionLayer;*/
 
             //Set physic material of other collider
             c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;

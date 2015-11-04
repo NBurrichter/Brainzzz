@@ -66,10 +66,6 @@ public class Blop1Control : MonoBehaviour
 
 
             DeletePreviousBlops();
-
-            //Attachment att = c.gameObject.AddComponent<Attachment>();
-            //att.PseudoParent = transform;
-            //rb.isKinematic = true;
             
 
             // Add Tag and Components to the attachement
@@ -87,9 +83,6 @@ public class Blop1Control : MonoBehaviour
 			attachedObject = c.gameObject.AddComponent<FixedJoint>();
 			attachedObject.connectedBody = rb;
 
-			/*Set layer so it cannot collide with other attached object(s)
-			c.gameObject.layer = Synapsing.Singleton.noCollisionLayer;
-			gameObject.layer = Synapsing.Singleton.noCollisionLayer; */
 
 			//Set physic material of other collider
 			c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;

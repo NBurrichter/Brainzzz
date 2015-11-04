@@ -40,6 +40,7 @@ public class CubeControl : MonoBehaviour {
 
     }
 
+    // Reset the mass of the object 
 	void ResetMass()
 	{
 		if(this.gameObject.GetComponent<Rigidbody>())
@@ -49,6 +50,8 @@ public class CubeControl : MonoBehaviour {
 		}
 	}
 
+
+    // call if the mergin is stoped 
     public void StopMergin()
     {
 
@@ -63,6 +66,8 @@ public class CubeControl : MonoBehaviour {
       
     }
 
+
+    // get if the object is currently mergin or not
     public bool GetMerginStatus()
     {
         return bIsMergin;
@@ -77,7 +82,7 @@ public class CubeControl : MonoBehaviour {
     void OnCollisionEnter(Collision c)
     {
         
-
+        // collision with other attachment
         if(this.gameObject.tag=="Blop1_Attachment" && c.gameObject.tag=="Blop2_Attachment")
         {
             Debug.Log("Stop Mergin");

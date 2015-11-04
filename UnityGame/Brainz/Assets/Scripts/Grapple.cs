@@ -69,6 +69,7 @@ public class Grapple : MonoBehaviour
 
         if(isGrappling)
         {
+            // grapple to bBlop 1
             if (i == 1)
             {
                 grappleParticleObject.transform.LookAt(goBlopOne.transform.position);
@@ -77,6 +78,7 @@ public class Grapple : MonoBehaviour
                 grapplePaticleSystem.startLifetime = lifetime;
                 grapplePaticleSystem.Play(true);
             }
+            // Grapple to Blop 2
             if (i == 2)
             {
                 grappleParticleObject.transform.LookAt(goBlopTwo.transform.position);
@@ -115,6 +117,8 @@ public class Grapple : MonoBehaviour
 
     }
 
+
+    // search for the two blops
     private void SearchBlops()
     {
         try
@@ -136,6 +140,8 @@ public class Grapple : MonoBehaviour
         }
     }
 
+
+    // return which Blop should be grappled to 1=Blop1, 2=Blop2, 0= no Blop
     private int GetBlopToDragTo()
     {
         // check for Blop one and if he has an attachment
@@ -145,7 +151,7 @@ public class Grapple : MonoBehaviour
         }
         else
         {
-            // check for Blop two and if he hsa an attachment
+            // check for Blop two and if he has an attachment
             if (goBlopOne == null && goBlopTwo != null && goBlopTwo.GetComponent<Blop2Control>().HasAttachedObject() == true)
             {
                 return 2;
@@ -158,7 +164,7 @@ public class Grapple : MonoBehaviour
 
     }
 
-
+    // Coroutine to handle the grapple
     IEnumerator DragToBlop(int i)
     {
         float timeSinceStart = 1f;
@@ -190,6 +196,7 @@ public class Grapple : MonoBehaviour
         }
     }
 
+    //Stop corotine if collision with a blop or its attachment
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Blop1" || col.gameObject.tag == "Blop2" ||
