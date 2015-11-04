@@ -13,6 +13,8 @@ public class Grapple : MonoBehaviour
 
     private bool isGrappling;
 
+    private float fGrappleSpeed = 7.5f;
+
     private IEnumerator grappleCoroutine;
 
     //grapple Particles
@@ -169,14 +171,16 @@ public class Grapple : MonoBehaviour
 
                 //Drag to Blop1
                 Vector3 dir = goBlopOne.transform.position - goPlayer.transform.position;
-                rb.velocity = dir;
+                dir = dir.normalized;
+                rb.velocity = dir * fGrappleSpeed;
                 Debug.DrawLine(goPlayer.transform.position, goBlopOne.transform.position + dir, Color.red);
             }
             else
             {
                 // let the player move to the position of the blop2
                 Vector3 dir = goBlopTwo.transform.position - goPlayer.transform.position;
-                rb.velocity = dir;
+                dir = dir.normalized;
+                rb.velocity = dir * fGrappleSpeed;
                 Debug.DrawLine(goPlayer.transform.position, goBlopTwo.transform.position + dir, Color.red);
             }
 
