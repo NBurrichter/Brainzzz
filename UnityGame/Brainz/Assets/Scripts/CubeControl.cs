@@ -54,8 +54,6 @@ public class CubeControl : MonoBehaviour {
     // call if the mergin is stoped 
     public void StopMergin()
     {
-
-            Debug.Log("Stop Mergin in cube control");
             if (blocktype == BlockType.Ramp)
             {
                 Debug.Log("Remove Joint");

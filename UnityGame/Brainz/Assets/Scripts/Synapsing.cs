@@ -49,7 +49,6 @@ public class Synapsing : MonoBehaviour
 
 
             if (bMergeEnabled == false) {
-				Debug.Log ("Start Mergin");
 				bMergeEnabled = true;
 			}
 		}
@@ -79,6 +78,7 @@ public class Synapsing : MonoBehaviour
 			blopTwoBody = Blop2.GetComponent<Rigidbody>();
 			
 		} catch (UnityException e) {
+            Debug.Log("Blop1 + Blop 2 :" + e);
 			Blop1 = null;
 			Blop2 = null;
 

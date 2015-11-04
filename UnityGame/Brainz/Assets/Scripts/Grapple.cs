@@ -127,6 +127,7 @@ public class Grapple : MonoBehaviour
         }
         catch (UnityException e)
         {
+            Debug.Log("Blop1: " + e);
             goBlopOne = null;
         }
 
@@ -136,6 +137,7 @@ public class Grapple : MonoBehaviour
         }
         catch (UnityException e)
         {
+            Debug.Log("Blop2: " + e);
             goBlopOne = null;
         }
     }
