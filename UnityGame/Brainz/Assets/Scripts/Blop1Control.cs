@@ -34,7 +34,7 @@ public class Blop1Control : MonoBehaviour
     {
         if (attachedObject != null)
         {
-            if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
+            if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)
             {
                 Debug.Log("Stop Mergin");
                 StopMergin();
@@ -58,16 +58,23 @@ public class Blop1Control : MonoBehaviour
 	{
 		if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground"))
 		{
+            if (c.gameObject.GetComponent<CubeControl>() == null)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
+
+
             DeletePreviousBlops();
 
             //Attachment att = c.gameObject.AddComponent<Attachment>();
             //att.PseudoParent = transform;
             //rb.isKinematic = true;
-
+            
 
             // Add Tag and Components to the attachement
             c.gameObject.tag = "Blop1_Attachment";
-            c.gameObject.GetComponent<CubeControl>().SetMergin(true);
 			Rigidbody otherBody;
 			
 			// check if There is already a Rigidbody
@@ -101,6 +108,7 @@ public class Blop1Control : MonoBehaviour
 
     public void StopMergin()
     {
+        attachedObject.GetComponent<CubeControl>().StopMergin();
         this.gameObject.transform.DetachChildren();
         Synapsing.Singleton.StopMergin();
         Destroy(this.gameObject);
