@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 0724842b3dce17f4780ba9c59b23633e
-timeCreated: 1446547731
+guid: d542388dcd6372748888567aa5bafd25
+timeCreated: 1446638734
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -14,18 +14,21 @@ ModelImporter:
     100012: pCube16
     100014: pCube17
     100016: pCube18
-    100018: pCube2
-    100020: pCube3
-    100022: pCube4
-    100024: pCube5
-    100026: pCube6
-    100028: pCube7
-    100030: pCube8
-    100032: pCube9
-    100034: platform_blocking_cube1
-    100036: platform_blocking_cube2
-    100038: platform_blocking_cube3
-    100040: //RootNode
+    100018: pCube19
+    100020: pCube2
+    100022: pCube3
+    100024: pCube4
+    100026: pCube5
+    100028: pCube6
+    100030: pCube7
+    100032: pCube8
+    100034: pCube9
+    100036: platform_blocking_cube1
+    100038: platform_blocking_cube2
+    100040: platform_blocking_cube3
+    100042: platform_blocking_cube4
+    100044: platform_blocking_cube5
+    100046: //RootNode
     400000: pCube10
     400002: pCube11
     400004: pCube12
@@ -35,18 +38,21 @@ ModelImporter:
     400012: pCube16
     400014: pCube17
     400016: pCube18
-    400018: pCube2
-    400020: pCube3
-    400022: pCube4
-    400024: pCube5
-    400026: pCube6
-    400028: pCube7
-    400030: pCube8
-    400032: pCube9
-    400034: platform_blocking_cube1
-    400036: platform_blocking_cube2
-    400038: platform_blocking_cube3
-    400040: //RootNode
+    400018: pCube19
+    400020: pCube2
+    400022: pCube3
+    400024: pCube4
+    400026: pCube5
+    400028: pCube6
+    400030: pCube7
+    400032: pCube8
+    400034: pCube9
+    400036: platform_blocking_cube1
+    400038: platform_blocking_cube2
+    400040: platform_blocking_cube3
+    400042: platform_blocking_cube4
+    400044: platform_blocking_cube5
+    400046: //RootNode
     2300000: pCube10
     2300002: pCube11
     2300004: pCube12
@@ -56,17 +62,20 @@ ModelImporter:
     2300012: pCube16
     2300014: pCube17
     2300016: pCube18
-    2300018: pCube2
-    2300020: pCube3
-    2300022: pCube4
-    2300024: pCube5
-    2300026: pCube6
-    2300028: pCube7
-    2300030: pCube8
-    2300032: pCube9
-    2300034: platform_blocking_cube1
-    2300036: platform_blocking_cube2
-    2300038: platform_blocking_cube3
+    2300018: pCube19
+    2300020: pCube2
+    2300022: pCube3
+    2300024: pCube4
+    2300026: pCube5
+    2300028: pCube6
+    2300030: pCube7
+    2300032: pCube8
+    2300034: pCube9
+    2300036: platform_blocking_cube1
+    2300038: platform_blocking_cube2
+    2300040: platform_blocking_cube3
+    2300042: platform_blocking_cube4
+    2300044: platform_blocking_cube5
     3300000: pCube10
     3300002: pCube11
     3300004: pCube12
@@ -76,37 +85,43 @@ ModelImporter:
     3300012: pCube16
     3300014: pCube17
     3300016: pCube18
-    3300018: pCube2
-    3300020: pCube3
-    3300022: pCube4
-    3300024: pCube5
-    3300026: pCube6
-    3300028: pCube7
-    3300030: pCube8
-    3300032: pCube9
-    3300034: platform_blocking_cube1
-    3300036: platform_blocking_cube2
-    3300038: platform_blocking_cube3
+    3300018: pCube19
+    3300020: pCube2
+    3300022: pCube3
+    3300024: pCube4
+    3300026: pCube5
+    3300028: pCube6
+    3300030: pCube7
+    3300032: pCube8
+    3300034: pCube9
+    3300036: platform_blocking_cube1
+    3300038: platform_blocking_cube2
+    3300040: platform_blocking_cube3
+    3300042: platform_blocking_cube4
+    3300044: platform_blocking_cube5
     4300000: platform_blocking_cube2
     4300002: platform_blocking_cube1
-    4300004: pCube17
-    4300006: platform_blocking_cube3
-    4300008: pCube18
-    4300010: pCube12
-    4300012: pCube14
-    4300014: pCube13
-    4300016: pCube15
-    4300018: pCube16
-    4300020: pCube2
-    4300022: pCube5
-    4300024: pCube4
-    4300026: pCube3
-    4300028: pCube6
-    4300030: pCube7
-    4300032: pCube8
-    4300034: pCube10
-    4300036: pCube9
-    4300038: pCube11
+    4300004: pCube18
+    4300006: pCube12
+    4300008: pCube14
+    4300010: pCube13
+    4300012: pCube15
+    4300014: pCube16
+    4300016: pCube2
+    4300018: pCube5
+    4300020: pCube4
+    4300022: pCube3
+    4300024: pCube6
+    4300026: pCube7
+    4300028: pCube8
+    4300030: pCube10
+    4300032: pCube9
+    4300034: pCube11
+    4300036: pCube19
+    4300038: pCube17
+    4300040: platform_blocking_cube3
+    4300042: platform_blocking_cube5
+    4300044: platform_blocking_cube4
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -131,7 +146,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 150
+    globalScale: 160
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
