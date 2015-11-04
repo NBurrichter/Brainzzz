@@ -34,29 +34,47 @@ public class Blop1Control : MonoBehaviour
     {
         if (attachedObject != null)
         {
-            if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
+            if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)
             {
                 Debug.Log("Stop Mergin");
                 StopMergin();
             }
         }
 
+        if (Input.GetAxis("XBox Trigger") == -1)
+        {
+            for (int i = 0; i <= goBlop1Array.Length - 1; i++)
+            {
+                if (goBlop1Array[i] != null)
+                    goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
+            }
+        }
     }
+          
+
+    
 
     void OnCollisionEnter(Collision c)
 	{
 		if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground"))
 		{
+            if (c.gameObject.GetComponent<CubeControl>() == null)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+
+
+
             DeletePreviousBlops();
 
             //Attachment att = c.gameObject.AddComponent<Attachment>();
             //att.PseudoParent = transform;
             //rb.isKinematic = true;
-
+            
 
             // Add Tag and Components to the attachement
             c.gameObject.tag = "Blop1_Attachment";
-            c.gameObject.GetComponent<CubeControl>().SetMergin(true);
 			Rigidbody otherBody;
 			
 			// check if There is already a Rigidbody
@@ -94,6 +112,7 @@ public class Blop1Control : MonoBehaviour
 
     public void StopMergin()
     {
+        attachedObject.GetComponent<CubeControl>().StopMergin();
         this.gameObject.transform.DetachChildren();
         Synapsing.Singleton.StopMergin();
         Destroy(this.gameObject);
@@ -124,7 +143,8 @@ public class Blop1Control : MonoBehaviour
     {
         for(int i = 0;i<=goBlop1Array.Length-2;i++)
         {
-            goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
+            if (goBlop1Array[i] != null)
+                goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
         }
     }
 
@@ -146,5 +166,12 @@ public class Blop1Control : MonoBehaviour
     void OnDestroy()
     {
         Destroy(particleObject);
+    }
+
+    public bool HasAttachedObject()
+    {
+        if (attachedObject != null)
+            return true;
+        return false;
     }
 }

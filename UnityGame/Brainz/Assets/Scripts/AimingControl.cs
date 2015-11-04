@@ -6,16 +6,16 @@ public class AimingControl : MonoBehaviour
 
 
     RaycastHit hit;
-    private GameObject goPlayer;
     public static AimingControl aimingControlSingleton;
     public float fShotSpeed;
 
     // Use this for initialization
     void Start()
     {
-        goPlayer = GameObject.FindGameObjectWithTag("Player");
+
         aimingControlSingleton = this;
     }
+
 
     // Update is called once per frame
     void Update()
@@ -32,9 +32,17 @@ public class AimingControl : MonoBehaviour
 
     public Vector3 GetHitDirection()
     {
-        Vector3 vHitDirection = hit.point - goPlayer.transform.position;
+        Vector3 vHitDirection = hit.point - this.transform.position;
         vHitDirection = vHitDirection.normalized;
         vHitDirection = vHitDirection * fShotSpeed;
+        
+        return vHitDirection;
+    }
+
+    public Vector3 GetSpawnPosition()
+    {
+        Vector3 vHitDirection = hit.point - this.transform.position;
+        vHitDirection = vHitDirection.normalized;
 
         return vHitDirection;
     }

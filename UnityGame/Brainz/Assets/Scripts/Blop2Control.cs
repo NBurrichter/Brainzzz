@@ -30,8 +30,17 @@ public class Blop2Control : MonoBehaviour
     {
         if (attachedObject != null)
         {
-            if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
+            if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)
                 StopMergin();
+        }
+
+        if (Input.GetAxis("XBox Trigger") == 1)
+        {
+            for (int i = 0; i <= goBlop2Array.Length - 1; i++)
+            {
+                if (goBlop2Array[i] != null)
+                    goBlop2Array[i].GetComponent<Blop2Control>().FreeOtherBlops();
+            }
         }
     }
 
@@ -42,12 +51,19 @@ public class Blop2Control : MonoBehaviour
         if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground"))
         {
 
+            if (c.gameObject.GetComponent<CubeControl>() == null)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+                
+
             DeletePreviousBlops();
+
 
 
             // Add Tag and Components to the attachement
             c.gameObject.tag = "Blop2_Attachment";
-            c.gameObject.GetComponent<CubeControl>().SetMergin(true);
             Rigidbody otherBody;
 
             // check if There is already a Rigidbody
@@ -81,6 +97,7 @@ public class Blop2Control : MonoBehaviour
 
     public void StopMergin()
     {
+        attachedObject.GetComponent<CubeControl>().StopMergin();
         this.gameObject.transform.DetachChildren();
         Synapsing.Singleton.StopMergin();
         Destroy(this.gameObject);
@@ -112,7 +129,9 @@ public class Blop2Control : MonoBehaviour
     {
         for (int i = 0; i <= goBlop2Array.Length - 2; i++)
         {
+            if(goBlop2Array[i]!=null)
             goBlop2Array[i].GetComponent<Blop2Control>().FreeOtherBlops();
+            
         }
     }
 
@@ -123,7 +142,7 @@ public class Blop2Control : MonoBehaviour
         if (attachedObject)
         {
             attachedObject.tag = "Untagged";
-            Destroy(attachedObject);
+            // Destroy(attachedObject);
 
             //Re-enable collision between attached objects
             attachedObject.gameObject.layer = 0;
@@ -134,5 +153,12 @@ public class Blop2Control : MonoBehaviour
     void OnDestroy()
     {
         Destroy(particleObject);
+    }
+
+    public bool HasAttachedObject()
+    {
+        if (attachedObject != null)
+            return true;
+        return false;
     }
 }

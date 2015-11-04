@@ -13,7 +13,7 @@ public class CubeControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        bIsMergin = true;
+        bIsMergin = false;
 
         if (blocktype == BlockType.NPC)
         {
@@ -40,11 +40,10 @@ public class CubeControl : MonoBehaviour {
 		}
 	}
 
-    public bool StopMergin()
+    public void StopMergin()
     {
-        if (bIsMergin == false)
-        {
-            Debug.Log("mergin is false");
+
+            Debug.Log("Stop Mergin in cube control");
             if (blocktype == BlockType.Ramp)
             {
                 Debug.Log("Remove Joint");
@@ -52,11 +51,14 @@ public class CubeControl : MonoBehaviour {
                 
             }
             this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-            return true;
-        }
-
-        return false;
+      
     }
+
+    public bool GetMerginStatus()
+    {
+        return bIsMergin;
+    }
+
 
     public void SetMergin(bool b)
     {
