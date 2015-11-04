@@ -8,6 +8,9 @@ public class CubeControl : MonoBehaviour {
     public enum  BlockType {Cube,Ramp,NPC };
     public BlockType blocktype;
 
+    private Blop1Control Blop1Script;
+    private Blop2Control Blop2Script;
+
     //Only needed for NPC
     private NavmeshTestNavigation navigation;
 
@@ -19,7 +22,9 @@ public class CubeControl : MonoBehaviour {
         {
             navigation = GetComponent<NavmeshTestNavigation>();
         }
-	}
+
+       
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,8 +33,12 @@ public class CubeControl : MonoBehaviour {
 			ResetMass();
 		}
 
-	
-	}
+        if(GameObject.FindGameObjectWithTag("Blop1")!=null)
+            Blop1Script = GameObject.FindGameObjectWithTag("Blop1").GetComponent<Blop1Control>();
+        if(GameObject.FindGameObjectWithTag("Blop2")!=null)
+            Blop2Script = GameObject.FindGameObjectWithTag("Blop2").GetComponent<Blop2Control>();
+
+    }
 
 	void ResetMass()
 	{
@@ -73,6 +82,8 @@ public class CubeControl : MonoBehaviour {
         {
             Debug.Log("Stop Mergin");
             bIsMergin = false;
+            Blop1Script.StopMergin();
+            Blop2Script.StopMergin();
 
         }
 
@@ -80,6 +91,8 @@ public class CubeControl : MonoBehaviour {
         {
             Debug.Log("Stop Mergin");
             bIsMergin = false;
+            Blop1Script.StopMergin();
+            Blop2Script.StopMergin();
         }
     }
 }
