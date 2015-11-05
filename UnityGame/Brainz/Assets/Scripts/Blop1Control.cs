@@ -91,7 +91,7 @@ public class Blop1Control : MonoBehaviour
 
 			//Set drag to 0
 			rb.drag = 0;
-			rb.mass = 0;
+			rb.mass = 0; // the mass should in the end not be lowered, search for a better solution
 			otherBody.drag = 0;
 
 			otherBody.mass = Synapsing.Singleton.blopMass;
