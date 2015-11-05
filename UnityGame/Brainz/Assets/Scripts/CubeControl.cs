@@ -40,35 +40,50 @@ public class CubeControl : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// Resets the mass of the cube
+    /// </summary> 
 	void ResetMass()
 	{
 		if(this.gameObject.GetComponent<Rigidbody>())
 		{
-			Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+            this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
+            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
 			rb.mass=1000;
 		}
 	}
 
+
+    /// <summary>
+    /// handles what should be done when the mergin is stopped
+    /// </summary>
     public void StopMergin()
     {
-
-            Debug.Log("Stop Mergin in cube control");
             if (blocktype == BlockType.Ramp)
             {
                 Debug.Log("Remove Joint");
                 this.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
                 
             }
-            this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-      
+        this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
+
     }
 
+
+    /// <summary>
+    /// returns if the objects is mergin or not
+    /// </summary>
     public bool GetMerginStatus()
     {
         return bIsMergin;
     }
 
 
+    /// <summary>
+    /// set if the objects is mergin or not
+    /// </summary>
+    /// <param name="b"></param>
     public void SetMergin(bool b)
     {
         bIsMergin = b;
@@ -77,7 +92,7 @@ public class CubeControl : MonoBehaviour {
     void OnCollisionEnter(Collision c)
     {
         
-
+        // collision with other attachment
         if(this.gameObject.tag=="Blop1_Attachment" && c.gameObject.tag=="Blop2_Attachment")
         {
             Debug.Log("Stop Mergin");

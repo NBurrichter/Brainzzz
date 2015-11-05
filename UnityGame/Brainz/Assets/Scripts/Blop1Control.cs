@@ -36,7 +36,6 @@ public class Blop1Control : MonoBehaviour
         {
             if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)
             {
-                Debug.Log("Stop Mergin");
                 StopMergin();
             }
         }
@@ -56,8 +55,10 @@ public class Blop1Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
 	{
-		if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground"))
-		{
+
+		if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground") &&
+            !c.gameObject.CompareTag("Blop1") && !c.gameObject.CompareTag("Blop2"))
+        {
             if (c.gameObject.GetComponent<CubeControl>() == null)
             {
                 Destroy(this.gameObject);
@@ -65,12 +66,8 @@ public class Blop1Control : MonoBehaviour
             }
 
 
-
+            // Delete previous Blops
             DeletePreviousBlops();
-
-            //Attachment att = c.gameObject.AddComponent<Attachment>();
-            //att.PseudoParent = transform;
-            //rb.isKinematic = true;
             
 
             // Add Tag and Components to the attachement
@@ -88,16 +85,13 @@ public class Blop1Control : MonoBehaviour
 			attachedObject = c.gameObject.AddComponent<FixedJoint>();
 			attachedObject.connectedBody = rb;
 
-			/*Set layer so it cannot collide with other attached object(s)
-			c.gameObject.layer = Synapsing.Singleton.noCollisionLayer;
-			gameObject.layer = Synapsing.Singleton.noCollisionLayer; */
 
 			//Set physic material of other collider
 			c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
 
 			//Set drag to 0
 			rb.drag = 0;
-			rb.mass = 0;
+			rb.mass = 0; // the mass should in the end not be lowered, search for a better solution
 			otherBody.drag = 0;
 
 			otherBody.mass = Synapsing.Singleton.blopMass;
@@ -110,8 +104,12 @@ public class Blop1Control : MonoBehaviour
 		}
 	}
 
+    /// <summary>
+    /// call this when the mergin is finished
+    /// </summary>
     public void StopMergin()
     {
+        
         attachedObject.GetComponent<CubeControl>().StopMergin();
         this.gameObject.transform.DetachChildren();
         Synapsing.Singleton.StopMergin();
@@ -119,26 +117,38 @@ public class Blop1Control : MonoBehaviour
         attachedObject.tag = "Untagged";
         Destroy(attachedObject);
 
-        //Re-enable collision between attached objects
+        //Re-enable collision between attached objects (can maybe be deleted)
         attachedObject.gameObject.layer = 0;
     }
 
 
     void OnTriggerEnter(Collider collider)
 	{
-		if (collider.gameObject.tag == "Blop2") 
-		{
-            StopMergin();
-		}
-
         if (collider.gameObject.tag == "Blop2_Attachment")
         {
-            StopMergin();
-            GameObject go = GameObject.FindGameObjectWithTag("Blop2");
-            go.GetComponent<Blop2Control>().StopMergin();
+            GameObject goBlop2 = GameObject.FindGameObjectWithTag("Blop2");
+            goBlop2.GetComponent<Blop2Control>().StopMergin();
         }
-	}
 
+        if (attachedObject != null)
+        {
+            if (collider.gameObject.tag == "Blop2")
+            {
+                StopMergin();
+            }
+
+            if (collider.gameObject.tag == "Blop2_Attachment")
+            {
+                StopMergin();
+                GameObject go = GameObject.FindGameObjectWithTag("Blop2");
+                go.GetComponent<Blop2Control>().StopMergin();
+            }
+        }
+	 }
+
+    /// <summary>
+    /// Delete all Blops that were shot previously
+    /// </summary>
     private void DeletePreviousBlops()
     {
         for(int i = 0;i<=goBlop1Array.Length-2;i++)
@@ -163,11 +173,19 @@ public class Blop1Control : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// called when Blop gets Destroyed
+    /// </summary>
     void OnDestroy()
     {
         Destroy(particleObject);
     }
 
+
+    /// <summary>
+    /// check if the Blop has an attachment
+    /// </summary>
+    /// <returns></returns>
     public bool HasAttachedObject()
     {
         if (attachedObject != null)
