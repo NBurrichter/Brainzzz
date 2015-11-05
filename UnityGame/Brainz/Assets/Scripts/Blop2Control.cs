@@ -48,7 +48,8 @@ public class Blop2Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground"))
+        if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground") &&
+            !c.gameObject.CompareTag("Blop1") && !c.gameObject.CompareTag("Blop2"))
         {
 
             if (c.gameObject.GetComponent<CubeControl>() == null)
@@ -57,7 +58,7 @@ public class Blop2Control : MonoBehaviour
                 return;
             }
                 
-
+            // Destroy previous Blops
             DeletePreviousBlops();
 
 
@@ -93,6 +94,10 @@ public class Blop2Control : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// handles when the mergin is finíshed or stoppped
+    /// </summary>
     public void StopMergin()
     {
         attachedObject.GetComponent<CubeControl>().StopMergin();
@@ -108,21 +113,31 @@ public class Blop2Control : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-
-        if (collider.gameObject.tag == "Blop1")
-        {
-            StopMergin();
-        }
-
         if (collider.gameObject.tag == "Blop1_Attachment")
         {
-            StopMergin();
-            GameObject go = GameObject.FindGameObjectWithTag("Blop1");
-            go.GetComponent<Blop1Control>().StopMergin();
+            GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
+            goBlop1.GetComponent<Blop1Control>().StopMergin();
+        }
+
+        if (attachedObject != null)
+        {
+            if (collider.gameObject.tag == "Blop1")
+            {
+                StopMergin();
+            }
+
+            if (collider.gameObject.tag == "Blop1_Attachment")
+            {
+                StopMergin();
+                GameObject go = GameObject.FindGameObjectWithTag("Blop1");
+                go.GetComponent<Blop1Control>().StopMergin();
+            }
         }
     }
 
-
+    /// <summary>
+    /// Deletes the previous shot Blops
+    /// </summary>
     private void DeletePreviousBlops()
     {
         for (int i = 0; i <= goBlop2Array.Length - 2; i++)
@@ -148,11 +163,20 @@ public class Blop2Control : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// callled when Blop gets destroyed
+    /// </summary>
     void OnDestroy()
     {
         Destroy(particleObject);
     }
 
+
+    /// <summary>
+    /// check if Blop has an attachment
+    /// </summary>
+    /// <returns></returns>
     public bool HasAttachedObject()
     {
         if (attachedObject != null)

@@ -30,6 +30,11 @@ public class AimingControl : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// returns the Direction the shot should be flying, multiplied with a speed value
+    /// </summary>
+    /// <returns> Vector3</returns>
     public Vector3 GetHitDirection()
     {
         Vector3 vHitDirection = hit.point - this.transform.position;
@@ -39,6 +44,11 @@ public class AimingControl : MonoBehaviour
         return vHitDirection;
     }
 
+    /// <summary>
+    /// return the point the Blop should spawn
+    /// </summary>
+    /// <returns> Vector3</returns>
+
     public Vector3 GetSpawnPosition()
     {
         Vector3 vHitDirection = hit.point - this.transform.position;
@@ -46,4 +56,6 @@ public class AimingControl : MonoBehaviour
 
         return vHitDirection;
     }
+
+    
 }

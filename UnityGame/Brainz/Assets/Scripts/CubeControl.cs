@@ -40,7 +40,9 @@ public class CubeControl : MonoBehaviour {
 
     }
 
-    // Reset the mass of the object 
+    /// <summary>
+    /// Resets the mass of the cube
+    /// </summary> 
 	void ResetMass()
 	{
 		if(this.gameObject.GetComponent<Rigidbody>())
@@ -51,7 +53,9 @@ public class CubeControl : MonoBehaviour {
 	}
 
 
-    // call if the mergin is stoped 
+    /// <summary>
+    /// handles what should be done when the mergin is stopped
+    /// </summary>
     public void StopMergin()
     {
             if (blocktype == BlockType.Ramp)
@@ -65,13 +69,19 @@ public class CubeControl : MonoBehaviour {
     }
 
 
-    // get if the object is currently mergin or not
+    /// <summary>
+    /// returns if the objects is mergin or not
+    /// </summary>
     public bool GetMerginStatus()
     {
         return bIsMergin;
     }
 
 
+    /// <summary>
+    /// set if the objects is mergin or not
+    /// </summary>
+    /// <param name="b"></param>
     public void SetMergin(bool b)
     {
         bIsMergin = b;

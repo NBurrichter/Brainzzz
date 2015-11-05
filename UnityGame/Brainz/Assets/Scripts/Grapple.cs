@@ -118,7 +118,9 @@ public class Grapple : MonoBehaviour
     }
 
 
-    // search for the two blops
+    /// <summary>
+    /// searches for the two blops and stores them in their respective variables
+    /// </summary>
     private void SearchBlops()
     {
         try
@@ -143,7 +145,9 @@ public class Grapple : MonoBehaviour
     }
 
 
-    // return which Blop should be grappled to 1=Blop1, 2=Blop2, 0= no Blop
+    ///<summary>
+    /// return which Blop should be grappled to 1 = Blop1, 2 = Blop2, 0 = no Blop
+    /// </summary>
     private int GetBlopToDragTo()
     {
         // check for Blop one and if he has an attachment
@@ -166,7 +170,11 @@ public class Grapple : MonoBehaviour
 
     }
 
-    // Coroutine to handle the grapple
+    /// <summary>
+    /// coroutine that handles the grapple process
+    /// </summary>
+    /// <param name="i"></param>
+    /// <returns></returns>
     IEnumerator DragToBlop(int i)
     {
         float timeSinceStart = 1f;
