@@ -89,6 +89,12 @@ public class Blop2Control : MonoBehaviour
             otherBody.drag = 0;
 
             otherBody.mass = Synapsing.Singleton.blopMass;
+
+            //Check if Block is a NPC
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
+            {
+                c.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(false);
+            }
         }
 
 
@@ -154,8 +160,14 @@ public class Blop2Control : MonoBehaviour
         Destroy(this.gameObject);
         if (attachedObject)
         {
+            if (attachedObject.gameObject.name == "Son")
+            {
+                Debug.Log("luke ich bin dein Vater");
+                attachedObject.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(true);
+            }
+
             attachedObject.tag = "Untagged";
-            // Destroy(attachedObject);
+            Destroy(attachedObject);
 
             //Re-enable collision between attached objects
             attachedObject.gameObject.layer = 0;

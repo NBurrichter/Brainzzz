@@ -164,6 +164,12 @@ public class Blop1Control : MonoBehaviour
         Destroy(this.gameObject);
         if (attachedObject)
         {
+            if(attachedObject.gameObject.name == "Son")
+            {
+                Debug.Log("luke ich bin dein Vater");
+                attachedObject.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(true);
+            }
+
             attachedObject.tag = "Untagged";
             Destroy(attachedObject);
             //Re-enable collision between attached objects
