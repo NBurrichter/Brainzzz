@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CameraScript : MonoBehaviour {
 
+    // Variables used for Rotation
     private float fXRotation;
     private float fYRotation;
     public float fRotationSpeed;

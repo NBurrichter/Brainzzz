@@ -39,7 +39,7 @@ public class Blop2Control : MonoBehaviour
             for (int i = 0; i <= goBlop2Array.Length - 1; i++)
             {
                 if (goBlop2Array[i] != null)
-                    goBlop2Array[i].GetComponent<Blop2Control>().FreeOtherBlops();
+                    goBlop2Array[i].GetComponent<Blop2Control>().DestroyThisBlop();
             }
         }
     }
@@ -149,12 +149,16 @@ public class Blop2Control : MonoBehaviour
         for (int i = 0; i <= goBlop2Array.Length - 2; i++)
         {
             if(goBlop2Array[i]!=null)
-            goBlop2Array[i].GetComponent<Blop2Control>().FreeOtherBlops();
+            goBlop2Array[i].GetComponent<Blop2Control>().DestroyThisBlop();
             
         }
     }
 
-    public void FreeOtherBlops()
+
+    /// <summary>
+    /// Destroys the Blop and releases all connections it has with other objects
+    /// </summary>
+    public void DestroyThisBlop()
     {
         this.gameObject.transform.DetachChildren();
         Destroy(this.gameObject);

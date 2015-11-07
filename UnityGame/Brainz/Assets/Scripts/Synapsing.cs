@@ -60,6 +60,10 @@ public class Synapsing : MonoBehaviour
 			
 	}
 
+
+    /// <summary>
+    /// searches for the two Blops
+    /// </summary>
 	private void SearchForBlops()
 	{
 		if (Blop1 && Blop2)
@@ -108,6 +112,10 @@ public class Synapsing : MonoBehaviour
 		}
 	}
 
+
+    /// <summary>
+    /// stop the mergin process
+    /// </summary>
 	public void StopMergin ()
 	{
 		bMergeEnabled = false;

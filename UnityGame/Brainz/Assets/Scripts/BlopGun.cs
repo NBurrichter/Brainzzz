@@ -15,7 +15,7 @@ public class BlopGun : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+        // Shot the first Blop
 		if(Input.GetButtonDown("Fire1"))
 		{
 
@@ -23,6 +23,8 @@ public class BlopGun : MonoBehaviour {
 
 		}
 
+
+        // Shot the second Blop
 		if(Input.GetButtonDown("Fire2"))
 		   {
 
