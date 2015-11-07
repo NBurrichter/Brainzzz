@@ -30,7 +30,7 @@ public class Blop2Control : MonoBehaviour
     {
         if (attachedObject != null)
         {
-            if (attachedObject.GetComponent<CubeControl>().StopMergin() == true)
+            if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)
                 StopMergin();
         }
 
@@ -48,15 +48,23 @@ public class Blop2Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground"))
+        if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground") &&
+            !c.gameObject.CompareTag("Blop1") && !c.gameObject.CompareTag("Blop2"))
         {
 
+            if (c.gameObject.GetComponent<CubeControl>() == null)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+                
+            // Destroy previous Blops
             DeletePreviousBlops();
+
 
 
             // Add Tag and Components to the attachement
             c.gameObject.tag = "Blop2_Attachment";
-            c.gameObject.GetComponent<CubeControl>().SetMergin(true);
             Rigidbody otherBody;
 
             // check if There is already a Rigidbody
@@ -71,8 +79,6 @@ public class Blop2Control : MonoBehaviour
             attachedObject = c.gameObject.AddComponent<FixedJoint>();
             attachedObject.connectedBody = rb;
 
-            /*Set layer so it cannot collide with other attached object(s)
-			c.gameObject.layer = Synapsing.Singleton.noCollisionLayer;*/
 
             //Set physic material of other collider
             c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
@@ -83,13 +89,24 @@ public class Blop2Control : MonoBehaviour
             otherBody.drag = 0;
 
             otherBody.mass = Synapsing.Singleton.blopMass;
+
+            //Check if Block is a NPC
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
+            {
+                c.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(false);
+            }
         }
 
 
     }
 
+
+    /// <summary>
+    /// handles when the mergin is finíshed or stoppped
+    /// </summary>
     public void StopMergin()
     {
+        attachedObject.GetComponent<CubeControl>().StopMergin();
         this.gameObject.transform.DetachChildren();
         Synapsing.Singleton.StopMergin();
         Destroy(this.gameObject);
@@ -102,21 +119,31 @@ public class Blop2Control : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-
-        if (collider.gameObject.tag == "Blop1")
-        {
-            StopMergin();
-        }
-
         if (collider.gameObject.tag == "Blop1_Attachment")
         {
-            StopMergin();
-            GameObject go = GameObject.FindGameObjectWithTag("Blop1");
-            go.GetComponent<Blop1Control>().StopMergin();
+            GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
+            goBlop1.GetComponent<Blop1Control>().StopMergin();
+        }
+
+        if (attachedObject != null)
+        {
+            if (collider.gameObject.tag == "Blop1")
+            {
+                StopMergin();
+            }
+
+            if (collider.gameObject.tag == "Blop1_Attachment")
+            {
+                StopMergin();
+                GameObject go = GameObject.FindGameObjectWithTag("Blop1");
+                go.GetComponent<Blop1Control>().StopMergin();
+            }
         }
     }
 
-
+    /// <summary>
+    /// Deletes the previous shot Blops
+    /// </summary>
     private void DeletePreviousBlops()
     {
         for (int i = 0; i <= goBlop2Array.Length - 2; i++)
@@ -133,8 +160,14 @@ public class Blop2Control : MonoBehaviour
         Destroy(this.gameObject);
         if (attachedObject)
         {
+            if (attachedObject.gameObject.name == "Son")
+            {
+                Debug.Log("luke ich bin dein Vater");
+                attachedObject.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(true);
+            }
+
             attachedObject.tag = "Untagged";
-            // Destroy(attachedObject);
+            Destroy(attachedObject);
 
             //Re-enable collision between attached objects
             attachedObject.gameObject.layer = 0;
@@ -142,11 +175,20 @@ public class Blop2Control : MonoBehaviour
 
     }
 
+
+    /// <summary>
+    /// callled when Blop gets destroyed
+    /// </summary>
     void OnDestroy()
     {
         Destroy(particleObject);
     }
 
+
+    /// <summary>
+    /// check if Blop has an attachment
+    /// </summary>
+    /// <returns></returns>
     public bool HasAttachedObject()
     {
         if (attachedObject != null)

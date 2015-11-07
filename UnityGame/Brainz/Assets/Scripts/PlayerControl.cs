@@ -52,7 +52,6 @@ public class PlayerControl : MonoBehaviour {
 		player = this.gameObject;
 		qRotation = player.transform.rotation;
 		isGrappling=false;
-		print (""+Screen.height + "  " + Screen.width);
 	}
 	
 	void Update ()

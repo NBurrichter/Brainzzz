@@ -1,55 +1,100 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CubeControl : MonoBehaviour {
+public class CubeControl : MonoBehaviour
+{
 
 
     private bool bIsMergin;
-    public enum BlockType {Cube,Ramp };
+    public enum BlockType { Cube, Ramp, NPC };
     public BlockType blocktype;
 
-	// Use this for initialization
-	void Start () {
-        bIsMergin = true;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(this.gameObject.tag=="Untagged")
-		{
-			ResetMass();
-		}
+    private Blop1Control Blop1Script;
+    private Blop2Control Blop2Script;
 
-	
-	}
+    //Only needed for NPC
+    private NavmeshTestNavigation navigation;
 
-	void ResetMass()
-	{
-		if(this.gameObject.GetComponent<Rigidbody>())
-		{
-			Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-			rb.mass=1000;
-		}
-	}
-
-    public bool StopMergin()
+    // Use this for initialization
+    void Start()
     {
-        if (bIsMergin == false)
+        bIsMergin = false;
+
+        if (blocktype == BlockType.NPC)
         {
-            Debug.Log("mergin is false");
-            if (blocktype == BlockType.Ramp)
-            {
-                Debug.Log("Remove Joint");
-                this.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
-                
-            }
-            this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-            return true;
+            navigation = GetComponent<NavmeshTestNavigation>();
         }
 
-        return false;
+
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        if (this.gameObject.tag == "Untagged")
+        {
+            ResetMass();
+        }
+
+        if (GameObject.FindGameObjectWithTag("Blop1") != null)
+            Blop1Script = GameObject.FindGameObjectWithTag("Blop1").GetComponent<Blop1Control>();
+        if (GameObject.FindGameObjectWithTag("Blop2") != null)
+            Blop2Script = GameObject.FindGameObjectWithTag("Blop2").GetComponent<Blop2Control>();
+
+    }
+
+    /// <summary>
+    /// Resets the mass of the cube
+    /// </summary> 
+	void ResetMass()
+    {
+        if (this.gameObject.GetComponent<Rigidbody>())
+        {
+            this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
+            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
+            rb.mass = 1000;
+        }
+    }
+
+
+    /// <summary>
+    /// handles what should be done when the mergin is stopped
+    /// </summary>
+    public void StopMergin()
+    {
+        if (blocktype == BlockType.Ramp)
+        {
+            Debug.Log("Remove Joint");
+            this.gameObject.GetComponent<Rigidbody>().freezeRotation = true;
+
+        }
+
+        this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
+
+        if (blocktype == BlockType.NPC)
+        {
+            navigation.SetActivationMode(true);
+        }
+
+        this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+    }
+
+
+    /// <summary>
+    /// returns if the objects is mergin or not
+    /// </summary>
+    public bool GetMerginStatus()
+    {
+        return bIsMergin;
+    }
+
+
+    /// <summary>
+    /// set if the objects is mergin or not
+    /// </summary>
+    /// <param name="b"></param>
     public void SetMergin(bool b)
     {
         bIsMergin = b;
@@ -57,18 +102,23 @@ public class CubeControl : MonoBehaviour {
 
     void OnCollisionEnter(Collision c)
     {
-        
 
-        if(this.gameObject.tag=="Blop1_Attachment" && c.gameObject.tag=="Blop2_Attachment")
+        // collision with other attachment
+        if (this.gameObject.tag == "Blop1_Attachment" && c.gameObject.tag == "Blop2_Attachment")
         {
             Debug.Log("Stop Mergin");
             bIsMergin = false;
+            Blop1Script.StopMergin();
+            Blop2Script.StopMergin();
+
         }
 
-        if (this.gameObject.tag == "Blop2_Attachment" && c.gameObject.tag=="Blop1_Attachment")
+        if (this.gameObject.tag == "Blop2_Attachment" && c.gameObject.tag == "Blop1_Attachment")
         {
             Debug.Log("Stop Mergin");
             bIsMergin = false;
+            Blop1Script.StopMergin();
+            Blop2Script.StopMergin();
         }
     }
 }
