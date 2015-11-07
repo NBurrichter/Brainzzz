@@ -21,7 +21,7 @@ public class AimingControl : MonoBehaviour
     void Update()
     {
 
-
+        // Get the point the Player is aiming for
         if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, Mathf.Infinity))
         {
 

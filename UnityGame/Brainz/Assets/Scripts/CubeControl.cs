@@ -31,11 +31,13 @@ public class CubeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Reset if its not an attachment
         if (this.gameObject.tag == "Untagged")
         {
-            ResetMass();
+            ResetObject();
         }
 
+        // Get access to the scripts of the two Blops
         if (GameObject.FindGameObjectWithTag("Blop1") != null)
             Blop1Script = GameObject.FindGameObjectWithTag("Blop1").GetComponent<Blop1Control>();
         if (GameObject.FindGameObjectWithTag("Blop2") != null)
@@ -44,15 +46,16 @@ public class CubeControl : MonoBehaviour
     }
 
     /// <summary>
-    /// Resets the mass of the cube
+    /// Resets the object
     /// </summary> 
-	void ResetMass()
+	void ResetObject()
     {
         if (this.gameObject.GetComponent<Rigidbody>())
         {
             this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
             rb.mass = 1000;
+            rb.useGravity = true;
         }
     }
 
@@ -69,15 +72,12 @@ public class CubeControl : MonoBehaviour
 
         }
 
-        this.gameObject.GetComponent<Rigidbody>().useGravity = true;
-        this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
-
         if (blocktype == BlockType.NPC)
         {
             navigation.SetActivationMode(true);
         }
 
-        this.gameObject.GetComponent<Rigidbody>().useGravity = true;
+        ResetObject();
 
     }
 

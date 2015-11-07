@@ -5,6 +5,7 @@ public class Blop1Control : MonoBehaviour
 {
 	
 	public GameObject Blop;
+    // Array to save the previous Blops
     private GameObject[] goBlop1Array;
 	private FixedJoint attachedObject;
 
@@ -45,7 +46,7 @@ public class Blop1Control : MonoBehaviour
             for (int i = 0; i <= goBlop1Array.Length - 1; i++)
             {
                 if (goBlop1Array[i] != null)
-                    goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
+                    goBlop1Array[i].GetComponent<Blop1Control>().DestroyThisBlop();
             }
         }
     }
@@ -154,11 +155,15 @@ public class Blop1Control : MonoBehaviour
         for(int i = 0;i<=goBlop1Array.Length-2;i++)
         {
             if (goBlop1Array[i] != null)
-                goBlop1Array[i].GetComponent<Blop1Control>().FreeOtherBlops();
+                goBlop1Array[i].GetComponent<Blop1Control>().DestroyThisBlop();
         }
     }
 
-    public void FreeOtherBlops()
+
+    /// <summary>
+    /// Destroy the Blops and releases all connections it had with other objects
+    /// </summary>
+    public void DestroyThisBlop()
     {
         this.gameObject.transform.DetachChildren();
         Destroy(this.gameObject);
