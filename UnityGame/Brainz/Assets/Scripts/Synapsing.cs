@@ -34,11 +34,22 @@ public class Synapsing : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetButtonDown ("Mergin")) 
-		{
+
 			SearchForBlops();
 
-            LifetimeAdjust particleScript1 = Blop1.GetComponentInChildren<LifetimeAdjust>();
+        if (Blop1 == null)
+            return;
+
+        if (Blop2 == null)
+            return;
+
+        if (Blop1.GetComponent<Blop1Control>().HasAttachedObject() == false)
+            return;
+
+        if (Blop2.GetComponent<Blop2Control>().HasAttachedObject() == false)
+            return;
+
+        LifetimeAdjust particleScript1 = Blop1.GetComponentInChildren<LifetimeAdjust>();
             particleScript1.target = Blop2;
             LifetimeAdjust particleScript2 = Blop2.GetComponentInChildren<LifetimeAdjust>();
             particleScript2.target = Blop1;
@@ -51,7 +62,7 @@ public class Synapsing : MonoBehaviour
             if (bMergeEnabled == false) {
 				bMergeEnabled = true;
 			}
-		}
+		
 
 		if (bMergeEnabled == true && merginCoroutine == null) {
 			merginCoroutine = Mergin ();
@@ -62,12 +73,16 @@ public class Synapsing : MonoBehaviour
 
 	private void SearchForBlops()
 	{
-		if (Blop1 && Blop2)
-		{
-			return;
-		}
-
-		try {	
+        if (GameObject.FindGameObjectWithTag("Blop1") == null)
+        {
+            Blop1 = null;
+            return;
+        }
+        if (GameObject.FindGameObjectWithTag("Blop2") == null)
+        {
+            Blop2 = null;
+            return;
+        }
 			Blop1 = GameObject.FindGameObjectWithTag ("Blop1");
 			Blop2 = GameObject.FindGameObjectWithTag ("Blop2");
 
@@ -77,13 +92,7 @@ public class Synapsing : MonoBehaviour
 			blopOneBody = Blop1.GetComponent<Rigidbody>();
 			blopTwoBody = Blop2.GetComponent<Rigidbody>();
 			
-		} catch (UnityException e) {
-            Debug.Log("Blop1 + Blop 2 :" + e);
-			Blop1 = null;
-			Blop2 = null;
 
-			print ("No two Blops");
-		}
 	}
 
 	IEnumerator Mergin ()

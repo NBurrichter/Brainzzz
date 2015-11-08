@@ -7,6 +7,8 @@ public class BlopGun : MonoBehaviour
     public GameObject Blop1Prefab;
     public GameObject Blop2Prefab;
 
+    private int iBloptype = 1;
+
 
     // Use this for initialization
     void Start()
@@ -22,17 +24,16 @@ public class BlopGun : MonoBehaviour
         // Shot the first Blop
         if (Input.GetButtonDown("Fire1"))
         {
-
-            Instantiate(Blop1Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
-
-        }
-
-
-        // Shot the second Blop
-        if (Input.GetButtonDown("Fire2"))
-        {
-
-            Instantiate(Blop2Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
+            if (iBloptype == 1)
+            {
+                Instantiate(Blop1Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
+                iBloptype = 2;
+            }
+            else
+            {
+                Instantiate(Blop2Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
+                iBloptype = 1;
+            }
         }
     }
 }
