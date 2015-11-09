@@ -55,7 +55,7 @@ public class CubeControl : MonoBehaviour
             this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
             rb.mass = 1000;
-            rb.useGravity = true;
+            
         }
     }
 
@@ -78,7 +78,7 @@ public class CubeControl : MonoBehaviour
         }
 
         ResetObject();
-
+        this.gameObject.GetComponent<Rigidbody>().useGravity = true;
     }
 
 
