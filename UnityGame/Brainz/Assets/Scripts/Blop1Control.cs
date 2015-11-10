@@ -18,7 +18,7 @@ public class Blop1Control : MonoBehaviour
 	{
 		Blop = this.gameObject;
 		rb = GetComponent<Rigidbody> ();
-        rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection(); 
+        rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection() * (1/rb.mass); 
 		Blop.tag = "Blop1";
         goBlop1Array = GameObject.FindGameObjectsWithTag("Blop1");
         foreach (Transform child in transform)
@@ -95,7 +95,7 @@ public class Blop1Control : MonoBehaviour
 			rb.mass = 0; // the mass should in the end not be lowered, search for a better solution
 			otherBody.drag = 0;
 
-			otherBody.mass = Synapsing.Singleton.blopMass;
+			otherBody.mass = Synapsing.Singleton.fBlopMass;
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
