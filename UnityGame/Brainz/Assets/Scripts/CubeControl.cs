@@ -12,9 +12,6 @@ public class CubeControl : MonoBehaviour
     private Blop1Control Blop1Script;
     private Blop2Control Blop2Script;
 
-    private bool bWasKinematic;
-    private Rigidbody rbCube;
-
     //Only needed for NPC
     private NavmeshTestNavigation navigation;
 
@@ -27,13 +24,7 @@ public class CubeControl : MonoBehaviour
         {
             navigation = GetComponent<NavmeshTestNavigation>();
         }
-        if (this.gameObject.GetComponent<Rigidbody>() != null)
-        {
-            bWasKinematic = this.gameObject.GetComponent<Rigidbody>().isKinematic;
-            rbCube = this.gameObject.GetComponent<Rigidbody>();
-        }
 
-        
 
     }
 
@@ -61,9 +52,9 @@ public class CubeControl : MonoBehaviour
     {
         if (this.gameObject.GetComponent<Rigidbody>())
         {
+            this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-            rb.mass = 1;
-            //rb.isKinematic = bWasKinematic;
+            rb.mass = 1000;
             
         }
     }
@@ -111,29 +102,23 @@ public class CubeControl : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        if (c.gameObject.tag == "Blop1" || c.gameObject.tag == "Blop2")
+
+        // collision with other attachment
+        if (this.gameObject.tag == "Blop1_Attachment" && c.gameObject.tag == "Blop2_Attachment")
         {
+            Debug.Log("Stop Mergin");
+            bIsMergin = false;
+            Blop1Script.StopMergin();
+            Blop2Script.StopMergin();
 
-            //this.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            // collision with other attachment
-            if (this.gameObject.tag == "Blop1_Attachment" && c.gameObject.tag == "Blop2_Attachment")
-            {
-                Debug.Log("Stop Mergin");
-                bIsMergin = false;
-                Blop1Script.StopMergin();
-                Blop2Script.StopMergin();
+        }
 
-            }
-
-            if (this.gameObject.tag == "Blop2_Attachment" && c.gameObject.tag == "Blop1_Attachment")
-            {
-                Debug.Log("Stop Mergin");
-                bIsMergin = false;
-                Blop1Script.StopMergin();
-                Blop2Script.StopMergin();
-            }
-
-            
+        if (this.gameObject.tag == "Blop2_Attachment" && c.gameObject.tag == "Blop1_Attachment")
+        {
+            Debug.Log("Stop Mergin");
+            bIsMergin = false;
+            Blop1Script.StopMergin();
+            Blop2Script.StopMergin();
         }
     }
 }

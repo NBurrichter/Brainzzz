@@ -917,10 +917,6 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -2.6099999
       objectReference: {fileID: 0}
-    - target: {fileID: 400002, guid: d542388dcd6372748888567aa5bafd25, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -6.3499999
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d542388dcd6372748888567aa5bafd25, type: 3}
   m_IsPrefabParent: 0
@@ -1010,10 +1006,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87184ae42d21cbb4da8de14bd9edfaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  merginForce: .150000006
   noFrictionMaterial: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
+  blopMass: .00999999978
   noCollisionLayer: 8
-  fBlopMass: 0
-  fMerginForceMultiplier: 20
 --- !u!81 &1620039732
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2281,7 +2277,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708360194}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 1000
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
