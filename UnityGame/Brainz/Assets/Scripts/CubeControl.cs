@@ -6,7 +6,7 @@ public class CubeControl : MonoBehaviour
 
 
     private bool bIsMergin;
-    public enum BlockType { Cube, Ramp, NPC };
+    public enum BlockType { Cube, Ramp, NPC, NPCAStar };
     public BlockType blocktype;
 
     private Blop1Control Blop1Script;
@@ -75,6 +75,14 @@ public class CubeControl : MonoBehaviour
         if (blocktype == BlockType.NPC)
         {
             navigation.SetActivationMode(true);
+        }
+        if (blocktype == BlockType.NPCAStar)
+        {
+            GetComponent<FindTestPath>().enabled = true;
+            GetComponent<FindTestPath>().Start();
+            GetComponent<Seeker>().enabled = true;
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<CharacterController>().enabled = true;
         }
 
         ResetObject();

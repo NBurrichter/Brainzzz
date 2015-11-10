@@ -7,9 +7,12 @@ public class UpdateGraph : MonoBehaviour {
     {
 	
 	}
-	
-	void Update ()
+
+    void Update()
     {
-        AstarPath.active.Scan();
-	}
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            AstarPath.active.Scan();s
+        }
+    }
 }

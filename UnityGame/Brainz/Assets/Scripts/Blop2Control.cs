@@ -10,7 +10,7 @@ public class Blop2Control : MonoBehaviour
     private GameObject particleObject;
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         this.gameObject.tag = "Blop2";
         rb = GetComponent<Rigidbody>();
@@ -94,6 +94,13 @@ public class Blop2Control : MonoBehaviour
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
             {
                 c.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(false);
+            }
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                c.gameObject.GetComponent<FindTestPath>().enabled = false;
+                c.gameObject.GetComponent<Seeker>().enabled = false;
+                c.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                c.gameObject.GetComponent<CharacterController>().enabled = false;
             }
         }
 
