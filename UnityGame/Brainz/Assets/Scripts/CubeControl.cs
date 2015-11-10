@@ -115,7 +115,6 @@ public class CubeControl : MonoBehaviour
 
         if (this.gameObject.tag == "Blop2_Attachment" && c.gameObject.tag == "Blop1_Attachment")
         {
-            Debug.Log("Stop Mergin");
             bIsMergin = false;
             Blop1Script.StopMergin();
             Blop2Script.StopMergin();
