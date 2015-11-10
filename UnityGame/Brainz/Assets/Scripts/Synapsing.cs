@@ -3,11 +3,12 @@ using System.Collections;
 
 public class Synapsing : MonoBehaviour
 {
-
+    [SerializeField]
+    private float merginForce;
 
     public PhysicMaterial noFrictionMaterial;
+    public float blopMass;
     public int noCollisionLayer;
-    public float fBlopMass;
 
     GameObject Blop1;
     GameObject Blop2;
@@ -21,8 +22,6 @@ public class Synapsing : MonoBehaviour
     private Rigidbody blopOneBody;
     private Rigidbody blopTwoBody;
 
-    public float fMerginForceMultiplier;
-
     public static Synapsing Singleton;
 
     // Use this for initialization
@@ -30,7 +29,6 @@ public class Synapsing : MonoBehaviour
     {
         Singleton = this;
         bMergeEnabled = false;
-        fBlopMass = 1f;
     }
 
     // Update is called once per frame
@@ -121,8 +119,8 @@ public class Synapsing : MonoBehaviour
 
             Vector3 dir = Blop1.transform.position - Blop2.transform.position;
 
-            blopOneBody.AddForce(-dir * fMerginForceMultiplier * timeSinceStart);
-            blopTwoBody.AddForce(dir * fMerginForceMultiplier * timeSinceStart);
+            blopOneBody.AddForce(-dir * merginForce * timeSinceStart);
+            blopTwoBody.AddForce(dir * merginForce * timeSinceStart);
         }
 
         yield return new WaitForSeconds(0.1f);

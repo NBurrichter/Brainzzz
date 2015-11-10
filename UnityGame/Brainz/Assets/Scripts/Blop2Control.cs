@@ -88,7 +88,7 @@ public class Blop2Control : MonoBehaviour
             rb.mass = 0;
             otherBody.drag = 0;
 
-            otherBody.mass = Synapsing.Singleton.fBlopMass;
+            otherBody.mass = Synapsing.Singleton.blopMass;
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
