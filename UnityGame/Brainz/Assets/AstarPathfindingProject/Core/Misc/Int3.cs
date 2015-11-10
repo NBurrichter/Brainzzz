@@ -1,8 +1,6 @@
-using Pathfinding;
 using UnityEngine;
 
-namespace Pathfinding
-{
+namespace Pathfinding {
 	/** Holds a coordinate in integers */
 	public struct Int3 {
 		public int x;

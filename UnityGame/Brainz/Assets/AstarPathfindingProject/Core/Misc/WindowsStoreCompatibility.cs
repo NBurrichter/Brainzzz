@@ -26,7 +26,7 @@ namespace Pathfinding.WindowsStore {
 #endif
 		}
 	}
-	
+
 #if NETFX_CORE
 	public delegate void ParameterizedThreadStart (System.Object ob);
 	public delegate void ThreadStart ();
@@ -37,11 +37,11 @@ namespace Pathfinding.WindowsStore {
 		// Fields
 		//
 		private Pathfinding.WindowsStore.ParameterizedThreadStart _paramThreadStart;
-		
+
 		private CancellationTokenSource _taskCancellationTokenSource;
-		
+
 		private Task _task = null;
-		
+
 		private Pathfinding.WindowsStore.ThreadStart _threadStart;
 
 		private static ManualResetEvent SleepEvent = new ManualResetEvent (false);
@@ -57,7 +57,7 @@ namespace Pathfinding.WindowsStore {
 				throw new NotImplementedException ();
 			}
 		}
-		
+
 		public bool IsBackground {
 			get {
 				return false;
@@ -65,12 +65,12 @@ namespace Pathfinding.WindowsStore {
 			set {
 			}
 		}
-		
+
 		public string Name {
 			get;
 			set;
 		}
-		
+
 		//
 		// Constructors
 		//
@@ -79,13 +79,13 @@ namespace Pathfinding.WindowsStore {
 			this._taskCancellationTokenSource = new CancellationTokenSource ();
 			this._paramThreadStart = start;
 		}
-		
+
 		public Thread (Pathfinding.WindowsStore.ThreadStart start)
 		{
 			this._taskCancellationTokenSource = new CancellationTokenSource ();
 			this._threadStart = start;
 		}
-		
+
 		//
 		// Static Methods
 		//
@@ -93,7 +93,7 @@ namespace Pathfinding.WindowsStore {
 		{
 			SleepEvent.WaitOne (ms);
 		}
-		
+
 		//
 		// Methods
 		//
@@ -103,7 +103,7 @@ namespace Pathfinding.WindowsStore {
 				this._taskCancellationTokenSource.Cancel ();
 			}
 		}
-		
+
 		private void EnsureTask (object paramThreadStartParam = null )
 		{
 			if (this._task == null ) {
@@ -121,19 +121,19 @@ namespace Pathfinding.WindowsStore {
 				}
 			}
 		}
-		
+
 		public bool Join (int ms)
 		{
 			this.EnsureTask ();
 			return this._task.Wait (ms, this._taskCancellationTokenSource.Token);
 		}
-		
+
 		public void Start ()
 		{
 			this.EnsureTask ();
 			this._task.Start (TaskScheduler.Default);
 		}
-		
+
 		public void Start (object param)
 		{
 			this.EnsureTask (param);

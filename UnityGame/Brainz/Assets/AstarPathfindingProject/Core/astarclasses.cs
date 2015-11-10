@@ -1,14 +1,16 @@
 using UnityEngine;
 using System.Collections.Generic;
 using Pathfinding;
-using Pathfinding.Util;
-using Pathfinding.Serialization.JsonFx;
 
 // Empty namespace declaration to avoid errors in the free version
 // Which does not have any classes in the RVO namespace
 namespace Pathfinding.RVO {}
 
 namespace Pathfinding {
+	using Pathfinding;
+	using Pathfinding.Util;
+	using Pathfinding.Serialization.JsonFx;
+
 	[System.Serializable]
 	/** Stores editor colors */
 	public class AstarColor {
@@ -282,12 +284,16 @@ namespace Pathfinding {
 	 * \see AstarPath.ScanLoop
 	 */
 	public struct Progress {
-		public float progress;
-		public string description;
+		public readonly float progress;
+		public readonly string description;
 
 		public Progress (float p, string d) {
 			progress = p;
 			description = d;
+		}
+
+		public override string ToString () {
+			return progress.ToString("0.0") + " " + description;
 		}
 	}
 
@@ -530,17 +536,14 @@ namespace Pathfinding {
 	 * Mainly used to send information about how the thread should execute when starting it
 	  */
 	public struct PathThreadInfo {
-		public int threadIndex;
-		public AstarPath astar;
-		public PathHandler runData;
-
-		public readonly System.Object lockObject;
+		public readonly int threadIndex;
+		public readonly AstarPath astar;
+		public readonly PathHandler runData;
 
 		public PathThreadInfo (int index, AstarPath astar, PathHandler runData) {
 			this.threadIndex = index;
 			this.astar = astar;
 			this.runData = runData;
-			lockObject = new object();
 		}
 	}
 

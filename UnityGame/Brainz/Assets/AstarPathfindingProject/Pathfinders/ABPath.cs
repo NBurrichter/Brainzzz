@@ -1,5 +1,5 @@
 using UnityEngine;
-using Pathfinding;
+using UnityEngine.Assertions.Must;
 
 namespace Pathfinding {
 //Mem - 4+1+4+1+[4]+[4]+1+1+4+4+4+4+4+  12+12+12+12+12+12+4+4+4+4+4+1+1+(4)+4+4+4+4+4+4+4 ? 166 bytes
@@ -77,6 +77,9 @@ namespace Pathfinding {
 		/** Saved original costs for the end node. \see ResetCosts */
 		protected int[] endNodeCosts;
 
+		/** Used in EndPointGridGraphSpecialCase */
+		GridNode gridSpecialCaseNode;
+
 		/** @{ @name Constructors */
 
 		/** Default constructor.
@@ -147,7 +150,7 @@ namespace Pathfinding {
 		/** Reset all values to their default values.
 		 * All inheriting path types must implement this function, resetting ALL their variables to enable recycling of paths.
 		 * Call this base function in inheriting types with base.Reset ();
-		  */
+		 */
 		public override void Reset () {
 			base.Reset ();
 
@@ -163,8 +166,153 @@ namespace Pathfinding {
 			partialBestTarget = null;
 			startIntPoint = new Int3();
 			hTarget = new Int3();
-
 			endNodeCosts = null;
+
+			gridSpecialCaseNode = null;
+		}
+
+		/** Applies a special case for grid nodes.
+		 *
+		 * Assume the closest walkable node is a grid node.
+		 * We will now apply a special case only for grid graphs.
+		 * In tile based games, an obstacle often occupies a whole
+		 * node. When a path is requested to the position of an obstacle
+		 * (single unwalkable node) the closest walkable node will be
+		 * one of the 8 nodes surrounding that unwalkable node
+		 * but that node is not neccessarily the one that is most
+		 * optimal to walk to so in this special case
+		 * we mark all nodes around the unwalkable node as targets
+		 * and when we search and find any one of them we simply exit
+		 * and set that first node we found to be the 'real' end node
+		 * because that will be the optimal node (this does not apply
+		 * in general unless the heuristic is set to None, but
+		 * for a single unwalkable node it does).
+		 * This also applies if the nearest node cannot be traversed for
+		 * some other reason like restricted tags.
+		 *
+		 * \returns True if the workaround was applied. If this happens the
+		 * endPoint, endNode, hTarget and hTargetNode fields will be modified.
+		 *
+		 * Image below shows paths when this special case is applied. The path goes from the white sphere to the blue orange box.
+		 * \shadowimage{abpath_grid_special.gif}
+		 *
+		 * Image below shows paths when this special case has been disabled
+		 * \shadowimage{abpath_grid_not_special.gif}
+		 */
+		protected virtual bool EndPointGridGraphSpecialCase (GraphNode closestWalkableEndNode) {
+			var gridNode = closestWalkableEndNode as GridNode;
+			if (gridNode != null) {
+				var gridGraph = GridNode.GetGridGraph(gridNode.GraphIndex);
+
+				// Find the closest node, not neccessarily walkable
+				NNInfo endNNInfo2 = AstarPath.active.GetNearest(originalEndPoint, NNConstraint.None, endHint);
+				var gridNode2 = endNNInfo2.node as GridNode;
+
+				if (gridNode != gridNode2 && gridNode2 != null && gridNode.GraphIndex == gridNode2.GraphIndex) {
+					// Calculate the coordinates of the nodes
+					var x1 = gridNode.NodeInGridIndex % gridGraph.width;
+					var z1 = gridNode.NodeInGridIndex / gridGraph.width;
+
+					var x2 = gridNode2.NodeInGridIndex % gridGraph.width;
+					var z2 = gridNode2.NodeInGridIndex / gridGraph.width;
+
+					bool wasClose = false;
+					switch (gridGraph.neighbours) {
+					case NumNeighbours.Four:
+						if ((x1 == x2 && System.Math.Abs(z1-z2) == 1) || (z1 == z2 && System.Math.Abs(x1-x2) == 1)) {
+							// If 'O' is gridNode2, then gridNode is one of the nodes marked with an 'x'
+							//    x
+							//  x O x
+							//    x
+							wasClose = true;
+						}
+						break;
+					case NumNeighbours.Eight:
+						if (System.Math.Abs(x1-x2) <= 1 && System.Math.Abs(z1-z2) <= 1) {
+							// If 'O' is gridNode2, then gridNode is one of the nodes marked with an 'x'
+							//  x x x
+							//  x O x
+							//  x x x
+							wasClose = true;
+						}
+						break;
+					case NumNeighbours.Six:
+						// Hexagon graph
+						for (int i = 0; i < 6; i++) {
+							var nx = x2 + gridGraph.neighbourXOffsets[GridGraph.hexagonNeighbourIndices[i]];
+							var nz = z2 + gridGraph.neighbourZOffsets[GridGraph.hexagonNeighbourIndices[i]];
+							if (x1 == nx && z1 == nz) {
+								// If 'O' is gridNode2, then gridNode is one of the nodes marked with an 'x'
+								//    x x
+								//  x O x
+								//  x x
+								wasClose = true;
+								break;
+							}
+						}
+						break;
+					default:
+						// Should not happen unless NumNeighbours is modified in the future
+						throw new System.Exception("Unhandled NumNeighbours");
+					}
+
+					if (wasClose) {
+						// We now need to find all nodes marked with an x to be able to mark them as targets
+						SetFlag1OnSurroundingGridNodes(gridNode2, true);
+
+						// Note, other methods assume hTarget is (Int3)endPoint
+						endPoint = (Vector3)gridNode2.position;
+						hTarget = gridNode2.position;
+						endNode = gridNode2;
+
+						// hTargetNode is used for heuristic optimizations
+						// (also known as euclidean embedding).
+						// Even though the endNode is not walkable
+						// we can use it for better heuristics since
+						// there is a workaround added (EuclideanEmbedding.ApplyGridGraphEndpointSpecialCase)
+						// which is there to support this case.
+						hTargetNode = endNode;
+
+						// We need to save this node
+						// so that we can reset flag1 on all nodes later
+						gridSpecialCaseNode = gridNode2;
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
+
+		/** Helper method to set PathNode.flag1 to a specific value for all nodes adjacent to a grid node */
+		void SetFlag1OnSurroundingGridNodes (GridNode gridNode, bool flag1State) {
+			// Loop through all adjacent grid nodes
+			var gridGraph = GridNode.GetGridGraph(gridNode.GraphIndex);
+
+			// Number of neighbours as an int
+			int mxnum = gridGraph.neighbours == NumNeighbours.Four ? 4 : (gridGraph.neighbours == NumNeighbours.Eight ? 8 : 6);
+
+			// Calculate the coordinates of the node
+			var x = gridNode.NodeInGridIndex % gridGraph.width;
+			var z = gridNode.NodeInGridIndex / gridGraph.width;
+
+			for (int i = 0; i < mxnum; i++) {
+				int nx, nz;
+				if (gridGraph.neighbours == NumNeighbours.Six) {
+					// Hexagon graph
+					nx = x + gridGraph.neighbourXOffsets[GridGraph.hexagonNeighbourIndices[i]];
+					nz = z + gridGraph.neighbourZOffsets[GridGraph.hexagonNeighbourIndices[i]];
+				} else {
+					nx = x + gridGraph.neighbourXOffsets[i];
+					nz = z + gridGraph.neighbourZOffsets[i];
+				}
+
+				// Check if the position is still inside the grid
+				if (nx >= 0 && nz >= 0 && nx < gridGraph.width && nz < gridGraph.depth) {
+					var adjacentNode = gridGraph.nodes[nz*gridGraph.width + nx];
+					pathHandler.GetPathNode(adjacentNode).flag1 = flag1State;
+				}
+			}
 		}
 
 		/** Prepares the path. Searches for start and end nodes and does some simple checking if a path is at all possible */
@@ -187,36 +335,9 @@ namespace Pathfinding {
 			startIntPoint = (Int3)startPoint;
 			startNode = startNNInfo.node;
 
-			//If it is declared that this path type has an end point
-			//Some path types might want to use most of the ABPath code, but will not have an explicit end point at this stage
-			if (hasEndPoint) {
-				NNInfo endNNInfo = AstarPath.active.GetNearest (endPoint,nnConstraint, endHint);
-				endPoint = endNNInfo.clampedPosition;
-
-				// Note, other methods assume hTarget is (Int3)endPoint
-				hTarget = (Int3)endPoint;
-				endNode = endNNInfo.node;
-				hTargetNode = endNode;
-			}
-
-			AstarProfiler.EndProfile ();
-
-
-			if (startNode == null && (hasEndPoint && endNode == null)) {
-				Error ();
-				LogError ("Couldn't find close nodes to the start point or the end point");
-				return;
-			}
-
 			if (startNode == null) {
 				Error ();
 				LogError ("Couldn't find a close node to the start point");
-				return;
-			}
-
-			if (endNode == null && hasEndPoint) {
-				Error ();
-				LogError ("Couldn't find a close node to the end point");
 				return;
 			}
 
@@ -226,17 +347,55 @@ namespace Pathfinding {
 				return;
 			}
 
-			if (hasEndPoint && !endNode.Walkable) {
-				Error ();
-				LogError ("The node closest to the end point is not walkable");
-				return;
+			// If it is declared that this path type has an end point
+			// Some path types might want to use most of the ABPath code, but will not have an explicit end point at this stage
+			if (hasEndPoint) {
+				NNInfo endNNInfo = AstarPath.active.GetNearest (endPoint,nnConstraint, endHint);
+				endPoint = endNNInfo.clampedPosition;
+				endNode = endNNInfo.node;
+
+				if (startNode == null && endNode == null) {
+					Error ();
+					LogError ("Couldn't find close nodes to the start point or the end point");
+					return;
+				}
+
+				if (endNode == null) {
+					Error ();
+					LogError ("Couldn't find a close node to the end point");
+					return;
+				}
+
+				// This should not trigger unless the user has modified the NNConstraint
+				if (!endNode.Walkable) {
+					Error ();
+					LogError ("The node closest to the end point is not walkable");
+					return;
+				}
+
+				// This should not trigger unless the user has modified the NNConstraint
+				if (startNode.Area != endNode.Area) {
+					Error ();
+					LogError ("There is no valid path to the target (start area: " + startNode.Area+", target area: " + endNode.Area + ")");
+					return;
+				}
+
+				// Potentially we want to special case grid graphs a bit
+				// to better support some kinds of games
+				// If this returns true it will overwrite the
+				// endNode, endPoint, hTarget and hTargetNode fields
+				if (!EndPointGridGraphSpecialCase(endNNInfo.node))
+				{
+					// Note, other methods assume hTarget is (Int3)endPoint
+					hTarget = (Int3)endPoint;
+					hTargetNode = endNode;
+
+					// Mark end node with flag1 to mark it as a target point
+					pathHandler.GetPathNode(endNode).flag1 = true;
+				}
 			}
 
-			if (hasEndPoint && startNode.Area != endNode.Area) {
-				Error ();
-				LogError ("There is no valid path to the target (start area: "+startNode.Area+", target area: "+endNode.Area+")");
-				return;
-			}
+			AstarProfiler.EndProfile ();
 		}
 
 		/** Checks if the start node is the target and complete the path if that is the case.
@@ -246,9 +405,10 @@ namespace Pathfinding {
 		 * and trace the path.
 		 */
 		protected virtual void CompletePathIfStartIsValidTarget () {
-			if (hasEndPoint && startNode == endNode) {
+			// flag1 specifies if a node is a target node for the path
+			if (hasEndPoint && pathHandler.GetPathNode(startNode).flag1) {
+				CompleteWith(startNode);
 				Trace (pathHandler.GetPathNode(startNode));
-				CompleteState = PathCompleteState.Complete;
 			}
 		}
 
@@ -297,7 +457,45 @@ namespace Pathfinding {
 
 		public override void Cleanup () {
 			if (startNode != null) pathHandler.GetPathNode (startNode).flag2 = false;
-			if (endNode != null) pathHandler.GetPathNode (endNode).flag2 = false;
+			if (endNode != null) {
+				var pathEndNode = pathHandler.GetPathNode(endNode);
+				pathEndNode.flag1 = false;
+				pathEndNode.flag2 = false;
+			}
+
+			// Set flag1 to false on all nodes we set it to true on
+			// at the start of the path call. Otherwise this state
+			// will leak to other path calculations and cause all
+			// kinds of havoc.
+			if (gridSpecialCaseNode != null) SetFlag1OnSurroundingGridNodes(gridSpecialCaseNode, false);
+		}
+
+		/** Completes the path using the specified target node.
+		 * This method assumes that the node is a target node of the path
+		 * not just any random node.
+		 */
+		void CompleteWith (GraphNode node) {
+			if (endNode == node) {
+				// Common case, no grid graph special case has been applied
+				// Nothing to do
+			} else {
+				// See EndPointGridGraphSpecialCase()
+				var gridNode = node as GridNode;
+				if (gridNode == null) {
+					throw new System.Exception("Some path is not cleaning up the flag1 field. This is a bug.");
+				}
+
+				// The grid graph special case has been applied
+				// The closest point on the node is not yet known
+				// so we need to calculate it
+				endPoint = gridNode.ClosestPointOnNode(originalEndPoint);
+				// This is now our end node
+				// We didn't know it before, but apparently it was optimal
+				// to move to this node
+				endNode = node;
+			}
+			// Mark the path as completed
+			CompleteState = PathCompleteState.Complete;
 		}
 
 		/** Calculates the path until completed or until the time has passed \a targetTick.
@@ -331,8 +529,10 @@ while the end has not been found and no error has ocurred
 				searchedNodes++;
 
 				// Close the current node, if the current node is the target node then the path is finished
-				if (currentR.node == endNode) {
-					CompleteState = PathCompleteState.Complete;
+				if (currentR.flag1) {
+					// We found a target point
+					// Mark that node as the end point
+					CompleteWith(currentR.node);
 					break;
 				}
 
@@ -343,7 +543,7 @@ while the end has not been found and no error has ocurred
 				AstarProfiler.StartFastProfile (4);
 
 				// Loop through all walkable neighbours of the node and add them to the open list.
-				currentR.node.Open (this,currentR,pathHandler);
+				currentR.node.Open (this, currentR, pathHandler);
 
 				AstarProfiler.EndFastProfile (4);
 
@@ -369,6 +569,7 @@ while the end has not been found and no error has ocurred
 					}
 					counter = 0;
 
+					// Mostly for development
 					if (searchedNodes > 1000000) {
 						throw new System.Exception ("Probable infinite loop. Over 1,000,000 nodes searched");
 					}
@@ -376,7 +577,6 @@ while the end has not been found and no error has ocurred
 
 				counter++;
 			}
-
 
 			AstarProfiler.StartProfile ("Trace");
 
@@ -455,7 +655,9 @@ while the end has not been found and no error has ocurred
 				text.Append (errorLog);
 			}
 
-			if (logMode == PathLog.Heavy && !AstarPath.IsUsingMultithreading ) {
+			// Can only print this from the Unity thread
+			// since otherwise an exception might be thrown
+			if (logMode == PathLog.Heavy && !AstarPath.active.IsUsingMultithreading ) {
 				text.Append ("\nCallback references ");
 				if (callback != null) text.Append(callback.Target.GetType().FullName).AppendLine();
 				else text.AppendLine ("NULL");

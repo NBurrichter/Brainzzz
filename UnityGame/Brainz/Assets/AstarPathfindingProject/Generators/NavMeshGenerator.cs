@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections.Generic;
 using Pathfinding.Serialization.JsonFx;
 using Pathfinding.Serialization;
-using Pathfinding;
 
 namespace Pathfinding {
 	public interface INavmesh {
@@ -330,13 +329,12 @@ and have a low memory footprint because of their smaller size to describe the sa
 		}
 
 		public static void UpdateArea (GraphUpdateObject o, INavmesh graph) {
-
-			//System.DateTime startTime = System.DateTime.UtcNow;
-
 			Bounds bounds = o.bounds;
 
+			// Bounding rectangle with floating point coordinates
 			Rect r = Rect.MinMaxRect (bounds.min.x,bounds.min.z,bounds.max.x,bounds.max.z);
 
+			// Bounding rectangle with int coordinates
 			var r2 = new IntRect(
 				Mathf.FloorToInt(bounds.min.x*Int3.Precision),
 				Mathf.FloorToInt(bounds.min.z*Int3.Precision),
@@ -344,11 +342,16 @@ and have a low memory footprint because of their smaller size to describe the sa
 				Mathf.FloorToInt(bounds.max.z*Int3.Precision)
 			);
 
+			// Corners of the bounding rectangle
 			var a = new Int3(r2.xmin,0,r2.ymin);
 			var b = new Int3(r2.xmin,0,r2.ymax);
 			var c = new Int3(r2.xmax,0,r2.ymin);
 			var d = new Int3(r2.xmax,0,r2.ymax);
 
+			var ymin = ((Int3)bounds.min).y;
+			var ymax = ((Int3)bounds.max).y;
+
+			// Loop through all nodes
 			graph.GetNodes (_node => {
 				var node = _node as TriangleMeshNode;
 
@@ -359,8 +362,8 @@ and have a low memory footprint because of their smaller size to describe the sa
 				int allTop = 0;
 				int allBottom = 0;
 
+				// Check bounding box rect in XZ plane
 				for (int v=0;v<3;v++) {
-
 					Int3 p = node.GetVertex(v);
 					var vert = (Vector3)p;
 
@@ -374,13 +377,15 @@ and have a low memory footprint because of their smaller size to describe the sa
 					if (vert.z < r.yMin) allTop++;
 					if (vert.z > r.yMax) allBottom++;
 				}
+
 				if (!inside) {
 					if (allLeft == 3 || allRight == 3 || allTop == 3 || allBottom == 3) {
 						return true;
 					}
 				}
 
-				for (int v=0;v<3;v++) {
+				// Check if the polygon edges intersect the bounding rect
+				for (int v = 0; v < 3; v++) {
 					int v2 = v > 1 ? 0 : v+1;
 
 					Int3 vert1 = node.GetVertex(v);
@@ -392,7 +397,8 @@ and have a low memory footprint because of their smaller size to describe the sa
 					if (Polygon.Intersects (d,b,vert1,vert2)) { inside = true; break; }
 				}
 
-				if (node.ContainsPoint (a) || node.ContainsPoint (b) || node.ContainsPoint (c) || node.ContainsPoint (d)) {
+				// Check if the node contains any corner of the bounding rect
+				if (inside || node.ContainsPoint (a) || node.ContainsPoint (b) || node.ContainsPoint (c) || node.ContainsPoint (d)) {
 					inside = true;
 				}
 
@@ -400,6 +406,22 @@ and have a low memory footprint because of their smaller size to describe the sa
 					return true;
 				}
 
+				int allAbove = 0;
+				int allBelow = 0;
+
+				// Check y coordinate
+				for (int v = 0; v < 3; v++) {
+					Int3 p = node.GetVertex(v);
+					var vert = (Vector3)p;
+					if (vert.y < ymin) allBelow++;
+					if (vert.y > ymax) allAbove++;
+				}
+
+				// Polygon is either completely above the bounding box or completely below it
+				if (allBelow == 3 || allAbove == 3) return true;
+
+				// Triangle is inside the bounding box!
+				// Update it!
 				o.WillUpdateNode(node);
 				o.Apply (node);
 				return true;
@@ -453,10 +475,17 @@ and have a low memory footprint because of their smaller size to describe the sa
 			}
 
 			sourceMesh = mesh;
-			ScanInternal ();
+
+			var scan = ScanInternal ().GetEnumerator ();
+			while (scan.MoveNext()) {}
 		}
 
-		public override void ScanInternal (OnScanStatus statusCallback) {
+		public override IEnumerable<Progress> ScanInternal () {
+			ScanInternal (p => {});
+			yield break;
+		}
+
+		public void ScanInternal (OnScanStatus statusCallback) {
 
 			if (sourceMesh == null) {
 				return;

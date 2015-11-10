@@ -103,15 +103,20 @@ public class AstarPathEditor : Editor {
 		guiLayoutx = new EditorGUILayoutx ();
 		EditorGUILayoutx.editor = this;
 
-		//Enables the editor to get a callback on OnDrawGizmos to enable graph editors to draw gizmos
+		// Enables the editor to get a callback on OnDrawGizmos to enable graph editors to draw gizmos
 		script.OnDrawGizmosCallback = OnDrawGizmos;
+
+		// Register to the OnUnloadGizmoMeshes event
+		// Make sure that if any previous subscriber (another instance of this editor likely) gets a final event
+		if (script.OnUnloadGizmoMeshes != null && script.OnUnloadGizmoMeshes != UnloadGizmoMeshes) script.OnUnloadGizmoMeshes();
+		script.OnUnloadGizmoMeshes = UnloadGizmoMeshes;
 
 		// Make sure all references are set up to avoid NullReferenceExceptions
 		script.SetUpReferences ();
 
 		Undo.undoRedoPerformed += OnUndoRedoPerformed;
 
-		//Search the assembly for graph types and graph editors
+		// Search the assembly for graph types and graph editors
 		if ( graphEditorTypes == null || graphEditorTypes.Count == 0 )
 			FindGraphTypes ();
 
@@ -123,7 +128,7 @@ public class AstarPathEditor : Editor {
 
 		LoadStyles ();
 
-		//Load graphs only when not playing, or in extreme cases, when astarData.graphs is null
+		// Load graphs only when not playing, or in extreme cases, when astarData.graphs is null
 		if ((!Application.isPlaying && (script.astarData == null || script.astarData.graphs == null || script.astarData.graphs.Length == 0)) || script.astarData.graphs == null) {
 			LoadGraphs ();
 		}
@@ -141,19 +146,7 @@ public class AstarPathEditor : Editor {
 		SetAstarEditorSettings ();
 		CheckGraphEditors ();
 
-		for (int i=0;i<graphEditors.Length;i++) {
-			if (graphEditors[i] != null) graphEditors[i].OnDisable ();
-		}
-
 		SaveGraphsAndUndo ();
-	}
-
-	public void OnDestroy () {
-		if (graphEditors != null) {
-			for (int i=0;i<graphEditors.Length;i++) {
-				if (graphEditors[i] != null) graphEditors[i].OnDestroy ();
-			}
-		}
 	}
 
 	/** Reads settings frome EditorPrefs */
@@ -831,10 +824,19 @@ public class AstarPathEditor : Editor {
 
 	public void OnSceneGUI () {
 
+		script = target as AstarPath;
+
+		// OnSceneGUI may be called from EditorUtility.DisplayProgressBar
+		// which is called repeatedly while the graphs are scanned in the
+		// editor. However running the OnSceneGUI method while the graphs
+		// are being scanned is a bad idea since it can interfere with
+		// scanning, especially by serializing changes
+		if (script.isScanning) {
+			return;
+		}
+
 		bool preChanged = GUI.changed;
 		GUI.changed = false;
-
-		script = target as AstarPath;
 
 		AstarPath.active = script;
 
@@ -1352,8 +1354,7 @@ public class AstarPathEditor : Editor {
 				for (int i=0;i<graphEditors.Length;i++) {
 					if (graphEditors[i] != null) {
 						//graphEditors[i].OnDisableUndo ();
-						graphEditors[i].OnDisable ();
-						graphEditors[i].OnDestroy ();
+						graphEditors[i].UnloadGizmoMeshes ();
 					}
 				}
 			}
@@ -1429,30 +1430,41 @@ public class AstarPathEditor : Editor {
 		return def;
 	}
 
-	/** Draw Editor Gizmos in graphs. This is called using a delegate OnDrawGizmosCallback in the AstarPath script.*/
+	/**
+	 * Draw Editor Gizmos in graphs.
+	 * This is called using a delegate OnDrawGizmosCallback in the AstarPath script.
+	 */
 	void OnDrawGizmos () {
-
 		AstarProfiler.StartProfile ("OnDrawGizmosEditor");
 
 		CheckGraphEditors ();
 
 		for (int i=0;i<script.graphs.Length;i++) {
-
 			NavGraph graph = script.graphs[i];
 
-
-			if (graph == null || graphEditors.Length <= i) {
-				continue;
+			if (graph != null && i < graphEditors.Length) {
+				graphEditors[i].OnDrawGizmos ();
 			}
-
-			graphEditors[i].OnDrawGizmos ();
 		}
 
 		AstarProfiler.EndProfile ("OnDrawGizmosEditor");
 	}
 
+	/** Unloads any temporary meshes used for drawing gizmos to prevent memory leaks */
+	void UnloadGizmoMeshes () {
+		if (script != null && script.graphs != null && graphEditors != null) {
+			for (int i=0;i<script.graphs.Length;i++) {
+				NavGraph graph = script.graphs[i];
+
+				if (graph != null && i < graphEditors.Length) {
+					graphEditors[i].UnloadGizmoMeshes ();
+				}
+			}
+		}
+	}
+
 	bool HandleUndo () {
-		//The user has tried to undo something, apply that
+		// The user has tried to undo something, apply that
 		if (script.astarData.GetData() == null) {
 			script.astarData.SetData (new byte[0]);
 		} else {
@@ -1553,7 +1565,7 @@ public class AstarPathEditor : Editor {
 
 		// Add a work item since we cannot be sure that pathfinding (or graph updates)
 		// is not running at the same time
-		AstarPath.active.AddWorkItem (new AstarPath.AstarWorkItem (force => {
+		AstarPath.active.AddWorkItem (new AstarWorkItem (force => {
 			var sr = new Pathfinding.Serialization.AstarSerializer(script.astarData, settings);
 			sr.OpenSerialize();
 			script.astarData.SerializeGraphsPart (sr);
@@ -1581,7 +1593,7 @@ public class AstarPathEditor : Editor {
 
 	void DeserializeGraphs (byte[] bytes) {
 
-		AstarPath.active.AddWorkItem (new AstarPath.AstarWorkItem (force => {
+		AstarPath.active.AddWorkItem (new AstarWorkItem (force => {
 			var sr = new Pathfinding.Serialization.AstarSerializer(script.astarData);
 			if (sr.OpenDeserialize(bytes)) {
 				script.astarData.DeserializeGraphsPart (sr);
@@ -1621,8 +1633,15 @@ public class AstarPathEditor : Editor {
 		EditorUtility.DisplayProgressBar ("Scanning","Scanning...",0);
 
 		try {
-			OnScanStatus info = progress => EditorUtility.DisplayProgressBar ("Scanning",progress.description,progress.progress);
-			AstarPath.active.ScanLoop (info);
+			var lastMessageTime = float.NegativeInfinity;
+			foreach (var p in AstarPath.active.ScanAsync ()) {
+				// Displaying the progress bar is pretty slow, so don't do it too often
+				if (Time.realtimeSinceStartup - lastMessageTime > 0.2f || true) {
+					// Display a progress bar of the scan
+					UnityEditor.EditorUtility.DisplayProgressBar ("Scanning",p.description,p.progress);
+					lastMessageTime = Time.realtimeSinceStartup;
+				}
+			}
 
 		} catch (System.Exception e) {
 			Debug.LogError ("There was an error generating the graphs:\n"+e+"\n\nIf you think this is a bug, please contact me on arongranberg.com (post a comment)\n");

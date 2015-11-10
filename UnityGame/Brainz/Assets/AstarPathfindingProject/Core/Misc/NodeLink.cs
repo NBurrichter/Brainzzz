@@ -37,7 +37,7 @@ namespace Pathfinding {
 			if (AstarPath.active.isScanning) {
 				InternalOnPostScan ();
 			} else {
-				AstarPath.active.AddWorkItem (new AstarPath.AstarWorkItem (delegate (bool force) {
+				AstarPath.active.AddWorkItem (new AstarWorkItem (force => {
 					InternalOnPostScan ();
 					return true;
 				}));
@@ -50,7 +50,7 @@ namespace Pathfinding {
 	
 		public override void OnGraphsPostUpdate () {
 			if (!AstarPath.active.isScanning) {
-				AstarPath.active.AddWorkItem (new AstarPath.AstarWorkItem (delegate (bool force) {
+				AstarPath.active.AddWorkItem (new AstarWorkItem (force => {
 					InternalOnPostScan ();
 					return true;
 				}));

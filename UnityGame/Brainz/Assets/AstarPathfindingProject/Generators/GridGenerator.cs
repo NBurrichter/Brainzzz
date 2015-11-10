@@ -324,7 +324,7 @@ AstarPath.active.Scan();
 		public readonly int[] neighbourZOffsets = new int[8];
 
 		/** Which neighbours are going to be used when #neighbours=6 */
-		static readonly int[] hexagonNeighbourIndices = { 0, 1, 2, 3, 5, 7 };
+		internal static readonly int[] hexagonNeighbourIndices = { 0, 1, 2, 3, 5, 7 };
 
 		/** In GetNearestForce, determines how far to search after a valid node has been found */
 		public const int getNearestForceOverlap = 2;
@@ -542,13 +542,13 @@ AstarPath.active.Scan();
 			SetMatrix (m);
 		}
 
-		/** \todo Set clamped position for Grid Graph */
 		public override NNInfo GetNearest (Vector3 position, NNConstraint constraint, GraphNode hint) {
 
 			if (nodes == null || depth*width != nodes.Length) {
 				return new NNInfo ();
 			}
 
+			// Calculate the closest node and the closest point on that node
 			position = inverseMatrix.MultiplyPoint3x4 (position);
 
 			float xf = position.x-0.5F;
@@ -564,7 +564,6 @@ AstarPath.active.Scan();
 			return nn;
 		}
 
-		/** \todo Set clamped position for Grid Graph */
 		public override NNInfo GetNearestForce (Vector3 position, NNConstraint constraint) {
 
 			if (nodes == null || depth*width != nodes.Length) {
@@ -580,8 +579,8 @@ AstarPath.active.Scan();
 			// Find the coordinates of the closest node
 			float xf = position.x-0.5F;
 			float zf = position.z-0.5f;
-			int x = Mathf.Clamp (Mathf.RoundToInt (xf)  , 0, width-1);
-			int z = Mathf.Clamp (Mathf.RoundToInt (zf)  , 0, depth-1);
+			int x = Mathf.Clamp (Mathf.RoundToInt (xf), 0, width-1);
+			int z = Mathf.Clamp (Mathf.RoundToInt (zf), 0, depth-1);
 
 			// Closest node
 			GridNode node = nodes[x+z*width];
@@ -782,12 +781,12 @@ AstarPath.active.Scan();
 			neighbourZOffsets[7] = -1;
 		}
 
-		public override void ScanInternal (OnScanStatus statusCallback) {
+		public override IEnumerable<Progress> ScanInternal () {
 
 			AstarPath.OnPostScan += new OnScanDelegate (OnPostScan);
 
 			if (nodeSize <= 0) {
-				return;
+				yield break;
 			}
 
 			// Make sure the matrix is up to date
@@ -795,7 +794,7 @@ AstarPath.active.Scan();
 
 			if (width > 1024 || depth > 1024) {
 				Debug.LogError ("One of the grid's sides is longer than 1024 nodes");
-				return;
+				yield break;
 			}
 
 
@@ -807,9 +806,11 @@ AstarPath.active.Scan();
 			// Set a global reference to this graph so that nodes can find it
 			GridNode.SetGridGraph (graphIndex,this);
 
+			yield return new Progress(0.05f, "Creating nodes");
+
 			// Create all nodes
 			nodes = new GridNode[width*depth];
-			for (int i=0;i<nodes.Length;i++) {
+			for (int i = 0; i < nodes.Length; i++) {
 				nodes[i] = new GridNode(active);
 				nodes[i].GraphIndex = (uint)graphIndex;
 			}
@@ -821,7 +822,19 @@ AstarPath.active.Scan();
 			collision.Initialize (matrix,nodeSize);
 
 
+			int progressCounter = 0;
+
+			const int YieldEveryNNodes = 1000;
+
 			for (int z = 0; z < depth; z ++) {
+				// Yield with a progress value at most every N nodes
+				if (progressCounter >= YieldEveryNNodes) {
+					progressCounter = 0;
+					yield return new Progress(Mathf.Lerp(0.1f,0.7f,z/(float)depth), "Calculating positions");
+				}
+
+				progressCounter += width;
+
 				for (int x = 0; x < width; x++) {
 
 					var node = nodes[z*width+x];
@@ -835,16 +848,21 @@ AstarPath.active.Scan();
 				}
 			}
 
+			for (int z = 0; z < depth; z++) {
+				// Yield with a progress value at most every N nodes
+				if (progressCounter >= YieldEveryNNodes) {
+					progressCounter = 0;
+					yield return new Progress(Mathf.Lerp(0.1f,0.7f,z/(float)depth), "Calculating connections");
+				}
 
-			for (int z = 0; z < depth; z ++) {
 				for (int x = 0; x < width; x++) {
-
-					var node = nodes[z*width+x];
-
+					var node = nodes[z*width + x];
 					// Recalculate connections to other nodes
-					CalculateConnections (nodes,x,z,node);
+					CalculateConnections(x, z, node);
 				}
 			}
+
+			yield return new Progress(0.95f, "Calculating erosion");
 
 			// Apply erosion
 			ErodeWalkableArea ();
@@ -972,7 +990,7 @@ AstarPath.active.Scan();
 					for (int z = zmin; z < zmax; z ++) {
 						for (int x = xmin; x < xmax; x++) {
 							GridNode node = nodes[z*Width+x];
-							CalculateConnections (nodes,x,z,node);
+							CalculateConnections (x,z,node);
 						}
 					}
 				}
@@ -1028,31 +1046,25 @@ AstarPath.active.Scan();
 		}
 
 		/** Returns true if a connection between the adjacent nodes \a n1 and \a n2 is valid.
-		 * Also takes into account if the nodes are walkable
+		 * Also takes into account if the nodes are walkable.
 		 *
 		 * This method may be overriden if you want to customize what connections are valid.
-		 * It must however hold that IsValidConnection(a,b) == IsValidConnection(b,a)
+		 * It must however hold that IsValidConnection(a,b) == IsValidConnection(b,a).
+		 *
+		 * This is used for calculating the connections when the graph is scanned or updated.
+		 *
+		 * \see CalculateConnections
 		 */
 		public virtual bool IsValidConnection (GridNode n1, GridNode n2) {
 			if (!n1.Walkable || !n2.Walkable) {
 				return false;
 			}
 
-			if (maxClimb > 0 && Mathf.Abs (n1.position[maxClimbAxis] - n2.position[maxClimbAxis]) > maxClimb*Int3.Precision) {
-				return false;
-			}
-
-			return true;
+			return maxClimb <= 0 || System.Math.Abs (n1.position[maxClimbAxis] - n2.position[maxClimbAxis]) <= maxClimb*Int3.Precision;
 		}
 
-		/** Small buffer to reduce memory allocations.
-		 * Used in the CalculateConnections function
-		 * \see CalculateConnections */
-		[System.NonSerialized]
-		protected int[] corners;
-
 		/** Calculates the grid connections for a single node.
-		 * Convenience function, it's faster to use CalculateConnections(GridNode[],int,int,node)
+		 * Convenience function, it's faster to use CalculateConnections(int,int,GridNode)
 		 * but that will only show when calculating for a large number of nodes.
 		 * \todo Test this function, should work ok, but you never know
 		 */
@@ -1063,19 +1075,30 @@ AstarPath.active.Scan();
 				int index = node.NodeInGridIndex;
 				int x = index % gg.width;
 				int z = index / gg.width;
-				gg.CalculateConnections (gg.nodes,x,z,node);
+				gg.CalculateConnections (x,z,node);
 			}
 		}
 
-		/** Calculates the grid connections for a single node */
+		/** Calculates the grid connections for a single node.
+		 * \deprecated CalculateConnections no longer takes a node array, it just uses the one on the graph
+		 */
+		[System.Obsolete("CalculateConnections no longer takes a node array, it just uses the one on the graph")]
 		public virtual void CalculateConnections (GridNode[] nodes, int x, int z, GridNode node) {
+			CalculateConnections(x,z,node);
+		}
 
-			//Reset all connections
-			// This makes the node have NO connections to any neighbour nodes
-			node.ResetConnectionsInternal ();
+		/** Calculates the grid connections for a single node.
+		 * The x and z parameters are assumed to be the grid coordinates of the node.
+		 *
+		 * \see CalculateConnections(GridNode)
+		 */
+		public virtual void CalculateConnections (int x, int z, GridNode node) {
 
-			//All connections are disabled if the node is not walkable
+			// All connections are disabled if the node is not walkable
 			if (!node.Walkable) {
+				// Reset all connections
+				// This makes the node have NO connections to any neighbour nodes
+				node.ResetConnectionsInternal ();
 				return;
 			}
 
@@ -1083,75 +1106,84 @@ AstarPath.active.Scan();
 			int index = node.NodeInGridIndex;
 
 			if (neighbours == NumNeighbours.Four || neighbours == NumNeighbours.Eight) {
+				// Bitpacked connections
+				// bit 0 is set if connection 0 is enabled
+				// bit 1 is set if connection 1 is enabled etc.
+				int conns = 0;
 
-				// Reset the buffer
-				if (corners == null) {
-					corners = new int[4];
-				} else {
-					for (int i = 0;i<4;i++) {
-						corners[i] = 0;
-					}
-				}
-
-				// Loop through axis aligned neighbours (up, down, right, left)
-				for (int i=0, j = 3; i<4; j = i, i++) {
-
+				// Loop through axis aligned neighbours (down, right, up, left) or (-Z, +X, +Z, -X)
+				for (int i = 0; i < 4; i++) {
 					int nx = x + neighbourXOffsets[i];
 					int nz = z + neighbourZOffsets[i];
 
-					if (nx < 0 || nz < 0 || nx >= width || nz >= depth) {
-						continue;
-					}
+					// Check if the new position is inside the grid
+					// Bitwise AND (&) is measurably faster than &&
+					// (not much, but this code is hot)
+					if (nx >= 0 & nz >= 0 & nx < width & nz < depth) {
+						var other = nodes[index+neighbourOffsets[i]];
 
-					var other = nodes[index+neighbourOffsets[i]];
-
-					if (IsValidConnection (node, other)) {
-						node.SetConnectionInternal (i, true);
-
-						// Mark the diagonal/corner adjacent to this connection as used
-						corners[i]++;
-						corners[j]++;
-					} else {
-						node.SetConnectionInternal (i, false);
+						if (IsValidConnection (node, other)) {
+							// Enable connection i
+							conns |= 1 << i;
+						}
 					}
 				}
+
+				// Bitpacked diagonal connections
+				int diagConns = 0;
 
 				// Add in the diagonal connections
 				if (neighbours == NumNeighbours.Eight) {
 					if (cutCorners) {
-						for (int i=0; i<4; i++) {
-
+						for (int i = 0; i < 4; i++) {
 							// If at least one axis aligned connection
-							// is adjacent to this diagonal, then we can add a connection
-							if (corners[i] >= 1) {
-								int nx = x + neighbourXOffsets[i+4];
-								int nz = z + neighbourZOffsets[i+4];
+							// is adjacent to this diagonal, then we can add a connection.
+							// Bitshifting is a lot faster than calling node.GetConnectionInternal.
+							// We need to check if connection i and i+1 are enabled
+							// but i+1 may overflow 4 and in that case need to be wrapped around
+							// (so 3+1 = 4 goes to 0). We do that by checking both connection i+1
+							// and i+1-4 at the same time. Either i+1 or i+1-4 will be in the range
+							// from 0 to 4 (exclusive)
+							if (((conns >> i | conns >> (i+1) | conns >> (i+1-4)) & 1) != 0) {
+								int directionIndex = i+4;
 
-								if (nx < 0 || nz < 0 || nx >= width || nz >= depth) {
-									continue;
+								int nx = x + neighbourXOffsets[directionIndex];
+								int nz = z + neighbourZOffsets[directionIndex];
+
+								if (nx >= 0 & nz >= 0 & nx < width & nz < depth) {
+									GridNode other = nodes[index+neighbourOffsets[directionIndex]];
+
+									if (IsValidConnection (node,other)) {
+										diagConns |= 1 << directionIndex;
+									}
 								}
-
-								GridNode other = nodes[index+neighbourOffsets[i+4]];
-
-								node.SetConnectionInternal (i+4, IsValidConnection (node,other));
 							}
 						}
 					} else {
-						for (int i=0; i<4; i++) {
-
+						for (int i = 0; i < 4; i++) {
 							// If exactly 2 axis aligned connections is adjacent to this connection
 							// then we can add the connection
-							//We don't need to check if it is out of bounds because if both of the other neighbours are inside the bounds this one must be too
-							if (corners[i] == 2) {
+							// We don't need to check if it is out of bounds because if both of
+							// the other neighbours are inside the bounds this one must be too
+							if ((conns >> i & 1) != 0 && ((conns >> (i+1) | conns >> (i+1-4)) & 1) != 0) {
 								GridNode other = nodes[index+neighbourOffsets[i+4]];
 
-								node.SetConnectionInternal (i+4, IsValidConnection (node,other));
+								if (IsValidConnection (node,other)) {
+									diagConns |= 1 << (i+4);
+								}
 							}
 						}
 					}
 				}
+
+				// Set all connections at the same time
+				node.SetAllConnectionInternal(conns | diagConns);
 			} else {
 				// Hexagon layout
+
+				// Reset all connections
+				// This makes the node have NO connections to any neighbour nodes
+				node.ResetConnectionsInternal ();
 
 				// Loop through all possible neighbours and try to connect to them
 				for (int j = 0; j < hexagonNeighbourIndices.Length; j++) {
@@ -1160,13 +1192,10 @@ AstarPath.active.Scan();
 					int nx = x + neighbourXOffsets[i];
 					int nz = z + neighbourZOffsets[i];
 
-					if (nx < 0 || nz < 0 || nx >= width || nz >= depth) {
-						continue;
+					if (nx >= 0 & nz >= 0 & nx < width & nz < depth) {
+						var other = nodes[index+neighbourOffsets[i]];
+						node.SetConnectionInternal (i, IsValidConnection (node, other));
 					}
-
-					var other = nodes[index+neighbourOffsets[i]];
-
-					node.SetConnectionInternal (i, IsValidConnection (node, other));
 				}
 			}
 		}
@@ -1472,7 +1501,7 @@ AstarPath.active.Scan();
 
 						GridNode node = nodes[index];
 
-						CalculateConnections (nodes,x,z,node);
+						CalculateConnections (x,z,node);
 					}
 				}
 			} else if (willChangeWalkability && erosion > 0) {
@@ -1516,7 +1545,7 @@ AstarPath.active.Scan();
 
 						GridNode node = nodes[index];
 
-						CalculateConnections (nodes,x,z,node);
+						CalculateConnections (x,z,node);
 					}
 				}
 
@@ -1542,7 +1571,7 @@ AstarPath.active.Scan();
 						int index = z*width+x;
 
 						GridNode node = nodes[index];
-						CalculateConnections (nodes,x,z,node);
+						CalculateConnections (x,z,node);
 					}
 				}
 			}

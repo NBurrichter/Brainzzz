@@ -1,4 +1,3 @@
-using Pathfinding;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +9,6 @@ namespace Pathfinding {
 		/** Called by editor scripts to rescan the graphs e.g when the user moved a graph.
 		  * Will only scan graphs if not playing and time to scan last graph was less than some constant (to avoid lag with large graphs) */
 		public bool AutoScan () {
-
 			if (!Application.isPlaying && AstarPath.active != null && AstarPath.active.lastScanTime < 0.11F) {
 				AstarPath.active.Scan ();
 				return true;
@@ -21,17 +19,14 @@ namespace Pathfinding {
 		public virtual void OnEnable () {
 		}
 
-		public virtual void OnDisable () {
+		public virtual void UnloadGizmoMeshes () {
 		}
 
-		public virtual void OnDestroy () {
-		}
-
-		public Object ObjectField (string label, Object obj, System.Type objType, bool allowSceneObjects) {
+		public static Object ObjectField (string label, Object obj, System.Type objType, bool allowSceneObjects) {
 			return ObjectField (new GUIContent (label),obj,objType,allowSceneObjects);
 		}
 
-		public Object ObjectField (GUIContent label, Object obj, System.Type objType, bool allowSceneObjects) {
+		public static Object ObjectField (GUIContent label, Object obj, System.Type objType, bool allowSceneObjects) {
 
 			obj = EditorGUILayout.ObjectField (label, obj, objType, allowSceneObjects);
 
@@ -54,10 +49,9 @@ namespace Pathfinding {
 					}
 
 				} else if (EditorUtility.IsPersistent (obj)) {
-
 					string path = AssetDatabase.GetAssetPath (obj);
 
-					System.Text.RegularExpressions.Regex rg = new System.Text.RegularExpressions.Regex(@"Resources[/|\\][^/]*$");
+					var rg = new System.Text.RegularExpressions.Regex(@"Resources[/|\\][^/]*$");
 
 
 					if (!rg.IsMatch(path)) {
@@ -115,11 +109,8 @@ namespace Pathfinding {
 		}
 
 		/** Draws a thin separator line */
-		public void Separator () {
-			GUIStyle separator = AstarPathEditor.astarSkin.FindStyle ("PixelBox3Separator");
-			if (separator == null) {
-				separator = new GUIStyle ();
-			}
+		public static void Separator () {
+			GUIStyle separator = AstarPathEditor.astarSkin.FindStyle ("PixelBox3Separator") ?? new GUIStyle ();
 
 			Rect r = GUILayoutUtility.GetRect (new GUIContent (),separator);
 
@@ -129,15 +120,12 @@ namespace Pathfinding {
 		}
 
 		/** Draws a small help box with a 'Fix' button to the right. \returns Boolean - Returns true if the button was clicked */
-		public bool FixLabel (string label, string buttonLabel = "Fix", int buttonWidth = 40) {
-			bool returnValue = false;
+		public static bool FixLabel (string label, string buttonLabel = "Fix", int buttonWidth = 40) {
 			GUILayout.BeginHorizontal ();
 			GUILayout.Space (14*EditorGUI.indentLevel);
 			GUILayout.BeginHorizontal (AstarPathEditor.helpBox);
 			GUILayout.Label (label, EditorGUIUtility.isProSkin ? EditorStyles.whiteMiniLabel : EditorStyles.miniLabel,GUILayout.ExpandWidth (true));
-			if (GUILayout.Button (buttonLabel,EditorStyles.miniButton,GUILayout.Width (buttonWidth))) {
-				returnValue = true;
-			}
+			var returnValue = GUILayout.Button (buttonLabel,EditorStyles.miniButton,GUILayout.Width (buttonWidth));
 			GUILayout.EndHorizontal ();
 			GUILayout.EndHorizontal ();
 			return returnValue;
@@ -146,7 +134,7 @@ namespace Pathfinding {
 		/** Draws a small help box.
 		 * Works with EditorGUI.indentLevel
 		 */
-		public void HelpBox (string label) {
+		public static void HelpBox (string label) {
 			GUILayout.BeginHorizontal ();
 			GUILayout.Space (14*EditorGUI.indentLevel);
 			GUILayout.Label (label, AstarPathEditor.helpBox);
@@ -159,7 +147,7 @@ namespace Pathfinding {
 		}
 
 		/** Draws a toggle with a bold label to the right. Does not enable or disable GUI */
-		public bool ToggleGroup (GUIContent label, bool value) {
+		public static bool ToggleGroup (GUIContent label, bool value) {
 			GUILayout.BeginHorizontal ();
 			GUILayout.Space (13*EditorGUI.indentLevel);
 			value = GUILayout.Toggle (value,"",GUILayout.Width (10));
@@ -177,9 +165,9 @@ namespace Pathfinding {
 
 			size *= 0.5F;
 
-			Vector3 dx = new Vector3 (size.x,0,0);
-			Vector3 dy = new Vector3 (0,size.y,0);
-			Vector3 dz = new Vector3 (0,0,size.z);
+			var dx = new Vector3 (size.x,0,0);
+			var dy = new Vector3 (0,size.y,0);
+			var dz = new Vector3 (0,0,size.z);
 
 			Vector3 p1 = center-dy-dz-dx;
 			Vector3 p2 = center-dy-dz+dx;

@@ -41,17 +41,6 @@ namespace Pathfinding {
 			return 0;
 		}
 
-		void GetClosestWalkableNodesToChildrenRecursively ( Transform tr, List<GraphNode> nodes ) {
-			foreach (Transform ch in tr ) {
-
-				NNInfo info = AstarPath.active.GetNearest ( ch.position, NNConstraint.Default );
-				if ( info.node != null && info.node.Walkable ) {
-					nodes.Add ( info.node );
-				}
-
-				GetClosestWalkableNodesToChildrenRecursively ( tr, nodes );
-			}
-		}
 
 		public void RecalculatePivots () {
 		}
@@ -59,6 +48,7 @@ namespace Pathfinding {
 		public void RecalculateCosts () {
 			dirty = false;
 		}
+
 
 		public void OnDrawGizmos () {
 		}

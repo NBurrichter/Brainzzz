@@ -263,7 +263,8 @@ namespace Pathfinding {
 				AstarPath.OnGraphPreScan (this);
 			}
 
-			ScanInternal ();
+			var scan = ScanInternal ().GetEnumerator ();
+			while (scan.MoveNext()) {}
 
 			if (AstarPath.OnGraphPostScan != null) {
 				AstarPath.OnGraphPostScan (this);
@@ -279,17 +280,12 @@ namespace Pathfinding {
 			throw new System.Exception ("This method is deprecated. Please use AstarPath.active.Scan or if you really want this.ScanInternal which has the same functionality as this method had.");
 		}
 
-		/** Internal method for scanning graphs */
-		public void ScanInternal () {
-			ScanInternal (null);
-		}
-
 		/**
 		 * Scans the graph, called from AstarPath.ScanLoop.
 		 * Override this function to implement custom scanning logic
 		 * The statusCallback may be optionally called to show progress info in the editor
 		 */
-		public abstract void ScanInternal (OnScanStatus statusCallback);
+		public abstract IEnumerable<Progress> ScanInternal ();
 
 		/* Color to use for gizmos.
 		 * Returns a color to be used for the specified node with the current debug settings (editor only).
@@ -432,6 +428,10 @@ namespace Pathfinding {
 				}
 				return true;
 			});
+		}
+
+		/** Called when temporary meshes used in OnDrawGizmos need to be unloaded to prevent memory leaks */
+		internal virtual void UnloadGizmoMeshes () {
 		}
 	}
 

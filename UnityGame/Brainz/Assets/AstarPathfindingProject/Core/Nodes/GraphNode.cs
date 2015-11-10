@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-using Pathfinding;
 using Pathfinding.Serialization;
 
 namespace Pathfinding {
@@ -10,10 +9,22 @@ namespace Pathfinding {
 
 	public abstract class GraphNode {
 
+		/** Internal unique index */
 		private int nodeIndex;
+
+		/** Bitpacked field holding several pieces of data.
+		 * \see Walkable
+		 * \see Area
+		 * \see GraphIndex
+		 * \see Tag
+		 */
 		protected uint flags;
 
-		/** Penlty cost for walking on this node. This can be used to make it harder/slower to walk over certain areas. */
+		/** Penalty cost for walking on this node.
+		 * This can be used to make it harder/slower to walk over certain nodes.
+		 *
+		 * A penalty of 1000 (Int3.Precision) corresponds to the cost of walking one world unit.
+		 */
 		private uint penalty;
 
 		/** Constructor for a graph node. */
@@ -37,7 +48,7 @@ namespace Pathfinding {
 		 *
 		 * \warning Should only be called by graph classes on their own nodes
 		 */
-		public void Destroy () {
+		internal void Destroy () {
 			//Already destroyed
 			if (Destroyed) return;
 
@@ -61,6 +72,11 @@ namespace Pathfinding {
 		 */
 		public int NodeIndex { get {return nodeIndex;}}
 
+		/** Position of the node in world space.
+		 * \note The position is stored as an Int3, not a Vector3.
+		 * You can convert an Int3 to a Vector3 using an explicit conversion.
+		 * \code var v3 = (Vector3)node.position; \endcode
+		 */
 		public Int3 position;
 
 #region Constants
@@ -69,9 +85,9 @@ namespace Pathfinding {
 		/** Mask of the walkable bit. \see Walkable */
 		const uint FlagsWalkableMask = 1 << FlagsWalkableOffset;
 
-		/** Start of region bits. \see Area */
+		/** Start of area bits. \see Area */
 		const int FlagsAreaOffset = 1;
-		/** Mask of region bits. \see Area */
+		/** Mask of area bits. \see Area */
 		const uint FlagsAreaMask = (131072-1) << FlagsAreaOffset;
 
 		/** Start of graph index bits. \see GraphIndex */
@@ -201,10 +217,10 @@ namespace Pathfinding {
 
 		/** Checks if this node has a connection to the specified node */
 		public virtual bool ContainsConnection (GraphNode node) {
-			//Simple but slow default implementation
+			// Simple but slow default implementation
 			bool contains = false;
-			GetConnections (delegate (GraphNode n) {
-				if (n == node) contains = true;
+			GetConnections (neighbour => {
+				contains |= neighbour == node;
 			});
 			return contains;
 		}

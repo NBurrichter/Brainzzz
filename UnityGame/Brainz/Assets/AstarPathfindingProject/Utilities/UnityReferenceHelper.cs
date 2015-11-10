@@ -1,5 +1,4 @@
 using UnityEngine;
-using Pathfinding;
 
 namespace Pathfinding {
 	[ExecuteInEditMode]
@@ -7,19 +6,19 @@ namespace Pathfinding {
 	 * Does nothing more than to hold a GUID value.
 	 */
 	public class UnityReferenceHelper : MonoBehaviour {
-		
+
 		[HideInInspector]
 		[SerializeField]
 		private string guid;
-		
+
 		public string GetGUID () {
 			return guid;
 		}
-		
+
 		public void Awake () {
 			Reset ();
 		}
-		
+
 		public void Reset () {
 			if (string.IsNullOrEmpty (guid)) {
 				guid = Pathfinding.Util.Guid.NewGuid ().ToString ();

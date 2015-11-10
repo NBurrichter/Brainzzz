@@ -1,4 +1,3 @@
-using Pathfinding;
 using System.Collections.Generic;
 using Pathfinding.Serialization;
 using UnityEngine;
@@ -89,13 +88,23 @@ namespace Pathfinding {
 
 		/** Enables or disables a connection in a specified direction on the graph.
 		 *	\see GetConnectionInternal
-		*/
+		 */
 		public void SetConnectionInternal (int dir, bool value) {
 			unchecked { gridFlags = (ushort)(gridFlags & ~((ushort)1 << GridFlagsConnectionOffset << dir) | (value ? (ushort)1 : (ushort)0) << GridFlagsConnectionOffset << dir); }
 		}
 
+		/** Sets the state of all grid connections.
+		 * \param connections a bitmask of the connections (bit 0 is the first connection, etc.).
+		 *
+		 * \see SetConnectionInternal
+		 */
+		public void SetAllConnectionInternal (int connections) {
+			unchecked { gridFlags = (ushort)((gridFlags & ~GridFlagsConnectionMask) | (connections << GridFlagsConnectionOffset)); }
+		}
+
 		/** Disables all grid connections from this node.
-		 * \note Other nodes might still be able to get to this node. Therefore it is recommended to also disable the relevant connections on adjacent nodes.
+		 * \note Other nodes might still be able to get to this node.
+		 * Therefore it is recommended to also disable the relevant connections on adjacent nodes.
 		*/
 		public void ResetConnectionsInternal () {
 			unchecked {
@@ -171,6 +180,29 @@ namespace Pathfinding {
 			}
 
 			if ( connections != null ) for (int i=0;i<connections.Length;i++) del(connections[i]);
+		}
+
+		public Vector3 ClosestPointOnNode (Vector3 p) {
+			var gg = GetGridGraph(GraphIndex);
+
+			// Convert to graph space
+			p = gg.inverseMatrix.MultiplyPoint3x4(p);
+
+			// Nodes are offset 0.5 graph space nodes
+			float xf = position.x-0.5F;
+			float zf = position.z-0.5f;
+
+			// Calculate graph position of this node
+			int x = nodeInGridIndex % gg.width;
+			int z = nodeInGridIndex / gg.width;
+
+			// Handle the y coordinate separately
+			float y = gg.inverseMatrix.MultiplyPoint3x4((Vector3)p).y;
+
+			var closestInGraphSpace = new Vector3(Mathf.Clamp(xf,x-0.5f,x+0.5f)+0.5f, y, Mathf.Clamp(zf,z-0.5f,z+0.5f)+0.5f);
+
+			// Convert to world space
+			return gg.matrix.MultiplyPoint3x4 (closestInGraphSpace);
 		}
 
 		public override bool GetPortal (GraphNode other, List<Vector3> left, List<Vector3> right, bool backwards)

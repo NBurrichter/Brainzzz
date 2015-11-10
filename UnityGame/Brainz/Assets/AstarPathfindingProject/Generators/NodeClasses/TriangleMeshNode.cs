@@ -1,5 +1,4 @@
 using UnityEngine;
-using Pathfinding;
 using Pathfinding.Serialization;
 
 namespace Pathfinding {
@@ -377,13 +376,11 @@ namespace Pathfinding {
 			return indices.Length;
 		}
 
-		public override Vector3 ClosestPointOnNode (Vector3 p)
-		{
+		public override Vector3 ClosestPointOnNode (Vector3 p) {
 			throw new System.NotImplementedException ();
 		}
 
-		public override Vector3 ClosestPointOnNodeXZ (Vector3 p)
-		{
+		public override Vector3 ClosestPointOnNodeXZ (Vector3 p) {
 			throw new System.NotImplementedException ();
 		}
 

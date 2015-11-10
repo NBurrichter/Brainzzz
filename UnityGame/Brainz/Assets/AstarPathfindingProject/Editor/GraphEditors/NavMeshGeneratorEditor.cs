@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using Pathfinding;
 
 namespace Pathfinding {
 	[CustomGraphEditor (typeof(NavMeshGraph),"NavMeshGraph")]

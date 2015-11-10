@@ -44,10 +44,10 @@ public class DynamicGridObstacle : MonoBehaviour {
 		//Perform update checks while there is a collider attached to the GameObject
 		while (col) {
 			
-			while (isWaitingForUpdate) {
+			while (isWaitingForUpdate || AstarPath.active.isScanning) {
 				yield return new WaitForSeconds (checkTime);
 			}
-			
+
 			//The current bounds
 			Bounds newBounds = col.bounds;
 			

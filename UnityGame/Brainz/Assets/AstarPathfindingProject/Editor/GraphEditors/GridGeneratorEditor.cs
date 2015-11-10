@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEditor;
-using Pathfinding;
 using Pathfinding.Serialization.JsonFx;
 
 namespace Pathfinding {
@@ -53,13 +52,9 @@ namespace Pathfinding {
 			var graph = target as GridGraph;
 
 			DrawFirstSection (graph);
-
 			Separator ();
-
 			DrawMiddleSection (graph);
-
 			Separator ();
-
 			DrawCollisionEditor (graph.collision);
 
 			if ( graph.collision.use2D ) {
@@ -69,7 +64,6 @@ namespace Pathfinding {
 			}
 
 			Separator ();
-
 			DrawLastSection (graph);
 		}
 
@@ -347,7 +341,6 @@ namespace Pathfinding {
 
 		/** Draws the inspector for a \link Pathfinding.GraphCollision GraphCollision class \endlink */
 		protected virtual void DrawCollisionEditor (GraphCollision collision) {
-
 			collision = collision ?? new GraphCollision ();
 
 			DrawUse2DPhysics (collision);
@@ -484,13 +477,10 @@ namespace Pathfinding {
 			Matrix4x4 inversed = savedMatrix.inverse;
 
 			Handles.color = AstarColor.BoundsHandles;
-
 			Handles.DrawCapFunction cap = Handles.CylinderCap;
 
 			Vector2 extents = graph.unclampedSize*0.5F;
-
 			Vector3 center = inversed.MultiplyPoint3x4 (graph.center);
-
 
 			if (Tools.current == Tool.Scale) {
 				const float HandleScale = 0.1f;

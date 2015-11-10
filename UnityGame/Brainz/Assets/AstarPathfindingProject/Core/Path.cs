@@ -2,7 +2,6 @@
 
 using UnityEngine;
 using System.Collections;
-using Pathfinding;
 using System.Collections.Generic;
 
 namespace Pathfinding {
@@ -89,7 +88,7 @@ namespace Pathfinding {
 		internal bool recycled;
 
 		/** True if the Reset function has been called.
-		 * Used to allert users when they are doing something wrong.
+		 * Used to alert users when they are doing something wrong.
 		 */
 		protected bool hasBeenReset;
 
@@ -215,16 +214,19 @@ yield return StartCoroutine (p.WaitForPath ());
 			while (GetState () != PathState.Returned) yield return null;
 		}
 
+		/** Estimated cost from the specified node to the target.
+		 * \see https://en.wikipedia.org/wiki/A*_search_algorithm
+		 */
 		public uint CalculateHScore (GraphNode node) {
-			uint v1;
+			uint h;
 			switch (heuristic) {
 			case Heuristic.Euclidean:
-				v1 = (uint)(((GetHTarget () - node.position).costMagnitude)*heuristicScale);
-				return v1;
+				h = (uint)(((GetHTarget () - node.position).costMagnitude)*heuristicScale);
+				return h;
 			case Heuristic.Manhattan:
 				Int3 p2 = node.position;
-				v1 = (uint)((System.Math.Abs (hTarget.x-p2.x) + System.Math.Abs (hTarget.y-p2.y) + System.Math.Abs (hTarget.z-p2.z))*heuristicScale);
-				return v1;
+				h = (uint)((System.Math.Abs (hTarget.x-p2.x) + System.Math.Abs (hTarget.y-p2.y) + System.Math.Abs (hTarget.z-p2.z))*heuristicScale);
+				return h;
 			case Heuristic.DiagonalManhattan:
 				Int3 p = GetHTarget () - node.position;
 				p.x = System.Math.Abs (p.x);
@@ -232,8 +234,8 @@ yield return StartCoroutine (p.WaitForPath ());
 				p.z = System.Math.Abs (p.z);
 				int diag = System.Math.Min (p.x,p.z);
 				int diag2 = System.Math.Max (p.x,p.z);
-				v1 = (uint)((((14*diag)/10) + (diag2-diag) + p.y) * heuristicScale);
-				return v1;
+				h = (uint)((((14*diag)/10) + (diag2-diag) + p.y) * heuristicScale);
+				return h;
 			}
 			return 0U;
 		}
@@ -299,7 +301,6 @@ yield return StartCoroutine (p.WaitForPath ());
 
 		/** Threadsafe increment of the state */
 		public void AdvanceState (PathState s) {
-
 			lock (stateLock) {
 				state = (PathState)System.Math.Max ((int)state, (int)s);
 			}
@@ -318,11 +319,16 @@ yield return StartCoroutine (p.WaitForPath ());
 // What it does is that it disables the LogError function if ASTAR_NO_LOGGING is enabled
 // since the DISABLED define will never be enabled
 // Ugly way of writing Conditional("!ASTAR_NO_LOGGING")
-		public void LogError (string msg) {
+		internal void LogError (string msg) {
+#if !UNITY_EDITOR
 			// Optimize for release builds
-			if (!(!AstarPath.isEditor && AstarPath.active.logPathResults == PathLog.None)) {
+			// If no path logging is enabled
+			// don't append to the error log string
+			// to reduce allocations
+			if (AstarPath.active.logPathResults != PathLog.None) {
 				_errorLog += msg;
 			}
+#endif
 
 			if (AstarPath.active.logPathResults != PathLog.None && AstarPath.active.logPathResults != PathLog.InGame) {
 				Debug.LogWarning (msg);
@@ -332,7 +338,7 @@ yield return StartCoroutine (p.WaitForPath ());
 		/** Logs an error and calls Error().
 		 * This is called only if something is very wrong or the user is doing something he/she really should not be doing.
 		 */
-		public void ForceLogError (string msg) {
+		internal void ForceLogError (string msg) {
 			Error();
 
 			_errorLog += msg;
@@ -345,11 +351,16 @@ yield return StartCoroutine (p.WaitForPath ());
 		  *
 		  * \note If AstarPath.logPathResults is PathLog.None and this is a standalone player, nothing will be logged as an optimization.
 		  */
-		public void Log (string msg) {
+		internal void Log (string msg) {
+#if !UNITY_EDITOR
 			// Optimize for release builds
-			if (!(!AstarPath.isEditor && AstarPath.active.logPathResults == PathLog.None)) {
+			// If no path logging is enabled
+			// don't append to the error log string
+			// to reduce allocations
+			if (AstarPath.active.logPathResults != PathLog.None) {
 				_errorLog += msg;
 			}
+#endif
 		}
 
 		/** Aborts the path because of an error.
@@ -633,7 +644,9 @@ public override void Recycle () {
 				text.Append (errorLog);
 			}
 
-			if (logMode == PathLog.Heavy && !AstarPath.IsUsingMultithreading ) {
+			// Can only print this from the Unity thread
+			// since otherwise an exception might be thrown
+			if (logMode == PathLog.Heavy && !AstarPath.active.IsUsingMultithreading ) {
 				text.Append ("\nCallback references ");
 				if (callback != null) text.Append(callback.Target.GetType().FullName).AppendLine();
 				else text.AppendLine ("NULL");

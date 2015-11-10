@@ -1,9 +1,8 @@
 using System.Threading;
-using Pathfinding;
 
 namespace Pathfinding {
 	/** Queue of paths to be processed by the system */
-	public class ThreadControlQueue {
+	class ThreadControlQueue {
 
 		public class QueueTerminationException : System.Exception {
 		}
@@ -177,10 +176,7 @@ namespace Pathfinding {
 				while (blocked || starving) {
 					blockedReceivers++;
 
-					if (blockedReceivers == numReceivers) {
-						//Last alive
-
-					} else if (blockedReceivers > numReceivers) {
+					if (blockedReceivers > numReceivers) {
 						throw new System.InvalidOperationException ("More receivers are blocked than specified in constructor ("+blockedReceivers + " > " + numReceivers+")");
 					}
 

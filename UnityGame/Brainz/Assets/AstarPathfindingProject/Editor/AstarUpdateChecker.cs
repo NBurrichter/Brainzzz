@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEditor;
 using System.Collections.Generic;
-using Pathfinding;
 using System.Linq;
 
 namespace Pathfinding {

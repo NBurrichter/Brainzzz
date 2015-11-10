@@ -137,9 +137,7 @@ namespace Pathfinding {
 		
 		/** Loads the graphs from memory, will load cached graphs if any exists */
 		public void Awake () {
-			
 			graphs = new NavGraph[0];
-			/* End default values */
 			
 			if (cacheStartup && file_cachedStartup != null) {
 				LoadFromCache ();
@@ -244,7 +242,6 @@ namespace Pathfinding {
 		 * A warning will be logged if all deserializers failed.
 		  */
 		public void DeserializeGraphs (byte[] bytes) {
-			
 			AstarPath.active.BlockUntilPathQueueBlocked();
 			
 			try {

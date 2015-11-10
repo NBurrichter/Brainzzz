@@ -1,7 +1,40 @@
 /** \page changelog Changelog
 
-- TODO
-	- http://forum.arongranberg.com/t/bug-tiled-recast-scan-ignores-graph-bounds/2137
+- 3.7.5 (2015-10-05)
+	- Breaking changes
+		- Graph updates to navmesh and recast graphs now also check that the nodes are contained in the supplied bounding box on the Y axis.
+			If the bounds you have been using were very short along the Y axis, you may have to change them so that they cover the nodes they should update.
+	- Improvements
+		- Added GridNode.ClosestPointOnNode.
+		- Optimized GridGraph.CalculateConnections by approximately 20%.
+			This means slightly faster scans and graph updates.
+		- Implemented async scanning. AstarPath.active.ScanAsync is an IEnumerable that can be iterated over several frames
+			so that e.g a progress bar can be shown while calculating the graphs. Note that this does not guarantee
+			a good framerate, but at least you can show a progress bar.
+		- Implemented \link Pathfinding.ABPath.EndPointGridGraphSpecialCase special case for paths on grid graphs \endlink so that if you request a path to an unwalkable node with several
+			walkable nodes around it, it will now not pick the closest walkable node to the requested target point and find a path to that
+			but it will find the shortest path which goes to any of the walkable nodes around the unwalkable node.
+			\htmlonly <a href="images/abpath_grid_not_special.gif">Before</a>, <a href="images/abpath_grid_special.gif">After</a> \endhtmlonly.
+			This is a special case of the MultiTargetPath, for more complicated configurations of targets the multi target path needs to be used to be able to handle it correctly.
+	- Changes
+		- Refactored out large parts of the AstarPath class to separate smaller classes to improve readability and increase encapsulation.
+		- AstarPath.IsUsingMultithreading and NumbParallelThreads have been made non-static.
+		- AstarPath.inGameDebugPath is now private.
+		- AstarPath.lastScanTime is now read only.
+		- Graph updates to navmesh and recast graphs now also check that the nodes are contained in the supplied bounding box on the Y axis.
+			If the bounds you have been using were very short along the Y axis, you may have to change them so that they cover the nodes they should update.
+	- Fixes
+		- Fixed stack overflow exception when a pivot root with no children was assigned in the heuristic optimization settings.
+		- Fixed scanning in the editor could sometimes throw exceptions on new versions of Unity.
+			Exceptions contained the message "Trying to initialize a node when it is not safe to initialize any node".
+			This happened because Unity changed the EditorGUIUtility.DisplayProgressBar function to also call
+			OnSceneGUI and OnDrawGizmos and that interfered with the scanning.
+		- Fixed paths could be returned with invalid nodes if the path was calculated right
+			before a call to AstarPath.Scan() was done. This could result in
+			the funnel modifier becoming really confused and returning a straight line to the
+			target instead of avoiding obstacles.
+		- Fixed sometimes not being able to use the Optimizations tab on newer versions of Unity.
+		- Fixed AstarWorkItem.init could be called multiple times.
 
 - 3.7.4 (2015-09-13)
 	- Changes

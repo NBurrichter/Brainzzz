@@ -75,7 +75,7 @@ public class ProceduralGridMover : MonoBehaviour {
 		// Check the distance in graph space
 		// We only care about the X and Z axes since the Y axis is the "height" coordinate of the nodes (in graph space)
 		// We only care about the plane that the nodes are placed in
-		if ( AstarMath.SqrMagnitudeXZ(graphCenterInGraphSpace, targetPositionInGraphSpace) > updateDistance*updateDistance ) {
+		if (AstarMath.SqrMagnitudeXZ(graphCenterInGraphSpace, targetPositionInGraphSpace) > updateDistance*updateDistance) {
 			UpdateGraph ();
 		}
 	}
@@ -112,10 +112,17 @@ public class ProceduralGridMover : MonoBehaviour {
 		// (hence the IEnumerator coroutine)
 		// to avoid too large FPS drops
 		IEnumerator ie = UpdateGraphCoroutine ();
-		AstarPath.active.AddWorkItem (new AstarPath.AstarWorkItem (
-		force => {
+		AstarPath.active.AddWorkItem (new AstarWorkItem (
+		(context, force) => {
+			// Make sure the areas for the graph
+			// have been recalculated
+			// not doing this can cause pathfinding to fail
+			// This will be done after all work items
+			// have been completed
+			if (floodFill) context.QueueFloodFill();
+
 			// If force is true we need to calculate all steps at once
-			if ( force ) while ( ie.MoveNext () ) {}
+			if (force) while (ie.MoveNext ()) {}
 
 			// Calculate one step. True will be returned when there are no more steps
 			bool done = !ie.MoveNext ();
@@ -245,7 +252,7 @@ public class ProceduralGridMover : MonoBehaviour {
 			// that might have changed
 			for ( int z = r.ymin; z < r.ymax; z++ ) {
 				for ( int x = 0; x < width; x++ ) {
-					graph.CalculateConnections (nodes, x, z, nodes[z*width+x]);
+					graph.CalculateConnections (x, z, nodes[z*width+x]);
 				}
 			}
 	
@@ -255,7 +262,7 @@ public class ProceduralGridMover : MonoBehaviour {
 			// that might have changed
 			for ( int z = minz; z < maxz; z++ ) {
 				for ( int x = r.xmin; x < r.xmax; x++ ) {
-					graph.CalculateConnections (nodes, x, z, nodes[z*width+x]);
+					graph.CalculateConnections (x, z, nodes[z*width+x]);
 				}
 			}
 	
@@ -266,7 +273,7 @@ public class ProceduralGridMover : MonoBehaviour {
 			/** \todo Optimize to not traverse all nodes in the graph, only those at the edges */
 			for ( int z = 0; z < depth; z++ ) {
 				for ( int x = 0; x < width; x++ ) {
-					if ( x == 0 || z == 0 || x >= width-1 || z >= depth-1 ) graph.CalculateConnections (nodes, x, z, nodes[z*width+x]);
+					if ( x == 0 || z == 0 || x >= width-1 || z >= depth-1 ) graph.CalculateConnections (x, z, nodes[z*width+x]);
 				}
 			}
 			
@@ -286,13 +293,7 @@ public class ProceduralGridMover : MonoBehaviour {
 				}
 			}
 		}
-		
-		if ( floodFill ) {
-			yield return null;
-			// Make sure the areas for the graph
-			// have been recalculated
-			// not doing this can cause pathfinding to fail
-			AstarPath.active.QueueWorkItemFloodFill ();
-		}
+
+		yield return null;
 	}
 }

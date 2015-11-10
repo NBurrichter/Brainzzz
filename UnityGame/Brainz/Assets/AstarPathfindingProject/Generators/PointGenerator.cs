@@ -229,7 +229,9 @@ namespace Pathfinding {
 			// A* Pathfinding Project Pro Only
 		}
 
-		public override void ScanInternal (OnScanStatus statusCallback) {
+		public override IEnumerable<Progress> ScanInternal () {
+
+			yield return new Progress(0, "Searching for GameObjects");
 
 			if (root == null) {
 				//If there is no root object, try to find nodes with the specified tag instead
@@ -238,8 +240,10 @@ namespace Pathfinding {
 				if (gos == null) {
 					nodes = new PointNode[0];
 					nodeCount = 0;
-					return;
+					yield break;
 				}
+
+				yield return new Progress(0.1f, "Creating nodes");
 
 				//Create and set up the found nodes
 				nodes = new PointNode[gos.Length];
@@ -283,12 +287,19 @@ namespace Pathfinding {
 
 
 			if (maxDistance >= 0) {
-				//To avoid too many allocations, these lists are reused for each node
-				var connections = new List<PointNode>(3);
-				var costs = new List<uint>(3);
+				// To avoid too many allocations, these lists are reused for each node
+				var connections = new List<PointNode>();
+				var costs = new List<uint>();
 
-				//Loop through all nodes and add connections to other nodes
-				for (int i=0;i<nodes.Length;i++) {
+				// Report progress every N nodes
+				const int YieldEveryNNodes = 512;
+
+				// Loop through all nodes and add connections to other nodes
+				for (int i = 0; i < nodes.Length; i++) {
+
+					if (i % YieldEveryNNodes == 0) {
+						yield return new Progress(Mathf.Lerp(0.15f, 1, i/(float)nodes.Length), "Connecting nodes");
+					}
 
 					connections.Clear ();
 					costs.Clear ();
@@ -316,7 +327,10 @@ namespace Pathfinding {
 
 		/** Returns if the connection between \a a and \a b is valid.
 		 * Checks for obstructions using raycasts (if enabled) and checks for height differences.\n
-		 * As a bonus, it outputs the distance between the nodes too if the connection is valid
+		 * As a bonus, it outputs the distance between the nodes too if the connection is valid.
+		 *
+		 * \note This is not the same as checking if node a is connected to node b.
+		 * That should be done using a.ContainsConnection(b)
 		 */
 		public virtual bool IsValidConnection (GraphNode a, GraphNode b, out float dist) {
 			dist = 0;

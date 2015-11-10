@@ -1,5 +1,4 @@
 using UnityEngine;
-using Pathfinding;
 
 namespace Pathfinding {
 	[AddComponentMenu("Pathfinding/GraphUpdateScene")]
