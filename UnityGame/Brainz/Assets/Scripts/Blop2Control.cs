@@ -10,7 +10,7 @@ public class Blop2Control : MonoBehaviour
     private GameObject particleObject;
 
     // Use this for initialization
-    void Start()
+    public void Start()
     {
         this.gameObject.tag = "Blop2";
         rb = GetComponent<Rigidbody>();
@@ -95,6 +95,13 @@ public class Blop2Control : MonoBehaviour
             {
                 c.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(false);
             }
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                c.gameObject.GetComponent<FindTestPath>().enabled = false;
+                c.gameObject.GetComponent<Seeker>().enabled = false;
+                c.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                c.gameObject.GetComponent<CharacterController>().enabled = false;
+            }
         }
 
 
@@ -168,10 +175,18 @@ public class Blop2Control : MonoBehaviour
         Destroy(this.gameObject);
         if (attachedObject)
         {
-            if (attachedObject.gameObject.name == "Son")
+            if (attachedObject.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
             {
                 Debug.Log("luke ich bin dein Vater");
                 attachedObject.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(true);
+            }
+            if (attachedObject.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                attachedObject.gameObject.GetComponent<FindTestPath>().enabled = true;
+                attachedObject.gameObject.GetComponent<FindTestPath>().Start();
+                attachedObject.gameObject.GetComponent<Seeker>().enabled = true;
+                attachedObject.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                attachedObject.gameObject.GetComponent<CharacterController>().enabled = true;
             }
 
             attachedObject.tag = "Untagged";

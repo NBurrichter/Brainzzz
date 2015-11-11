@@ -85,7 +85,7 @@ NavMeshSettings:
     minRegionArea: 2
     cellSize: .166666672
     manualCellSize: 0
-  m_NavMeshData: {fileID: 23800000, guid: 639b4a9db729fc0439bd13b0b3b8748f, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 585c59830108fec4d9960e122d798658, type: 2}
 --- !u!1 &23020473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,7 +1272,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 64597080}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.6700001, y: 0, z: .159999996}
+  m_LocalPosition: {x: 8.40999985, y: .0979999974, z: 11.6999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2097609962}
@@ -9013,7 +9013,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1699112556}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.0499992, y: -1.49000001, z: -.400000006}
+  m_LocalPosition: {x: 17.9300003, y: -1.49000001, z: -.400000006}
   m_LocalScale: {x: 3.18122172, y: 3.32248616, z: 3.70460987}
   m_Children:
   - {fileID: 861710187}
