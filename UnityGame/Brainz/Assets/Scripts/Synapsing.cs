@@ -4,10 +4,10 @@ using System.Collections;
 public class Synapsing : MonoBehaviour
 {
     [SerializeField]
-    private float merginForce;
+    private float fMerginForceMultiplier;
 
     public PhysicMaterial noFrictionMaterial;
-    public float blopMass;
+    public float fBlopMass;
     public int noCollisionLayer;
 
     GameObject Blop1;
@@ -119,8 +119,8 @@ public class Synapsing : MonoBehaviour
 
             Vector3 dir = Blop1.transform.position - Blop2.transform.position;
 
-            blopOneBody.AddForce(-dir * merginForce * timeSinceStart);
-            blopTwoBody.AddForce(dir * merginForce * timeSinceStart);
+            blopOneBody.AddForce(-dir * fMerginForceMultiplier * timeSinceStart);
+            blopTwoBody.AddForce(dir * fMerginForceMultiplier * timeSinceStart);
         }
 
         yield return new WaitForSeconds(0.1f);

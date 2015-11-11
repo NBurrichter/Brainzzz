@@ -88,7 +88,7 @@ public class Blop2Control : MonoBehaviour
             rb.mass = 0;
             otherBody.drag = 0;
 
-            otherBody.mass = Synapsing.Singleton.blopMass;
+            otherBody.mass = Synapsing.Singleton.fBlopMass;
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
@@ -126,11 +126,7 @@ public class Blop2Control : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Blop1_Attachment")
-        {
-            GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
-            goBlop1.GetComponent<Blop1Control>().StopMergin();
-        }
+
 
         if (attachedObject != null)
         {
@@ -144,6 +140,14 @@ public class Blop2Control : MonoBehaviour
                 StopMergin();
                 GameObject go = GameObject.FindGameObjectWithTag("Blop1");
                 go.GetComponent<Blop1Control>().StopMergin();
+            }
+        }
+        else
+        {
+            if (collider.gameObject.tag == "Blop1_Attachment")
+            {
+                GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
+                goBlop1.GetComponent<Blop1Control>().StopMergin();
             }
         }
     }
