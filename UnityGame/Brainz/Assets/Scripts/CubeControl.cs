@@ -106,7 +106,6 @@ public class CubeControl : MonoBehaviour
         // collision with other attachment
         if (this.gameObject.tag == "Blop1_Attachment" && c.gameObject.tag == "Blop2_Attachment")
         {
-            Debug.Log("Stop Mergin");
             bIsMergin = false;
             Blop1Script.StopMergin();
             Blop2Script.StopMergin();

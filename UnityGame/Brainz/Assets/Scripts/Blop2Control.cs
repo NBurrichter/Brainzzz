@@ -119,11 +119,7 @@ public class Blop2Control : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Blop1_Attachment")
-        {
-            GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
-            goBlop1.GetComponent<Blop1Control>().StopMergin();
-        }
+
 
         if (attachedObject != null)
         {
@@ -137,6 +133,14 @@ public class Blop2Control : MonoBehaviour
                 StopMergin();
                 GameObject go = GameObject.FindGameObjectWithTag("Blop1");
                 go.GetComponent<Blop1Control>().StopMergin();
+            }
+        }
+        else
+        {
+            if (collider.gameObject.tag == "Blop1_Attachment")
+            {
+                GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
+                goBlop1.GetComponent<Blop1Control>().StopMergin();
             }
         }
     }

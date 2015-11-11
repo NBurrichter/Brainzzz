@@ -1006,9 +1006,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87184ae42d21cbb4da8de14bd9edfaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  merginForce: .150000006
+  fMerginForceMultiplier: 20
   noFrictionMaterial: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
-  blopMass: .00999999978
+  fBlopMass: 1
   noCollisionLayer: 8
 --- !u!81 &1620039732
 AudioListener:
@@ -2277,7 +2277,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1708360194}
   serializedVersion: 2
-  m_Mass: 1000
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1

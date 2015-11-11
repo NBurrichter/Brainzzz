@@ -17,6 +17,8 @@ public class Grapple : MonoBehaviour
 
     private IEnumerator grappleCoroutine;
 
+    private int iBlopToDragTo;
+
     //grapple Particles
     private ParticleSystem grapplePaticleSystem;
     private GameObject grappleParticleObject;
@@ -42,16 +44,20 @@ public class Grapple : MonoBehaviour
     void Update()
     {
         SearchBlops();
-        int i = GetBlopToDragTo();
+        
+        if (!isGrappling)
+        {
+            iBlopToDragTo = GetBlopToDragTo();
+        }
 
         if (Input.GetButtonDown("Grapple"))
         {
 
             //start grappeling
 
-            if (i != 0 && !isGrappling)
+            if (iBlopToDragTo != 0 && !isGrappling)
             {
-                grappleCoroutine = DragToBlop(i);
+                grappleCoroutine = DragToBlop(iBlopToDragTo);
                 goPlayer.GetComponent<PlayerControl>().SetGrapple(true);
                 StartCoroutine(grappleCoroutine);
                 isGrappling = true;
@@ -61,6 +67,7 @@ public class Grapple : MonoBehaviour
                 if (isGrappling)
                 {
                     goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
+                    Debug.Log("manual stop of the coroutine");
                     StopCoroutine(grappleCoroutine);
                     isGrappling = false;
                     grapplePaticleSystem.Stop();
@@ -73,7 +80,7 @@ public class Grapple : MonoBehaviour
         if(isGrappling)
         {
             // grapple to bBlop 1
-            if (i == 1)
+            if (iBlopToDragTo == 1)
             {
                 grappleParticleObject.transform.LookAt(goBlopOne.transform.position);
                 dist = Vector3.Distance(transform.position, goBlopOne.transform.position);
@@ -82,7 +89,7 @@ public class Grapple : MonoBehaviour
                 grapplePaticleSystem.Play(true);
             }
             // Grapple to Blop 2
-            if (i == 2)
+            if (iBlopToDragTo == 2)
             {
                 grappleParticleObject.transform.LookAt(goBlopTwo.transform.position);
                 dist = Vector3.Distance(transform.position, goBlopTwo.transform.position);
@@ -109,11 +116,12 @@ public class Grapple : MonoBehaviour
 
         }
 
-        if (i == 0)
+        if (iBlopToDragTo == 0)
         {
             if (grappleCoroutine != null)
             {
                 goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
+                Debug.Log("Stop cause no Blop to drag to");
                 StopCoroutine(grappleCoroutine);
             }
         }
@@ -215,10 +223,12 @@ public class Grapple : MonoBehaviour
         if (col.gameObject.tag == "Blop1" || col.gameObject.tag == "Blop2" ||
            col.gameObject.tag == "Blop1_Attachment" || col.gameObject.tag == "Blop2_Attachment")
         {
+            
             if (grappleCoroutine != null)
             {
+                Debug.Log("Stop coroutine cause collision" + col.gameObject.name);
                 StopCoroutine(grappleCoroutine);
-                isGrappling = false;
+                isGrappling = false; 
                 grapplePaticleSystem.Stop();
                 grapplePaticleSystem.Clear();
             }
