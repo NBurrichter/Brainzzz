@@ -58,11 +58,14 @@ public class Grapple : MonoBehaviour
             }
             else
             {
-                goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
-                StopCoroutine(grappleCoroutine);
-                isGrappling = false;
-                grapplePaticleSystem.Stop();
-                grapplePaticleSystem.Clear();
+                if (isGrappling)
+                {
+                    goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
+                    StopCoroutine(grappleCoroutine);
+                    isGrappling = false;
+                    grapplePaticleSystem.Stop();
+                    grapplePaticleSystem.Clear();
+                }
             }
 
         }

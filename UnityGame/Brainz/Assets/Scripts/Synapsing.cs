@@ -3,40 +3,53 @@ using System.Collections;
 
 public class Synapsing : MonoBehaviour
 {
-	[SerializeField]
-	private float merginForce;
+    [SerializeField]
+    private float merginForce;
 
-	public PhysicMaterial noFrictionMaterial;
-	public float blopMass;
-	public int noCollisionLayer;
+    public PhysicMaterial noFrictionMaterial;
+    public float blopMass;
+    public int noCollisionLayer;
 
-	GameObject Blop1;
-	GameObject Blop2;
+    GameObject Blop1;
+    GameObject Blop2;
 
     Blop1Control Blop1Script;
     Blop2Control Blop2Script;
 
-	private bool bMergeEnabled;
-	private IEnumerator merginCoroutine;
+    private bool bMergeEnabled;
+    private IEnumerator merginCoroutine;
 
-	private Rigidbody blopOneBody;
-	private Rigidbody blopTwoBody;
+    private Rigidbody blopOneBody;
+    private Rigidbody blopTwoBody;
 
-	public static Synapsing Singleton;
+    public static Synapsing Singleton;
 
-	// Use this for initialization
-	void Start ()
-	{
-		Singleton= this;
-		bMergeEnabled = false;
-	}
-	
-	// Update is called once per frame
-	void Update ()
-	{
-		if (Input.GetButtonDown ("Mergin")) 
-		{
-			SearchForBlops();
+    // Use this for initialization
+    void Start()
+    {
+        Singleton = this;
+        bMergeEnabled = false;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetButtonDown("Mergin"))
+        {
+            SearchForBlops();
+
+            if (Blop1 == null)
+                return;
+
+            if (Blop2 == null)
+                return;
+
+            if (Blop1.GetComponent<Blop1Control>().HasAttachedObject() == false)
+                return;
+
+            if (Blop2.GetComponent<Blop2Control>().HasAttachedObject() == false)
+                return;
+
 
             LifetimeAdjust particleScript1 = Blop1.GetComponentInChildren<LifetimeAdjust>();
             particleScript1.target = Blop2;
@@ -48,83 +61,85 @@ public class Synapsing : MonoBehaviour
             particleSystem2.Play();
 
 
-            if (bMergeEnabled == false) {
-				bMergeEnabled = true;
-			}
-		}
+            if (bMergeEnabled == false)
+            {
+                bMergeEnabled = true;
+            }
+        }
 
-		if (bMergeEnabled == true && merginCoroutine == null) {
-			merginCoroutine = Mergin ();
-			StartCoroutine(merginCoroutine);
-		}
-			
-	}
+        if (bMergeEnabled == true && merginCoroutine == null)
+        {
+            merginCoroutine = Mergin();
+            StartCoroutine(merginCoroutine);
+        }
+
+    }
 
 
     /// <summary>
     /// searches for the two Blops
     /// </summary>
 	private void SearchForBlops()
-	{
-		if (Blop1 && Blop2)
-		{
-			return;
-		}
+    {
+        if (Blop1 && Blop2)
+        {
+            return;
+        }
 
-		try {	
-			Blop1 = GameObject.FindGameObjectWithTag ("Blop1");
-			Blop2 = GameObject.FindGameObjectWithTag ("Blop2");
+        if (GameObject.FindGameObjectWithTag("Blop1") == null)
+            return;
+        Blop1 = GameObject.FindGameObjectWithTag("Blop1");
 
-            Blop1Script = Blop1.GetComponent<Blop1Control>();
-            Blop2Script = Blop2.GetComponent<Blop2Control>();
+        if (GameObject.FindGameObjectWithTag("Blop2") == null)
+            return;
+        Blop2 = GameObject.FindGameObjectWithTag("Blop2");
 
-			blopOneBody = Blop1.GetComponent<Rigidbody>();
-			blopTwoBody = Blop2.GetComponent<Rigidbody>();
-			
-		} catch (UnityException e) {
-            Debug.Log("Blop1 + Blop 2 :" + e);
-			Blop1 = null;
-			Blop2 = null;
+        Blop1Script = Blop1.GetComponent<Blop1Control>();
+        Blop2Script = Blop2.GetComponent<Blop2Control>();
 
-			print ("No two Blops");
-		}
-	}
+        blopOneBody = Blop1.GetComponent<Rigidbody>();
+        blopTwoBody = Blop2.GetComponent<Rigidbody>();
 
-	IEnumerator Mergin ()
-	{
-		float timeSinceStart = 1f;
+ 
+}
+	
 
-		while (true) 
-		{
-			timeSinceStart += Time.deltaTime;
+	IEnumerator Mergin()
+{
+    float timeSinceStart = 1f;
 
-            // check if Blops are existing and they have an attachment
-			if (Blop1 != null && Blop2 != null && Blop1Script.HasAttachedObject() == true && Blop2Script.HasAttachedObject() == true  ) {
-            
+    while (true)
+    {
+        timeSinceStart += Time.deltaTime;
 
-				Vector3 dir = Blop1.transform.position - Blop2.transform.position;
-
-				blopOneBody.AddForce(-dir * merginForce * timeSinceStart);
-				blopTwoBody.AddForce(dir * merginForce * timeSinceStart);
-			}
-
-			yield return new WaitForSeconds(0.1f);
-		}
-	}
+        // check if Blops are existing and they have an attachment
+        if (Blop1 != null && Blop2 != null && Blop1Script.HasAttachedObject() == true && Blop2Script.HasAttachedObject() == true)
+        {
 
 
-    /// <summary>
-    /// stop the mergin process
-    /// </summary>
-	public void StopMergin ()
-	{
-		bMergeEnabled = false;
+            Vector3 dir = Blop1.transform.position - Blop2.transform.position;
 
-		if (merginCoroutine != null)
-		{
-		StopCoroutine(merginCoroutine);
-		}
+            blopOneBody.AddForce(-dir * merginForce * timeSinceStart);
+            blopTwoBody.AddForce(dir * merginForce * timeSinceStart);
+        }
 
-			merginCoroutine = null;
-	}
+        yield return new WaitForSeconds(0.1f);
+    }
+}
+
+
+/// <summary>
+/// stop the mergin process
+/// </summary>
+public void StopMergin()
+{
+    bMergeEnabled = false;
+
+    if (merginCoroutine != null)
+    {
+        StopCoroutine(merginCoroutine);
+    }
+
+    merginCoroutine = null;
+}
 }
