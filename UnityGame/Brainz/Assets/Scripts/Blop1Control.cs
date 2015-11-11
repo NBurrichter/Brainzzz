@@ -57,7 +57,8 @@ public class Blop1Control : MonoBehaviour
     void OnCollisionEnter(Collision c)
 	{
 
-		if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground") &&
+		if (!attachedObject && !c.gameObject.CompareTag("P
+            ") && !c.gameObject.CompareTag("Ground") &&
             !c.gameObject.CompareTag("Blop1") && !c.gameObject.CompareTag("Blop2"))
         {
             if (c.gameObject.GetComponent<CubeControl>() == null)
