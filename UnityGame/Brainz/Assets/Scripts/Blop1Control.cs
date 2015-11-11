@@ -176,10 +176,19 @@ public class Blop1Control : MonoBehaviour
         Destroy(this.gameObject);
         if (attachedObject)
         {
-            if(attachedObject.gameObject.name == "Son")
+            if(attachedObject.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
             {
                 Debug.Log("luke ich bin dein Vater");
                 attachedObject.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(true);
+            }
+            if (attachedObject.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                Debug.Log("Meep");
+                attachedObject.gameObject.GetComponent<FindTestPath>().enabled = true;
+                attachedObject.gameObject.GetComponent<FindTestPath>().Start();
+                attachedObject.gameObject.GetComponent<Seeker>().enabled = true;
+                attachedObject.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+                attachedObject.gameObject.GetComponent<CharacterController>().enabled = true;
             }
 
             attachedObject.tag = "Untagged";

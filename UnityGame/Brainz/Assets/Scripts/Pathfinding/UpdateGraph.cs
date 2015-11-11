@@ -12,7 +12,7 @@ public class UpdateGraph : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            AstarPath.active.Scan();s
+            AstarPath.active.Scan();
         }
     }
 }
