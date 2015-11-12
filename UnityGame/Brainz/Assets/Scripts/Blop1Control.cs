@@ -124,14 +124,13 @@ public class Blop1Control : MonoBehaviour
         attachedObject.tag = "Untagged";
         Destroy(attachedObject);
 
-        //Re-enable collision between attached objects (can maybe be deleted)
-        attachedObject.gameObject.layer = 0;
+
     }
 
 
     void OnTriggerEnter(Collider collider)
 	{
-
+        
 
         if (attachedObject != null)
         {
@@ -162,10 +161,11 @@ public class Blop1Control : MonoBehaviour
     /// </summary>
     private void DeletePreviousBlops()
     {
-        for(int i = 0;i<=goBlop1Array.Length-2;i++)
+        for (int i = 0;i<=goBlop1Array.Length-2;i++)
         {
             if (goBlop1Array[i] != null)
                 goBlop1Array[i].GetComponent<Blop1Control>().DestroyThisBlop();
+
         }
     }
 
@@ -196,8 +196,13 @@ public class Blop1Control : MonoBehaviour
 
             attachedObject.tag = "Untagged";
             Destroy(attachedObject);
-            //Re-enable collision between attached objects
-            attachedObject.gameObject.layer = 0;
+
+
+            if (Grapple.Si_Grappple.IsGrappling() == true)
+            {
+                Grapple.Si_Grappple.StopGrapple();
+            }
+
         }
 
 

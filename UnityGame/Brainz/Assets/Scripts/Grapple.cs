@@ -66,12 +66,11 @@ public class Grapple : MonoBehaviour
             {
                 if (isGrappling)
                 {
-                    goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
-                    Debug.Log("manual stop of the coroutine");
-                    StopCoroutine(grappleCoroutine);
-                    isGrappling = false;
-                    grapplePaticleSystem.Stop();
-                    grapplePaticleSystem.Clear();
+                    StopGrapple();
+                    if (goBlopOne != null)
+                        Destroy(goBlopOne);
+                    if (goBlopTwo != null)
+                        Destroy(goBlopTwo);
                 }
             }
 
@@ -121,7 +120,6 @@ public class Grapple : MonoBehaviour
             if (grappleCoroutine != null)
             {
                 goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
-                Debug.Log("Stop cause no Blop to drag to");
                 StopCoroutine(grappleCoroutine);
             }
         }
@@ -220,22 +218,39 @@ public class Grapple : MonoBehaviour
     //Stop corotine if collision with a blop or its attachment
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Blop1" || col.gameObject.tag == "Blop2" ||
-           col.gameObject.tag == "Blop1_Attachment" || col.gameObject.tag == "Blop2_Attachment")
+        if (isGrappling == true)
         {
-            
-            if (grappleCoroutine != null)
+            if (col.gameObject.tag == "Blop1" || col.gameObject.tag == "Blop2" ||
+               col.gameObject.tag == "Blop1_Attachment" || col.gameObject.tag == "Blop2_Attachment")
             {
-                Debug.Log("Stop coroutine cause collision" + col.gameObject.name);
-                StopCoroutine(grappleCoroutine);
-                isGrappling = false; 
-                grapplePaticleSystem.Stop();
-                grapplePaticleSystem.Clear();
-            }
-            goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
-            grappleCoroutine = null;
+                if (col.gameObject.tag == "Blop1" || col.gameObject.tag == "Blop1_Attachment")
+                    Destroy(goBlopOne);
+                if (col.gameObject.tag == "Blop2" || col.gameObject.tag == "Blop2_Attachment")
+                    Destroy(goBlopTwo);
 
+                StopGrapple();
+
+            }
         }
+    }
+
+    public void StopGrapple()
+    {
+        if (grappleCoroutine != null)
+        {
+            StopCoroutine(grappleCoroutine);
+            isGrappling = false;
+            grapplePaticleSystem.Stop();
+            grapplePaticleSystem.Clear();
+        }
+        goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
+        grappleCoroutine = null;
+
+    }
+
+    public bool IsGrappling()
+    {
+        return isGrappling;
     }
 
 }
