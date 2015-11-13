@@ -82,4 +82,17 @@ public class FindTestPath : MonoBehaviour {
             return;
         }
     }
+
+    public void StartCouroutineFindPath()
+    {
+        StartCoroutine(FindNewPath());
+    }
+
+    IEnumerator FindNewPath()
+    {
+        yield return new WaitForSeconds(1);
+        Start();
+
+    }
+
 }
