@@ -24,6 +24,9 @@ public class Synapsing : MonoBehaviour
 
     public static Synapsing Singleton;
 
+    public LayerMask mask = -1;  // the layer, the walls should be in
+
+
     // Use this for initialization
     void Start()
     {
@@ -114,9 +117,19 @@ public class Synapsing : MonoBehaviour
             // check if Blops are existing and they have an attachment
             if (Blop1 != null && Blop2 != null && Blop1Script.HasAttachedObject() == true && Blop2Script.HasAttachedObject() == true)
             {
-
-
+                
                 Vector3 dir = Blop1.transform.position - Blop2.transform.position;
+
+                // Raycast hit may be deletet if no use
+                RaycastHit hit;
+                // Raycast to catch if there is a wall between the cubes
+                if (Physics.Raycast(Blop1.transform.position, -dir.normalized,out hit,dir.magnitude,mask.value))
+                {
+                    // Work here if there is a wall between
+                    Debug.Log("Hit something");
+
+                }
+
 
                 blopOneBody.AddForce(-dir * fMerginForceMultiplier * timeSinceStart);
                 blopTwoBody.AddForce(dir * fMerginForceMultiplier * timeSinceStart);

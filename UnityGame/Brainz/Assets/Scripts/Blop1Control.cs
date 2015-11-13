@@ -156,6 +156,33 @@ public class Blop1Control : MonoBehaviour
         }
 	 }
 
+    void OnCollisionStay(Collision col)
+    {
+        if (attachedObject != null)
+        {
+            if (col.gameObject.tag == "Blop2")
+            {
+                StopMergin();
+            }
+
+            if (col.gameObject.tag == "Blop2_Attachment")
+            {
+                StopMergin();
+                GameObject go = GameObject.FindGameObjectWithTag("Blop2");
+                go.GetComponent<Blop2Control>().StopMergin();
+            }
+        }
+        else
+        {
+            if (col.gameObject.tag == "Blop2_Attachment")
+            {
+                GameObject goBlop2 = GameObject.FindGameObjectWithTag("Blop2");
+                goBlop2.GetComponent<Blop2Control>().StopMergin();
+            }
+        }
+
+    }
+
     /// <summary>
     /// Delete all Blops that were shot previously
     /// </summary>

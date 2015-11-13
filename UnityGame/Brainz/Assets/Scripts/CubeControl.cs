@@ -127,4 +127,28 @@ public class CubeControl : MonoBehaviour
             Blop2Script.StopMergin();
         }
     }
+
+    void OnCollisionStay(Collision col)
+    {
+        // collision with other attachment
+        if (this.gameObject.tag == "Blop1_Attachment" && col.gameObject.tag == "Blop2_Attachment")
+        {
+            bIsMergin = false;
+            Blop1Script.StopMergin();
+            Blop2Script.StopMergin();
+            //Show particles to indicate that they are combined
+
+        }
+
+        if (this.gameObject.tag == "Blop2_Attachment" && col.gameObject.tag == "Blop1_Attachment")
+        {
+            bIsMergin = false;
+            Blop1Script.StopMergin();
+            Blop2Script.StopMergin();
+            // Show particles to indicate that they are combined
+        }
+
+    }
+
+
 }

@@ -151,6 +151,32 @@ public class Blop2Control : MonoBehaviour
         }
     }
 
+    void OnCollisionStay(Collision col)
+    {
+        if (attachedObject != null)
+        {
+            if (col.gameObject.tag == "Blop1")
+            {
+                StopMergin();
+            }
+
+            if (col.gameObject.tag == "Blop1_Attachment")
+            {
+                StopMergin();
+                GameObject go = GameObject.FindGameObjectWithTag("Blop1");
+                go.GetComponent<Blop1Control>().StopMergin();
+            }
+        }
+        else
+        {
+            if (col.gameObject.tag == "Blop1_Attachment")
+            {
+                GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
+                goBlop1.GetComponent<Blop1Control>().StopMergin();
+            }
+        }
+    }
+
     /// <summary>
     /// Deletes the previous shot Blops
     /// </summary>
