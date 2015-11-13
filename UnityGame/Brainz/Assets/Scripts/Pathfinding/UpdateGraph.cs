@@ -3,9 +3,11 @@ using System.Collections;
 
 public class UpdateGraph : MonoBehaviour {
 
+    public static UpdateGraph S;
+
 	void Start ()
     {
-	
+        S = this;
 	}
 
     void Update()
@@ -14,5 +16,10 @@ public class UpdateGraph : MonoBehaviour {
         {
             AstarPath.active.Scan();
         }
+    }
+
+    public void UpdateGridGraph()
+    {
+        AstarPath.active.Scan();
     }
 }
