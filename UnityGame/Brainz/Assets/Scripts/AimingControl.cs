@@ -53,6 +53,7 @@ public class AimingControl : MonoBehaviour
     {
         Vector3 vHitDirection = hit.point - this.transform.position;
         vHitDirection = vHitDirection.normalized;
+        
 
         return vHitDirection;
     }

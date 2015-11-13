@@ -24,6 +24,9 @@ public class Synapsing : MonoBehaviour
 
     public static Synapsing Singleton;
 
+    public LayerMask mask = -1;  // the layer, the walls should be in
+
+
     // Use this for initialization
     void Start()
     {
@@ -34,38 +37,37 @@ public class Synapsing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Mergin"))
+
+        SearchForBlops();
+
+        if (Blop1 == null)
+            return;
+
+        if (Blop2 == null)
+            return;
+
+        if (Blop1.GetComponent<Blop1Control>().HasAttachedObject() == false)
+            return;
+
+        if (Blop2.GetComponent<Blop2Control>().HasAttachedObject() == false)
+            return;
+
+
+        LifetimeAdjust particleScript1 = Blop1.GetComponentInChildren<LifetimeAdjust>();
+        particleScript1.target = Blop2;
+        LifetimeAdjust particleScript2 = Blop2.GetComponentInChildren<LifetimeAdjust>();
+        particleScript2.target = Blop1;
+        ParticleSystem particleSystem1 = Blop1.GetComponentInChildren<ParticleSystem>();
+        particleSystem1.Play();
+        ParticleSystem particleSystem2 = Blop2.GetComponentInChildren<ParticleSystem>();
+        particleSystem2.Play();
+
+
+        if (bMergeEnabled == false)
         {
-            SearchForBlops();
-
-            if (Blop1 == null)
-                return;
-
-            if (Blop2 == null)
-                return;
-
-            if (Blop1.GetComponent<Blop1Control>().HasAttachedObject() == false)
-                return;
-
-            if (Blop2.GetComponent<Blop2Control>().HasAttachedObject() == false)
-                return;
-
-
-            LifetimeAdjust particleScript1 = Blop1.GetComponentInChildren<LifetimeAdjust>();
-            particleScript1.target = Blop2;
-            LifetimeAdjust particleScript2 = Blop2.GetComponentInChildren<LifetimeAdjust>();
-            particleScript2.target = Blop1;
-            ParticleSystem particleSystem1 = Blop1.GetComponentInChildren<ParticleSystem>();
-            particleSystem1.Play();
-            ParticleSystem particleSystem2 = Blop2.GetComponentInChildren<ParticleSystem>();
-            particleSystem2.Play();
-
-
-            if (bMergeEnabled == false)
-            {
-                bMergeEnabled = true;
-            }
+            bMergeEnabled = true;
         }
+
 
         if (bMergeEnabled == true && merginCoroutine == null)
         {
@@ -100,46 +102,56 @@ public class Synapsing : MonoBehaviour
         blopOneBody = Blop1.GetComponent<Rigidbody>();
         blopTwoBody = Blop2.GetComponent<Rigidbody>();
 
- 
-}
-	
 
-	IEnumerator Mergin()
-{
-    float timeSinceStart = 1f;
+    }
 
-    while (true)
+
+    IEnumerator Mergin()
     {
-        timeSinceStart += Time.deltaTime;
+        float timeSinceStart = 1f;
 
-        // check if Blops are existing and they have an attachment
-        if (Blop1 != null && Blop2 != null && Blop1Script.HasAttachedObject() == true && Blop2Script.HasAttachedObject() == true)
+        while (true)
         {
+            timeSinceStart += Time.deltaTime;
+
+            // check if Blops are existing and they have an attachment
+            if (Blop1 != null && Blop2 != null && Blop1Script.HasAttachedObject() == true && Blop2Script.HasAttachedObject() == true)
+            {
+                
+                Vector3 dir = Blop1.transform.position - Blop2.transform.position;
+
+                // Raycast hit may be deletet if no use
+                RaycastHit hit;
+                // Raycast to catch if there is a wall between the cubes
+                if (Physics.Raycast(Blop1.transform.position, -dir.normalized,out hit,dir.magnitude,mask.value))
+                {
+                    // Work here if there is a wall between
+                    Debug.Log("Hit something");
+
+                }
 
 
-            Vector3 dir = Blop1.transform.position - Blop2.transform.position;
+                blopOneBody.AddForce(-dir * fMerginForceMultiplier * timeSinceStart);
+                blopTwoBody.AddForce(dir * fMerginForceMultiplier * timeSinceStart);
+            }
 
-            blopOneBody.AddForce(-dir * fMerginForceMultiplier * timeSinceStart);
-            blopTwoBody.AddForce(dir * fMerginForceMultiplier * timeSinceStart);
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+
+    /// <summary>
+    /// stop the mergin process
+    /// </summary>
+    public void StopMergin()
+    {
+        bMergeEnabled = false;
+
+        if (merginCoroutine != null)
+        {
+            StopCoroutine(merginCoroutine);
         }
 
-        yield return new WaitForSeconds(0.1f);
+        merginCoroutine = null;
     }
-}
-
-
-/// <summary>
-/// stop the mergin process
-/// </summary>
-public void StopMergin()
-{
-    bMergeEnabled = false;
-
-    if (merginCoroutine != null)
-    {
-        StopCoroutine(merginCoroutine);
-    }
-
-    merginCoroutine = null;
-}
 }

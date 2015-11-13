@@ -917,6 +917,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -2.6099999
       objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: d542388dcd6372748888567aa5bafd25, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d542388dcd6372748888567aa5bafd25, type: 3}
   m_IsPrefabParent: 0
@@ -1010,6 +1014,9 @@ MonoBehaviour:
   noFrictionMaterial: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
   fBlopMass: 1
   noCollisionLayer: 8
+  mask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!81 &1620039732
 AudioListener:
   m_ObjectHideFlags: 0

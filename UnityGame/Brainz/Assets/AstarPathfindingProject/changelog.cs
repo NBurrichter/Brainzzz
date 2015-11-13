@@ -102,7 +102,8 @@
 			It will now report more accurate hit information as well.
 		- Fixed documentation on LayerGridGraph.Linecast saying that it would return false if there was an obstacle in the way
 			when in fact exactly the opposite was true.
-		- Fixed inspector GUI throwing exceptions when two or more grid graphs or layered grid graphs were visible and thickRaycast was enabled on only one of them.
+		- Fixed inspector GUI throwing exceptions when two or more grid graphs or layered grid graphs were visible and thick
+        cast was enabled on only one of them.
 		- Fixed a few options only relevant for grid graphs were visible in the layered grid graph inspector as well.
 		- Fixed GridGraph.CheckConnection returned the wrong result when neighbours was Four and dir was less than 4.
 		- All compiler directives in the Optimizations tab are now tested during the package build phase. So hopefully none of them should give compiler errors now.
