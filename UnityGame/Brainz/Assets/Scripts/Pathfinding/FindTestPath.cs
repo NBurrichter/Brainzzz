@@ -20,11 +20,15 @@ public class FindTestPath : MonoBehaviour {
     public GameObject[] waypoints;
     private int activeWaypoint;
 
+    //If the end of the path is reached
+    private bool endOfPathReached;
+
     public void Awake()
     {
         activeWaypoint = 0;
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
+        endOfPathReached = false;
     }
 
     public void Start()
@@ -52,12 +56,14 @@ public class FindTestPath : MonoBehaviour {
 
         //seeker.GetNewPath(transform.position,targetPosition);
 
+        //Look if near next waypoint
         Debug.DrawLine(transform.position,waypoints[activeWaypoint].transform.position);
-        if(Vector3.Distance(transform.position,waypoints[activeWaypoint].transform.position) < 2)
+        if(Vector3.Distance(transform.position,waypoints[activeWaypoint].transform.position) < 2 && activeWaypoint < waypoints.Length-1)
         {
             Debug.Log("Reached waypoit");
             activeWaypoint++;
             Start();
+            endOfPathReached = false;
         }
 
         if (path == null)
@@ -65,15 +71,27 @@ public class FindTestPath : MonoBehaviour {
             //We have no path to move after yet
             return;
         }
-        if (currentWaypoint >= path.vectorPath.Count)
+
+        if (currentWaypoint >= path.vectorPath.Count && !endOfPathReached )
         {
             Debug.Log("End Of Path Reached");
+            endOfPathReached = true;
             return;
         }
-        //Direction to the next waypoint
-        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-        dir *= speed * Time.deltaTime;
-        controller.SimpleMove(dir);
+
+        if (!endOfPathReached)
+        {
+            //Direction to the next waypoint
+            Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+            dir *= speed * Time.deltaTime;
+            controller.SimpleMove(dir);
+        }
+        else
+        {
+            controller.SimpleMove((waypoints[activeWaypoint].transform.position - transform.position).normalized);
+            return;
+        }
+
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
         if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)

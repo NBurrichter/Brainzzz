@@ -59,8 +59,9 @@ public class CubeControl : MonoBehaviour
         {
             saveSleeping = false;
         }
-        if (!saveSleeping && rbody.IsSleeping())
+        if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
+            Debug.Log("Update GridGraph from Object " + name);
             UpdateGraph.S.UpdateGridGraph();
             saveSleeping = true;
         }
@@ -102,7 +103,7 @@ public class CubeControl : MonoBehaviour
         }
         if (blocktype == BlockType.NPCAStar)
         {
-            UpdateGraph.S.UpdateGridGraph();
+            //UpdateGraph.S.UpdateGridGraph();
             FindTestPath myTestPath = GetComponent<FindTestPath>();
             myTestPath.enabled = true;
             myTestPath.Start();
