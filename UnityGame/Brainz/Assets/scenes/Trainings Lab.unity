@@ -1010,7 +1010,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87184ae42d21cbb4da8de14bd9edfaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fMerginForceMultiplier: 20
+  fMerginForceMultiplier: 40
   noFrictionMaterial: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
   fBlopMass: 1
   noCollisionLayer: 8
