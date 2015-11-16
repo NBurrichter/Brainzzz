@@ -12,13 +12,23 @@ public class CubeControl : MonoBehaviour
     private Blop1Control Blop1Script;
     private Blop2Control Blop2Script;
 
+    private Rigidbody rbody;
+
     //Only needed for NPC
     private NavmeshTestNavigation navigation;
+
+    //Needed to update the grid graph
+    private bool saveSleeping;
+
+    public bool showSleeping;
 
     // Use this for initialization
     void Start()
     {
         bIsMergin = false;
+
+        saveSleeping = false;
+        rbody = GetComponent<Rigidbody>();
 
         if (blocktype == BlockType.NPC)
         {
@@ -31,6 +41,8 @@ public class CubeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        showSleeping = rbody.IsSleeping();
+
         // Reset if its not an attachment
         if (this.gameObject.tag == "Untagged")
         {
@@ -42,6 +54,16 @@ public class CubeControl : MonoBehaviour
             Blop1Script = GameObject.FindGameObjectWithTag("Blop1").GetComponent<Blop1Control>();
         if (GameObject.FindGameObjectWithTag("Blop2") != null)
             Blop2Script = GameObject.FindGameObjectWithTag("Blop2").GetComponent<Blop2Control>();
+
+        if (!rbody.IsSleeping())
+        {
+            saveSleeping = false;
+        }
+        if (!saveSleeping && rbody.IsSleeping())
+        {
+            UpdateGraph.S.UpdateGridGraph();
+            saveSleeping = true;
+        }
 
     }
 
@@ -65,6 +87,8 @@ public class CubeControl : MonoBehaviour
     /// </summary>
     public void StopMergin()
     {
+        //UpdateGraph.S.UpdateGridGraph();
+
         if (blocktype == BlockType.Ramp)
         {
             Debug.Log("Remove Joint");
@@ -78,11 +102,15 @@ public class CubeControl : MonoBehaviour
         }
         if (blocktype == BlockType.NPCAStar)
         {
-            GetComponent<FindTestPath>().enabled = true;
-            GetComponent<FindTestPath>().Start();
+            UpdateGraph.S.UpdateGridGraph();
+            FindTestPath myTestPath = GetComponent<FindTestPath>();
+            myTestPath.enabled = true;
+            myTestPath.Start();
+            //myTestPath.StartCouroutineFindPath();
             GetComponent<Seeker>().enabled = true;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<CharacterController>().enabled = true;
+            
         }
 
         ResetObject();
