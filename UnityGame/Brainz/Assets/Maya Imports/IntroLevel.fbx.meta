@@ -15,6 +15,17 @@ ModelImporter:
     100014: pCylinder5
     100016: pCylinder6
     100018: pCylinder9
+    100020: Doorplaceholder
+    100022: pillar
+    100024: Rohr_bL
+    100026: Rohr_bR
+    100028: Rohr_mitter
+    100030: Rohr_oL
+    100032: Rohr_oR
+    100034: Rohr_uL
+    100036: Rohr_uR
+    100038: room
+    100040: son_holder1
     400000: //RootNode
     400002: MainRoom
     400004: pCube1
@@ -25,6 +36,17 @@ ModelImporter:
     400014: pCylinder5
     400016: pCylinder6
     400018: pCylinder9
+    400020: Doorplaceholder
+    400022: pillar
+    400024: Rohr_bL
+    400026: Rohr_bR
+    400028: Rohr_mitter
+    400030: Rohr_oL
+    400032: Rohr_oR
+    400034: Rohr_uL
+    400036: Rohr_uR
+    400038: room
+    400040: son_holder1
     2300000: MainRoom
     2300002: pCube1
     2300004: pCylinder1
@@ -34,6 +56,17 @@ ModelImporter:
     2300012: pCylinder5
     2300014: pCylinder6
     2300016: pCylinder9
+    2300018: Doorplaceholder
+    2300020: pillar
+    2300022: Rohr_bL
+    2300024: Rohr_bR
+    2300026: Rohr_mitter
+    2300028: Rohr_oL
+    2300030: Rohr_oR
+    2300032: Rohr_uL
+    2300034: Rohr_uR
+    2300036: room
+    2300038: son_holder1
     3300000: MainRoom
     3300002: pCube1
     3300004: pCylinder1
@@ -43,6 +76,17 @@ ModelImporter:
     3300012: pCylinder5
     3300014: pCylinder6
     3300016: pCylinder9
+    3300018: Doorplaceholder
+    3300020: pillar
+    3300022: Rohr_bL
+    3300024: Rohr_bR
+    3300026: Rohr_mitter
+    3300028: Rohr_oL
+    3300030: Rohr_oR
+    3300032: Rohr_uL
+    3300034: Rohr_uR
+    3300036: room
+    3300038: son_holder1
     4300000: MainRoom
     4300002: pCylinder1
     4300004: pCylinder2
@@ -52,6 +96,17 @@ ModelImporter:
     4300012: pCylinder6
     4300014: pCube1
     4300016: pCylinder9
+    4300018: room
+    4300020: pillar
+    4300022: Doorplaceholder
+    4300024: son_holder1
+    4300026: Rohr_mitter
+    4300028: Rohr_uR
+    4300030: Rohr_uL
+    4300032: Rohr_oR
+    4300034: Rohr_oL
+    4300036: Rohr_bL
+    4300038: Rohr_bR
     9500000: //RootNode
   materials:
     importMaterials: 1

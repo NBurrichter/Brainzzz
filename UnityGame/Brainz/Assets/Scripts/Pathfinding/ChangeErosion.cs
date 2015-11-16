@@ -17,7 +17,7 @@ public class ChangeErosion : MonoBehaviour {
         // Updates internal size from the above values
         gg.UpdateSizeFromWidthDepth();
         // Scans all graphs, do not call gg.Scan(), that is an internal method
-        AstarPath.active.Scan();
+        //AstarPath.active.Scan();
 
         Debug.Log(other.name);
         //AstarPath.active.

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8be2e95c05b778544b9c12d1c8a440be
-timeCreated: 1447360299
+guid: be544757ac6124b43b5ef96f9899c8ab
+timeCreated: 1447679312
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Roof
-    4300002: Roof1
+    4300000: Door
     9500000: //RootNode
   materials:
     importMaterials: 1

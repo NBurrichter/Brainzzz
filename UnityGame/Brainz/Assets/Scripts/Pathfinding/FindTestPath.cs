@@ -35,6 +35,7 @@ public class FindTestPath : MonoBehaviour {
     {
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
         seeker.StartPath(transform.position, waypoints[activeWaypoint].transform.position, OnPathComplete);
+        endOfPathReached = false;
     }
 
     public void OnPathComplete(Path p)
@@ -88,7 +89,9 @@ public class FindTestPath : MonoBehaviour {
         }
         else
         {
-            controller.SimpleMove((waypoints[activeWaypoint].transform.position - transform.position).normalized);
+            Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+            dir *= speed * Time.deltaTime;
+            controller.SimpleMove(dir);
             return;
         }
 
@@ -109,8 +112,8 @@ public class FindTestPath : MonoBehaviour {
     IEnumerator FindNewPath()
     {
         yield return new WaitForSeconds(1);
-        Start();
-
+        //Disabled for now
+        //Start();
     }
 
 }
