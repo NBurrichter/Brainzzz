@@ -71,7 +71,7 @@ public class PlayerControl : MonoBehaviour {
 
         if(Input.GetButtonDown("Restart"))
         {
-            Application.LoadLevel("NiklasScene");
+            Application.LoadLevel(Application.loadedLevel); 
         }
 
         //Character Controller Script
