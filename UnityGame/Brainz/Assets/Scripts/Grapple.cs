@@ -245,7 +245,14 @@ public class Grapple : MonoBehaviour
         }
         goPlayer.GetComponent<PlayerControl>().SetGrapple(false);
         grappleCoroutine = null;
-
+        if (goBlopOne != null)
+        {
+            goBlopOne.GetComponent<Blop1Control>().DestroyThisBlop();
+        }
+        if (goBlopTwo != null)
+        {
+            goBlopTwo.GetComponent<Blop2Control>().DestroyThisBlop();
+        }
     }
 
     public bool IsGrappling()

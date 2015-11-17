@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &231523891
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -175,6 +176,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &280822367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -218,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &296269749
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -306,6 +309,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!54 &670183276
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -582,6 +586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!1 &961977104 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: d542388dcd6372748888567aa5bafd25, type: 3}
@@ -613,6 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &961977108
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -742,6 +748,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &1433637748
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1013,7 +1020,6 @@ MonoBehaviour:
   fMerginForceMultiplier: 40
   noFrictionMaterial: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
   fBlopMass: 1
-  noCollisionLayer: 8
   mask:
     serializedVersion: 2
     m_Bits: 2048
@@ -1115,6 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &1638790959
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2320,6 +2327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &1750076342
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2394,6 +2402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &1848550072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2437,6 +2446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &1921975643
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2480,6 +2490,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blocktype: 0
+  showSleeping: 0
 --- !u!65 &1932725125
 BoxCollider:
   m_ObjectHideFlags: 0
