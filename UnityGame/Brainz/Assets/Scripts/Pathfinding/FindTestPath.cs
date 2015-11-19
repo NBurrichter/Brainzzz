@@ -84,13 +84,13 @@ public class FindTestPath : MonoBehaviour {
         {
             //Direction to the next waypoint
             Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-            dir *= speed * Time.deltaTime;
+            dir *= speed;
             controller.SimpleMove(dir);
         }
         else
         {
             Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
-            dir *= speed * Time.deltaTime;
+            dir *= speed;
             controller.SimpleMove(dir);
             return;
         }
