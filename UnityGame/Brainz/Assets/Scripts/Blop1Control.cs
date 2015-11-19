@@ -254,4 +254,6 @@ public class Blop1Control : MonoBehaviour
             return true;
         return false;
     }
+
+    
 }

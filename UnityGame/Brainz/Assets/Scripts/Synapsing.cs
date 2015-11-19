@@ -8,7 +8,6 @@ public class Synapsing : MonoBehaviour
 
     public PhysicMaterial noFrictionMaterial;
     public float fBlopMass;
-    public int noCollisionLayer;
 
     GameObject Blop1;
     GameObject Blop2;
@@ -130,9 +129,12 @@ public class Synapsing : MonoBehaviour
 
                 }
 
+                // normalize the direction-vector to have it the force independent from the distance of the Blops
+                dir = dir.normalized;
 
-                blopOneBody.AddForce(-dir * fMerginForceMultiplier * timeSinceStart);
-                blopTwoBody.AddForce(dir * fMerginForceMultiplier * timeSinceStart);
+                // may remove the time since start component to have a more constant force
+                blopOneBody.AddForce(-dir * fMerginForceMultiplier); 
+                blopTwoBody.AddForce(dir * fMerginForceMultiplier);
             }
 
             yield return new WaitForSeconds(0.1f);

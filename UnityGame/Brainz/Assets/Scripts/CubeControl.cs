@@ -61,7 +61,7 @@ public class CubeControl : MonoBehaviour
         }
         if (!saveSleeping && rbody.IsSleeping())
         {
-            UpdateGraph.S.UpdateGridGraph();
+            //UpdateGraph.S.UpdateGridGraph();
             saveSleeping = true;
         }
 
