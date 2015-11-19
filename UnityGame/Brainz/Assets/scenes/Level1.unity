@@ -5173,7 +5173,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 909160180}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.8799992, y: .879999995, z: 39.7599983}
+  m_LocalPosition: {x: -21.6900005, y: .879999995, z: 44.4700012}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5190,7 +5190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetPosition: {x: 0, y: 0, z: 30}
-  speed: 100
+  speed: 150
   nextWaypointDistance: 1
   waypoints:
   - {fileID: 1051467037}
@@ -7025,8 +7025,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1402847808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.0900002, y: 8.77000046, z: 6.96000004}
-  m_LocalScale: {x: 11.2243805, y: 5.35290337, z: 1.92025518}
+  m_LocalPosition: {x: -21.9699993, y: 8.06000042, z: 6.82999992}
+  m_LocalScale: {x: 11.0116358, y: 6.83396482, z: 1.73587942}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
@@ -7499,7 +7499,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd25de5d809ae740ae62d32f8ac5bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t2DCrosshair: {fileID: 0}
+  t2DCrosshair: {fileID: 2800000, guid: 4dbf1f12050c0a74784e65d4d7cd6833, type: 3}
 --- !u!114 &1623639742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7543,7 +7543,7 @@ MonoBehaviour:
   noCollisionLayer: 8
   mask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 8192
 --- !u!81 &1623639745
 AudioListener:
   m_ObjectHideFlags: 0
