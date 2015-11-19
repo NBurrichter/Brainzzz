@@ -20,6 +20,6 @@ public class UpdateGraph : MonoBehaviour {
 
     public void UpdateGridGraph()
     {
-        AstarPath.active.Scan();
+        //AstarPath.active.Scan();
     }
 }
