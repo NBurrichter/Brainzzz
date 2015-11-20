@@ -23,6 +23,9 @@ public class FindTestPath : MonoBehaviour {
     //If the end of the path is reached
     private bool endOfPathReached;
 
+    //Apply the current waypoint effect
+    public WaypointType.Types walkState;
+
     public void Awake()
     {
         activeWaypoint = 0;
@@ -62,6 +65,7 @@ public class FindTestPath : MonoBehaviour {
         if(Vector3.Distance(transform.position,waypoints[activeWaypoint].transform.position) < 2 && activeWaypoint < waypoints.Length-1)
         {
             Debug.Log("Reached waypoit");
+            walkState = waypoints[activeWaypoint].GetComponent<WaypointType>().type;
             activeWaypoint++;
             Start();
             endOfPathReached = false;
@@ -89,9 +93,12 @@ public class FindTestPath : MonoBehaviour {
         }
         else
         {
-            Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
-            dir *= speed;
-            controller.SimpleMove(dir);
+            if (walkState == WaypointType.Types.walkToNextWaypointOnPathEnd)
+            {
+                Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                dir *= speed;
+                controller.SimpleMove(dir);
+            }
             return;
         }
 
