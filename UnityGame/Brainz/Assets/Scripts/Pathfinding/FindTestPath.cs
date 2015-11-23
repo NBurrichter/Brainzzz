@@ -2,7 +2,8 @@
 using System.Collections;
 using Pathfinding;
 
-public class FindTestPath : MonoBehaviour {
+public class FindTestPath : MonoBehaviour
+{
 
     //The point to move to
     public Vector3 targetPosition;
@@ -61,14 +62,16 @@ public class FindTestPath : MonoBehaviour {
         //seeker.GetNewPath(transform.position,targetPosition);
 
         //Look if near next waypoint
-        Debug.DrawLine(transform.position,waypoints[activeWaypoint].transform.position);
-        if(Vector3.Distance(transform.position,waypoints[activeWaypoint].transform.position) < 2 && activeWaypoint < waypoints.Length-1)
+        Debug.DrawLine(transform.position, waypoints[activeWaypoint].transform.position);
+
+        //Old Waypoint reaching. Lookw for the point instead of trigger box
+        if (Vector3.Distance(transform.position, waypoints[activeWaypoint].transform.position) < 2 && activeWaypoint < waypoints.Length - 1)
         {
             Debug.Log("Reached waypoit");
-            walkState = waypoints[activeWaypoint].GetComponent<WaypointType>().type;
+            /*walkState = waypoints[activeWaypoint].GetComponent<WaypointType>().type;
             activeWaypoint++;
             Start();
-            endOfPathReached = false;
+            endOfPathReached = false;*/
         }
 
         if (path == null)
@@ -77,27 +80,51 @@ public class FindTestPath : MonoBehaviour {
             return;
         }
 
-        if (currentWaypoint >= path.vectorPath.Count && !endOfPathReached )
+        if (currentWaypoint >= path.vectorPath.Count && !endOfPathReached)
         {
             Debug.Log("End Of Path Reached");
             endOfPathReached = true;
             return;
         }
 
+        //Move around
         if (!endOfPathReached)
         {
-            //Direction to the next waypoint
-            Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-            dir *= speed;
-            controller.SimpleMove(dir);
+            switch (walkState)
+            {
+                case WaypointType.Types.walkToNextWaypointOnPathEnd:
+                case WaypointType.Types.stayOnPathEnd:
+                    //Direction to the next waypoint
+                    Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+                    dir *= speed;
+                    controller.SimpleMove(dir);
+                    break;
+                case WaypointType.Types.elevatorEntrance:
+                    Vector3 directionToWaypoint = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    directionToWaypoint *= speed;
+                    controller.SimpleMove(directionToWaypoint);
+                    break;
+            }
+
         }
         else
         {
-            if (walkState == WaypointType.Types.walkToNextWaypointOnPathEnd)
+            switch (walkState)
             {
-                Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
-                dir *= speed;
-                controller.SimpleMove(dir);
+                case WaypointType.Types.walkToNextWaypointOnPathEnd:
+                    Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    dir *= speed;
+                    controller.SimpleMove(dir);
+                    break;
+                case WaypointType.Types.elevatorEntrance:
+
+                    break;
+                case WaypointType.Types.elevator:
+
+                    break;
+                case WaypointType.Types.elevatorExit:
+
+                    break;
             }
             return;
         }
@@ -123,4 +150,23 @@ public class FindTestPath : MonoBehaviour {
         //Start();
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag);
+        if (other.tag == "Waypoint")
+        {
+            WaypointType pointType = other.transform.parent.GetComponent<WaypointType>();
+            Debug.Log(activeWaypoint.ToString());
+            Debug.Log(pointType.waypointNumber.ToString());
+
+            if (activeWaypoint == pointType.waypointNumber && activeWaypoint < waypoints.Length - 1)
+            {
+                Debug.Log("Reached waypoit");
+                walkState = waypoints[activeWaypoint].GetComponent<WaypointType>().type;
+                activeWaypoint++;
+                Start();
+                endOfPathReached = false;
+            }
+        }
+    }
 }

@@ -10,6 +10,7 @@ TagManager:
   - Blop1_Attachment
   - Blop2_Attachment
   - PlayerCamera
+  - Waypoint
   layers:
   - Default
   - TransparentFX
