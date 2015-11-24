@@ -462,8 +462,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 13.8703995, y: 26.4138374, z: 1}
+  m_Center: {x: -2.32182312, y: 9.56947899, z: 0}
 --- !u!1 &98296989
 GameObject:
   m_ObjectHideFlags: 0
@@ -4764,7 +4764,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 743309399}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: .246832177, z: 0, w: .969058275}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -4780,8 +4780,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 5.15908337, y: 5.61132812, z: 1}
+  m_Center: {x: .472745955, y: 2.6893177, z: 5.05000353e-05}
 --- !u!1 &760271749
 GameObject:
   m_ObjectHideFlags: 0
@@ -5348,8 +5348,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10.3722267, y: 20.0985069, z: 1}
+  m_Center: {x: -.0238294601, y: 9.54925346, z: 0}
 --- !u!1 &878618397
 GameObject:
   m_ObjectHideFlags: 0
@@ -6267,7 +6267,7 @@ GameObject:
   m_Layer: 0
   m_Name: SoundPlayer
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -6282,7 +6282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4497ed1734326d4bb021add7f4a21ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  talkClips: []
+  damagedBorder: .400000006
+  retardedBorder: .800000012
+  normalClips: []
+  damagedClips: []
+  retardedClips: []
 --- !u!82 &1040904039
 AudioSource:
   m_ObjectHideFlags: 0
@@ -6388,7 +6392,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1042324361}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.8100004, y: 0, z: -29.1200008}
+  m_LocalPosition: {x: 15.8100004, y: 0, z: -29.4899998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1969172435}
@@ -6940,8 +6944,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 12.6187267, y: 18.01408, z: 1}
+  m_Center: {x: -3.8118391, y: 8.50704002, z: 0}
 --- !u!1 &1142262230
 GameObject:
   m_ObjectHideFlags: 0
@@ -8482,8 +8486,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 19.4423981, z: 8.21176338}
+  m_Center: {x: 0, y: 9.22119904, z: .272121429}
 --- !u!1 &1618723213
 GameObject:
   m_ObjectHideFlags: 0
@@ -9557,8 +9561,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 18.8771324, z: 8.02393913}
+  m_Center: {x: 0, y: 8.93856621, z: .94354248}
 --- !u!1 &1921985883
 GameObject:
   m_ObjectHideFlags: 0
@@ -9657,8 +9661,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.98644209, y: 5.91168833, z: 1}
+  m_Center: {x: .226311684, y: 2.45584416, z: 0}
 --- !u!1 &1969551005
 GameObject:
   m_ObjectHideFlags: 0
@@ -9682,7 +9686,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1969551005}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.2200003, y: -0, z: 16.3400002}
+  m_LocalPosition: {x: 15.2200003, y: -0, z: 13.5299997}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 853346873}
@@ -10278,8 +10282,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 9.32727432, y: 17.1062546, z: 1}
+  m_Center: {x: -.580635071, y: 8.05312729, z: 0}
 --- !u!1 &2120333373
 GameObject:
   m_ObjectHideFlags: 0
