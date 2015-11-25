@@ -20,11 +20,11 @@ TagManager:
   - 
   - 
   - AttachedObject
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - MoveingBlock
+  - Top
+  - Players
+  - Wall
   - 
   - 
   - 

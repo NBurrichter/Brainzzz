@@ -7,6 +7,9 @@ using System.Collections;
 //----http://wiki.unity3d.com/index.php?title=RigidbodyFPSWalker---
 public class PlayerControl : MonoBehaviour {
 
+    //momentarily public, later may be calculated automaticaly
+    public float playerHeight;
+
 	public float fRotationSpeed = 40.0f;
 	private float fXRotation;
 	private float fYRotation;
@@ -49,7 +52,6 @@ public class PlayerControl : MonoBehaviour {
 		player = this.gameObject;
 		qRotation = player.transform.rotation;
 		isGrappling=false;
-		print (""+Screen.height + "  " + Screen.width);
 	}
 	
 	void Update ()
@@ -58,15 +60,18 @@ public class PlayerControl : MonoBehaviour {
 		// check if mouse is out of screen
 		fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
 		fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime *-1.0f;
- 
+
+        fXRotation += Input.GetAxis("Joystick Camera X") * fRotationSpeed * Time.deltaTime;
+
+
         //Mouse rotation moveement
-	    qRotation = Quaternion.Euler(fYRotation,fXRotation,0);
+        qRotation = Quaternion.Euler(0,fXRotation,0);
 
         player.transform.rotation = qRotation;
 
         if(Input.GetButtonDown("Restart"))
         {
-            Application.LoadLevel("NiklasScene");
+            Application.LoadLevel(Application.loadedLevel); 
         }
 
         //Character Controller Script
@@ -101,6 +106,11 @@ public class PlayerControl : MonoBehaviour {
             return;
         }
 
+       /* if (Physics.Raycast(transform.position, Vector3.down, playerHeight))
+        {
+            grounded = true;
+        }
+        */
         if (grounded)
         {
             // Calculate how fast we should be moving

@@ -12,6 +12,7 @@ public class Attachment : MonoBehaviour
         lastFramePosition = PseudoParent.position;
     }
 
+    // move object with the parent
     private void LateUpdate()
     {
         if (!PseudoParent)
