@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlaySoundlines : MonoBehaviour {
 
+    public static PlaySoundlines S;
+
     private DamageIndicator sonDamageScript;
     private AudioSource source;
 
@@ -23,11 +25,13 @@ public class PlaySoundlines : MonoBehaviour {
 	
 	void Update ()
     {
+        /*
         int i = Random.Range(0, 10);
         if (i == 1)
         {
             PlayWeightedSounds(1);
         }
+        */
     }
 
     public void PlayWeightedSounds(int clipNumber)
