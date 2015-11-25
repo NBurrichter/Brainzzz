@@ -3283,7 +3283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8db448eda5c00594aa3f93328be98b05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundClipNumber: 1
+  soundClipNumber: 0
 --- !u!1 &399935081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6530,7 +6530,7 @@ MonoBehaviour:
   damagedBorder: .400000006
   retardedBorder: .800000012
   normalClips:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 972b25c12f9e149468f6e0aeaebe6dde, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   damagedClips:

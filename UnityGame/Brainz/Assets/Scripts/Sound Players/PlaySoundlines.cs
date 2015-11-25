@@ -18,6 +18,12 @@ public class PlaySoundlines : MonoBehaviour {
     public AudioClip[] damagedClips;
     public AudioClip[] retardedClips;
 
+    void Awake()
+    {
+        S = this;
+        source = GetComponent<AudioSource>();
+    }
+
 	void Start ()
     {
         sonDamageScript = GameObject.Find("Son").GetComponent<DamageIndicator>();
@@ -44,6 +50,7 @@ public class PlaySoundlines : MonoBehaviour {
         {
             //Play normal clip
             Debug.Log("Play Normal clip");
+            source.PlayOneShot(normalClips[clipNumber]);
         }
         else
         {
@@ -51,6 +58,7 @@ public class PlaySoundlines : MonoBehaviour {
             {
                 //Play damaged clip
                 Debug.Log("Play damaged clip");
+                source.PlayOneShot(damagedClips[clipNumber]);
             }
             else
             {
@@ -58,6 +66,7 @@ public class PlaySoundlines : MonoBehaviour {
                 {
                     //Play retarded Clip
                     Debug.Log("Play retarded clip");
+                    source.PlayOneShot(retardedClips[clipNumber]);
                 }
             }
         }
