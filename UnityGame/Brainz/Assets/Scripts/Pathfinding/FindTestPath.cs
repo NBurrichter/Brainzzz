@@ -94,15 +94,22 @@ public class FindTestPath : MonoBehaviour
             {
                 case WaypointType.Types.walkToNextWaypointOnPathEnd:
                 case WaypointType.Types.stayOnPathEnd:
+                    Debug.DrawLine(transform.position, path.vectorPath[currentWaypoint],Color.red);
                     //Direction to the next waypoint
                     Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
                     dir *= speed;
                     controller.SimpleMove(dir);
+                    Vector3 flatDir = new Vector3(dir.x, 0, dir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatDir, Color.yellow);
+                    transform.LookAt(transform.position + flatDir);
                     break;
                 case WaypointType.Types.elevatorEntrance:
                     Vector3 directionToWaypoint = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
                     directionToWaypoint *= speed;
                     controller.SimpleMove(directionToWaypoint);
+                    Vector3 flatWaypointDir = new Vector3(directionToWaypoint.x, 0, directionToWaypoint.z);
+                    Debug.DrawLine(transform.position, transform.position + flatWaypointDir,Color.yellow);
+                    transform.LookAt(transform.position + flatWaypointDir);
                     break;
             }
 
@@ -115,6 +122,7 @@ public class FindTestPath : MonoBehaviour
                     Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
                     dir *= speed;
                     controller.SimpleMove(dir);
+                    transform.LookAt(transform.position + dir);
                     break;
                 case WaypointType.Types.elevatorEntrance:
 

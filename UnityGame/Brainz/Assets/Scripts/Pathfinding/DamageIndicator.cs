@@ -6,12 +6,13 @@ public class DamageIndicator : MonoBehaviour
 
     public float maxHealth;
     private float health;
+    public GameObject renderObject;
     private Renderer rend;
 
     void Start()
     {
         health = maxHealth;
-        rend = GetComponent<Renderer>();
+        rend = renderObject.GetComponent<Renderer>();
     }
 
     void Update()
