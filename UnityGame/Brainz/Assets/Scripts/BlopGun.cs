@@ -25,6 +25,8 @@ public class BlopGun : MonoBehaviour {
 
     private ParticleSystem psGun;
     private float fXRotation = 90f;
+    private float fYRotation;
+    private float fZRotation;
 
 
     /// <summary>
@@ -60,7 +62,9 @@ public class BlopGun : MonoBehaviour {
         Quaternion qRotation; 
         transform.Rotate(new Vector3(90, 0, 0));
         fXRotation = transform.localRotation.eulerAngles.x;
-        Debug.Log(fXRotation);
+        fYRotation = transform.localRotation.eulerAngles.y;
+        fZRotation = transform.localRotation.eulerAngles.z;
+        Debug.Log(fXRotation + "  " + fYRotation + "  " + fZRotation);
 
         if (bIsCharged==false)
         {
@@ -92,7 +96,7 @@ public class BlopGun : MonoBehaviour {
                 fRechargeTimer += Time.deltaTime;
             }
 
-            qRotation = Quaternion.Euler(fXRotation, 0, 0);
+            qRotation = Quaternion.Euler(fXRotation, fYRotation, fZRotation);
             transform.localRotation = qRotation;
 
         }
