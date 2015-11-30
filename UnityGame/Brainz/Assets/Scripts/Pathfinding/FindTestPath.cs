@@ -27,6 +27,9 @@ public class FindTestPath : MonoBehaviour
     //Apply the current waypoint effect
     public WaypointType.Types walkState;
 
+    //lookat dummy (should be found automaticaly)
+    public GameObject lookAtDummy;
+
     public void Awake()
     {
         activeWaypoint = 0;
@@ -58,6 +61,9 @@ public class FindTestPath : MonoBehaviour
         {
             Start();
         }
+
+        //rotate towards lookatdummy
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookAtDummy.transform.rotation, 0.45f);
 
         //seeker.GetNewPath(transform.position,targetPosition);
 
@@ -101,7 +107,7 @@ public class FindTestPath : MonoBehaviour
                     controller.SimpleMove(dir);
                     Vector3 flatDir = new Vector3(dir.x, 0, dir.z);
                     Debug.DrawLine(transform.position, transform.position + flatDir, Color.yellow);
-                    transform.LookAt(transform.position + flatDir);
+                    lookAtDummy.transform.LookAt(transform.position + flatDir);
                     break;
                 case WaypointType.Types.elevatorEntrance:
                     Vector3 directionToWaypoint = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
@@ -109,7 +115,22 @@ public class FindTestPath : MonoBehaviour
                     controller.SimpleMove(directionToWaypoint);
                     Vector3 flatWaypointDir = new Vector3(directionToWaypoint.x, 0, directionToWaypoint.z);
                     Debug.DrawLine(transform.position, transform.position + flatWaypointDir,Color.yellow);
-                    transform.LookAt(transform.position + flatWaypointDir);
+                    lookAtDummy.transform.LookAt(transform.position + flatWaypointDir);
+                    break;
+                case WaypointType.Types.elevator:
+                    GetComponent<Rigidbody>().isKinematic = false;
+                    controller.enabled = false;
+
+                    break;
+                case WaypointType.Types.elevatorExit:
+                    GetComponent<Rigidbody>().isKinematic = true;
+                    controller.enabled = true;
+                    Vector3 elevatorDir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    elevatorDir *= speed;
+                    controller.SimpleMove(elevatorDir);
+                    Vector3 flatElevatorDir = new Vector3(elevatorDir.x, 0, elevatorDir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatElevatorDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatElevatorDir);
                     break;
             }
 
@@ -122,16 +143,31 @@ public class FindTestPath : MonoBehaviour
                     Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
                     dir *= speed;
                     controller.SimpleMove(dir);
-                    transform.LookAt(transform.position + dir);
+                    Vector3 flatDir = new Vector3(dir.x, 0, dir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatDir);
                     break;
                 case WaypointType.Types.elevatorEntrance:
-
+                    Vector3 elevatorDir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    elevatorDir *= speed;
+                    controller.SimpleMove(elevatorDir);
+                    Vector3 flatElevatorDir = new Vector3(elevatorDir.x, 0, elevatorDir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatElevatorDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatElevatorDir);
                     break;
                 case WaypointType.Types.elevator:
-
+                    GetComponent<Rigidbody>().isKinematic = false;
+                    controller.enabled = false;
                     break;
                 case WaypointType.Types.elevatorExit:
-
+                    GetComponent<Rigidbody>().isKinematic = true;
+                    controller.enabled = true;
+                    Vector3 exitDir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    exitDir *= speed;
+                    controller.SimpleMove(exitDir);
+                    Vector3 flatExitDir = new Vector3(exitDir.x, 0, exitDir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatExitDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatExitDir);
                     break;
             }
             return;

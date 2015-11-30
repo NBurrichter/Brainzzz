@@ -62,7 +62,7 @@ public class CubeControl : MonoBehaviour
         if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
             Debug.Log("Update GridGraph from Object " + name);
-            //UpdateGraph.S.UpdateGridGraph();
+            UpdateGraph.S.UpdateGridGraph();
             saveSleeping = true;
         }
 
