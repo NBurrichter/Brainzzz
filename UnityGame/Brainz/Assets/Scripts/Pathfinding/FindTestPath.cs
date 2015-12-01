@@ -2,7 +2,8 @@
 using System.Collections;
 using Pathfinding;
 
-public class FindTestPath : MonoBehaviour {
+public class FindTestPath : MonoBehaviour
+{
 
     //The point to move to
     public Vector3 targetPosition;
@@ -20,17 +21,28 @@ public class FindTestPath : MonoBehaviour {
     public GameObject[] waypoints;
     private int activeWaypoint;
 
+    //If the end of the path is reached
+    private bool endOfPathReached;
+
+    //Apply the current waypoint effect
+    public WaypointType.Types walkState;
+
+    //lookat dummy (should be found automaticaly)
+    public GameObject lookAtDummy;
+
     public void Awake()
     {
         activeWaypoint = 0;
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
+        endOfPathReached = false;
     }
 
     public void Start()
     {
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
         seeker.StartPath(transform.position, waypoints[activeWaypoint].transform.position, OnPathComplete);
+        endOfPathReached = false;
     }
 
     public void OnPathComplete(Path p)
@@ -50,14 +62,22 @@ public class FindTestPath : MonoBehaviour {
             Start();
         }
 
+        //rotate towards lookatdummy
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookAtDummy.transform.rotation, 0.45f);
+
         //seeker.GetNewPath(transform.position,targetPosition);
 
-        Debug.DrawLine(transform.position,waypoints[activeWaypoint].transform.position);
-        if(Vector3.Distance(transform.position,waypoints[activeWaypoint].transform.position) < 2)
+        //Look if near next waypoint
+        Debug.DrawLine(transform.position, waypoints[activeWaypoint].transform.position);
+
+        //Old Waypoint reaching. Lookw for the point instead of trigger box
+        if (Vector3.Distance(transform.position, waypoints[activeWaypoint].transform.position) < 2 && activeWaypoint < waypoints.Length - 1)
         {
             Debug.Log("Reached waypoit");
+            /*walkState = waypoints[activeWaypoint].GetComponent<WaypointType>().type;
             activeWaypoint++;
             Start();
+            endOfPathReached = false;*/
         }
 
         if (path == null)
@@ -65,15 +85,94 @@ public class FindTestPath : MonoBehaviour {
             //We have no path to move after yet
             return;
         }
-        if (currentWaypoint >= path.vectorPath.Count)
+
+        if (currentWaypoint >= path.vectorPath.Count && !endOfPathReached)
         {
             Debug.Log("End Of Path Reached");
+            endOfPathReached = true;
             return;
         }
-        //Direction to the next waypoint
-        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-        dir *= speed * Time.deltaTime;
-        controller.SimpleMove(dir);
+
+        //Move around
+        if (!endOfPathReached)
+        {
+            switch (walkState)
+            {
+                case WaypointType.Types.walkToNextWaypointOnPathEnd:
+                case WaypointType.Types.stayOnPathEnd:
+                    Debug.DrawLine(transform.position, path.vectorPath[currentWaypoint],Color.red);
+                    //Direction to the next waypoint
+                    Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+                    dir *= speed;
+                    controller.SimpleMove(dir);
+                    Vector3 flatDir = new Vector3(dir.x, 0, dir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatDir);
+                    break;
+                case WaypointType.Types.elevatorEntrance:
+                    Vector3 directionToWaypoint = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    directionToWaypoint *= speed;
+                    controller.SimpleMove(directionToWaypoint);
+                    Vector3 flatWaypointDir = new Vector3(directionToWaypoint.x, 0, directionToWaypoint.z);
+                    Debug.DrawLine(transform.position, transform.position + flatWaypointDir,Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatWaypointDir);
+                    break;
+                case WaypointType.Types.elevator:
+                    GetComponent<Rigidbody>().isKinematic = false;
+                    controller.enabled = false;
+
+                    break;
+                case WaypointType.Types.elevatorExit:
+                    GetComponent<Rigidbody>().isKinematic = true;
+                    controller.enabled = true;
+                    Vector3 elevatorDir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    elevatorDir *= speed;
+                    controller.SimpleMove(elevatorDir);
+                    Vector3 flatElevatorDir = new Vector3(elevatorDir.x, 0, elevatorDir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatElevatorDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatElevatorDir);
+                    break;
+            }
+
+        }
+        else
+        {
+            switch (walkState)
+            {
+                case WaypointType.Types.walkToNextWaypointOnPathEnd:
+                    Vector3 dir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    dir *= speed;
+                    controller.SimpleMove(dir);
+                    Vector3 flatDir = new Vector3(dir.x, 0, dir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatDir);
+                    break;
+                case WaypointType.Types.elevatorEntrance:
+                    Vector3 elevatorDir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    elevatorDir *= speed;
+                    controller.SimpleMove(elevatorDir);
+                    Vector3 flatElevatorDir = new Vector3(elevatorDir.x, 0, elevatorDir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatElevatorDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatElevatorDir);
+                    break;
+                case WaypointType.Types.elevator:
+                    GetComponent<Rigidbody>().isKinematic = false;
+                    controller.enabled = false;
+                    break;
+                case WaypointType.Types.elevatorExit:
+                    GetComponent<Rigidbody>().isKinematic = true;
+                    controller.enabled = true;
+                    Vector3 exitDir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    exitDir *= speed;
+                    controller.SimpleMove(exitDir);
+                    Vector3 flatExitDir = new Vector3(exitDir.x, 0, exitDir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatExitDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatExitDir);
+                    break;
+            }
+            return;
+        }
+
         //Check if we are close enough to the next waypoint
         //If we are, proceed to follow the next waypoint
         if (Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance)
@@ -91,8 +190,27 @@ public class FindTestPath : MonoBehaviour {
     IEnumerator FindNewPath()
     {
         yield return new WaitForSeconds(1);
-        Start();
-
+        //Disabled for now
+        //Start();
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log(other.tag);
+        if (other.tag == "Waypoint")
+        {
+            WaypointType pointType = other.transform.parent.GetComponent<WaypointType>();
+            Debug.Log(activeWaypoint.ToString());
+            Debug.Log(pointType.waypointNumber.ToString());
+
+            if (activeWaypoint == pointType.waypointNumber && activeWaypoint < waypoints.Length - 1)
+            {
+                Debug.Log("Reached waypoit");
+                walkState = waypoints[activeWaypoint].GetComponent<WaypointType>().type;
+                activeWaypoint++;
+                Start();
+                endOfPathReached = false;
+            }
+        }
+    }
 }

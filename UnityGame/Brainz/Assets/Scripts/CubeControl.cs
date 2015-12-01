@@ -22,6 +22,9 @@ public class CubeControl : MonoBehaviour
 
     public bool showSleeping;
 
+    //needed for pathfinnding
+    private bool finished;
+
     // Use this for initialization
     void Start()
     {
@@ -35,7 +38,7 @@ public class CubeControl : MonoBehaviour
             navigation = GetComponent<NavmeshTestNavigation>();
         }
 
-
+        finished = false;
     }
 
     // Update is called once per frame
@@ -59,12 +62,22 @@ public class CubeControl : MonoBehaviour
         {
             saveSleeping = false;
         }
-        if (!saveSleeping && rbody.IsSleeping())
+        if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
-            //UpdateGraph.S.UpdateGridGraph();
+            Debug.Log("Update GridGraph from Object " + name);
+            UpdateGraph.S.UpdateGridGraph();
             saveSleeping = true;
         }
 
+        if(blocktype == BlockType.NPCAStar && finished)
+        {
+
+            if (Physics.Raycast(transform.position, Vector3.down, 1))
+            {
+                StartCoroutine(ResetNPC());
+                finished = false;
+            }
+        }
     }
 
     /// <summary>
@@ -75,9 +88,7 @@ public class CubeControl : MonoBehaviour
         if (this.gameObject.GetComponent<Rigidbody>() && blocktype == BlockType.Cube)
         {
             this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
-            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();
-            rb.mass = 1000;
-            
+            Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();        
         }
     }
 
@@ -102,7 +113,10 @@ public class CubeControl : MonoBehaviour
         }
         if (blocktype == BlockType.NPCAStar)
         {
-            UpdateGraph.S.UpdateGridGraph();
+            finished = true;
+
+            /*
+            //UpdateGraph.S.UpdateGridGraph();
             FindTestPath myTestPath = GetComponent<FindTestPath>();
             myTestPath.enabled = true;
             myTestPath.Start();
@@ -110,7 +124,8 @@ public class CubeControl : MonoBehaviour
             GetComponent<Seeker>().enabled = true;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<CharacterController>().enabled = true;
-            
+            rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            */
         }
 
         ResetObject();
@@ -178,5 +193,19 @@ public class CubeControl : MonoBehaviour
 
     }
 
+    IEnumerator ResetNPC()
+    {
+        yield return new WaitForSeconds(1);
+
+        //UpdateGraph.S.UpdateGridGraph();
+        FindTestPath myTestPath = GetComponent<FindTestPath>();
+        myTestPath.enabled = true;
+        myTestPath.Start();
+        //myTestPath.StartCouroutineFindPath();-
+        GetComponent<Seeker>().enabled = true;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<CharacterController>().enabled = true;
+        rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
 
 }

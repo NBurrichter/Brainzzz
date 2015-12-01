@@ -37,7 +37,7 @@ public class AimingControl : MonoBehaviour
     /// <returns> Vector3</returns>
     public Vector3 GetHitDirection()
     {
-        Vector3 vHitDirection = hit.point - this.transform.position;
+        Vector3 vHitDirection = hit.point - BlopGun.BlopGunSingelton.transform.position;
         vHitDirection = vHitDirection.normalized;
         vHitDirection = vHitDirection * fShotSpeed;
         
@@ -51,11 +51,16 @@ public class AimingControl : MonoBehaviour
 
     public Vector3 GetSpawnPosition()
     {
-        Vector3 vHitDirection = hit.point - this.transform.position;
+        Vector3 vHitDirection = hit.point - BlopGun.BlopGunSingelton.transform.position;
         vHitDirection = vHitDirection.normalized;
         
 
         return vHitDirection;
+    }
+
+    public Vector3 GetHitPointPosition()
+    {
+        return hit.point;
     }
 
     

@@ -138,6 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7753b53b10917024aa31be350910b100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  matBlop2: {fileID: 2100000, guid: a1a715f5c2bbef54ca63fbcda1ee2629, type: 2}
 --- !u!135 &13553952
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1377,6 +1378,14 @@ Prefab:
       propertyPath: prewarm
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: matBlop2
+      value: 
+      objectReference: {fileID: 2100000, guid: a1a715f5c2bbef54ca63fbcda1ee2629, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 173570}
