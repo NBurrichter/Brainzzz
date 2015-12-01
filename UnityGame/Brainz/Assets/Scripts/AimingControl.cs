@@ -58,5 +58,10 @@ public class AimingControl : MonoBehaviour
         return vHitDirection;
     }
 
+    public Vector3 GetHitPointPosition()
+    {
+        return hit.point;
+    }
+
     
 }
