@@ -2108,9 +2108,6 @@ MonoBehaviour:
   Blop1Prefab: {fileID: 148576, guid: 23ffe2036a47e6f4fa0fcea996f27aa2, type: 2}
   Blop2Prefab: {fileID: 173570, guid: 4a9bdd55003d6e3498cab051c958b4ac, type: 2}
   fRechargeTime: .200000003
-  matRecharging: {fileID: 2100000, guid: 3cef4e03c5d97964b86a2bbf7d969286, type: 2}
-  matBlop1: {fileID: 2100000, guid: e339d303862013646af1d1ac8f8a5acb, type: 2}
-  matBlop2: {fileID: 2100000, guid: a1a715f5c2bbef54ca63fbcda1ee2629, type: 2}
   fMovingFactor: 1.79999995
   fRotationFactor: 450
 --- !u!1 &1515324812
