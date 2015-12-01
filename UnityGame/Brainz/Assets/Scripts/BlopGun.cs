@@ -19,12 +19,14 @@ public class BlopGun : MonoBehaviour {
     private Renderer renCurrent;
     private Material matCharged;
 
+    public Material matRecharging;
+    public Material matBlop1;
+    public Material matBlop2;
+
     private ParticleSystem psGun;
     private float fXRotation = 90f;
     private float fYRotation;
     private float fZRotation;
-
-    public static BlopGun BlopGunSingelton;
 
 
     /// <summary>
@@ -44,7 +46,6 @@ public class BlopGun : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        BlopGunSingelton = this;
         bIsCharged = true;
         fRechargeTimer = 0.0f;
         renCurrent = GetComponent<Renderer>();
@@ -107,6 +108,8 @@ public class BlopGun : MonoBehaviour {
                 Instantiate(Blop1Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
                 bIsCharged = false;
                 //renCurrent.material = matRecharging;
+                matCharged = matBlop1;
+                renCurrent.material = matCharged;
                 psGun.Play();
                 localPos = transform.localPosition;
             }
@@ -123,14 +126,13 @@ public class BlopGun : MonoBehaviour {
                 Instantiate(Blop2Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
                 bIsCharged = false;
                 //renCurrent.material = matRecharging;
+                matCharged = matBlop2;
+                renCurrent.material = matCharged;
                 psGun.Play();
                 localPos = transform.localPosition;
             }
         }
 	}
 
-    public void ChangeTexture(Material mat)
-    {
-        renCurrent.material = mat;
-    }
+
 }

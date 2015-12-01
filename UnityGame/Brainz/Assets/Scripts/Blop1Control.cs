@@ -11,9 +11,7 @@ public class Blop1Control : MonoBehaviour
 
     private GameObject particleObject;
 
-    public Material matBlop1;
-
-    private Vector3 vMoveDirection;
+    new Vector3 vMoveDirection;
 
 	Rigidbody rb;
 	
@@ -73,7 +71,6 @@ public class Blop1Control : MonoBehaviour
                 return;
             }
 
-            BlopGun.BlopGunSingelton.ChangeTexture(matBlop1);
 
             // Delete previous Blops
             DeletePreviousBlops();

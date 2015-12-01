@@ -122,7 +122,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Blop: {fileID: 0}
-  matBlop1: {fileID: 2100000, guid: e339d303862013646af1d1ac8f8a5acb, type: 2}
 --- !u!114 &11493644
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1431,10 +1430,6 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 0}
-      propertyPath: matBlop1
-      value: 
-      objectReference: {fileID: 2100000, guid: e339d303862013646af1d1ac8f8a5acb, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148576}

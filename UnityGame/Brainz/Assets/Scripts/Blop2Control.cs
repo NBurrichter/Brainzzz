@@ -9,8 +9,6 @@ public class Blop2Control : MonoBehaviour
 
     private GameObject particleObject;
 
-    public Material matBlop2;
-
     // Use this for initialization
     public void Start()
     {
@@ -63,7 +61,7 @@ public class Blop2Control : MonoBehaviour
             // Destroy previous Blops
             DeletePreviousBlops();
 
-            BlopGun.BlopGunSingelton.ChangeTexture(matBlop2);
+
 
             // Add Tag and Components to the attachement
             c.gameObject.tag = "Blop2_Attachment";
