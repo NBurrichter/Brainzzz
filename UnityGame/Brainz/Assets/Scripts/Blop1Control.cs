@@ -11,6 +11,8 @@ public class Blop1Control : MonoBehaviour
 
     private GameObject particleObject;
 
+    new Vector3 vMoveDirection;
+
 	Rigidbody rb;
 	
 	// Use this for initialization
@@ -18,7 +20,7 @@ public class Blop1Control : MonoBehaviour
 	{
 		Blop = this.gameObject;
 		rb = GetComponent<Rigidbody> ();
-        rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection(); 
+        vMoveDirection = AimingControl.aimingControlSingleton.GetHitDirection(); 
 		Blop.tag = "Blop1";
         goBlop1Array = GameObject.FindGameObjectsWithTag("Blop1");
         foreach (Transform child in transform)
@@ -33,6 +35,9 @@ public class Blop1Control : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(attachedObject==null)
+            transform.position += vMoveDirection * Time.smoothDeltaTime;
+
         if (attachedObject != null)
         {
             if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)

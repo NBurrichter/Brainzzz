@@ -42,10 +42,10 @@ public class BlopGun : MonoBehaviour {
     private Vector3 vOldPosition;
 
 
+    private Vector3 localPos;
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         bIsCharged = true;
         fRechargeTimer = 0.0f;
         renCurrent = GetComponent<Renderer>();
@@ -64,18 +64,16 @@ public class BlopGun : MonoBehaviour {
         fXRotation = transform.localRotation.eulerAngles.x;
         fYRotation = transform.localRotation.eulerAngles.y;
         fZRotation = transform.localRotation.eulerAngles.z;
-        Debug.Log(fXRotation + "  " + fYRotation + "  " + fZRotation);
 
         if (bIsCharged==false)
         {
 
-
-            if(fRechargeTimer >=fRechargeTime)
+            if(fRechargeTimer > fRechargeTime)
             {
-                fXRotation = transform.rotation.eulerAngles.x;
                 fRechargeTimer = 0.0f;
                 bIsCharged = true;
                 psGun.Stop();
+                transform.localPosition = localPos;
                 //renCurrent.material = matCharged;
 
             }
@@ -84,12 +82,13 @@ public class BlopGun : MonoBehaviour {
                 //move weapon while recharging
                 if (fRechargeTimer < fRechargeTime / 2)
                 {
-                    transform.position -= (transform.up * Time.deltaTime) * fMovingFactor;
+                    transform.position -= (transform.up * Time.smoothDeltaTime) * fMovingFactor;
                     fXRotation -= Time.deltaTime * fRotationFactor;
+
                 }
                 else
                 {
-                    transform.position += (transform.up * Time.deltaTime) * fMovingFactor;
+                    transform.position += (transform.up * Time.smoothDeltaTime) * fMovingFactor;
                     fXRotation += Time.deltaTime * fRotationFactor;
                 }
 
@@ -104,13 +103,16 @@ public class BlopGun : MonoBehaviour {
         // Shot the first Blop
 		if(Input.GetButtonDown("Fire1"))
 		{
-
-            Instantiate(Blop1Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(),Quaternion.identity);
-            bIsCharged = false;
-            //renCurrent.material = matRecharging;
-            matCharged = matBlop1;
-            renCurrent.material = matCharged;
-            psGun.Play();
+            if (bIsCharged == true)
+            {
+                Instantiate(Blop1Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
+                bIsCharged = false;
+                //renCurrent.material = matRecharging;
+                matCharged = matBlop1;
+                renCurrent.material = matCharged;
+                psGun.Play();
+                localPos = transform.localPosition;
+            }
 
 
         }
@@ -119,13 +121,16 @@ public class BlopGun : MonoBehaviour {
         // Shot the second Blop
 		if(Input.GetButtonDown("Fire2"))
 		   {
-
-			Instantiate(Blop2Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
-            bIsCharged = false;
-            //renCurrent.material = matRecharging;
-            matCharged = matBlop2;
-            renCurrent.material = matCharged;
-            psGun.Play();
+            if (bIsCharged == true)
+            {
+                Instantiate(Blop2Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
+                bIsCharged = false;
+                //renCurrent.material = matRecharging;
+                matCharged = matBlop2;
+                renCurrent.material = matCharged;
+                psGun.Play();
+                localPos = transform.localPosition;
+            }
         }
 	}
 

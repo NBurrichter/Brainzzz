@@ -133,6 +133,8 @@ public class Synapsing : MonoBehaviour
                 dir = dir.normalized;
 
                 // may remove the time since start component to have a more constant force
+                //blopOneBody.isKinematic = false;
+                //blopTwoBody.isKinematic = false;
                 blopOneBody.AddForce(-dir * fMerginForceMultiplier); 
                 blopTwoBody.AddForce(dir * fMerginForceMultiplier);
             }
