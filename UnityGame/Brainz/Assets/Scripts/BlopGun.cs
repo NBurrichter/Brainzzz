@@ -104,8 +104,13 @@ public class BlopGun : MonoBehaviour {
 		{
             if (bIsCharged == true)
             {
-                Instantiate(Blop1Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
+                Instantiate(Blop1Prefab, transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
                 bIsCharged = false;
+                Debug.DrawLine(Vector3.zero, AimingControl.aimingControlSingleton.gameObject.transform.position,Color.magenta,5);
+                Debug.DrawLine(Vector3.zero, transform.position, Color.cyan, 5);
+                Debug.DrawLine(Vector3.zero, transform.parent.root.transform.position, Color.red, 5);
+                Debug.Log(AimingControl.aimingControlSingleton.gameObject.transform.position);
+
                 //renCurrent.material = matRecharging;
                 psGun.Play();
                 localPos = transform.localPosition;
@@ -120,7 +125,7 @@ public class BlopGun : MonoBehaviour {
 		   {
             if (bIsCharged == true)
             {
-                Instantiate(Blop2Prefab, AimingControl.aimingControlSingleton.gameObject.transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
+                Instantiate(Blop2Prefab, transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
                 bIsCharged = false;
                 //renCurrent.material = matRecharging;
                 psGun.Play();
