@@ -22,6 +22,9 @@ public class CubeControl : MonoBehaviour
 
     public bool showSleeping;
 
+    //needed for pathfinnding
+    private bool finished;
+
     // Use this for initialization
     void Start()
     {
@@ -35,7 +38,7 @@ public class CubeControl : MonoBehaviour
             navigation = GetComponent<NavmeshTestNavigation>();
         }
 
-
+        finished = false;
     }
 
     // Update is called once per frame
@@ -62,10 +65,19 @@ public class CubeControl : MonoBehaviour
         if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
             Debug.Log("Update GridGraph from Object " + name);
-            //UpdateGraph.S.UpdateGridGraph();
+            UpdateGraph.S.UpdateGridGraph();
             saveSleeping = true;
         }
 
+        if(blocktype == BlockType.NPCAStar && finished)
+        {
+
+            if (Physics.Raycast(transform.position, Vector3.down, 1))
+            {
+                StartCoroutine(ResetNPC());
+                finished = false;
+            }
+        }
     }
 
     /// <summary>
@@ -101,6 +113,9 @@ public class CubeControl : MonoBehaviour
         }
         if (blocktype == BlockType.NPCAStar)
         {
+            finished = true;
+
+            /*
             //UpdateGraph.S.UpdateGridGraph();
             FindTestPath myTestPath = GetComponent<FindTestPath>();
             myTestPath.enabled = true;
@@ -109,7 +124,8 @@ public class CubeControl : MonoBehaviour
             GetComponent<Seeker>().enabled = true;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<CharacterController>().enabled = true;
-            
+            rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            */
         }
 
         ResetObject();
@@ -177,5 +193,19 @@ public class CubeControl : MonoBehaviour
 
     }
 
+    IEnumerator ResetNPC()
+    {
+        yield return new WaitForSeconds(1);
+
+        //UpdateGraph.S.UpdateGridGraph();
+        FindTestPath myTestPath = GetComponent<FindTestPath>();
+        myTestPath.enabled = true;
+        myTestPath.Start();
+        //myTestPath.StartCouroutineFindPath();-
+        GetComponent<Seeker>().enabled = true;
+        GetComponent<Rigidbody>().isKinematic = true;
+        GetComponent<CharacterController>().enabled = true;
+        rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
 
 }

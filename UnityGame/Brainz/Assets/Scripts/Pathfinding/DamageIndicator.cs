@@ -6,12 +6,13 @@ public class DamageIndicator : MonoBehaviour
 
     public float maxHealth;
     private float health;
+    public GameObject renderObject;
     private Renderer rend;
 
     void Start()
     {
         health = maxHealth;
-        rend = GetComponent<Renderer>();
+        rend = renderObject.GetComponent<Renderer>();
     }
 
     void Update()
@@ -22,7 +23,15 @@ public class DamageIndicator : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
-        health--;
+        if (health > 0)
+        {
+            health--;
+        }
         rend.material.color = new Color((health/maxHealth),(health / maxHealth),(health / maxHealth));
+    }
+
+    public float GetHealth()
+    {
+        return health;
     }
 }
