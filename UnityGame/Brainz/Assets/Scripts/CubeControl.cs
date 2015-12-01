@@ -109,6 +109,7 @@ public class CubeControl : MonoBehaviour
             GetComponent<Seeker>().enabled = true;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<CharacterController>().enabled = true;
+            rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
             
         }
 

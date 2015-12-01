@@ -255,5 +255,9 @@ public class Blop1Control : MonoBehaviour
         return false;
     }
 
-    
+    public GameObject GetAttachedObject()
+    {
+        return attachedObject.gameObject;
+    }
+
 }

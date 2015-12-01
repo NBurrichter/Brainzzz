@@ -72,6 +72,14 @@ public class Synapsing : MonoBehaviour
         {
             merginCoroutine = Mergin();
             StartCoroutine(merginCoroutine);
+            if(Blop1Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                Blop1Script.GetAttachedObject().GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            }
+            if (Blop2Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                Blop1Script.GetAttachedObject().GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            }
         }
 
     }

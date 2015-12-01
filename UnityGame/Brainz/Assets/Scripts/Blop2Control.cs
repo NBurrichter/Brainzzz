@@ -246,4 +246,10 @@ public class Blop2Control : MonoBehaviour
             return true;
         return false;
     }
+
+    public GameObject GetAttachedObject()
+    {
+        return attachedObject.gameObject;
+    }
+
 }
