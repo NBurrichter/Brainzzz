@@ -419,7 +419,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHeight: 1.10000002
-  fRotationSpeed: 80
+  playerWidth: 0
+  fRotationSpeed: 30
   speed: 10
   gravity: 10
   maxVelocityChange: 10
@@ -2182,7 +2183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d55fe4d67a5cfb4a9ee8dd5d10c5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fRotationSpeed: 40
+  fRotationSpeed: 15
   focusPoint: {fileID: 1515324812}
   cameraOffset: {x: 0, y: 0, z: -3.5}
 --- !u!114 &1620039731

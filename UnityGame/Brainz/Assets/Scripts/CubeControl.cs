@@ -64,7 +64,7 @@ public class CubeControl : MonoBehaviour
         }
         if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
-            Debug.Log("Update GridGraph from Object " + name);
+            //Debug.Log("Update GridGraph from Object " + name);
             UpdateGraph.S.UpdateGridGraph();
             saveSleeping = true;
         }
@@ -153,7 +153,7 @@ public class CubeControl : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-
+        Debug.Log("Collision Enterd in Frame: " + Time.frameCount);
         // collision with other attachment
         if (this.gameObject.tag == "Blop1_Attachment" && c.gameObject.tag == "Blop2_Attachment")
         {
@@ -207,5 +207,6 @@ public class CubeControl : MonoBehaviour
         GetComponent<CharacterController>().enabled = true;
         rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
+
 
 }
