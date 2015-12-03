@@ -132,6 +132,15 @@ public class FindTestPath : MonoBehaviour
                     Debug.DrawLine(transform.position, transform.position + flatElevatorDir, Color.yellow);
                     lookAtDummy.transform.LookAt(transform.position + flatElevatorDir);
                     break;
+                case WaypointType.Types.walkDirectPath:
+                    Vector3 directDir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    directDir *= speed;
+                    controller.SimpleMove(directDir);
+                    Vector3 flatDirectDir = new Vector3(directDir.x, 0, directDir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatDirectDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatDirectDir);
+                    break;
+
             }
 
         }
@@ -168,6 +177,14 @@ public class FindTestPath : MonoBehaviour
                     Vector3 flatExitDir = new Vector3(exitDir.x, 0, exitDir.z);
                     Debug.DrawLine(transform.position, transform.position + flatExitDir, Color.yellow);
                     lookAtDummy.transform.LookAt(transform.position + flatExitDir);
+                    break;
+                case WaypointType.Types.walkDirectPath:
+                    Vector3 directDir = (waypoints[activeWaypoint].transform.position - transform.position).normalized;
+                    directDir *= speed;
+                    controller.SimpleMove(directDir);
+                    Vector3 flatDirectDir = new Vector3(directDir.x, 0, directDir.z);
+                    Debug.DrawLine(transform.position, transform.position + flatDirectDir, Color.yellow);
+                    lookAtDummy.transform.LookAt(transform.position + flatDirectDir);
                     break;
             }
             return;

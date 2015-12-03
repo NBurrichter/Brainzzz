@@ -39,6 +39,20 @@ ModelImporter:
     100062: InnerBox7
     100064: InnerBox8
     100066: //RootNode
+    100068: Block10Segments
+    100070: Block12Segments
+    100072: Block16Segments
+    100074: Block8Segments
+    100076: LevelGroup
+    100078: OuterRing
+    100080: OuterRing1
+    100082: Ring10Segments
+    100084: Ring12Segments
+    100086: Ring16Segments
+    100088: Ring8Segmments8
+    100090: Ring8Segmments
+    100092: Spiral5
+    100094: Spiral
     400000: Box
     400002: Box1
     400004: Box10
@@ -73,6 +87,20 @@ ModelImporter:
     400062: InnerBox7
     400064: InnerBox8
     400066: //RootNode
+    400068: Block10Segments
+    400070: Block12Segments
+    400072: Block16Segments
+    400074: Block8Segments
+    400076: LevelGroup
+    400078: OuterRing
+    400080: OuterRing1
+    400082: Ring10Segments
+    400084: Ring12Segments
+    400086: Ring16Segments
+    400088: Ring8Segmments8
+    400090: Ring8Segmments
+    400092: Spiral5
+    400094: Spiral
     2300000: Box
     2300002: Box1
     2300004: Box10
@@ -106,6 +134,19 @@ ModelImporter:
     2300060: InnerBox1
     2300062: InnerBox7
     2300064: InnerBox8
+    2300066: Block10Segments
+    2300068: Block12Segments
+    2300070: Block16Segments
+    2300072: Block8Segments
+    2300074: OuterRing
+    2300076: OuterRing1
+    2300078: Ring10Segments
+    2300080: Ring12Segments
+    2300082: Ring16Segments
+    2300084: Ring8Segmments8
+    2300086: Ring8Segmments
+    2300088: Spiral5
+    2300090: Spiral
     3300000: Box
     3300002: Box1
     3300004: Box10
@@ -139,6 +180,19 @@ ModelImporter:
     3300060: InnerBox1
     3300062: InnerBox7
     3300064: InnerBox8
+    3300066: Block10Segments
+    3300068: Block12Segments
+    3300070: Block16Segments
+    3300072: Block8Segments
+    3300074: OuterRing
+    3300076: OuterRing1
+    3300078: Ring10Segments
+    3300080: Ring12Segments
+    3300082: Ring16Segments
+    3300084: Ring8Segmments8
+    3300086: Ring8Segmments
+    3300088: Spiral5
+    3300090: Spiral
     4300000: Box
     4300002: InnerBox
     4300004: Box1
@@ -172,6 +226,19 @@ ModelImporter:
     4300060: InnerBox
     4300062: Box7
     4300064: InnerBox7
+    4300066: OuterRing1
+    4300068: OuterRing
+    4300070: Block8Segments
+    4300072: Block10Segments
+    4300074: Block12Segments
+    4300076: Block16Segments
+    4300078: Ring8Segmments8
+    4300080: Ring10Segments
+    4300082: Ring12Segments
+    4300084: Ring16Segments
+    4300086: Ring8Segmments
+    4300088: Spiral5
+    4300090: Spiral
   materials:
     importMaterials: 1
     materialName: 0
@@ -195,7 +262,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 250
+    globalScale: 500
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
