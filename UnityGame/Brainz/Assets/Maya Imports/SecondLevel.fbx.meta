@@ -1,0 +1,238 @@
+fileFormatVersion: 2
+guid: 9c7f2c7313c7ee5439d169e8ef37d66b
+timeCreated: 1449061003
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Box
+    100002: Box1
+    100004: Box10
+    100006: Box11
+    100008: Box12
+    100010: Box13
+    100012: Box14
+    100014: Box15
+    100016: Box16
+    100018: Box17
+    100020: Box2
+    100022: Box5
+    100024: Box6
+    100026: Box7
+    100028: Box8
+    100030: Box9
+    100032: InnerBox
+    100034: InnerBox 1
+    100036: InnerBox 10
+    100038: InnerBox 11
+    100040: InnerBox 12
+    100042: InnerBox 13
+    100044: InnerBox 2
+    100046: InnerBox 3
+    100048: InnerBox 4
+    100050: InnerBox 5
+    100052: InnerBox 6
+    100054: InnerBox 7
+    100056: InnerBox 8
+    100058: InnerBox 9
+    100060: InnerBox1
+    100062: InnerBox7
+    100064: InnerBox8
+    100066: //RootNode
+    400000: Box
+    400002: Box1
+    400004: Box10
+    400006: Box11
+    400008: Box12
+    400010: Box13
+    400012: Box14
+    400014: Box15
+    400016: Box16
+    400018: Box17
+    400020: Box2
+    400022: Box5
+    400024: Box6
+    400026: Box7
+    400028: Box8
+    400030: Box9
+    400032: InnerBox
+    400034: InnerBox 1
+    400036: InnerBox 10
+    400038: InnerBox 11
+    400040: InnerBox 12
+    400042: InnerBox 13
+    400044: InnerBox 2
+    400046: InnerBox 3
+    400048: InnerBox 4
+    400050: InnerBox 5
+    400052: InnerBox 6
+    400054: InnerBox 7
+    400056: InnerBox 8
+    400058: InnerBox 9
+    400060: InnerBox1
+    400062: InnerBox7
+    400064: InnerBox8
+    400066: //RootNode
+    2300000: Box
+    2300002: Box1
+    2300004: Box10
+    2300006: Box11
+    2300008: Box12
+    2300010: Box13
+    2300012: Box14
+    2300014: Box15
+    2300016: Box16
+    2300018: Box17
+    2300020: Box2
+    2300022: Box5
+    2300024: Box6
+    2300026: Box7
+    2300028: Box8
+    2300030: Box9
+    2300032: InnerBox
+    2300034: InnerBox 1
+    2300036: InnerBox 10
+    2300038: InnerBox 11
+    2300040: InnerBox 12
+    2300042: InnerBox 13
+    2300044: InnerBox 2
+    2300046: InnerBox 3
+    2300048: InnerBox 4
+    2300050: InnerBox 5
+    2300052: InnerBox 6
+    2300054: InnerBox 7
+    2300056: InnerBox 8
+    2300058: InnerBox 9
+    2300060: InnerBox1
+    2300062: InnerBox7
+    2300064: InnerBox8
+    3300000: Box
+    3300002: Box1
+    3300004: Box10
+    3300006: Box11
+    3300008: Box12
+    3300010: Box13
+    3300012: Box14
+    3300014: Box15
+    3300016: Box16
+    3300018: Box17
+    3300020: Box2
+    3300022: Box5
+    3300024: Box6
+    3300026: Box7
+    3300028: Box8
+    3300030: Box9
+    3300032: InnerBox
+    3300034: InnerBox 1
+    3300036: InnerBox 10
+    3300038: InnerBox 11
+    3300040: InnerBox 12
+    3300042: InnerBox 13
+    3300044: InnerBox 2
+    3300046: InnerBox 3
+    3300048: InnerBox 4
+    3300050: InnerBox 5
+    3300052: InnerBox 6
+    3300054: InnerBox 7
+    3300056: InnerBox 8
+    3300058: InnerBox 9
+    3300060: InnerBox1
+    3300062: InnerBox7
+    3300064: InnerBox8
+    4300000: Box
+    4300002: InnerBox
+    4300004: Box1
+    4300006: InnerBox
+    4300008: Box2
+    4300010: InnerBox
+    4300012: Box5
+    4300014: InnerBox
+    4300016: Box6
+    4300018: InnerBox
+    4300020: Box8
+    4300022: InnerBox8
+    4300024: Box9
+    4300026: InnerBox
+    4300028: Box10
+    4300030: InnerBox
+    4300032: Box11
+    4300034: InnerBox
+    4300036: Box12
+    4300038: InnerBox
+    4300040: Box13
+    4300042: InnerBox
+    4300044: Box14
+    4300046: InnerBox
+    4300048: Box15
+    4300050: InnerBox
+    4300052: Box16
+    4300054: InnerBox
+    4300056: InnerBox1
+    4300058: Box17
+    4300060: InnerBox
+    4300062: Box7
+    4300064: InnerBox7
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 250
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

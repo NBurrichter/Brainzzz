@@ -9,7 +9,8 @@ public class WaypointType : MonoBehaviour {
         stayOnPathEnd,
         elevatorEntrance,
         elevator,
-        elevatorExit
+        elevatorExit,
+        walkDirectPath
     };
 
     public Types type;

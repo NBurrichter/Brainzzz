@@ -96,7 +96,7 @@ public class Blop1Control : MonoBehaviour
 
 
 			//Set physic material of other collider
-			c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
+			//c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
 
 			//Set drag to 0
 			rb.drag = 0;
