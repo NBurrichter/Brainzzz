@@ -153,7 +153,7 @@ public class CubeControl : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        Debug.Log("Collision Enterd in Frame: " + Time.frameCount);
+
         // collision with other attachment
         if (this.gameObject.tag == "Blop1_Attachment" && c.gameObject.tag == "Blop2_Attachment")
         {

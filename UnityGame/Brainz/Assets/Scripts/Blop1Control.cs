@@ -74,7 +74,6 @@ public class Blop1Control : MonoBehaviour
 
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
-            Debug.Log(listPreviousKinematicStatus[i] + "  " + listGameObjectsInTrigger[i].name);
             listGameObjectsInTrigger[i].GetComponent<Rigidbody>().isKinematic = listPreviousKinematicStatus[i];
         }
 
@@ -190,14 +189,13 @@ public class Blop1Control : MonoBehaviour
                     // Return if object is already in list
                     if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
                         return;
-                }
-                Debug.Log("Save Object " + "Frame: " + Time.frameCount + "Collision with: " + collider.gameObject.name);           
+                }           
                 listGameObjectsInTrigger.Add(collider.gameObject);
-                Debug.Log("Saved GameObject");
+
                 listPreviousKinematicStatus.Add(collider.gameObject.GetComponent<Rigidbody>().isKinematic);
-                Debug.Log("Saved Kinematic");
+
                 collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-                Debug.Log("Changed Kinematic " + "Frame: " + Time.frameCount + "Collision with: " + collider.gameObject.name);
+
             }
         }
     }

@@ -61,7 +61,7 @@ public class Blop2Control : MonoBehaviour
     {
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
-            Debug.Log(listPreviousKinematicStatus[i] + "  " + listGameObjectsInTrigger[i].name);
+
             listGameObjectsInTrigger[i].GetComponent<Rigidbody>().isKinematic = listPreviousKinematicStatus[i];
         }
 
