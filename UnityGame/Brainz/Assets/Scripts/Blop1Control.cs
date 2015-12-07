@@ -185,6 +185,12 @@ public class Blop1Control : MonoBehaviour
         {
             if(collider.gameObject.GetComponent<CubeControl>()!= null)
             {
+                for(int i = 0; i< listGameObjectsInTrigger.Count; i++)
+                {
+                    // Return if object is already in list
+                    if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
+                        return;
+                }
                 Debug.Log("Save Object " + "Frame: " + Time.frameCount + "Collision with: " + collider.gameObject.name);           
                 listGameObjectsInTrigger.Add(collider.gameObject);
                 Debug.Log("Saved GameObject");

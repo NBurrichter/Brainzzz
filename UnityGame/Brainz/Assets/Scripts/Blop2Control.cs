@@ -59,6 +59,12 @@ public class Blop2Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
+        for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
+        {
+            Debug.Log(listPreviousKinematicStatus[i] + "  " + listGameObjectsInTrigger[i].name);
+            listGameObjectsInTrigger[i].GetComponent<Rigidbody>().isKinematic = listPreviousKinematicStatus[i];
+        }
+
 
         if (attachedObject != null)
         {
@@ -165,6 +171,14 @@ public class Blop2Control : MonoBehaviour
         {
             if (collider.gameObject.GetComponent<CubeControl>() != null)
             {
+
+                for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
+                {
+                    // Return if object is already in list
+                    if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
+                        return;
+                }
+
                 listGameObjectsInTrigger.Add(collider.gameObject);
                 listPreviousKinematicStatus.Add(collider.gameObject.GetComponent<Rigidbody>().isKinematic);
                 collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
