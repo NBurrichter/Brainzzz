@@ -1,0 +1,127 @@
+fileFormatVersion: 2
+guid: 5cebd345792f9274b9a9874f73762714
+timeCreated: 1449491724
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: geo_base_mesh
+    100002: geo_hair
+    100004: Geo_HandWeapon
+    100006: geo_l_eye
+    100008: geo_l_lid
+    100010: geo_l_underlid
+    100012: geo_r_eye
+    100014: geo_r_lid1
+    100016: geo_r_underlid
+    100018: Geometry
+    100020: GRP_Body_Hair
+    100022: GRP_Eyes
+    100024: GRP_Spheres_inside
+    100026: //RootNode
+    400000: geo_base_mesh
+    400002: geo_hair
+    400004: Geo_HandWeapon
+    400006: geo_l_eye
+    400008: geo_l_lid
+    400010: geo_l_underlid
+    400012: geo_r_eye
+    400014: geo_r_lid1
+    400016: geo_r_underlid
+    400018: Geometry
+    400020: GRP_Body_Hair
+    400022: GRP_Eyes
+    400024: GRP_Spheres_inside
+    400026: //RootNode
+    2300000: geo_base_mesh
+    2300002: geo_hair
+    2300004: Geo_HandWeapon
+    2300006: geo_l_eye
+    2300008: geo_l_lid
+    2300010: geo_l_underlid
+    2300012: geo_r_eye
+    2300014: geo_r_lid1
+    2300016: geo_r_underlid
+    3300000: geo_base_mesh
+    3300002: geo_hair
+    3300004: Geo_HandWeapon
+    3300006: geo_l_eye
+    3300008: geo_l_lid
+    3300010: geo_l_underlid
+    3300012: geo_r_eye
+    3300014: geo_r_lid1
+    3300016: geo_r_underlid
+    4300000: geo_r_eye
+    4300002: geo_l_eye
+    4300004: geo_r_underlid
+    4300006: geo_l_lid
+    4300008: geo_l_underlid
+    4300010: geo_r_lid1
+    4300012: geo_base_mesh
+    4300014: geo_hair
+    4300016: Geo_HandWeapon
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 20
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

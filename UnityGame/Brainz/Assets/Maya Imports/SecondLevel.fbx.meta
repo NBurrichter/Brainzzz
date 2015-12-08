@@ -53,6 +53,26 @@ ModelImporter:
     100090: Ring8Segmments
     100092: Spiral5
     100094: Spiral
+    100096: SpiralInner
+    100098: Block16Segments1
+    100100: GlassFront
+    100102: Ring16Segments1
+    100104: Ring16Segments2
+    100106: Ring16Segments3
+    100108: Rings
+    100110: UnusedBoxes
+    100112: UnusedRings
+    100114: pCube1
+    100116: Block16Segments2
+    100118: Ring16Segments4
+    100120: Block16Segments22
+    100122: Block16Segments11
+    100124: Block16Segments21
+    100126: Plank1
+    100128: Plank2
+    100130: Block16Segments31
+    100132: Plank3
+    100134: Ring16Segments6
     400000: Box
     400002: Box1
     400004: Box10
@@ -101,6 +121,26 @@ ModelImporter:
     400090: Ring8Segmments
     400092: Spiral5
     400094: Spiral
+    400096: SpiralInner
+    400098: Block16Segments1
+    400100: GlassFront
+    400102: Ring16Segments1
+    400104: Ring16Segments2
+    400106: Ring16Segments3
+    400108: Rings
+    400110: UnusedBoxes
+    400112: UnusedRings
+    400114: pCube1
+    400116: Block16Segments2
+    400118: Ring16Segments4
+    400120: Block16Segments22
+    400122: Block16Segments11
+    400124: Block16Segments21
+    400126: Plank1
+    400128: Plank2
+    400130: Block16Segments31
+    400132: Plank3
+    400134: Ring16Segments6
     2300000: Box
     2300002: Box1
     2300004: Box10
@@ -147,6 +187,23 @@ ModelImporter:
     2300086: Ring8Segmments
     2300088: Spiral5
     2300090: Spiral
+    2300092: SpiralInner
+    2300094: Block16Segments1
+    2300096: GlassFront
+    2300098: Ring16Segments1
+    2300100: Ring16Segments2
+    2300102: Ring16Segments3
+    2300104: pCube1
+    2300106: Block16Segments2
+    2300108: Ring16Segments4
+    2300110: Block16Segments22
+    2300112: Block16Segments11
+    2300114: Block16Segments21
+    2300116: Plank1
+    2300118: Plank2
+    2300120: Block16Segments31
+    2300122: Plank3
+    2300124: Ring16Segments6
     3300000: Box
     3300002: Box1
     3300004: Box10
@@ -193,6 +250,23 @@ ModelImporter:
     3300086: Ring8Segmments
     3300088: Spiral5
     3300090: Spiral
+    3300092: SpiralInner
+    3300094: Block16Segments1
+    3300096: GlassFront
+    3300098: Ring16Segments1
+    3300100: Ring16Segments2
+    3300102: Ring16Segments3
+    3300104: pCube1
+    3300106: Block16Segments2
+    3300108: Ring16Segments4
+    3300110: Block16Segments22
+    3300112: Block16Segments11
+    3300114: Block16Segments21
+    3300116: Plank1
+    3300118: Plank2
+    3300120: Block16Segments31
+    3300122: Plank3
+    3300124: Ring16Segments6
     4300000: Box
     4300002: InnerBox
     4300004: Box1
@@ -239,6 +313,23 @@ ModelImporter:
     4300086: Ring8Segmments
     4300088: Spiral5
     4300090: Spiral
+    4300092: SpiralInner
+    4300094: GlassFront
+    4300096: Block16Segments1
+    4300098: Ring16Segments1
+    4300100: Ring16Segments2
+    4300102: Ring16Segments3
+    4300104: pCube1
+    4300106: Ring16Segments4
+    4300108: Block16Segments2
+    4300110: Block16Segments22
+    4300112: Block16Segments21
+    4300114: Block16Segments11
+    4300116: Plank2
+    4300118: Plank1
+    4300120: Block16Segments31
+    4300122: Plank3
+    4300124: Ring16Segments6
   materials:
     importMaterials: 1
     materialName: 0
