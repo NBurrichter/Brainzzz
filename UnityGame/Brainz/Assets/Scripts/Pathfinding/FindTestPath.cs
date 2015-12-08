@@ -30,8 +30,16 @@ public class FindTestPath : MonoBehaviour
     //lookat dummy (should be found automaticaly)
     public GameObject lookAtDummy;
 
+    //Sound source
+    private AudioSource source;
+
+    //bool wait
+    public bool wait;
+
     public void Awake()
     {
+        source = GetComponent<AudioSource>();
+
         activeWaypoint = 0;
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
@@ -40,6 +48,7 @@ public class FindTestPath : MonoBehaviour
 
     public void Start()
     {
+        wait = false;
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
         seeker.StartPath(transform.position, waypoints[activeWaypoint].transform.position, OnPathComplete);
         endOfPathReached = false;
@@ -60,6 +69,12 @@ public class FindTestPath : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             Start();
+        }
+
+        if (wait == true)
+        {
+            Debug.Log("Wait");
+            return;
         }
 
         //rotate towards lookatdummy
@@ -211,6 +226,12 @@ public class FindTestPath : MonoBehaviour
         //Start();
     }
 
+    IEnumerator WaitAtPoint(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        wait = false;
+    }
+
     void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.tag);
@@ -227,6 +248,14 @@ public class FindTestPath : MonoBehaviour
                 activeWaypoint++;
                 Start();
                 endOfPathReached = false;
+
+                wait = true;
+                StartCoroutine(WaitAtPoint(pointType.waitTime));
+
+                if (pointType.sType == WaypointType.SoundType.playOneSound)
+                {
+                    source.PlayOneShot(pointType.soundClip);
+                }
             }
         }
     }

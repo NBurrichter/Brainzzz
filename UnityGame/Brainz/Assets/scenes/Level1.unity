@@ -424,7 +424,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63390390}
   m_LocalRotation: {x: -1.15202326e-07, y: .707106709, z: -.707106829, w: -1.15202312e-07}
-  m_LocalPosition: {x: -1.19000006, y: 0, z: -0}
+  m_LocalPosition: {x: -1.19000006, y: 1.13699996, z: -0}
   m_LocalScale: {x: .190096825, y: .401224583, z: .190096855}
   m_Children:
   - {fileID: 1087256006}
@@ -880,7 +880,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
+  sType: 0
   waypointNumber: 8
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &181538989
 GameObject:
   m_ObjectHideFlags: 0
@@ -3363,7 +3366,7 @@ GameObject:
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &398654241
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3979,7 +3982,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 13
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &487050361
 GameObject:
   m_ObjectHideFlags: 0
@@ -4378,7 +4384,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 7
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &563979349
 GameObject:
   m_ObjectHideFlags: 0
@@ -4872,7 +4881,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 6
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &668972885
 GameObject:
   m_ObjectHideFlags: 0
@@ -5493,7 +5505,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 1
   waypointNumber: 3
+  waitTime: 0
+  soundClip: {fileID: 8300000, guid: b281f8613a3d3e445b724e47f8db5283, type: 3}
 --- !u!1 &780813806
 GameObject:
   m_ObjectHideFlags: 0
@@ -6057,7 +6072,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 899495614}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .137999997, z: 0}
+  m_LocalPosition: {x: -0, y: 1.32799995, z: .0599999987}
   m_LocalScale: {x: .577639341, y: .577639341, z: .577639341}
   m_Children: []
   m_Father: {fileID: 1824223985}
@@ -6068,7 +6083,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 899495614}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -6241,6 +6256,7 @@ GameObject:
   - 114: {fileID: 909160190}
   - 114: {fileID: 909160191}
   - 136: {fileID: 909160182}
+  - 82: {fileID: 909160192}
   m_Layer: 12
   m_Name: Son
   m_TagString: Untagged
@@ -6338,6 +6354,7 @@ MonoBehaviour:
   - {fileID: 1180003898}
   walkState: 0
   lookAtDummy: {fileID: 1049805552}
+  wait: 0
 --- !u!54 &909160186
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6445,6 +6462,76 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 10
   renderObject: {fileID: 223365085}
+--- !u!82 &909160192
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 909160180}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!1 &948818125
 GameObject:
   m_ObjectHideFlags: 0
@@ -7076,7 +7163,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 5
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &1047618671
 GameObject:
   m_ObjectHideFlags: 0
@@ -7218,7 +7308,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 0
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &1069656119
 GameObject:
   m_ObjectHideFlags: 0
@@ -8793,7 +8886,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 1
   waypointNumber: 1
+  waitTime: 5
+  soundClip: {fileID: 8300000, guid: b89850d4fe514bc41abda2e1de152689, type: 3}
 --- !u!1 &1175068214
 GameObject:
   m_ObjectHideFlags: 0
@@ -8835,7 +8931,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  sType: 0
   waypointNumber: 9
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &1178232873
 GameObject:
   m_ObjectHideFlags: 0
@@ -8950,7 +9049,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 14
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &1182668084
 GameObject:
   m_ObjectHideFlags: 0
@@ -9533,7 +9635,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 4
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &1316348429
 GameObject:
   m_ObjectHideFlags: 0
@@ -10096,7 +10201,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 4
+  sType: 0
   waypointNumber: 10
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &1484694276
 GameObject:
   m_ObjectHideFlags: 0
@@ -10211,7 +10319,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 12
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &1512094466
 GameObject:
   m_ObjectHideFlags: 0
@@ -11347,7 +11458,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1824223984}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
@@ -11425,7 +11536,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 0
   waypointNumber: 11
+  waitTime: 0
+  soundClip: {fileID: 0}
 --- !u!1 &1832655673
 GameObject:
   m_ObjectHideFlags: 0
@@ -11734,8 +11848,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1969551005}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.2200003, y: -0, z: 13.5299997}
+  m_LocalRotation: {x: 0, y: -.743689954, z: 0, w: .668524742}
+  m_LocalPosition: {x: -9.64000034, y: -0, z: 23.8299999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 853346873}
@@ -11753,7 +11867,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+  sType: 1
   waypointNumber: 2
+  waitTime: 4
+  soundClip: {fileID: 8300000, guid: 44c595197fd637d4eb0f610b0edd9738, type: 3}
 --- !u!1 &2003163567 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 8be2e95c05b778544b9c12d1c8a440be, type: 3}
