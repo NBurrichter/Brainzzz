@@ -123,7 +123,7 @@ public class Blop2Control : MonoBehaviour
 
 
             //Set physic material of other collider
-            c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
+            //c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
 
 
 

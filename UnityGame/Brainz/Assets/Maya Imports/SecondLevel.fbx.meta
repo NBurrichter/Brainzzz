@@ -1,0 +1,438 @@
+fileFormatVersion: 2
+guid: 9c7f2c7313c7ee5439d169e8ef37d66b
+timeCreated: 1449061003
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Box
+    100002: Box1
+    100004: Box10
+    100006: Box11
+    100008: Box12
+    100010: Box13
+    100012: Box14
+    100014: Box15
+    100016: Box16
+    100018: Box17
+    100020: Box2
+    100022: Box5
+    100024: Box6
+    100026: Box7
+    100028: Box8
+    100030: Box9
+    100032: InnerBox
+    100034: InnerBox 1
+    100036: InnerBox 10
+    100038: InnerBox 11
+    100040: InnerBox 12
+    100042: InnerBox 13
+    100044: InnerBox 2
+    100046: InnerBox 3
+    100048: InnerBox 4
+    100050: InnerBox 5
+    100052: InnerBox 6
+    100054: InnerBox 7
+    100056: InnerBox 8
+    100058: InnerBox 9
+    100060: InnerBox1
+    100062: InnerBox7
+    100064: InnerBox8
+    100066: //RootNode
+    100068: Block10Segments
+    100070: Block12Segments
+    100072: Block16Segments
+    100074: Block8Segments
+    100076: LevelGroup
+    100078: OuterRing
+    100080: OuterRing1
+    100082: Ring10Segments
+    100084: Ring12Segments
+    100086: Ring16Segments
+    100088: Ring8Segmments8
+    100090: Ring8Segmments
+    100092: Spiral5
+    100094: Spiral
+    100096: SpiralInner
+    100098: Block16Segments1
+    100100: GlassFront
+    100102: Ring16Segments1
+    100104: Ring16Segments2
+    100106: Ring16Segments3
+    100108: Rings
+    100110: UnusedBoxes
+    100112: UnusedRings
+    100114: pCube1
+    100116: Block16Segments2
+    100118: Ring16Segments4
+    100120: Block16Segments22
+    100122: Block16Segments11
+    100124: Block16Segments21
+    100126: Plank1
+    100128: Plank2
+    100130: Block16Segments31
+    100132: Plank3
+    100134: Ring16Segments6
+    100136: Ring16Segments7
+    100138: Bridge
+    100140: Glass
+    100142: SpiralEkig4
+    100144: transform2
+    100146: Glass1
+    100148: TestCube
+    100150: Glass2
+    100152: Glass3
+    400000: Box
+    400002: Box1
+    400004: Box10
+    400006: Box11
+    400008: Box12
+    400010: Box13
+    400012: Box14
+    400014: Box15
+    400016: Box16
+    400018: Box17
+    400020: Box2
+    400022: Box5
+    400024: Box6
+    400026: Box7
+    400028: Box8
+    400030: Box9
+    400032: InnerBox
+    400034: InnerBox 1
+    400036: InnerBox 10
+    400038: InnerBox 11
+    400040: InnerBox 12
+    400042: InnerBox 13
+    400044: InnerBox 2
+    400046: InnerBox 3
+    400048: InnerBox 4
+    400050: InnerBox 5
+    400052: InnerBox 6
+    400054: InnerBox 7
+    400056: InnerBox 8
+    400058: InnerBox 9
+    400060: InnerBox1
+    400062: InnerBox7
+    400064: InnerBox8
+    400066: //RootNode
+    400068: Block10Segments
+    400070: Block12Segments
+    400072: Block16Segments
+    400074: Block8Segments
+    400076: LevelGroup
+    400078: OuterRing
+    400080: OuterRing1
+    400082: Ring10Segments
+    400084: Ring12Segments
+    400086: Ring16Segments
+    400088: Ring8Segmments8
+    400090: Ring8Segmments
+    400092: Spiral5
+    400094: Spiral
+    400096: SpiralInner
+    400098: Block16Segments1
+    400100: GlassFront
+    400102: Ring16Segments1
+    400104: Ring16Segments2
+    400106: Ring16Segments3
+    400108: Rings
+    400110: UnusedBoxes
+    400112: UnusedRings
+    400114: pCube1
+    400116: Block16Segments2
+    400118: Ring16Segments4
+    400120: Block16Segments22
+    400122: Block16Segments11
+    400124: Block16Segments21
+    400126: Plank1
+    400128: Plank2
+    400130: Block16Segments31
+    400132: Plank3
+    400134: Ring16Segments6
+    400136: Ring16Segments7
+    400138: Bridge
+    400140: Glass
+    400142: SpiralEkig4
+    400144: transform2
+    400146: Glass1
+    400148: TestCube
+    400150: Glass2
+    400152: Glass3
+    2300000: Box
+    2300002: Box1
+    2300004: Box10
+    2300006: Box11
+    2300008: Box12
+    2300010: Box13
+    2300012: Box14
+    2300014: Box15
+    2300016: Box16
+    2300018: Box17
+    2300020: Box2
+    2300022: Box5
+    2300024: Box6
+    2300026: Box7
+    2300028: Box8
+    2300030: Box9
+    2300032: InnerBox
+    2300034: InnerBox 1
+    2300036: InnerBox 10
+    2300038: InnerBox 11
+    2300040: InnerBox 12
+    2300042: InnerBox 13
+    2300044: InnerBox 2
+    2300046: InnerBox 3
+    2300048: InnerBox 4
+    2300050: InnerBox 5
+    2300052: InnerBox 6
+    2300054: InnerBox 7
+    2300056: InnerBox 8
+    2300058: InnerBox 9
+    2300060: InnerBox1
+    2300062: InnerBox7
+    2300064: InnerBox8
+    2300066: Block10Segments
+    2300068: Block12Segments
+    2300070: Block16Segments
+    2300072: Block8Segments
+    2300074: OuterRing
+    2300076: OuterRing1
+    2300078: Ring10Segments
+    2300080: Ring12Segments
+    2300082: Ring16Segments
+    2300084: Ring8Segmments8
+    2300086: Ring8Segmments
+    2300088: Spiral5
+    2300090: Spiral
+    2300092: SpiralInner
+    2300094: Block16Segments1
+    2300096: GlassFront
+    2300098: Ring16Segments1
+    2300100: Ring16Segments2
+    2300102: Ring16Segments3
+    2300104: pCube1
+    2300106: Block16Segments2
+    2300108: Ring16Segments4
+    2300110: Block16Segments22
+    2300112: Block16Segments11
+    2300114: Block16Segments21
+    2300116: Plank1
+    2300118: Plank2
+    2300120: Block16Segments31
+    2300122: Plank3
+    2300124: Ring16Segments6
+    2300126: Ring16Segments7
+    2300128: Bridge
+    2300130: Glass
+    2300132: SpiralEkig4
+    2300134: Glass1
+    2300136: TestCube
+    2300138: Glass2
+    2300140: Glass3
+    3300000: Box
+    3300002: Box1
+    3300004: Box10
+    3300006: Box11
+    3300008: Box12
+    3300010: Box13
+    3300012: Box14
+    3300014: Box15
+    3300016: Box16
+    3300018: Box17
+    3300020: Box2
+    3300022: Box5
+    3300024: Box6
+    3300026: Box7
+    3300028: Box8
+    3300030: Box9
+    3300032: InnerBox
+    3300034: InnerBox 1
+    3300036: InnerBox 10
+    3300038: InnerBox 11
+    3300040: InnerBox 12
+    3300042: InnerBox 13
+    3300044: InnerBox 2
+    3300046: InnerBox 3
+    3300048: InnerBox 4
+    3300050: InnerBox 5
+    3300052: InnerBox 6
+    3300054: InnerBox 7
+    3300056: InnerBox 8
+    3300058: InnerBox 9
+    3300060: InnerBox1
+    3300062: InnerBox7
+    3300064: InnerBox8
+    3300066: Block10Segments
+    3300068: Block12Segments
+    3300070: Block16Segments
+    3300072: Block8Segments
+    3300074: OuterRing
+    3300076: OuterRing1
+    3300078: Ring10Segments
+    3300080: Ring12Segments
+    3300082: Ring16Segments
+    3300084: Ring8Segmments8
+    3300086: Ring8Segmments
+    3300088: Spiral5
+    3300090: Spiral
+    3300092: SpiralInner
+    3300094: Block16Segments1
+    3300096: GlassFront
+    3300098: Ring16Segments1
+    3300100: Ring16Segments2
+    3300102: Ring16Segments3
+    3300104: pCube1
+    3300106: Block16Segments2
+    3300108: Ring16Segments4
+    3300110: Block16Segments22
+    3300112: Block16Segments11
+    3300114: Block16Segments21
+    3300116: Plank1
+    3300118: Plank2
+    3300120: Block16Segments31
+    3300122: Plank3
+    3300124: Ring16Segments6
+    3300126: Ring16Segments7
+    3300128: Bridge
+    3300130: Glass
+    3300132: SpiralEkig4
+    3300134: Glass1
+    3300136: TestCube
+    3300138: Glass2
+    3300140: Glass3
+    4300000: Box
+    4300002: InnerBox
+    4300004: Box1
+    4300006: InnerBox
+    4300008: Box2
+    4300010: InnerBox
+    4300012: Box5
+    4300014: InnerBox
+    4300016: Box6
+    4300018: InnerBox
+    4300020: Box8
+    4300022: InnerBox8
+    4300024: Box9
+    4300026: InnerBox
+    4300028: Box10
+    4300030: InnerBox
+    4300032: Box11
+    4300034: InnerBox
+    4300036: Box12
+    4300038: InnerBox
+    4300040: Box13
+    4300042: InnerBox
+    4300044: Box14
+    4300046: InnerBox
+    4300048: Box15
+    4300050: InnerBox
+    4300052: Box16
+    4300054: InnerBox
+    4300056: InnerBox1
+    4300058: Box17
+    4300060: InnerBox
+    4300062: Box7
+    4300064: InnerBox7
+    4300066: OuterRing1
+    4300068: OuterRing
+    4300070: Block8Segments
+    4300072: Block10Segments
+    4300074: Block12Segments
+    4300076: Block16Segments
+    4300078: Ring8Segmments8
+    4300080: Ring10Segments
+    4300082: Ring12Segments
+    4300084: Ring16Segments
+    4300086: Ring8Segmments
+    4300088: Spiral5
+    4300090: Spiral
+    4300092: SpiralInner
+    4300094: GlassFront
+    4300096: Block16Segments1
+    4300098: Ring16Segments1
+    4300100: Ring16Segments2
+    4300102: Ring16Segments3
+    4300104: pCube1
+    4300106: Ring16Segments4
+    4300108: Block16Segments2
+    4300110: Block16Segments22
+    4300112: Block16Segments21
+    4300114: Block16Segments11
+    4300116: Plank2
+    4300118: Plank1
+    4300120: Block16Segments31
+    4300122: Plank3
+    4300124: Ring16Segments6
+    4300126: Ring16Segments7
+    4300128: Bridge
+    4300130: SpiralEkig4
+    4300132: Glass
+    4300134: Glass1
+    4300136: TestCube
+    4300138: Glass2
+    4300140: Glass3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 500
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

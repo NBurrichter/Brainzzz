@@ -119,6 +119,7 @@ public class Blop1Control : MonoBehaviour
 
             // Add Tag and Components to the attachement
             c.gameObject.tag = "Blop1_Attachment";
+
             Rigidbody otherBody;
 
             // check if There is already a Rigidbody
@@ -136,7 +137,6 @@ public class Blop1Control : MonoBehaviour
 
             //Set physic material of other collider
             c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
-
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
