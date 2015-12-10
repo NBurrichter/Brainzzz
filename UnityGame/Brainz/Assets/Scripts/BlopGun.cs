@@ -109,7 +109,7 @@ public class BlopGun : MonoBehaviour {
                 Debug.DrawLine(Vector3.zero, AimingControl.aimingControlSingleton.gameObject.transform.position,Color.magenta,5);
                 Debug.DrawLine(Vector3.zero, transform.position, Color.cyan, 5);
                 Debug.DrawLine(Vector3.zero, transform.parent.root.transform.position, Color.red, 5);
-                Debug.Log(AimingControl.aimingControlSingleton.gameObject.transform.position);
+
 
                 //renCurrent.material = matRecharging;
                 psGun.Play();

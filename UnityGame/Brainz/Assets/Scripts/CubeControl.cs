@@ -64,7 +64,7 @@ public class CubeControl : MonoBehaviour
         }
         if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
-            Debug.Log("Update GridGraph from Object " + name);
+            //Debug.Log("Update GridGraph from Object " + name);
             UpdateGraph.S.UpdateGridGraph();
             saveSleeping = true;
         }
@@ -207,5 +207,6 @@ public class CubeControl : MonoBehaviour
         GetComponent<CharacterController>().enabled = true;
         rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
+
 
 }

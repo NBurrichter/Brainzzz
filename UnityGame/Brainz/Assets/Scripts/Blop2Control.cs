@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Blop2Control : MonoBehaviour
 {
@@ -9,14 +10,19 @@ public class Blop2Control : MonoBehaviour
 
     private GameObject particleObject;
 
+    private Vector3 vMoveDirection;
+
     public Material matBlop2;
+
+    private List<GameObject> listGameObjectsInTrigger = new List<GameObject>();
+    private List<bool> listPreviousKinematicStatus = new List<bool>();
 
     // Use this for initialization
     public void Start()
     {
         this.gameObject.tag = "Blop2";
         rb = GetComponent<Rigidbody>();
-        rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection();
+        vMoveDirection = AimingControl.aimingControlSingleton.GetHitDirection();
         goBlop2Array = GameObject.FindGameObjectsWithTag("Blop2");
         foreach (Transform child in transform)
         {
@@ -30,6 +36,9 @@ public class Blop2Control : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (attachedObject == null)
+            transform.position += vMoveDirection * Time.smoothDeltaTime;
+
         if (attachedObject != null)
         {
             if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)
@@ -50,6 +59,37 @@ public class Blop2Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
+        for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
+        {
+
+            listGameObjectsInTrigger[i].GetComponent<Rigidbody>().isKinematic = listPreviousKinematicStatus[i];
+        }
+
+
+        if (attachedObject != null)
+        {
+            if (c.gameObject.tag == "Blop1")
+            {
+                StopMergin();
+            }
+
+            if (c.gameObject.tag == "Blop1_Attachment")
+            {
+                StopMergin();
+                GameObject go = GameObject.FindGameObjectWithTag("Blop1");
+                go.GetComponent<Blop1Control>().StopMergin();
+            }
+        }
+        else
+        {
+            if (c.gameObject.tag == "Blop1_Attachment")
+            {
+                GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
+                goBlop1.GetComponent<Blop1Control>().StopMergin();
+            }
+        }
+
+
         if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground") &&
             !c.gameObject.CompareTag("Blop1") && !c.gameObject.CompareTag("Blop2"))
         {
@@ -85,12 +125,7 @@ public class Blop2Control : MonoBehaviour
             //Set physic material of other collider
             c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
 
-            //Set drag to 0
-            rb.drag = 0;
-            rb.mass = 0;
-            otherBody.drag = 0;
 
-            otherBody.mass = Synapsing.Singleton.fBlopMass;
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
@@ -127,28 +162,21 @@ public class Blop2Control : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-
-
-        if (attachedObject != null)
+        if (attachedObject == null)
         {
-            if (collider.gameObject.tag == "Blop1")
+            if (collider.gameObject.GetComponent<CubeControl>() != null)
             {
-                StopMergin();
-            }
 
-            if (collider.gameObject.tag == "Blop1_Attachment")
-            {
-                StopMergin();
-                GameObject go = GameObject.FindGameObjectWithTag("Blop1");
-                go.GetComponent<Blop1Control>().StopMergin();
-            }
-        }
-        else
-        {
-            if (collider.gameObject.tag == "Blop1_Attachment")
-            {
-                GameObject goBlop1 = GameObject.FindGameObjectWithTag("Blop1");
-                goBlop1.GetComponent<Blop1Control>().StopMergin();
+                for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
+                {
+                    // Return if object is already in list
+                    if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
+                        return;
+                }
+
+                listGameObjectsInTrigger.Add(collider.gameObject);
+                listPreviousKinematicStatus.Add(collider.gameObject.GetComponent<Rigidbody>().isKinematic);
+                collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             }
         }
     }

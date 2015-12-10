@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Blop1Control : MonoBehaviour
 {
-	
-	public GameObject Blop;
+    
+    public GameObject Blop;
     // Array to save the previous Blops
     private GameObject[] goBlop1Array;
-	private FixedJoint attachedObject;
+    private FixedJoint attachedObject;
 
     private GameObject particleObject;
 
@@ -15,15 +16,18 @@ public class Blop1Control : MonoBehaviour
 
     private Vector3 vMoveDirection;
 
-	Rigidbody rb;
-	
-	// Use this for initialization
-	void Start ()
-	{
-		Blop = this.gameObject;
-		rb = GetComponent<Rigidbody> ();
-        vMoveDirection = AimingControl.aimingControlSingleton.GetHitDirection(); 
-		Blop.tag = "Blop1";
+    private List<GameObject> listGameObjectsInTrigger = new List<GameObject>();
+    private List<bool> listPreviousKinematicStatus = new List<bool>();
+
+    Rigidbody rb;
+
+    // Use this for initialization
+    void Start()
+    {
+        Blop = this.gameObject;
+        rb = GetComponent<Rigidbody>();
+        vMoveDirection = AimingControl.aimingControlSingleton.GetHitDirection();
+        Blop.tag = "Blop1";
         goBlop1Array = GameObject.FindGameObjectsWithTag("Blop1");
         foreach (Transform child in transform)
         {
@@ -37,8 +41,12 @@ public class Blop1Control : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(attachedObject==null)
+        if (attachedObject == null)
+        {
             transform.position += vMoveDirection * Time.smoothDeltaTime;
+            Debug.DrawLine(Vector3.zero, transform.position, Color.black, 2);
+        }
+
 
         if (attachedObject != null)
         {
@@ -57,14 +65,44 @@ public class Blop1Control : MonoBehaviour
             }
         }
     }
-          
 
-    
+
+
 
     void OnCollisionEnter(Collision c)
-	{
+    {
 
-		if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground") &&
+        for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
+        {
+            listGameObjectsInTrigger[i].GetComponent<Rigidbody>().isKinematic = listPreviousKinematicStatus[i];
+        }
+
+        if (attachedObject != null)
+        {
+            if (c.gameObject.tag == "Blop2")
+            {
+                StopMergin();
+            }
+
+            if (c.gameObject.tag == "Blop2_Attachment")
+            {
+                StopMergin();
+                GameObject go = GameObject.FindGameObjectWithTag("Blop2");
+                go.GetComponent<Blop2Control>().StopMergin();
+            }
+        }
+        else
+        {
+            if (c.gameObject.tag == "Blop2_Attachment")
+            {
+                GameObject goBlop2 = GameObject.FindGameObjectWithTag("Blop2");
+                goBlop2.GetComponent<Blop2Control>().StopMergin();
+            }
+        }
+
+
+
+        if (!attachedObject && !c.gameObject.CompareTag("Player") && !c.gameObject.CompareTag("Ground") &&
             !c.gameObject.CompareTag("Blop1") && !c.gameObject.CompareTag("Blop2"))
         {
             if (c.gameObject.GetComponent<CubeControl>() == null)
@@ -77,33 +115,28 @@ public class Blop1Control : MonoBehaviour
 
             // Delete previous Blops
             DeletePreviousBlops();
-            
+
 
             // Add Tag and Components to the attachement
             c.gameObject.tag = "Blop1_Attachment";
-			Rigidbody otherBody;
-			
-			// check if There is already a Rigidbody
-			if(c.gameObject.GetComponent<Rigidbody>())
-			{
-				otherBody = c.gameObject.GetComponent<Rigidbody>();
-			}
-			else{
-				otherBody = c.gameObject.AddComponent<Rigidbody> ();
-			}
-			attachedObject = c.gameObject.AddComponent<FixedJoint>();
-			attachedObject.connectedBody = rb;
+            Rigidbody otherBody;
+
+            // check if There is already a Rigidbody
+            if (c.gameObject.GetComponent<Rigidbody>())
+            {
+                otherBody = c.gameObject.GetComponent<Rigidbody>();
+            }
+            else
+            {
+                otherBody = c.gameObject.AddComponent<Rigidbody>();
+            }
+            attachedObject = c.gameObject.AddComponent<FixedJoint>();
+            attachedObject.connectedBody = rb;
 
 
-			//Set physic material of other collider
-			c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
+            //Set physic material of other collider
+            c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
 
-			//Set drag to 0
-			rb.drag = 0;
-			rb.mass = 0; // the mass should in the end not be lowered, search for a better solution
-			otherBody.drag = 0;
-
-			otherBody.mass = Synapsing.Singleton.fBlopMass;
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
@@ -118,7 +151,10 @@ public class Blop1Control : MonoBehaviour
                 c.gameObject.GetComponent<CharacterController>().enabled = false;
             }
         }
-	}
+
+
+
+    }
 
     /// <summary>
     /// call this when the mergin is finished
@@ -137,32 +173,27 @@ public class Blop1Control : MonoBehaviour
 
 
     void OnTriggerEnter(Collider collider)
-	{
-        
-
-        if (attachedObject != null)
+    {
+        //add boolean or similare to avoid an object being saved multiple times
+        if (attachedObject == null)
         {
-            if (collider.gameObject.tag == "Blop2")
+            if(collider.gameObject.GetComponent<CubeControl>()!= null)
             {
-                StopMergin();
-            }
+                for(int i = 0; i< listGameObjectsInTrigger.Count; i++)
+                {
+                    // Return if object is already in list
+                    if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
+                        return;
+                }           
+                listGameObjectsInTrigger.Add(collider.gameObject);
 
-            if (collider.gameObject.tag == "Blop2_Attachment")
-            {
-                StopMergin();
-                GameObject go = GameObject.FindGameObjectWithTag("Blop2");
-                go.GetComponent<Blop2Control>().StopMergin();
+                listPreviousKinematicStatus.Add(collider.gameObject.GetComponent<Rigidbody>().isKinematic);
+
+                collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+
             }
         }
-        else
-        {
-            if (collider.gameObject.tag == "Blop2_Attachment")
-            {
-                GameObject goBlop2 = GameObject.FindGameObjectWithTag("Blop2");
-                goBlop2.GetComponent<Blop2Control>().StopMergin();
-            }
-        }
-	 }
+    }
 
     void OnCollisionStay(Collision col)
     {
@@ -196,7 +227,7 @@ public class Blop1Control : MonoBehaviour
     /// </summary>
     private void DeletePreviousBlops()
     {
-        for (int i = 0;i<=goBlop1Array.Length-2;i++)
+        for (int i = 0; i <= goBlop1Array.Length - 2; i++)
         {
             if (goBlop1Array[i] != null)
                 goBlop1Array[i].GetComponent<Blop1Control>().DestroyThisBlop();
@@ -214,7 +245,7 @@ public class Blop1Control : MonoBehaviour
         Destroy(this.gameObject);
         if (attachedObject)
         {
-            if(attachedObject.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
+            if (attachedObject.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
             {
                 Debug.Log("luke ich bin dein Vater");
                 attachedObject.gameObject.GetComponent<NavmeshTestNavigation>().SetActivationMode(true);
