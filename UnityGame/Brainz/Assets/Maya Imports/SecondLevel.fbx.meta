@@ -81,6 +81,7 @@ ModelImporter:
     100146: Glass1
     100148: TestCube
     100150: Glass2
+    100152: Glass3
     400000: Box
     400002: Box1
     400004: Box10
@@ -157,6 +158,7 @@ ModelImporter:
     400146: Glass1
     400148: TestCube
     400150: Glass2
+    400152: Glass3
     2300000: Box
     2300002: Box1
     2300004: Box10
@@ -227,6 +229,7 @@ ModelImporter:
     2300134: Glass1
     2300136: TestCube
     2300138: Glass2
+    2300140: Glass3
     3300000: Box
     3300002: Box1
     3300004: Box10
@@ -297,6 +300,7 @@ ModelImporter:
     3300134: Glass1
     3300136: TestCube
     3300138: Glass2
+    3300140: Glass3
     4300000: Box
     4300002: InnerBox
     4300004: Box1
@@ -367,6 +371,7 @@ ModelImporter:
     4300134: Glass1
     4300136: TestCube
     4300138: Glass2
+    4300140: Glass3
   materials:
     importMaterials: 1
     materialName: 0
