@@ -1,46 +1,65 @@
 fileFormatVersion: 2
-guid: 8afebca1d3704234591901bcda4e9b7c
-timeCreated: 1447331565
+guid: 5cebd345792f9274b9a9874f73762714
+timeCreated: 1449491724
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: BlockBig
-    100004: Door
-    100006: ElevatorCube
-    100008: Gate
-    100010: Level1
-    100012: Roof1
-    400000: //RootNode
-    400002: BlockBig
-    400004: Door
-    400006: ElevatorCube
-    400008: Gate
-    400010: Level1
-    400012: Roof1
-    2300000: //RootNode
-    2300002: BlockBig
-    2300004: Door
-    2300006: ElevatorCube
-    2300008: Gate
-    2300010: Level1
-    2300012: Roof1
-    3300000: //RootNode
-    3300002: BlockBig
-    3300004: Door
-    3300006: ElevatorCube
-    3300008: Gate
-    3300010: Level1
-    3300012: Roof1
-    4300000: pPlane1
-    4300002: Level
-    4300004: Level1
-    4300006: Door
-    4300008: Roof1
-    4300010: BlockBig
-    4300012: ElevatorCube
-    4300014: Gate
+    100000: geo_base_mesh
+    100002: geo_hair
+    100004: Geo_HandWeapon
+    100006: geo_l_eye
+    100008: geo_l_lid
+    100010: geo_l_underlid
+    100012: geo_r_eye
+    100014: geo_r_lid1
+    100016: geo_r_underlid
+    100018: Geometry
+    100020: GRP_Body_Hair
+    100022: GRP_Eyes
+    100024: GRP_Spheres_inside
+    100026: //RootNode
+    400000: geo_base_mesh
+    400002: geo_hair
+    400004: Geo_HandWeapon
+    400006: geo_l_eye
+    400008: geo_l_lid
+    400010: geo_l_underlid
+    400012: geo_r_eye
+    400014: geo_r_lid1
+    400016: geo_r_underlid
+    400018: Geometry
+    400020: GRP_Body_Hair
+    400022: GRP_Eyes
+    400024: GRP_Spheres_inside
+    400026: //RootNode
+    2300000: geo_base_mesh
+    2300002: geo_hair
+    2300004: Geo_HandWeapon
+    2300006: geo_l_eye
+    2300008: geo_l_lid
+    2300010: geo_l_underlid
+    2300012: geo_r_eye
+    2300014: geo_r_lid1
+    2300016: geo_r_underlid
+    3300000: geo_base_mesh
+    3300002: geo_hair
+    3300004: Geo_HandWeapon
+    3300006: geo_l_eye
+    3300008: geo_l_lid
+    3300010: geo_l_underlid
+    3300012: geo_r_eye
+    3300014: geo_r_lid1
+    3300016: geo_r_underlid
+    4300000: geo_r_eye
+    4300002: geo_l_eye
+    4300004: geo_r_underlid
+    4300006: geo_l_lid
+    4300008: geo_l_underlid
+    4300010: geo_r_lid1
+    4300012: geo_base_mesh
+    4300014: geo_hair
+    4300016: Geo_HandWeapon
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -65,7 +84,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 250
+    globalScale: 20
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

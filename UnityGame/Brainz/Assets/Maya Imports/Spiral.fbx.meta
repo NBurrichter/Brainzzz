@@ -1,47 +1,24 @@
 fileFormatVersion: 2
-guid: 8afebca1d3704234591901bcda4e9b7c
-timeCreated: 1447331565
+guid: 4882ee2db7ddbb946a0b0ced96ea3d71
+timeCreated: 1449051782
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    100002: BlockBig
-    100004: Door
-    100006: ElevatorCube
-    100008: Gate
-    100010: Level1
-    100012: Roof1
-    400000: //RootNode
-    400002: BlockBig
-    400004: Door
-    400006: ElevatorCube
-    400008: Gate
-    400010: Level1
-    400012: Roof1
-    2300000: //RootNode
-    2300002: BlockBig
-    2300004: Door
-    2300006: ElevatorCube
-    2300008: Gate
-    2300010: Level1
-    2300012: Roof1
-    3300000: //RootNode
-    3300002: BlockBig
-    3300004: Door
-    3300006: ElevatorCube
-    3300008: Gate
-    3300010: Level1
-    3300012: Roof1
-    4300000: pPlane1
-    4300002: Level
-    4300004: Level1
-    4300006: Door
-    4300008: Roof1
-    4300010: BlockBig
-    4300012: ElevatorCube
-    4300014: Gate
-    9500000: //RootNode
+    100000: pCube10
+    100002: pCube8
+    100004: //RootNode
+    400000: pCube10
+    400002: pCube8
+    400004: //RootNode
+    2300000: pCube10
+    2300002: pCube8
+    2300004: //RootNode
+    3300000: pCube10
+    3300002: pCube8
+    3300004: //RootNode
+    4300000: pCube8
+    4300002: pCube10
   materials:
     importMaterials: 1
     materialName: 0
@@ -65,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 250
+    globalScale: 200
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -100,7 +77,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
