@@ -7,7 +7,6 @@ public class Synapsing : MonoBehaviour
     private float fMerginForceMultiplier;
 
     public PhysicMaterial noFrictionMaterial;
-    public float fBlopMass;
 
     GameObject Blop1;
     GameObject Blop2;

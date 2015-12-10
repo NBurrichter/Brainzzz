@@ -432,7 +432,7 @@ CapsuleCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 779629943}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: .5
@@ -2199,7 +2199,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fMerginForceMultiplier: 40
   noFrictionMaterial: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
-  fBlopMass: 1
   mask:
     serializedVersion: 2
     m_Bits: 2048

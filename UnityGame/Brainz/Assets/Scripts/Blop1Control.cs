@@ -137,11 +137,6 @@ public class Blop1Control : MonoBehaviour
             //Set physic material of other collider
             c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
 
-            //Set drag to 0
-            rb.drag = 0;
-            rb.mass = 0; // the mass should in the end not be lowered, search for a better solution
-            otherBody.drag = 0;
-            otherBody.mass = Synapsing.Singleton.fBlopMass;
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
