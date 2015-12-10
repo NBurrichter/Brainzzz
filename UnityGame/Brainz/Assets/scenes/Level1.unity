@@ -3719,7 +3719,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 454723154}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -7068,7 +7068,7 @@ AudioSource:
   Spatialize: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 3.85725164
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -10655,7 +10655,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1551956564}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -10952,7 +10952,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fMerginForceMultiplier: 150
   noFrictionMaterial: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
-  fBlopMass: 1
   mask:
     serializedVersion: 2
     m_Bits: 8192
@@ -11267,6 +11266,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: fe0c4af65c94d094799c4a083c5917de, type: 3}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: fe0c4af65c94d094799c4a083c5917de, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
