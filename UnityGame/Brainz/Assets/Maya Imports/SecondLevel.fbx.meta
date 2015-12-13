@@ -82,6 +82,8 @@ ModelImporter:
     100148: TestCube
     100150: Glass2
     100152: Glass3
+    100154: Block16Segments32
+    100156: SpiralEckig
     400000: Box
     400002: Box1
     400004: Box10
@@ -159,6 +161,8 @@ ModelImporter:
     400148: TestCube
     400150: Glass2
     400152: Glass3
+    400154: Block16Segments32
+    400156: SpiralEckig
     2300000: Box
     2300002: Box1
     2300004: Box10
@@ -230,6 +234,8 @@ ModelImporter:
     2300136: TestCube
     2300138: Glass2
     2300140: Glass3
+    2300142: Block16Segments32
+    2300144: SpiralEckig
     3300000: Box
     3300002: Box1
     3300004: Box10
@@ -301,6 +307,8 @@ ModelImporter:
     3300136: TestCube
     3300138: Glass2
     3300140: Glass3
+    3300142: Block16Segments32
+    3300144: SpiralEckig
     4300000: Box
     4300002: InnerBox
     4300004: Box1
@@ -372,6 +380,8 @@ ModelImporter:
     4300136: TestCube
     4300138: Glass2
     4300140: Glass3
+    4300142: Block16Segments32
+    4300144: SpiralEckig
   materials:
     importMaterials: 1
     materialName: 0
