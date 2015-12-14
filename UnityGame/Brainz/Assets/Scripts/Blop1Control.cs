@@ -74,6 +74,7 @@ public class Blop1Control : MonoBehaviour
 
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
+
             listGameObjectsInTrigger[i].GetComponent<Rigidbody>().isKinematic = listPreviousKinematicStatus[i];
         }
 
@@ -179,9 +180,15 @@ public class Blop1Control : MonoBehaviour
         {
             if(collider.gameObject.GetComponent<CubeControl>()!= null)
             {
-                for(int i = 0; i< listGameObjectsInTrigger.Count; i++)
+                if (collider.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+                {
+                    return;
+                }
+
+                for (int i = 0; i< listGameObjectsInTrigger.Count; i++)
                 {
                     // Return if object is already in list
+
                     if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
                         return;
                 }           
