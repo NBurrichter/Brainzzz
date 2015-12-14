@@ -9,6 +9,7 @@ public class Blop2Control : MonoBehaviour
     private FixedJoint attachedObject;
 
     private GameObject particleObject;
+    private GameObject sparkObjcet;
 
     private Vector3 vMoveDirection;
 
@@ -29,6 +30,10 @@ public class Blop2Control : MonoBehaviour
             if (child.name == "LineEffect")
             {
                 particleObject = child.gameObject;
+            }
+            if (child.name == "FX_Lightning 1")
+            {
+                sparkObjcet = child.gameObject;
             }
         }
     }
@@ -263,6 +268,7 @@ public class Blop2Control : MonoBehaviour
     void OnDestroy()
     {
         Destroy(particleObject);
+        Destroy(sparkObjcet);
     }
 
 
