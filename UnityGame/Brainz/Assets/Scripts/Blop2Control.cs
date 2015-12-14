@@ -164,6 +164,11 @@ public class Blop2Control : MonoBehaviour
     {
         if (attachedObject == null)
         {
+            if (collider.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                return;
+            }
+
             if (collider.gameObject.GetComponent<CubeControl>() != null)
             {
 
