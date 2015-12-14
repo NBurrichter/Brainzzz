@@ -195,16 +195,19 @@ public class CubeControl : MonoBehaviour
 
     IEnumerator ResetNPC()
     {
+        GetComponent<FindTestPath>().Landed();
         yield return new WaitForSeconds(1);
 
         //UpdateGraph.S.UpdateGridGraph();
         FindTestPath myTestPath = GetComponent<FindTestPath>();
         myTestPath.enabled = true;
         myTestPath.Start();
-        //myTestPath.StartCouroutineFindPath();-
+        //myTestPath.StartCouroutineFindPath();
         GetComponent<Seeker>().enabled = true;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<CharacterController>().enabled = true;
+        GetComponent<FindTestPath>().Landed();
+        GetComponent<FindTestPath>().ResetFallCicle();
         rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 

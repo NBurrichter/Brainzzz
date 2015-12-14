@@ -247,6 +247,7 @@ public class Blop2Control : MonoBehaviour
             }
             if (attachedObject.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
             {
+                Debug.Log("Meep");
                 attachedObject.gameObject.GetComponent<FindTestPath>().enabled = true;
                 attachedObject.gameObject.GetComponent<FindTestPath>().Start();
                 attachedObject.gameObject.GetComponent<Seeker>().enabled = true;

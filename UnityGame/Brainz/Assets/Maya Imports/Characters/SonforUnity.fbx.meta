@@ -3046,7 +3046,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Son_Catch
       takeName: Take 001
-      firstFrame: 325
+      firstFrame: 332
       lastFrame: 340
       wrapMode: 0
       orientationOffsetY: 0

@@ -155,6 +155,7 @@ public class Blop1Control : MonoBehaviour
                 c.gameObject.GetComponent<Seeker>().enabled = false;
                 c.gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 c.gameObject.GetComponent<CharacterController>().enabled = false;
+                c.gameObject.GetComponent<FindTestPath>().GetBlop();
             }
         }
 
