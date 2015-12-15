@@ -26,7 +26,6 @@ public class BlopGun : MonoBehaviour {
 
     public static BlopGun BlopGunSingelton;
 
-
     /// <summary>
     /// the factor the weapon should move while reloading
     /// </summary>
@@ -39,11 +38,14 @@ public class BlopGun : MonoBehaviour {
 
     private Vector3 vOldPosition;
 
-
     private Vector3 localPos;
+
+    private Animator playerAnim;
 
     // Use this for initialization
     void Start () {
+        playerAnim = GetComponentInParent<Animator>();
+
         BlopGunSingelton = this;
         bIsCharged = true;
         fRechargeTimer = 0.0f;
@@ -114,6 +116,8 @@ public class BlopGun : MonoBehaviour {
                 //renCurrent.material = matRecharging;
                 psGun.Play();
                 localPos = transform.localPosition;
+
+                playerAnim.SetTrigger("Shoot");
             }
 
 
@@ -130,6 +134,8 @@ public class BlopGun : MonoBehaviour {
                 //renCurrent.material = matRecharging;
                 psGun.Play();
                 localPos = transform.localPosition;
+
+                playerAnim.SetTrigger("Shoot");
             }
         }
 	}
