@@ -123,6 +123,12 @@ public class Blop2Control : MonoBehaviour
             {
                 otherBody = c.gameObject.AddComponent<Rigidbody>();
             }
+
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                transform.position = c.transform.position;
+            }
+
             attachedObject = c.gameObject.AddComponent<FixedJoint>();
             attachedObject.connectedBody = rb;
 

@@ -75,6 +75,7 @@ public class CubeControl : MonoBehaviour
             if (Physics.Raycast(transform.position, Vector3.down, 1))
             {
                 StartCoroutine(ResetNPC());
+                GetComponent<FindTestPath>().Landed();
                 finished = false;
             }
         }
@@ -195,7 +196,6 @@ public class CubeControl : MonoBehaviour
 
     IEnumerator ResetNPC()
     {
-        GetComponent<FindTestPath>().Landed();
         yield return new WaitForSeconds(1);
 
         //UpdateGraph.S.UpdateGridGraph();

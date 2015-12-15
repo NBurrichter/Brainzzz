@@ -137,6 +137,12 @@ public class Blop1Control : MonoBehaviour
             {
                 otherBody = c.gameObject.AddComponent<Rigidbody>();
             }
+
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                transform.position = GameObject.Find("BlopPoint").transform.position;
+            }
+
             attachedObject = c.gameObject.AddComponent<FixedJoint>();
             attachedObject.connectedBody = rb;
 
