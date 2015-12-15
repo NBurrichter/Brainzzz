@@ -72,7 +72,7 @@ public class CubeControl : MonoBehaviour
         if(blocktype == BlockType.NPCAStar && finished)
         {
 
-            if (Physics.Raycast(transform.position, Vector3.down, 1))
+            if (Physics.Raycast(transform.position, Vector3.down, 1) && !bIsMergin)
             {
                 StartCoroutine(ResetNPC());
                 GetComponent<FindTestPath>().Landed();
