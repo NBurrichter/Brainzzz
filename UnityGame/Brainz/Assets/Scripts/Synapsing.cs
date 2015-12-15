@@ -78,7 +78,7 @@ public class Synapsing : MonoBehaviour
             }
             if (Blop2Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
             {
-                Blop1Script.GetAttachedObject().GetComponent<FindTestPath>().StartFlying();
+                Blop2Script.GetAttachedObject().GetComponent<FindTestPath>().StartFlying();
                 //Blop1Script.GetAttachedObject().GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             }
         }
@@ -172,7 +172,7 @@ public class Synapsing : MonoBehaviour
         }
         if (Blop2Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
         {
-            Blop1Script.GetAttachedObject().GetComponent<FindTestPath>().StartFalling();
+            Blop2Script.GetAttachedObject().GetComponent<FindTestPath>().StartFalling();
             //Blop1Script.GetAttachedObject().GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
 
