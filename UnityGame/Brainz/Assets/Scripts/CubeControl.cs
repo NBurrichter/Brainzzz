@@ -88,7 +88,7 @@ public class CubeControl : MonoBehaviour
     {
         if (this.gameObject.GetComponent<Rigidbody>() && blocktype == BlockType.Cube)
         {
-            this.gameObject.GetComponent<BoxCollider>().material = null; // remove the no-friction material
+            this.gameObject.GetComponent<Collider>().material = null; // remove the no-friction material
             Rigidbody rb = this.gameObject.GetComponent<Rigidbody>();        
         }
     }
