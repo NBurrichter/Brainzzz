@@ -5463,7 +5463,7 @@ Prefab:
     - target: {fileID: 9500000, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2cbc5588e8a1c094584c93847c296ec8, type: 2}
+      objectReference: {fileID: 9100000, guid: da5a90346dc70f64c9cac4eb3b41c4f1, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
   m_IsPrefabParent: 0
@@ -11499,6 +11499,7 @@ MonoBehaviour:
   maxVelocityChange: 10
   canJump: 1
   jumpHeight: 2
+  grounded: 0
 --- !u!136 &1824223988
 CapsuleCollider:
   m_ObjectHideFlags: 0
