@@ -11,6 +11,7 @@ public class Blop1Control : MonoBehaviour
     private FixedJoint attachedObject;
 
     private GameObject particleObject;
+    private GameObject sparkObjcet;
 
     public Material matBlop1;
 
@@ -34,6 +35,10 @@ public class Blop1Control : MonoBehaviour
             if (child.name == "LineEffect")
             {
                 particleObject = child.gameObject;
+            }
+            if (child.name == "FX_Lightning 1")
+            {
+                sparkObjcet = child.gameObject;
             }
         }
     }
@@ -74,6 +79,7 @@ public class Blop1Control : MonoBehaviour
 
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
+
             listGameObjectsInTrigger[i].GetComponent<Rigidbody>().isKinematic = listPreviousKinematicStatus[i];
         }
 
@@ -179,9 +185,15 @@ public class Blop1Control : MonoBehaviour
         {
             if(collider.gameObject.GetComponent<CubeControl>()!= null)
             {
-                for(int i = 0; i< listGameObjectsInTrigger.Count; i++)
+                if (collider.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+                {
+                    return;
+                }
+
+                for (int i = 0; i< listGameObjectsInTrigger.Count; i++)
                 {
                     // Return if object is already in list
+
                     if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
                         return;
                 }           
@@ -280,6 +292,7 @@ public class Blop1Control : MonoBehaviour
     void OnDestroy()
     {
         Destroy(particleObject);
+        Destroy(sparkObjcet);
     }
 
 
