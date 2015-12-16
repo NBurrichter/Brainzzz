@@ -16,8 +16,13 @@ public class CameraScript : MonoBehaviour {
 
     private float maxCameraDistance;
 
+    //Rigidbody of player
+    private Rigidbody rb;
+
 	void Start ()
 	{
+        rb = GetComponentInParent<Rigidbody>();
+
         startPos = focusPoint.transform.localPosition + cameraOffset;
         transform.localPosition = startPos;
         maxCameraDistance = Vector3.Distance(transform.position,focusPoint.transform.position);
@@ -38,7 +43,11 @@ public class CameraScript : MonoBehaviour {
         
         transform.rotation = qRotation;
 
+        //Camera moveing back with move speed
+        transform.localPosition = startPos - new Vector3(0,0,Mathf.Clamp(rb.velocity.magnitude,0,2));
+
         //move Cam up down
+        /*
         float movedist = fYRotation / 90;
         if (movedist > 0)
         {
@@ -49,6 +58,7 @@ public class CameraScript : MonoBehaviour {
             movedist = Mathf.Abs(movedist);
             transform.localPosition = Vector3.Lerp(startPos, startPos + Vector3.forward * 2 + Vector3.down, movedist);
         }
+        */
 
         //Test if camera is occupied
         RaycastHit cameraHit;
