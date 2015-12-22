@@ -36,7 +36,7 @@ public class CameraScript : MonoBehaviour {
         //--Position---//
         //Camera moveing back with move speed
         //transform.localPosition = startPos - new Vector3(0,0,Mathf.Clamp(rb.velocity.magnitude,0,2));
-        transform.position = cameraPositionPoint.transform.position;
+        transform.position = Vector3.Lerp(transform.position,cameraPositionPoint.transform.position,0.9f);
 
         //---Rotation--//
         
