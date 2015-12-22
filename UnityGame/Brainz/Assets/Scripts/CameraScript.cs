@@ -27,18 +27,27 @@ public class CameraScript : MonoBehaviour {
 
         startPos = focusPoint.transform.localPosition + cameraOffset;
         transform.localPosition = startPos;
+        transform.position = cameraPositionPoint.transform.position;
         maxCameraDistance = Vector3.Distance(transform.position,focusPoint.transform.position);
 	}
 
     void Update()
     {
-        //---Rotation--//
+        //--Position---//
+        //Camera moveing back with move speed
+        //transform.localPosition = startPos - new Vector3(0,0,Mathf.Clamp(rb.velocity.magnitude,0,2));
+        transform.position = cameraPositionPoint.transform.position;
 
+        //---Rotation--//
+        
         // check if mouse is out of screen
         // fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
         fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime * -1.0f;
         fYRotation += Input.GetAxis("Joystick Camera Y") * fRotationSpeed * Time.deltaTime * -1.0f;
 
+        transform.LookAt(focusPoint.transform.position);
+
+        /*
         //Clamp rotation
         fYRotation = Mathf.Clamp(fYRotation,-90,90);
 
@@ -46,10 +55,8 @@ public class CameraScript : MonoBehaviour {
         qRotation = Quaternion.Euler(fYRotation, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z);
         
         transform.rotation = qRotation;
+        */
 
-        //--Position---//
-        //Camera moveing back with move speed
-        transform.localPosition = startPos - new Vector3(0,0,Mathf.Clamp(rb.velocity.magnitude,0,2));
 
         //move Cam up down
         /*
