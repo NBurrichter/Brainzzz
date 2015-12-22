@@ -8313,7 +8313,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 903577349}
   m_Layer: 12
-  m_Name: CameraPoint
+  m_Name: CameraFocusPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9175,7 +9175,7 @@ Prefab:
     - target: {fileID: 9500000, guid: 79cce89a0bbe2e448abc888d8b7ca318, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 2cbc5588e8a1c094584c93847c296ec8, type: 2}
+      objectReference: {fileID: 9100000, guid: 6504c8cd7bfd461439fde57366e66467, type: 2}
     - target: {fileID: 400162, guid: 79cce89a0bbe2e448abc888d8b7ca318, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -12360,6 +12360,47 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 30
+--- !u!1 &1136474508
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1136474509}
+  - 114: {fileID: 1136474510}
+  m_Layer: 0
+  m_Name: CameraPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1136474509
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136474508}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: -1.62920685e-07}
+  m_LocalPosition: {x: .841849148, y: 2.63000011, z: -2.39999986}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1824223985}
+  m_RootOrder: 5
+--- !u!114 &1136474510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1136474508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ee494f163c86b458010aae0fc630f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  focusPoint: {fileID: 903577348}
+  offset: {x: 0, y: 0, z: -3.5}
 --- !u!1 &1138345103
 GameObject:
   m_ObjectHideFlags: 0
@@ -16449,6 +16490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fRotationSpeed: 40
   focusPoint: {fileID: 903577348}
+  cameraPositionPoint: {fileID: 1136474508}
   cameraOffset: {x: 0, y: 0, z: -3.5}
 --- !u!114 &1623639743
 MonoBehaviour:
@@ -17625,6 +17667,7 @@ Transform:
   - {fileID: 1212931540}
   - {fileID: 1218855995}
   - {fileID: 244034354}
+  - {fileID: 1136474509}
   m_Father: {fileID: 0}
   m_RootOrder: 29
 --- !u!54 &1824223986

@@ -9,6 +9,8 @@ public class CameraScript : MonoBehaviour {
     public float fRotationSpeed;
 
     public GameObject focusPoint;
+    public GameObject cameraPositionPoint;
+
     public Vector3 cameraOffset;
 
     private Quaternion qRotation;
@@ -30,6 +32,8 @@ public class CameraScript : MonoBehaviour {
 
     void Update()
     {
+        //---Rotation--//
+
         // check if mouse is out of screen
         // fXRotation += Input.GetAxis("Mouse X") * fRotationSpeed * Time.deltaTime;
         fYRotation += Input.GetAxis("Mouse Y") * fRotationSpeed * Time.deltaTime * -1.0f;
@@ -43,6 +47,7 @@ public class CameraScript : MonoBehaviour {
         
         transform.rotation = qRotation;
 
+        //--Position---//
         //Camera moveing back with move speed
         transform.localPosition = startPos - new Vector3(0,0,Mathf.Clamp(rb.velocity.magnitude,0,2));
 
@@ -60,7 +65,7 @@ public class CameraScript : MonoBehaviour {
         }
         */
 
-        //Test if camera is occupied
+        //--Test if camera is occupied--//
         RaycastHit cameraHit;
         if (Physics.Raycast(focusPoint.transform.position,transform.position - focusPoint.transform.position, out cameraHit, maxCameraDistance))
         {
