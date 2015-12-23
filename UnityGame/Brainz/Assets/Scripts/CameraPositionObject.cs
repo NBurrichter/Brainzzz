@@ -20,7 +20,11 @@ public class CameraPositionObject : MonoBehaviour {
     void Update ()
     {
         //Speed cameraoffset
-        float speedOffset = playerRB.velocity.magnitude *speedOffsetAmplification;
+        //In all directions
+        //float speedOffset = playerRB.velocity.magnitude *speedOffsetAmplification;
+        //only forward speed
+        float speedOffset = transform.InverseTransformDirection(playerRB.velocity).z * speedOffsetAmplification;
+        speedOffset = Mathf.Clamp(speedOffset, 0, 100);
 
         transform.localPosition = offset - new Vector3(0,0,speedOffset);
 
