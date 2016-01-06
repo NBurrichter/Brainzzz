@@ -1,0 +1,3516 @@
+fileFormatVersion: 2
+guid: ff5fc114e4c16db4dbda7c55e2179458
+timeCreated: 1450171147
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: anim_back01
+    100002: anim_blinkdown_l_01
+    100004: anim_blinkdown_r_01
+    100006: anim_blinktop_l_01
+    100008: anim_blinktop_r_01
+    100010: anim_chest01
+    100012: anim_COG01
+    100014: anim_eyes01
+    100016: anim_head01
+    100018: anim_l_arm01
+    100020: anim_l_coatin_a01
+    100022: anim_l_coatin_b01
+    100024: anim_l_coatin_c01
+    100026: anim_l_coatin_d01
+    100028: anim_l_coatin_e01
+    100030: anim_l_coatin_f01
+    100032: anim_l_coatout_a01
+    100034: anim_l_coatout_b01
+    100036: anim_l_coatout_c01
+    100038: anim_l_coatout_d01
+    100040: anim_l_coatout_e01
+    100042: anim_l_coatout_f01
+    100044: anim_l_eye01
+    100046: anim_l_hairdumn_a01
+    100048: anim_l_hairdumn_b01
+    100050: anim_l_hairdumn_c01
+    100052: anim_l_hairleft_a01
+    100054: anim_l_hairleft_b01
+    100056: anim_l_hairleft_c01
+    100058: anim_l_hairtop_a01
+    100060: anim_l_hairtop_b01
+    100062: anim_l_hairtop_c01
+    100064: anim_l_knee01
+    100066: anim_l_knee02
+    100068: anim_l_knee03
+    100070: anim_l_leg01
+    100072: anim_l_leg02
+    100074: anim_neck01
+    100076: anim_pelvis01
+    100078: anim_r_arm01
+    100080: anim_r_coatin_a01
+    100082: anim_r_coatin_b01
+    100084: anim_r_coatin_c01
+    100086: anim_r_coatin_d01
+    100088: anim_r_coatin_e01
+    100090: anim_r_coatin_f01
+    100092: anim_r_coatout_a01
+    100094: anim_r_coatout_b01
+    100096: anim_r_coatout_c01
+    100098: anim_r_coatout_d01
+    100100: anim_r_coatout_e01
+    100102: anim_r_coatout_f01
+    100104: anim_r_eye01
+    100106: anim_r_hairright_a01
+    100108: anim_r_hairright_b01
+    100110: anim_r_hairright_c01
+    100112: anim_r_knee01
+    100114: be_head01
+    100116: be_l_ankle01
+    100118: be_l_eye01
+    100120: be_l_fluffin_01
+    100122: be_l_fluffout_01
+    100124: be_l_hair_d01
+    100126: be_l_hand01
+    100128: be_l_toe01
+    100130: be_m_hair_d01
+    100132: be_mu_hair_d01
+    100134: be_pelvis01
+    100136: be_r_ankle01
+    100138: be_r_eye01
+    100140: be_r_fluffin_01
+    100142: be_r_fluffout_01
+    100144: be_r_hair_d01
+    100146: be_r_hand01
+    100148: be_r_toe01
+    100150: bind_back01
+    100152: bind_chest01
+    100154: bind_head01
+    100156: bind_l_ankle01
+    100158: bind_l_eye01
+    100160: bind_l_fluffin_a01
+    100162: bind_l_fluffin_b01
+    100164: bind_l_fluffin_c01
+    100166: bind_l_fluffin_d01
+    100168: bind_l_fluffin_e01
+    100170: bind_l_fluffin_f01
+    100172: bind_l_fluffout_a01
+    100174: bind_l_fluffout_b01
+    100176: bind_l_fluffout_c01
+    100178: bind_l_fluffout_d01
+    100180: bind_l_fluffout_e01
+    100182: bind_l_fluffout_f01
+    100184: bind_l_foot01
+    100186: bind_l_forearm01
+    100188: bind_l_hair_a01
+    100190: bind_l_hair_b01
+    100192: bind_l_hair_c01
+    100194: bind_l_hand01
+    100196: bind_l_shin01
+    100198: bind_l_soulder01
+    100200: bind_l_thigh01
+    100202: bind_m_hair_a01
+    100204: bind_m_hair_b01
+    100206: bind_m_hair_c01
+    100208: bind_mu_hair_a01
+    100210: bind_mu_hair_b01
+    100212: bind_mu_hair_c01
+    100214: bind_neck01
+    100216: bind_pelvis01
+    100218: bind_r_ankle01
+    100220: bind_r_eye01
+    100222: bind_r_fluffin_a01
+    100224: bind_r_fluffin_b01
+    100226: bind_r_fluffin_c01
+    100228: bind_r_fluffin_d01
+    100230: bind_r_fluffin_e01
+    100232: bind_r_fluffin_f01
+    100234: bind_r_fluffout_a01
+    100236: bind_r_fluffout_b01
+    100238: bind_r_fluffout_c01
+    100240: bind_r_fluffout_d01
+    100242: bind_r_fluffout_e01
+    100244: bind_r_fluffout_f01
+    100246: bind_r_foot01
+    100248: bind_r_forearm01
+    100250: bind_r_hair_a01
+    100252: bind_r_hair_b01
+    100254: bind_r_hair_c01
+    100256: bind_r_hand01
+    100258: bind_r_shin01
+    100260: bind_r_soulder01
+    100262: bind_r_thigh01
+    100264: bind_root01
+    100266: controls01
+    100268: eyelid_l_bot01
+    100270: eyelid_l_bot02
+    100272: eyelid_l_top01
+    100274: eyelid_l_top02
+    100276: eyelids1
+    100278: Eyes1
+    100280: Fluff1
+    100282: FluffHinten2
+    100284: global01
+    100286: grp_coat01
+    100288: grp_eyeblink
+    100290: grp_hair01
+    100292: Haare1
+    100294: Hair_l_1
+    100296: Hair_l_2
+    100298: Hair_l_3
+    100300: Hair_m_1
+    100302: Hair_m_2
+    100304: Hair_m_3
+    100306: Hair_m_4
+    100308: Hair_ml_1
+    100310: Hair_ml_2
+    100312: Hair_ml_3
+    100314: Hair_mr_1
+    100316: Hair_mr_2
+    100318: Hair_mr_3
+    100320: Hair_r_1
+    100322: Hair_r_2
+    100324: Hair_r_3
+    100326: Hairdown
+    100328: Hairleft
+    100330: Hairright
+    100332: Hairtop
+    100334: iks01
+    100336: jdrv_l_ankle01
+    100338: jdrv_l_foot01
+    100340: jdrv_l_toe01
+    100342: jdrv_r_ankle01
+    100344: jdrv_r_foot01
+    100346: jdrv_r_toe01
+    100348: joint1
+    100350: joint2
+    100352: joint2 1
+    100354: joint2 2
+    100356: joint2 3
+    100358: joint3
+    100360: joint6
+    100362: joint9
+    100364: pCylinder2
+    100366: pPlane5
+    100368: rp_l_arm01
+    100370: rp_l_eye01
+    100372: rp_l_leg01
+    100374: rp_r_arm01
+    100376: rp_r_eye01
+    100378: rp_r_leg01
+    100380: Skeleton01
+    100382: Son_LeftEye
+    100384: Son_Legs
+    100386: Son_RightEye
+    100388: Son_UpperBody
+    100390: SonBody
+    100392: //RootNode
+    100394: transform1
+    100396: transform3
+    400000: anim_back01
+    400002: anim_blinkdown_l_01
+    400004: anim_blinkdown_r_01
+    400006: anim_blinktop_l_01
+    400008: anim_blinktop_r_01
+    400010: anim_chest01
+    400012: anim_COG01
+    400014: anim_eyes01
+    400016: anim_head01
+    400018: anim_l_arm01
+    400020: anim_l_coatin_a01
+    400022: anim_l_coatin_b01
+    400024: anim_l_coatin_c01
+    400026: anim_l_coatin_d01
+    400028: anim_l_coatin_e01
+    400030: anim_l_coatin_f01
+    400032: anim_l_coatout_a01
+    400034: anim_l_coatout_b01
+    400036: anim_l_coatout_c01
+    400038: anim_l_coatout_d01
+    400040: anim_l_coatout_e01
+    400042: anim_l_coatout_f01
+    400044: anim_l_eye01
+    400046: anim_l_hairdumn_a01
+    400048: anim_l_hairdumn_b01
+    400050: anim_l_hairdumn_c01
+    400052: anim_l_hairleft_a01
+    400054: anim_l_hairleft_b01
+    400056: anim_l_hairleft_c01
+    400058: anim_l_hairtop_a01
+    400060: anim_l_hairtop_b01
+    400062: anim_l_hairtop_c01
+    400064: anim_l_knee01
+    400066: anim_l_knee02
+    400068: anim_l_knee03
+    400070: anim_l_leg01
+    400072: anim_l_leg02
+    400074: anim_neck01
+    400076: anim_pelvis01
+    400078: anim_r_arm01
+    400080: anim_r_coatin_a01
+    400082: anim_r_coatin_b01
+    400084: anim_r_coatin_c01
+    400086: anim_r_coatin_d01
+    400088: anim_r_coatin_e01
+    400090: anim_r_coatin_f01
+    400092: anim_r_coatout_a01
+    400094: anim_r_coatout_b01
+    400096: anim_r_coatout_c01
+    400098: anim_r_coatout_d01
+    400100: anim_r_coatout_e01
+    400102: anim_r_coatout_f01
+    400104: anim_r_eye01
+    400106: anim_r_hairright_a01
+    400108: anim_r_hairright_b01
+    400110: anim_r_hairright_c01
+    400112: anim_r_knee01
+    400114: be_head01
+    400116: be_l_ankle01
+    400118: be_l_eye01
+    400120: be_l_fluffin_01
+    400122: be_l_fluffout_01
+    400124: be_l_hair_d01
+    400126: be_l_hand01
+    400128: be_l_toe01
+    400130: be_m_hair_d01
+    400132: be_mu_hair_d01
+    400134: be_pelvis01
+    400136: be_r_ankle01
+    400138: be_r_eye01
+    400140: be_r_fluffin_01
+    400142: be_r_fluffout_01
+    400144: be_r_hair_d01
+    400146: be_r_hand01
+    400148: be_r_toe01
+    400150: bind_back01
+    400152: bind_chest01
+    400154: bind_head01
+    400156: bind_l_ankle01
+    400158: bind_l_eye01
+    400160: bind_l_fluffin_a01
+    400162: bind_l_fluffin_b01
+    400164: bind_l_fluffin_c01
+    400166: bind_l_fluffin_d01
+    400168: bind_l_fluffin_e01
+    400170: bind_l_fluffin_f01
+    400172: bind_l_fluffout_a01
+    400174: bind_l_fluffout_b01
+    400176: bind_l_fluffout_c01
+    400178: bind_l_fluffout_d01
+    400180: bind_l_fluffout_e01
+    400182: bind_l_fluffout_f01
+    400184: bind_l_foot01
+    400186: bind_l_forearm01
+    400188: bind_l_hair_a01
+    400190: bind_l_hair_b01
+    400192: bind_l_hair_c01
+    400194: bind_l_hand01
+    400196: bind_l_shin01
+    400198: bind_l_soulder01
+    400200: bind_l_thigh01
+    400202: bind_m_hair_a01
+    400204: bind_m_hair_b01
+    400206: bind_m_hair_c01
+    400208: bind_mu_hair_a01
+    400210: bind_mu_hair_b01
+    400212: bind_mu_hair_c01
+    400214: bind_neck01
+    400216: bind_pelvis01
+    400218: bind_r_ankle01
+    400220: bind_r_eye01
+    400222: bind_r_fluffin_a01
+    400224: bind_r_fluffin_b01
+    400226: bind_r_fluffin_c01
+    400228: bind_r_fluffin_d01
+    400230: bind_r_fluffin_e01
+    400232: bind_r_fluffin_f01
+    400234: bind_r_fluffout_a01
+    400236: bind_r_fluffout_b01
+    400238: bind_r_fluffout_c01
+    400240: bind_r_fluffout_d01
+    400242: bind_r_fluffout_e01
+    400244: bind_r_fluffout_f01
+    400246: bind_r_foot01
+    400248: bind_r_forearm01
+    400250: bind_r_hair_a01
+    400252: bind_r_hair_b01
+    400254: bind_r_hair_c01
+    400256: bind_r_hand01
+    400258: bind_r_shin01
+    400260: bind_r_soulder01
+    400262: bind_r_thigh01
+    400264: bind_root01
+    400266: controls01
+    400268: eyelid_l_bot01
+    400270: eyelid_l_bot02
+    400272: eyelid_l_top01
+    400274: eyelid_l_top02
+    400276: eyelids1
+    400278: Eyes1
+    400280: Fluff1
+    400282: FluffHinten2
+    400284: global01
+    400286: grp_coat01
+    400288: grp_eyeblink
+    400290: grp_hair01
+    400292: Haare1
+    400294: Hair_l_1
+    400296: Hair_l_2
+    400298: Hair_l_3
+    400300: Hair_m_1
+    400302: Hair_m_2
+    400304: Hair_m_3
+    400306: Hair_m_4
+    400308: Hair_ml_1
+    400310: Hair_ml_2
+    400312: Hair_ml_3
+    400314: Hair_mr_1
+    400316: Hair_mr_2
+    400318: Hair_mr_3
+    400320: Hair_r_1
+    400322: Hair_r_2
+    400324: Hair_r_3
+    400326: Hairdown
+    400328: Hairleft
+    400330: Hairright
+    400332: Hairtop
+    400334: iks01
+    400336: jdrv_l_ankle01
+    400338: jdrv_l_foot01
+    400340: jdrv_l_toe01
+    400342: jdrv_r_ankle01
+    400344: jdrv_r_foot01
+    400346: jdrv_r_toe01
+    400348: joint1
+    400350: joint2
+    400352: joint2 1
+    400354: joint2 2
+    400356: joint2 3
+    400358: joint3
+    400360: joint6
+    400362: joint9
+    400364: pCylinder2
+    400366: pPlane5
+    400368: rp_l_arm01
+    400370: rp_l_eye01
+    400372: rp_l_leg01
+    400374: rp_r_arm01
+    400376: rp_r_eye01
+    400378: rp_r_leg01
+    400380: Skeleton01
+    400382: Son_LeftEye
+    400384: Son_Legs
+    400386: Son_RightEye
+    400388: Son_UpperBody
+    400390: SonBody
+    400392: //RootNode
+    400394: transform1
+    400396: transform3
+    4300000: Hair_m_1
+    4300002: Hair_m_2
+    4300004: Hair_l_1
+    4300006: Hair_r_1
+    4300008: Hair_m_3
+    4300010: Hair_m_4
+    4300012: Hair_mr_3
+    4300014: Hair_ml_3
+    4300016: Hair_l_2
+    4300018: Hair_l_3
+    4300020: Hair_ml_1
+    4300022: Hair_ml_2
+    4300024: Hair_r_2
+    4300026: Hair_r_3
+    4300028: Hair_mr_1
+    4300030: Hair_mr_2
+    4300032: Son_LeftEye
+    4300034: Son_RightEye
+    4300036: Son_UpperBody
+    4300038: Son_Legs
+    4300040: FluffHinten2
+    4300042: eyelid_l_top01
+    4300044: eyelid_l_bot01
+    4300046: eyelid_l_top02
+    4300048: eyelid_l_bot02
+    7400000: S_Walk
+    7400002: S_Bump
+    7400004: S_Fall
+    7400006: S_Pull
+    7400008: S_Land
+    7400010: S_Catch
+    7400012: S_Idle
+    9500000: //RootNode
+    13700000: eyelid_l_bot01
+    13700002: eyelid_l_bot02
+    13700004: eyelid_l_top01
+    13700006: eyelid_l_top02
+    13700008: FluffHinten2
+    13700010: Hair_l_1
+    13700012: Hair_l_2
+    13700014: Hair_l_3
+    13700016: Hair_m_1
+    13700018: Hair_m_2
+    13700020: Hair_m_3
+    13700022: Hair_m_4
+    13700024: Hair_ml_1
+    13700026: Hair_ml_2
+    13700028: Hair_ml_3
+    13700030: Hair_mr_1
+    13700032: Hair_mr_2
+    13700034: Hair_mr_3
+    13700036: Hair_r_1
+    13700038: Hair_r_2
+    13700040: Hair_r_3
+    13700042: Son_LeftEye
+    13700044: Son_Legs
+    13700046: Son_RightEye
+    13700048: Son_UpperBody
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: S_Walk
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: eyelids1
+        weight: 1
+      - path: eyelids1/eyelid_l_bot01
+        weight: 1
+      - path: eyelids1/eyelid_l_bot02
+        weight: 1
+      - path: eyelids1/eyelid_l_top01
+        weight: 1
+      - path: eyelids1/eyelid_l_top02
+        weight: 1
+      - path: Eyes1
+        weight: 1
+      - path: Eyes1/Son_LeftEye
+        weight: 1
+      - path: Eyes1/Son_RightEye
+        weight: 1
+      - path: Fluff1
+        weight: 1
+      - path: Fluff1/FluffHinten2
+        weight: 1
+      - path: global01
+        weight: 1
+      - path: global01/controls01
+        weight: 1
+      - path: global01/controls01/anim_COG01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01/anim_head01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_pelvis01
+        weight: 1
+      - path: global01/controls01/anim_eyes01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_l_eye01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_r_eye01
+        weight: 1
+      - path: global01/controls01/anim_l_arm01
+        weight: 1
+      - path: global01/controls01/anim_l_knee01
+        weight: 1
+      - path: global01/controls01/anim_l_knee02
+        weight: 1
+      - path: global01/controls01/anim_l_knee03
+        weight: 1
+      - path: global01/controls01/anim_l_leg01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01/jdrv_l_ankle01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01/jdrv_r_ankle01
+        weight: 1
+      - path: global01/controls01/anim_r_arm01
+        weight: 1
+      - path: global01/controls01/anim_r_knee01
+        weight: 1
+      - path: global01/controls01/grp_coat01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01/anim_l_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01/anim_l_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01/anim_r_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01/anim_r_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_r_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_r_01
+        weight: 1
+      - path: global01/controls01/grp_hair01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01/anim_l_hairdumn_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01/anim_l_hairleft_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01/anim_l_hairtop_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01/anim_r_hairright_c01
+        weight: 1
+      - path: global01/iks01
+        weight: 1
+      - path: global01/iks01/rp_l_arm01
+        weight: 1
+      - path: global01/iks01/rp_l_eye01
+        weight: 1
+      - path: global01/iks01/rp_l_leg01
+        weight: 1
+      - path: global01/iks01/rp_r_arm01
+        weight: 1
+      - path: global01/iks01/rp_r_eye01
+        weight: 1
+      - path: global01/iks01/rp_r_leg01
+        weight: 1
+      - path: global01/Skeleton01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01/be_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/be_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01/be_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01/be_l_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01/be_m_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01/be_mu_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01/be_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01/be_r_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1/joint2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3/joint2
+          1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6/joint2
+          2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9/joint2
+          3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01/be_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01/be_l_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01/be_l_fluffout_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/be_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01/be_l_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01/be_r_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01/be_r_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01/be_r_fluffout_01
+        weight: 1
+      - path: Haare1
+        weight: 1
+      - path: Haare1/Hairdown
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_4
+        weight: 1
+      - path: Haare1/Hairdown/Hair_ml_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_mr_3
+        weight: 1
+      - path: Haare1/Hairleft
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_2
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_3
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_1
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_2
+        weight: 1
+      - path: Haare1/Hairright
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_1
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_3
+        weight: 1
+      - path: Haare1/Hairtop
+        weight: 1
+      - path: Haare1/Hairtop/Hair_l_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_2
+        weight: 1
+      - path: Haare1/Hairtop/Hair_r_1
+        weight: 1
+      - path: SonBody
+        weight: 1
+      - path: SonBody/Son_Legs
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2/transform1
+        weight: 1
+      - path: SonBody/Son_UpperBody
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5/transform3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Bump
+      takeName: Take 001
+      firstFrame: 221
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: eyelids1
+        weight: 1
+      - path: eyelids1/eyelid_l_bot01
+        weight: 1
+      - path: eyelids1/eyelid_l_bot02
+        weight: 1
+      - path: eyelids1/eyelid_l_top01
+        weight: 1
+      - path: eyelids1/eyelid_l_top02
+        weight: 1
+      - path: Eyes1
+        weight: 1
+      - path: Eyes1/Son_LeftEye
+        weight: 1
+      - path: Eyes1/Son_RightEye
+        weight: 1
+      - path: Fluff1
+        weight: 1
+      - path: Fluff1/FluffHinten2
+        weight: 1
+      - path: global01
+        weight: 1
+      - path: global01/controls01
+        weight: 1
+      - path: global01/controls01/anim_COG01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01/anim_head01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_pelvis01
+        weight: 1
+      - path: global01/controls01/anim_eyes01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_l_eye01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_r_eye01
+        weight: 1
+      - path: global01/controls01/anim_l_arm01
+        weight: 1
+      - path: global01/controls01/anim_l_knee01
+        weight: 1
+      - path: global01/controls01/anim_l_knee02
+        weight: 1
+      - path: global01/controls01/anim_l_knee03
+        weight: 1
+      - path: global01/controls01/anim_l_leg01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01/jdrv_l_ankle01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01/jdrv_r_ankle01
+        weight: 1
+      - path: global01/controls01/anim_r_arm01
+        weight: 1
+      - path: global01/controls01/anim_r_knee01
+        weight: 1
+      - path: global01/controls01/grp_coat01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01/anim_l_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01/anim_l_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01/anim_r_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01/anim_r_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_r_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_r_01
+        weight: 1
+      - path: global01/controls01/grp_hair01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01/anim_l_hairdumn_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01/anim_l_hairleft_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01/anim_l_hairtop_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01/anim_r_hairright_c01
+        weight: 1
+      - path: global01/iks01
+        weight: 1
+      - path: global01/iks01/rp_l_arm01
+        weight: 1
+      - path: global01/iks01/rp_l_eye01
+        weight: 1
+      - path: global01/iks01/rp_l_leg01
+        weight: 1
+      - path: global01/iks01/rp_r_arm01
+        weight: 1
+      - path: global01/iks01/rp_r_eye01
+        weight: 1
+      - path: global01/iks01/rp_r_leg01
+        weight: 1
+      - path: global01/Skeleton01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01/be_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/be_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01/be_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01/be_l_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01/be_m_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01/be_mu_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01/be_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01/be_r_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1/joint2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3/joint2
+          1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6/joint2
+          2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9/joint2
+          3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01/be_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01/be_l_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01/be_l_fluffout_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/be_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01/be_l_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01/be_r_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01/be_r_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01/be_r_fluffout_01
+        weight: 1
+      - path: Haare1
+        weight: 1
+      - path: Haare1/Hairdown
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_4
+        weight: 1
+      - path: Haare1/Hairdown/Hair_ml_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_mr_3
+        weight: 1
+      - path: Haare1/Hairleft
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_2
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_3
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_1
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_2
+        weight: 1
+      - path: Haare1/Hairright
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_1
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_3
+        weight: 1
+      - path: Haare1/Hairtop
+        weight: 1
+      - path: Haare1/Hairtop/Hair_l_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_2
+        weight: 1
+      - path: Haare1/Hairtop/Hair_r_1
+        weight: 1
+      - path: SonBody
+        weight: 1
+      - path: SonBody/Son_Legs
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2/transform1
+        weight: 1
+      - path: SonBody/Son_UpperBody
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5/transform3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Fall
+      takeName: Take 001
+      firstFrame: 242
+      lastFrame: 268
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: eyelids1
+        weight: 1
+      - path: eyelids1/eyelid_l_bot01
+        weight: 1
+      - path: eyelids1/eyelid_l_bot02
+        weight: 1
+      - path: eyelids1/eyelid_l_top01
+        weight: 1
+      - path: eyelids1/eyelid_l_top02
+        weight: 1
+      - path: Eyes1
+        weight: 1
+      - path: Eyes1/Son_LeftEye
+        weight: 1
+      - path: Eyes1/Son_RightEye
+        weight: 1
+      - path: Fluff1
+        weight: 1
+      - path: Fluff1/FluffHinten2
+        weight: 1
+      - path: global01
+        weight: 1
+      - path: global01/controls01
+        weight: 1
+      - path: global01/controls01/anim_COG01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01/anim_head01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_pelvis01
+        weight: 1
+      - path: global01/controls01/anim_eyes01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_l_eye01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_r_eye01
+        weight: 1
+      - path: global01/controls01/anim_l_arm01
+        weight: 1
+      - path: global01/controls01/anim_l_knee01
+        weight: 1
+      - path: global01/controls01/anim_l_knee02
+        weight: 1
+      - path: global01/controls01/anim_l_knee03
+        weight: 1
+      - path: global01/controls01/anim_l_leg01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01/jdrv_l_ankle01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01/jdrv_r_ankle01
+        weight: 1
+      - path: global01/controls01/anim_r_arm01
+        weight: 1
+      - path: global01/controls01/anim_r_knee01
+        weight: 1
+      - path: global01/controls01/grp_coat01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01/anim_l_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01/anim_l_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01/anim_r_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01/anim_r_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_r_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_r_01
+        weight: 1
+      - path: global01/controls01/grp_hair01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01/anim_l_hairdumn_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01/anim_l_hairleft_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01/anim_l_hairtop_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01/anim_r_hairright_c01
+        weight: 1
+      - path: global01/iks01
+        weight: 1
+      - path: global01/iks01/rp_l_arm01
+        weight: 1
+      - path: global01/iks01/rp_l_eye01
+        weight: 1
+      - path: global01/iks01/rp_l_leg01
+        weight: 1
+      - path: global01/iks01/rp_r_arm01
+        weight: 1
+      - path: global01/iks01/rp_r_eye01
+        weight: 1
+      - path: global01/iks01/rp_r_leg01
+        weight: 1
+      - path: global01/Skeleton01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01/be_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/be_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01/be_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01/be_l_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01/be_m_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01/be_mu_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01/be_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01/be_r_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1/joint2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3/joint2
+          1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6/joint2
+          2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9/joint2
+          3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01/be_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01/be_l_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01/be_l_fluffout_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/be_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01/be_l_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01/be_r_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01/be_r_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01/be_r_fluffout_01
+        weight: 1
+      - path: Haare1
+        weight: 1
+      - path: Haare1/Hairdown
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_4
+        weight: 1
+      - path: Haare1/Hairdown/Hair_ml_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_mr_3
+        weight: 1
+      - path: Haare1/Hairleft
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_2
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_3
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_1
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_2
+        weight: 1
+      - path: Haare1/Hairright
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_1
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_3
+        weight: 1
+      - path: Haare1/Hairtop
+        weight: 1
+      - path: Haare1/Hairtop/Hair_l_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_2
+        weight: 1
+      - path: Haare1/Hairtop/Hair_r_1
+        weight: 1
+      - path: SonBody
+        weight: 1
+      - path: SonBody/Son_Legs
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2/transform1
+        weight: 1
+      - path: SonBody/Son_UpperBody
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5/transform3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Pull
+      takeName: Take 001
+      firstFrame: 272
+      lastFrame: 291
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: eyelids1
+        weight: 1
+      - path: eyelids1/eyelid_l_bot01
+        weight: 1
+      - path: eyelids1/eyelid_l_bot02
+        weight: 1
+      - path: eyelids1/eyelid_l_top01
+        weight: 1
+      - path: eyelids1/eyelid_l_top02
+        weight: 1
+      - path: Eyes1
+        weight: 1
+      - path: Eyes1/Son_LeftEye
+        weight: 1
+      - path: Eyes1/Son_RightEye
+        weight: 1
+      - path: Fluff1
+        weight: 1
+      - path: Fluff1/FluffHinten2
+        weight: 1
+      - path: global01
+        weight: 1
+      - path: global01/controls01
+        weight: 1
+      - path: global01/controls01/anim_COG01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01/anim_head01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_pelvis01
+        weight: 1
+      - path: global01/controls01/anim_eyes01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_l_eye01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_r_eye01
+        weight: 1
+      - path: global01/controls01/anim_l_arm01
+        weight: 1
+      - path: global01/controls01/anim_l_knee01
+        weight: 1
+      - path: global01/controls01/anim_l_knee02
+        weight: 1
+      - path: global01/controls01/anim_l_knee03
+        weight: 1
+      - path: global01/controls01/anim_l_leg01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01/jdrv_l_ankle01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01/jdrv_r_ankle01
+        weight: 1
+      - path: global01/controls01/anim_r_arm01
+        weight: 1
+      - path: global01/controls01/anim_r_knee01
+        weight: 1
+      - path: global01/controls01/grp_coat01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01/anim_l_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01/anim_l_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01/anim_r_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01/anim_r_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_r_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_r_01
+        weight: 1
+      - path: global01/controls01/grp_hair01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01/anim_l_hairdumn_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01/anim_l_hairleft_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01/anim_l_hairtop_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01/anim_r_hairright_c01
+        weight: 1
+      - path: global01/iks01
+        weight: 1
+      - path: global01/iks01/rp_l_arm01
+        weight: 1
+      - path: global01/iks01/rp_l_eye01
+        weight: 1
+      - path: global01/iks01/rp_l_leg01
+        weight: 1
+      - path: global01/iks01/rp_r_arm01
+        weight: 1
+      - path: global01/iks01/rp_r_eye01
+        weight: 1
+      - path: global01/iks01/rp_r_leg01
+        weight: 1
+      - path: global01/Skeleton01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01/be_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/be_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01/be_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01/be_l_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01/be_m_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01/be_mu_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01/be_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01/be_r_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1/joint2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3/joint2
+          1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6/joint2
+          2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9/joint2
+          3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01/be_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01/be_l_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01/be_l_fluffout_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/be_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01/be_l_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01/be_r_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01/be_r_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01/be_r_fluffout_01
+        weight: 1
+      - path: Haare1
+        weight: 1
+      - path: Haare1/Hairdown
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_4
+        weight: 1
+      - path: Haare1/Hairdown/Hair_ml_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_mr_3
+        weight: 1
+      - path: Haare1/Hairleft
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_2
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_3
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_1
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_2
+        weight: 1
+      - path: Haare1/Hairright
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_1
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_3
+        weight: 1
+      - path: Haare1/Hairtop
+        weight: 1
+      - path: Haare1/Hairtop/Hair_l_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_2
+        weight: 1
+      - path: Haare1/Hairtop/Hair_r_1
+        weight: 1
+      - path: SonBody
+        weight: 1
+      - path: SonBody/Son_Legs
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2/transform1
+        weight: 1
+      - path: SonBody/Son_UpperBody
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5/transform3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Land
+      takeName: Take 001
+      firstFrame: 300
+      lastFrame: 325
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: eyelids1
+        weight: 1
+      - path: eyelids1/eyelid_l_bot01
+        weight: 1
+      - path: eyelids1/eyelid_l_bot02
+        weight: 1
+      - path: eyelids1/eyelid_l_top01
+        weight: 1
+      - path: eyelids1/eyelid_l_top02
+        weight: 1
+      - path: Eyes1
+        weight: 1
+      - path: Eyes1/Son_LeftEye
+        weight: 1
+      - path: Eyes1/Son_RightEye
+        weight: 1
+      - path: Fluff1
+        weight: 1
+      - path: Fluff1/FluffHinten2
+        weight: 1
+      - path: global01
+        weight: 1
+      - path: global01/controls01
+        weight: 1
+      - path: global01/controls01/anim_COG01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01/anim_head01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_pelvis01
+        weight: 1
+      - path: global01/controls01/anim_eyes01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_l_eye01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_r_eye01
+        weight: 1
+      - path: global01/controls01/anim_l_arm01
+        weight: 1
+      - path: global01/controls01/anim_l_knee01
+        weight: 1
+      - path: global01/controls01/anim_l_knee02
+        weight: 1
+      - path: global01/controls01/anim_l_knee03
+        weight: 1
+      - path: global01/controls01/anim_l_leg01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01/jdrv_l_ankle01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01/jdrv_r_ankle01
+        weight: 1
+      - path: global01/controls01/anim_r_arm01
+        weight: 1
+      - path: global01/controls01/anim_r_knee01
+        weight: 1
+      - path: global01/controls01/grp_coat01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01/anim_l_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01/anim_l_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01/anim_r_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01/anim_r_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_r_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_r_01
+        weight: 1
+      - path: global01/controls01/grp_hair01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01/anim_l_hairdumn_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01/anim_l_hairleft_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01/anim_l_hairtop_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01/anim_r_hairright_c01
+        weight: 1
+      - path: global01/iks01
+        weight: 1
+      - path: global01/iks01/rp_l_arm01
+        weight: 1
+      - path: global01/iks01/rp_l_eye01
+        weight: 1
+      - path: global01/iks01/rp_l_leg01
+        weight: 1
+      - path: global01/iks01/rp_r_arm01
+        weight: 1
+      - path: global01/iks01/rp_r_eye01
+        weight: 1
+      - path: global01/iks01/rp_r_leg01
+        weight: 1
+      - path: global01/Skeleton01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01/be_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/be_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01/be_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01/be_l_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01/be_m_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01/be_mu_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01/be_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01/be_r_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1/joint2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3/joint2
+          1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6/joint2
+          2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9/joint2
+          3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01/be_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01/be_l_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01/be_l_fluffout_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/be_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01/be_l_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01/be_r_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01/be_r_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01/be_r_fluffout_01
+        weight: 1
+      - path: Haare1
+        weight: 1
+      - path: Haare1/Hairdown
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_4
+        weight: 1
+      - path: Haare1/Hairdown/Hair_ml_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_mr_3
+        weight: 1
+      - path: Haare1/Hairleft
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_2
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_3
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_1
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_2
+        weight: 1
+      - path: Haare1/Hairright
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_1
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_3
+        weight: 1
+      - path: Haare1/Hairtop
+        weight: 1
+      - path: Haare1/Hairtop/Hair_l_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_2
+        weight: 1
+      - path: Haare1/Hairtop/Hair_r_1
+        weight: 1
+      - path: SonBody
+        weight: 1
+      - path: SonBody/Son_Legs
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2/transform1
+        weight: 1
+      - path: SonBody/Son_UpperBody
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5/transform3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Catch
+      takeName: Take 001
+      firstFrame: 331
+      lastFrame: 340
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: eyelids1
+        weight: 1
+      - path: eyelids1/eyelid_l_bot01
+        weight: 1
+      - path: eyelids1/eyelid_l_bot02
+        weight: 1
+      - path: eyelids1/eyelid_l_top01
+        weight: 1
+      - path: eyelids1/eyelid_l_top02
+        weight: 1
+      - path: Eyes1
+        weight: 1
+      - path: Eyes1/Son_LeftEye
+        weight: 1
+      - path: Eyes1/Son_RightEye
+        weight: 1
+      - path: Fluff1
+        weight: 1
+      - path: Fluff1/FluffHinten2
+        weight: 1
+      - path: global01
+        weight: 1
+      - path: global01/controls01
+        weight: 1
+      - path: global01/controls01/anim_COG01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01/anim_head01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_pelvis01
+        weight: 1
+      - path: global01/controls01/anim_eyes01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_l_eye01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_r_eye01
+        weight: 1
+      - path: global01/controls01/anim_l_arm01
+        weight: 1
+      - path: global01/controls01/anim_l_knee01
+        weight: 1
+      - path: global01/controls01/anim_l_knee02
+        weight: 1
+      - path: global01/controls01/anim_l_knee03
+        weight: 1
+      - path: global01/controls01/anim_l_leg01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01/jdrv_l_ankle01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01/jdrv_r_ankle01
+        weight: 1
+      - path: global01/controls01/anim_r_arm01
+        weight: 1
+      - path: global01/controls01/anim_r_knee01
+        weight: 1
+      - path: global01/controls01/grp_coat01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01/anim_l_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01/anim_l_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01/anim_r_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01/anim_r_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_r_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_r_01
+        weight: 1
+      - path: global01/controls01/grp_hair01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01/anim_l_hairdumn_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01/anim_l_hairleft_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01/anim_l_hairtop_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01/anim_r_hairright_c01
+        weight: 1
+      - path: global01/iks01
+        weight: 1
+      - path: global01/iks01/rp_l_arm01
+        weight: 1
+      - path: global01/iks01/rp_l_eye01
+        weight: 1
+      - path: global01/iks01/rp_l_leg01
+        weight: 1
+      - path: global01/iks01/rp_r_arm01
+        weight: 1
+      - path: global01/iks01/rp_r_eye01
+        weight: 1
+      - path: global01/iks01/rp_r_leg01
+        weight: 1
+      - path: global01/Skeleton01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01/be_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/be_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01/be_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01/be_l_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01/be_m_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01/be_mu_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01/be_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01/be_r_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1/joint2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3/joint2
+          1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6/joint2
+          2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9/joint2
+          3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01/be_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01/be_l_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01/be_l_fluffout_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/be_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01/be_l_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01/be_r_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01/be_r_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01/be_r_fluffout_01
+        weight: 1
+      - path: Haare1
+        weight: 1
+      - path: Haare1/Hairdown
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_4
+        weight: 1
+      - path: Haare1/Hairdown/Hair_ml_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_mr_3
+        weight: 1
+      - path: Haare1/Hairleft
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_2
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_3
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_1
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_2
+        weight: 1
+      - path: Haare1/Hairright
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_1
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_3
+        weight: 1
+      - path: Haare1/Hairtop
+        weight: 1
+      - path: Haare1/Hairtop/Hair_l_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_2
+        weight: 1
+      - path: Haare1/Hairtop/Hair_r_1
+        weight: 1
+      - path: SonBody
+        weight: 1
+      - path: SonBody/Son_Legs
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2/transform1
+        weight: 1
+      - path: SonBody/Son_UpperBody
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5/transform3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: S_Idle
+      takeName: Take 001
+      firstFrame: 40
+      lastFrame: 215
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: eyelids1
+        weight: 1
+      - path: eyelids1/eyelid_l_bot01
+        weight: 1
+      - path: eyelids1/eyelid_l_bot02
+        weight: 1
+      - path: eyelids1/eyelid_l_top01
+        weight: 1
+      - path: eyelids1/eyelid_l_top02
+        weight: 1
+      - path: Eyes1
+        weight: 1
+      - path: Eyes1/Son_LeftEye
+        weight: 1
+      - path: Eyes1/Son_RightEye
+        weight: 1
+      - path: Fluff1
+        weight: 1
+      - path: Fluff1/FluffHinten2
+        weight: 1
+      - path: global01
+        weight: 1
+      - path: global01/controls01
+        weight: 1
+      - path: global01/controls01/anim_COG01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_back01/anim_chest01/anim_neck01/anim_head01
+        weight: 1
+      - path: global01/controls01/anim_COG01/anim_pelvis01
+        weight: 1
+      - path: global01/controls01/anim_eyes01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_l_eye01
+        weight: 1
+      - path: global01/controls01/anim_eyes01/anim_r_eye01
+        weight: 1
+      - path: global01/controls01/anim_l_arm01
+        weight: 1
+      - path: global01/controls01/anim_l_knee01
+        weight: 1
+      - path: global01/controls01/anim_l_knee02
+        weight: 1
+      - path: global01/controls01/anim_l_knee03
+        weight: 1
+      - path: global01/controls01/anim_l_leg01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg01/jdrv_l_toe01/jdrv_l_foot01/jdrv_l_ankle01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01
+        weight: 1
+      - path: global01/controls01/anim_l_leg02/jdrv_r_toe01/jdrv_r_foot01/jdrv_r_ankle01
+        weight: 1
+      - path: global01/controls01/anim_r_arm01
+        weight: 1
+      - path: global01/controls01/anim_r_knee01
+        weight: 1
+      - path: global01/controls01/grp_coat01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatin_a01/anim_l_coatin_b01/anim_l_coatin_c01/anim_l_coatin_d01/anim_l_coatin_e01/anim_l_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_l_coatout_a01/anim_l_coatout_b01/anim_l_coatout_c01/anim_l_coatout_d01/anim_l_coatout_e01/anim_l_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatin_a01/anim_r_coatin_b01/anim_r_coatin_c01/anim_r_coatin_d01/anim_r_coatin_e01/anim_r_coatin_f01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01
+        weight: 1
+      - path: global01/controls01/grp_coat01/anim_r_coatout_a01/anim_r_coatout_b01/anim_r_coatout_c01/anim_r_coatout_d01/anim_r_coatout_e01/anim_r_coatout_f01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinkdown_r_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_l_01
+        weight: 1
+      - path: global01/controls01/grp_eyeblink/anim_blinktop_r_01
+        weight: 1
+      - path: global01/controls01/grp_hair01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairdumn_a01/anim_l_hairdumn_b01/anim_l_hairdumn_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairleft_a01/anim_l_hairleft_b01/anim_l_hairleft_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_l_hairtop_a01/anim_l_hairtop_b01/anim_l_hairtop_c01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01
+        weight: 1
+      - path: global01/controls01/grp_hair01/anim_r_hairright_a01/anim_r_hairright_b01/anim_r_hairright_c01
+        weight: 1
+      - path: global01/iks01
+        weight: 1
+      - path: global01/iks01/rp_l_arm01
+        weight: 1
+      - path: global01/iks01/rp_l_eye01
+        weight: 1
+      - path: global01/iks01/rp_l_leg01
+        weight: 1
+      - path: global01/iks01/rp_r_arm01
+        weight: 1
+      - path: global01/iks01/rp_r_eye01
+        weight: 1
+      - path: global01/iks01/rp_r_leg01
+        weight: 1
+      - path: global01/Skeleton01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_l_soulder01/bind_l_forearm01/bind_l_hand01/be_l_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/be_head01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_eye01/be_l_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_l_hair_a01/bind_l_hair_b01/bind_l_hair_c01/be_l_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_m_hair_a01/bind_m_hair_b01/bind_m_hair_c01/be_m_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_mu_hair_a01/bind_mu_hair_b01/bind_mu_hair_c01/be_mu_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_eye01/be_r_eye01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/bind_r_hair_a01/bind_r_hair_b01/bind_r_hair_c01/be_r_hair_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint1/joint2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint3/joint2
+          1
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint6/joint2
+          2
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_neck01/bind_head01/joint9/joint2
+          3
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_back01/bind_chest01/bind_r_soulder01/bind_r_forearm01/bind_r_hand01/be_r_hand01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffin_a01/bind_l_fluffin_b01/bind_l_fluffin_c01/bind_l_fluffin_d01/bind_l_fluffin_e01/bind_l_fluffin_f01/be_l_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_l_fluffout_a01/bind_l_fluffout_b01/bind_l_fluffout_c01/bind_l_fluffout_d01/bind_l_fluffout_e01/bind_l_fluffout_f01/be_l_fluffout_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/be_pelvis01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_l_thigh01/bind_l_shin01/be_l_ankle01/bind_l_ankle01/bind_l_foot01/be_l_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_pelvis01/bind_r_thigh01/bind_r_shin01/be_r_ankle01/bind_r_ankle01/bind_r_foot01/be_r_toe01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffin_a01/bind_r_fluffin_b01/bind_r_fluffin_c01/bind_r_fluffin_d01/bind_r_fluffin_e01/bind_r_fluffin_f01/be_r_fluffin_01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01
+        weight: 1
+      - path: global01/Skeleton01/bind_root01/bind_r_fluffout_a01/bind_r_fluffout_b01/bind_r_fluffout_c01/bind_r_fluffout_d01/bind_r_fluffout_e01/bind_r_fluffout_f01/be_r_fluffout_01
+        weight: 1
+      - path: Haare1
+        weight: 1
+      - path: Haare1/Hairdown
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_m_4
+        weight: 1
+      - path: Haare1/Hairdown/Hair_ml_3
+        weight: 1
+      - path: Haare1/Hairdown/Hair_mr_3
+        weight: 1
+      - path: Haare1/Hairleft
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_2
+        weight: 1
+      - path: Haare1/Hairleft/Hair_l_3
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_1
+        weight: 1
+      - path: Haare1/Hairleft/Hair_ml_2
+        weight: 1
+      - path: Haare1/Hairright
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_1
+        weight: 1
+      - path: Haare1/Hairright/Hair_mr_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_2
+        weight: 1
+      - path: Haare1/Hairright/Hair_r_3
+        weight: 1
+      - path: Haare1/Hairtop
+        weight: 1
+      - path: Haare1/Hairtop/Hair_l_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_1
+        weight: 1
+      - path: Haare1/Hairtop/Hair_m_2
+        weight: 1
+      - path: Haare1/Hairtop/Hair_r_1
+        weight: 1
+      - path: SonBody
+        weight: 1
+      - path: SonBody/Son_Legs
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2
+        weight: 1
+      - path: SonBody/Son_Legs/pCylinder2/transform1
+        weight: 1
+      - path: SonBody/Son_UpperBody
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5
+        weight: 1
+      - path: SonBody/Son_UpperBody/pPlane5/transform3
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 15
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

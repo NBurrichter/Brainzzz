@@ -30,7 +30,10 @@ public class PlayerControl : MonoBehaviour {
     public float maxVelocityChange = 10.0f;
     public bool canJump = true;
     public float jumpHeight = 2.0f;
-    private bool grounded = false;
+    public bool grounded = false;
+
+    //Animation Controlls
+    private Animator anim;
 
     //Character Controller vars
     /*
@@ -43,6 +46,8 @@ public class PlayerControl : MonoBehaviour {
 
     void Awake()
     {
+        anim = GetComponentInChildren<Animator>(); 
+
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         rb.useGravity = false;
@@ -104,17 +109,64 @@ public class PlayerControl : MonoBehaviour {
         if (isGrappling)
         {
             grounded = false;
+            anim.SetBool("Grounded", false);
             return;
         }
 
         RaycastHit sphereHitInfo;
-        if (Physics.SphereCast(transform.position,playerWidth, Vector3.down,out sphereHitInfo, playerHeight))
+        Debug.DrawLine(transform.position, transform.position + Vector3.down * playerHeight,Color.blue,1);
+        if (Physics.SphereCast(transform.position+Vector3.up,playerWidth, Vector3.down,out sphereHitInfo, playerHeight) == true)
         {
+            Debug.LogWarning("WHY ZOU NO WORKZ");
             grounded = true;
+            anim.SetBool("Grounded", true);
+            Debug.Log(sphereHitInfo.collider.name);
         }
-        
+        else
+        {
+            grounded = false;
+            anim.SetBool("Grounded", false);
+        }
+
+
+        if (Input.GetAxis("Vertical") == 0)
+        {
+            anim.SetInteger("Walking", 0);
+        }
+        if (Input.GetAxis("Horizontal") == 0)
+        {
+            anim.SetInteger("Strafe", 0);
+        }
+
         if (grounded) //Grounded movement
         {
+            //Get input for animation
+            if  (Input.GetAxis("Vertical") > 0)
+            {
+                anim.SetInteger("Walking", 1);
+            }
+            if (Input.GetAxis("Vertical") < 0)
+            {
+                anim.SetInteger("Walking", -1);
+            }
+            if (Input.GetAxis("Vertical") == 0)
+            {
+                anim.SetInteger("Walking", 0);
+            }
+
+            if (Input.GetAxis("Horizontal") > 0)
+            {
+                anim.SetInteger("Strafe", 1);
+            }
+            if (Input.GetAxis("Horizontal") < 0)
+            {
+                anim.SetInteger("Strafe", -1);
+            }
+            if (Input.GetAxis("Horizontal") == 0)
+            {
+                anim.SetInteger("Strafe", 0);
+            }
+
             // Calculate how fast we should be moving
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
             targetVelocity = transform.TransformDirection(targetVelocity);
@@ -131,6 +183,7 @@ public class PlayerControl : MonoBehaviour {
             // Jumping
             if (canJump && Input.GetButton("Jump"))
             {
+                anim.SetTrigger("Jump");
                 rb.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed(), velocity.z);
             }
         }
@@ -154,12 +207,14 @@ public class PlayerControl : MonoBehaviour {
         if(!isGrappling)
         rb.AddForce(new Vector3(0, -gravity * rb.mass, 0));
 
-        grounded = false;
+        //grounded = false;
+        //anim.SetBool("Grounded", false);
     }
 
     void OnCollisionStay()
     {
         //grounded = true;
+        //anim.SetBool("Grounded",true);
     }
 
     float CalculateJumpVerticalSpeed()
@@ -172,6 +227,7 @@ public class PlayerControl : MonoBehaviour {
     public void SetGrapple(bool b)
 	{
 		isGrappling = b;
+        anim.SetBool("IsGrappling", b);
 	}
 
 }

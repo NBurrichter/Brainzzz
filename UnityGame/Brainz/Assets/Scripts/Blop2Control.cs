@@ -123,6 +123,12 @@ public class Blop2Control : MonoBehaviour
             {
                 otherBody = c.gameObject.AddComponent<Rigidbody>();
             }
+
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                transform.position = GameObject.Find("BlopPoint").transform.position;
+            }
+
             attachedObject = c.gameObject.AddComponent<FixedJoint>();
             attachedObject.connectedBody = rb;
 
@@ -143,6 +149,7 @@ public class Blop2Control : MonoBehaviour
                 c.gameObject.GetComponent<Seeker>().enabled = false;
                 c.gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 c.gameObject.GetComponent<CharacterController>().enabled = false;
+                c.gameObject.GetComponent<FindTestPath>().GetBlop();
             }
         }
 
@@ -247,6 +254,7 @@ public class Blop2Control : MonoBehaviour
             }
             if (attachedObject.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
             {
+                Debug.Log("Meep");
                 attachedObject.gameObject.GetComponent<FindTestPath>().enabled = true;
                 attachedObject.gameObject.GetComponent<FindTestPath>().Start();
                 attachedObject.gameObject.GetComponent<Seeker>().enabled = true;
