@@ -164,16 +164,22 @@ public class Synapsing : MonoBehaviour
         {
             StopCoroutine(merginCoroutine);
         }
-
-        if (Blop1Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+        if (Blop1Script.GetAttachedObject() != null)
         {
-            Blop1Script.GetAttachedObject().GetComponent<FindTestPath>().StartFalling();
-            //Blop1Script.GetAttachedObject().GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            if (Blop1Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                Blop1Script.GetAttachedObject().GetComponent<FindTestPath>().StartFalling();
+                //Blop1Script.GetAttachedObject().GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            }
         }
-        if (Blop2Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+
+        if (Blop2Script.GetAttachedObject() != null)
         {
-            Blop2Script.GetAttachedObject().GetComponent<FindTestPath>().StartFalling();
-            //Blop1Script.GetAttachedObject().GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            if (Blop2Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                Blop2Script.GetAttachedObject().GetComponent<FindTestPath>().StartFalling();
+                //Blop1Script.GetAttachedObject().GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            }
         }
 
         merginCoroutine = null;

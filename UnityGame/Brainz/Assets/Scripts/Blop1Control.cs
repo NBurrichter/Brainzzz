@@ -76,6 +76,7 @@ public class Blop1Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
+        Debug.LogError("Blop1 Collision Entered");
 
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
@@ -101,6 +102,7 @@ public class Blop1Control : MonoBehaviour
         {
             if (c.gameObject.tag == "Blop2_Attachment")
             {
+                Debug.LogError("Is Blop2-Attachment");
                 GameObject goBlop2 = GameObject.FindGameObjectWithTag("Blop2");
                 goBlop2.GetComponent<Blop2Control>().StopMergin();
             }
@@ -174,9 +176,12 @@ public class Blop1Control : MonoBehaviour
     /// </summary>
     public void StopMergin()
     {
+        Debug.LogError("Call Stop Mergin Blop1");
         attachedObject.GetComponent<CubeControl>().StopMergin();
         this.gameObject.transform.DetachChildren();
+        Debug.LogError("Stop Synapsing");
         Synapsing.Singleton.StopMergin();
+        Debug.LogError("Destroy Blop1");
         Destroy(this.gameObject);
         attachedObject.tag = "Untagged";
         Destroy(attachedObject);
@@ -260,6 +265,7 @@ public class Blop1Control : MonoBehaviour
     /// </summary>
     public void DestroyThisBlop()
     {
+        Debug.LogError("Destroy Blop 1");
         this.gameObject.transform.DetachChildren();
         Destroy(this.gameObject);
         if (attachedObject)
@@ -316,6 +322,8 @@ public class Blop1Control : MonoBehaviour
 
     public GameObject GetAttachedObject()
     {
+        if (attachedObject == null)
+            return null;
         return attachedObject.gameObject;
     }
 
