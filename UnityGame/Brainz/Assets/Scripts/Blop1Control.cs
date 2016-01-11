@@ -27,7 +27,8 @@ public class Blop1Control : MonoBehaviour
     {
         Blop = this.gameObject;
         rb = GetComponent<Rigidbody>();
-        vMoveDirection = AimingControl.aimingControlSingleton.GetHitDirection();
+        //vMoveDirection = AimingControl.aimingControlSingleton.GetHitDirection();
+        rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection();
         Blop.tag = "Blop1";
         goBlop1Array = GameObject.FindGameObjectsWithTag("Blop1");
         foreach (Transform child in transform)
@@ -76,7 +77,12 @@ public class Blop1Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
-        Debug.LogError("Blop1 Collision Entered");
+        if (c.gameObject.name != "Player" && c.gameObject.name != "Player (1)")
+        {
+            rb.velocity = Vector3.zero;
+        }
+        
+        Debug.LogError("Blop1 Collision Entered with "+ c.gameObject.name);
 
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
