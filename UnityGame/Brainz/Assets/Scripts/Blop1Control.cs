@@ -82,7 +82,6 @@ public class Blop1Control : MonoBehaviour
             rb.velocity = Vector3.zero;
         }
         
-        Debug.LogError("Blop1 Collision Entered with "+ c.gameObject.name);
 
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
@@ -182,12 +181,9 @@ public class Blop1Control : MonoBehaviour
     /// </summary>
     public void StopMergin()
     {
-        Debug.LogError("Call Stop Mergin Blop1");
         attachedObject.GetComponent<CubeControl>().StopMergin();
         this.gameObject.transform.DetachChildren();
-        Debug.LogError("Stop Synapsing");
         Synapsing.Singleton.StopMergin();
-        Debug.LogError("Destroy Blop1");
         Destroy(this.gameObject);
         attachedObject.tag = "Untagged";
         Destroy(attachedObject);
