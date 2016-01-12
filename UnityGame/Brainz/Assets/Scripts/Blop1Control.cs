@@ -27,7 +27,8 @@ public class Blop1Control : MonoBehaviour
     {
         Blop = this.gameObject;
         rb = GetComponent<Rigidbody>();
-        vMoveDirection = AimingControl.aimingControlSingleton.GetHitDirection();
+        //vMoveDirection = AimingControl.aimingControlSingleton.GetHitDirection();
+        rb.velocity = AimingControl.aimingControlSingleton.GetHitDirection();
         Blop.tag = "Blop1";
         goBlop1Array = GameObject.FindGameObjectsWithTag("Blop1");
         foreach (Transform child in transform)
@@ -76,6 +77,12 @@ public class Blop1Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
+        if (c.gameObject.name != "Player" && c.gameObject.name != "Player (1)")
+        {
+            rb.velocity = Vector3.zero;
+        }
+        
+        Debug.LogError("Blop1 Collision Entered with "+ c.gameObject.name);
 
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
@@ -101,6 +108,7 @@ public class Blop1Control : MonoBehaviour
         {
             if (c.gameObject.tag == "Blop2_Attachment")
             {
+                Debug.LogError("Is Blop2-Attachment");
                 GameObject goBlop2 = GameObject.FindGameObjectWithTag("Blop2");
                 goBlop2.GetComponent<Blop2Control>().StopMergin();
             }
@@ -137,6 +145,12 @@ public class Blop1Control : MonoBehaviour
             {
                 otherBody = c.gameObject.AddComponent<Rigidbody>();
             }
+
+            if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+            {
+                transform.position = GameObject.Find("BlopPoint").transform.position;
+            }
+
             attachedObject = c.gameObject.AddComponent<FixedJoint>();
             attachedObject.connectedBody = rb;
 
@@ -155,6 +169,7 @@ public class Blop1Control : MonoBehaviour
                 c.gameObject.GetComponent<Seeker>().enabled = false;
                 c.gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 c.gameObject.GetComponent<CharacterController>().enabled = false;
+                c.gameObject.GetComponent<FindTestPath>().GetBlop();
             }
         }
 
@@ -167,9 +182,12 @@ public class Blop1Control : MonoBehaviour
     /// </summary>
     public void StopMergin()
     {
+        Debug.LogError("Call Stop Mergin Blop1");
         attachedObject.GetComponent<CubeControl>().StopMergin();
         this.gameObject.transform.DetachChildren();
+        Debug.LogError("Stop Synapsing");
         Synapsing.Singleton.StopMergin();
+        Debug.LogError("Destroy Blop1");
         Destroy(this.gameObject);
         attachedObject.tag = "Untagged";
         Destroy(attachedObject);
@@ -253,6 +271,7 @@ public class Blop1Control : MonoBehaviour
     /// </summary>
     public void DestroyThisBlop()
     {
+        Debug.LogError("Destroy Blop 1");
         this.gameObject.transform.DetachChildren();
         Destroy(this.gameObject);
         if (attachedObject)
@@ -309,6 +328,8 @@ public class Blop1Control : MonoBehaviour
 
     public GameObject GetAttachedObject()
     {
+        if (attachedObject == null)
+            return null;
         return attachedObject.gameObject;
     }
 

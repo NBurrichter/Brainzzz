@@ -36,9 +36,13 @@ public class FindTestPath : MonoBehaviour
     //bool wait
     public bool wait;
 
+    //animation controlls
+    private Animator anim;
+
     public void Awake()
     {
         source = GetComponent<AudioSource>();
+        anim = GetComponentInChildren<Animator>();
 
         activeWaypoint = 0;
         seeker = GetComponent<Seeker>();
@@ -228,8 +232,10 @@ public class FindTestPath : MonoBehaviour
 
     IEnumerator WaitAtPoint(float seconds)
     {
+        anim.SetBool("IsIdle", true);
         yield return new WaitForSeconds(seconds);
         wait = false;
+        anim.SetBool("IsIdle", false);
     }
 
     void OnTriggerEnter(Collider other)
@@ -258,5 +264,33 @@ public class FindTestPath : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void GetBlop()
+    {
+        anim.SetBool("HasBlop", true);
+    }
+
+    public void StartFlying()
+    {
+        anim.SetBool("IsFlying", true);
+    }
+
+    public void StartFalling()
+    {
+        anim.SetBool("IsFalling", true);
+    }
+
+    public void Landed()
+    {
+        anim.SetBool("HitGround", true);
+    }
+
+    public void ResetFallCicle()
+    {
+        anim.SetBool("HasBlop", false);
+        anim.SetBool("IsFlying", false);
+        anim.SetBool("IsFalling", false);
+        anim.SetBool("HitGround", false);
     }
 }

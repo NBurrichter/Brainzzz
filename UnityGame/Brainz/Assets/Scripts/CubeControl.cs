@@ -72,9 +72,10 @@ public class CubeControl : MonoBehaviour
         if(blocktype == BlockType.NPCAStar && finished)
         {
 
-            if (Physics.Raycast(transform.position, Vector3.down, 1))
+            if (Physics.Raycast(transform.position, Vector3.down, 1) && !bIsMergin)
             {
                 StartCoroutine(ResetNPC());
+                GetComponent<FindTestPath>().Landed();
                 finished = false;
             }
         }
@@ -201,10 +202,12 @@ public class CubeControl : MonoBehaviour
         FindTestPath myTestPath = GetComponent<FindTestPath>();
         myTestPath.enabled = true;
         myTestPath.Start();
-        //myTestPath.StartCouroutineFindPath();-
+        //myTestPath.StartCouroutineFindPath();
         GetComponent<Seeker>().enabled = true;
         GetComponent<Rigidbody>().isKinematic = true;
         GetComponent<CharacterController>().enabled = true;
+        GetComponent<FindTestPath>().Landed();
+        GetComponent<FindTestPath>().ResetFallCicle();
         rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
