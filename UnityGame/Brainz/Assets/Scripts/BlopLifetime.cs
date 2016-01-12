@@ -49,7 +49,6 @@ public class BlopLifetime : MonoBehaviour {
             {
                 ScriptBlop2.DestroyThisBlop();
             }
-            Debug.LogError("To long, Blop destroyed");
         }
 	}
 }

@@ -267,7 +267,6 @@ public class Blop1Control : MonoBehaviour
     /// </summary>
     public void DestroyThisBlop()
     {
-        Debug.LogError("Destroy Blop 1");
         this.gameObject.transform.DetachChildren();
         Destroy(this.gameObject);
         if (attachedObject)
