@@ -156,7 +156,7 @@ public class Blop1Control : MonoBehaviour
 
 
             //Set physic material of other collider
-            c.gameObject.GetComponent<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
+            c.gameObject.GetComponentInChildren<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
