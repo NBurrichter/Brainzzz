@@ -46,6 +46,7 @@ GameObject:
   - 54: {fileID: 5403472}
   - 114: {fileID: 11443706}
   - 135: {fileID: 13586802}
+  - 114: {fileID: 11440164}
   m_Layer: 0
   m_Name: Blop1
   m_TagString: Untagged
@@ -168,6 +169,18 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &11440164
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 148576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c4d284f9345e6489f41d882aff3fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fBlopLifetime: 1.60000002
 --- !u!114 &11443706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2563,6 +2576,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Interpolate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fBlopLifetime
+      value: 1.60000002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

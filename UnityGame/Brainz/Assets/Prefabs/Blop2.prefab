@@ -49,6 +49,7 @@ GameObject:
   - 54: {fileID: 5426878}
   - 114: {fileID: 11489172}
   - 135: {fileID: 13585218}
+  - 114: {fileID: 11457864}
   m_Layer: 0
   m_Name: Blop2
   m_TagString: Untagged
@@ -185,6 +186,18 @@ MonoBehaviour:
   - {r: 1, g: 0, b: 0, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
   - {r: 0, g: 1, b: 0, a: 1}
+--- !u!114 &11457864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89c4d284f9345e6489f41d882aff3fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fBlopLifetime: 1.60000002
 --- !u!114 &11489172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2514,6 +2527,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Radius
       value: 2.20000005
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: fBlopLifetime
+      value: 1.60000002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
