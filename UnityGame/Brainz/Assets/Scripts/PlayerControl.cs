@@ -133,9 +133,17 @@ public class PlayerControl : MonoBehaviour {
         {
             anim.SetInteger("Walking", 0);
         }
+        else
+        {
+            anim.SetBool("IsShooting", false);
+        }
         if (Input.GetAxis("Horizontal") == 0)
         {
             anim.SetInteger("Strafe", 0);
+        }
+        else
+        {
+            anim.SetBool("IsShooting", false);
         }
 
         if (grounded) //Grounded movement

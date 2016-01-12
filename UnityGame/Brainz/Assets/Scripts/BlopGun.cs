@@ -118,6 +118,7 @@ public class BlopGun : MonoBehaviour {
                 localPos = transform.localPosition;
 
                 playerAnim.SetTrigger("Shoot");
+                StartCoroutine(StartIsShooting());
             }
 
 
@@ -143,5 +144,11 @@ public class BlopGun : MonoBehaviour {
     public void ChangeTexture(Material mat)
     {
         renCurrent.material = mat;
+    }
+
+    IEnumerator StartIsShooting()
+    {
+        yield return new WaitForEndOfFrame();
+        playerAnim.SetBool("IsShooting", true); 
     }
 }
