@@ -1,42 +1,22 @@
 fileFormatVersion: 2
-guid: cb5d005fa85b83048816ad491ddf0dc7
-timeCreated: 1452516853
+guid: dc2ce33be39604840af4379d81a8e7a5
+timeCreated: 1452591218
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: ersterRaum
-    100002: letzter_raum
-    100004: //RootNode
-    100006: raum1
-    100008: raum2
-    100010: raum3
-    100012: raum4
-    400000: ersterRaum
-    400002: letzter_raum
-    400004: //RootNode
-    400006: raum1
-    400008: raum2
-    400010: raum3
-    400012: raum4
-    2300000: ersterRaum
-    2300002: letzter_raum
-    2300004: raum1
-    2300006: raum2
-    2300008: raum3
-    2300010: raum4
-    3300000: ersterRaum
-    3300002: letzter_raum
-    3300004: raum1
-    3300006: raum2
-    3300008: raum3
-    3300010: raum4
-    4300000: raum1
-    4300002: raum2
-    4300004: raum3
-    4300006: ersterRaum
-    4300008: letzter_raum
-    4300010: raum4
+    100000: //RootNode
+    100002: schub1
+    100004: schublade
+    400000: //RootNode
+    400002: schub1
+    400004: schublade
+    2300000: schub1
+    2300002: schublade
+    3300000: schub1
+    3300002: schublade
+    4300000: schublade
+    4300002: schub1
     9500000: //RootNode
   materials:
     importMaterials: 1
