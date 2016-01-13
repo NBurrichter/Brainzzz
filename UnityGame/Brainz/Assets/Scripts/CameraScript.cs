@@ -28,7 +28,6 @@ public class CameraScript : MonoBehaviour {
         startPos = focusPoint.transform.localPosition + cameraOffset;
         transform.localPosition = startPos;
         transform.position = cameraPositionPoint.transform.position;
-        maxCameraDistance = Vector3.Distance(transform.position,focusPoint.transform.position);
 	}
 
     void Update()
@@ -74,6 +73,7 @@ public class CameraScript : MonoBehaviour {
 
         //--Test if camera is occupied--//
         RaycastHit cameraHit;
+        maxCameraDistance = Vector3.Distance(transform.position, focusPoint.transform.position);
         if (Physics.Raycast(focusPoint.transform.position,transform.position - focusPoint.transform.position, out cameraHit, maxCameraDistance))
         {
             Debug.DrawLine(focusPoint.transform.position,cameraHit.point);
