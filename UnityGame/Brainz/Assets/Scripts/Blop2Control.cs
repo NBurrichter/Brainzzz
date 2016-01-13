@@ -202,7 +202,7 @@ public class Blop2Control : MonoBehaviour
             }
             else if (collider.gameObject.transform.parent.GetComponent<CubeControl>() != null)
             {
-                Debug.LogError("Parent has CubeControl");
+                
                 if (collider.gameObject.transform.parent.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
                 {
                     return;
@@ -211,11 +211,10 @@ public class Blop2Control : MonoBehaviour
                 for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
                 {
                     // Return if object is already in list
-                    Debug.LogError("Already in list");
                     if (listGameObjectsInTrigger[i].name == collider.gameObject.transform.parent.gameObject.name)
                         return;
                 }
-                Debug.LogError("Added Object: " + collider.gameObject.transform.parent.gameObject.name);
+                
                 listGameObjectsInTrigger.Add(collider.gameObject.transform.parent.gameObject);
 
                 listPreviousKinematicStatus.Add(collider.gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic);
