@@ -77,16 +77,22 @@ public class Blop1Control : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
+        
+
         if (c.gameObject.name != "Player" && c.gameObject.name != "Player (1)")
         {
+            // sets the velocity to zero
             rb.velocity = Vector3.zero;
+            
         }
         
 
         for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
         {
-
+            
+            // Resets the kinematicstates of all listet Objects
             listGameObjectsInTrigger[i].GetComponent<Rigidbody>().isKinematic = listPreviousKinematicStatus[i];
+            
         }
 
         if (attachedObject != null)
@@ -107,7 +113,7 @@ public class Blop1Control : MonoBehaviour
         {
             if (c.gameObject.tag == "Blop2_Attachment")
             {
-                Debug.LogError("Is Blop2-Attachment");
+                
                 GameObject goBlop2 = GameObject.FindGameObjectWithTag("Blop2");
                 goBlop2.GetComponent<Blop2Control>().StopMergin();
             }
@@ -156,6 +162,7 @@ public class Blop1Control : MonoBehaviour
 
             //Set physic material of other collider
             c.gameObject.GetComponentInChildren<Collider>().material = Synapsing.Singleton.noFrictionMaterial;
+            
 
             //Check if Block is a NPC
             if (c.gameObject.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPC)
@@ -194,11 +201,13 @@ public class Blop1Control : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
+        
         //add boolean or similare to avoid an object being saved multiple times
         if (attachedObject == null)
         {
             if(collider.gameObject.GetComponent<CubeControl>()!= null)
             {
+                
                 if (collider.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
                 {
                     return;
@@ -207,16 +216,38 @@ public class Blop1Control : MonoBehaviour
                 for (int i = 0; i< listGameObjectsInTrigger.Count; i++)
                 {
                     // Return if object is already in list
-
+                    
                     if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
                         return;
-                }           
+                }
+                         
                 listGameObjectsInTrigger.Add(collider.gameObject);
 
                 listPreviousKinematicStatus.Add(collider.gameObject.GetComponent<Rigidbody>().isKinematic);
 
                 collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            }
+            else if(collider.gameObject.transform.parent.GetComponent<CubeControl>() != null)
+            {
+                
+                if (collider.gameObject.transform.parent.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+                {
+                    return;
+                }
 
+                for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
+                {
+                    // Return if object is already in list
+                    
+                    if (listGameObjectsInTrigger[i].name == collider.gameObject.transform.parent.gameObject.name)
+                        return;
+                }
+                
+                listGameObjectsInTrigger.Add(collider.gameObject.transform.parent.gameObject);
+
+                listPreviousKinematicStatus.Add(collider.gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic);
+
+                collider.gameObject.GetComponentInParent<Rigidbody>().isKinematic = true;
             }
         }
     }
