@@ -200,26 +200,29 @@ public class Blop2Control : MonoBehaviour
                 listPreviousKinematicStatus.Add(collider.gameObject.GetComponent<Rigidbody>().isKinematic);
                 collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
             }
-            else if (collider.gameObject.transform.parent.GetComponent<CubeControl>() != null)
+            else if (collider.gameObject.transform.parent != null)
             {
-                
-                if (collider.gameObject.transform.parent.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+                if (collider.gameObject.transform.parent.GetComponent<CubeControl>() != null)
                 {
-                    return;
-                }
 
-                for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
-                {
-                    // Return if object is already in list
-                    if (listGameObjectsInTrigger[i].name == collider.gameObject.transform.parent.gameObject.name)
+                    if (collider.gameObject.transform.parent.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+                    {
                         return;
+                    }
+
+                    for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
+                    {
+                        // Return if object is already in list
+                        if (listGameObjectsInTrigger[i].name == collider.gameObject.transform.parent.gameObject.name)
+                            return;
+                    }
+
+                    listGameObjectsInTrigger.Add(collider.gameObject.transform.parent.gameObject);
+
+                    listPreviousKinematicStatus.Add(collider.gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic);
+
+                    collider.gameObject.GetComponentInParent<Rigidbody>().isKinematic = true;
                 }
-                
-                listGameObjectsInTrigger.Add(collider.gameObject.transform.parent.gameObject);
-
-                listPreviousKinematicStatus.Add(collider.gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic);
-
-                collider.gameObject.GetComponentInParent<Rigidbody>().isKinematic = true;
             }
         }
     }
