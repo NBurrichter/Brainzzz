@@ -1057,9 +1057,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57911669962db8c41a09f879a0e94677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-
-  fShotSpeed: 35
-
+  fShotSpeed: 22
+--- !u!1001 &177102184
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1105,7 +1104,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97cce3f6240acb142880fa5f76827177, type: 2}
   m_IsPrefabParent: 0
->>>>>>> refs/remotes/origin/master
 --- !u!1 &181538989
 GameObject:
   m_ObjectHideFlags: 0
