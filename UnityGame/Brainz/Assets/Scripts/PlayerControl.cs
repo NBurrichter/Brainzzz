@@ -117,7 +117,6 @@ public class PlayerControl : MonoBehaviour {
         Debug.DrawLine(transform.position, transform.position + Vector3.down * playerHeight,Color.blue,1);
         if (Physics.SphereCast(transform.position+Vector3.up,playerWidth, Vector3.down,out sphereHitInfo, playerHeight) == true)
         {
-            Debug.LogWarning("WHY ZOU NO WORKZ");
             grounded = true;
             anim.SetBool("Grounded", true);
             Debug.Log(sphereHitInfo.collider.name);
