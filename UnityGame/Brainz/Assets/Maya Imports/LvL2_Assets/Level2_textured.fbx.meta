@@ -1,0 +1,352 @@
+fileFormatVersion: 2
+guid: 75d076b84aa08854b960e5052d9b819b
+timeCreated: 1452862073
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: "BauGer\xFCst"
+    100002: "BauGer\xFCst1"
+    100004: Block16Segments11
+    100006: Block16Segments21
+    100008: Block16Segments31
+    100010: Block16Segments32
+    100012: Container
+    100014: Container1
+    100016: Floor
+    100018: Gewebe
+    100020: Glass
+    100022: Glass 1
+    100024: GlassFrame
+    100026: GlassFrame 1
+    100028: Karre
+    100030: //RootNode
+    100032: LevelGroupBlockSpiral
+    100034: Pipe
+    100036: Pipe 1
+    100038: Plank1
+    100040: Plank2
+    100042: Planks
+    100044: Platte
+    100046: Platte 1
+    100048: Props
+    100050: Rad
+    100052: Ring16Segments
+    100054: Ring16Segments2
+    100056: Ring16Segments3
+    100058: Ring16Segments4
+    100060: Ring16Top1
+    100062: Ring16Top2
+    100064: RingGlass
+    100066: RingPipe
+    100068: Rings
+    100070: Schienen
+    100072: Schubkarre
+    100074: SpiralEckig
+    100076: Stange
+    100078: Stange 1
+    100080: Stange2
+    100082: Stange2 1
+    100084: Stange3
+    100086: Stange3 1
+    100088: Stange4
+    100090: Stange4 1
+    100092: Stange5
+    100094: Stange5 1
+    100096: Stange6
+    100098: Stange6 1
+    100100: Stange7
+    100102: Stange7 1
+    100104: Stange8
+    100106: Stange8 1
+    100108: Stutze
+    100110: Stutze 1
+    100112: Stutze2
+    100114: Stutze2 1
+    100116: Stutze3
+    100118: Stutze3 1
+    100120: Stutze4
+    100122: Stutze4 1
+    400000: "BauGer\xFCst"
+    400002: "BauGer\xFCst1"
+    400004: Block16Segments11
+    400006: Block16Segments21
+    400008: Block16Segments31
+    400010: Block16Segments32
+    400012: Container
+    400014: Container1
+    400016: Floor
+    400018: Gewebe
+    400020: Glass
+    400022: Glass 1
+    400024: GlassFrame
+    400026: GlassFrame 1
+    400028: Karre
+    400030: //RootNode
+    400032: LevelGroupBlockSpiral
+    400034: Pipe
+    400036: Pipe 1
+    400038: Plank1
+    400040: Plank2
+    400042: Planks
+    400044: Platte
+    400046: Platte 1
+    400048: Props
+    400050: Rad
+    400052: Ring16Segments
+    400054: Ring16Segments2
+    400056: Ring16Segments3
+    400058: Ring16Segments4
+    400060: Ring16Top1
+    400062: Ring16Top2
+    400064: RingGlass
+    400066: RingPipe
+    400068: Rings
+    400070: Schienen
+    400072: Schubkarre
+    400074: SpiralEckig
+    400076: Stange
+    400078: Stange 1
+    400080: Stange2
+    400082: Stange2 1
+    400084: Stange3
+    400086: Stange3 1
+    400088: Stange4
+    400090: Stange4 1
+    400092: Stange5
+    400094: Stange5 1
+    400096: Stange6
+    400098: Stange6 1
+    400100: Stange7
+    400102: Stange7 1
+    400104: Stange8
+    400106: Stange8 1
+    400108: Stutze
+    400110: Stutze 1
+    400112: Stutze2
+    400114: Stutze2 1
+    400116: Stutze3
+    400118: Stutze3 1
+    400120: Stutze4
+    400122: Stutze4 1
+    2300000: Block16Segments11
+    2300002: Block16Segments21
+    2300004: Block16Segments31
+    2300006: Block16Segments32
+    2300008: Container
+    2300010: Container1
+    2300012: Floor
+    2300014: Gewebe
+    2300016: Glass 1
+    2300018: GlassFrame
+    2300020: GlassFrame 1
+    2300022: Karre
+    2300024: Pipe 1
+    2300026: Plank1
+    2300028: Plank2
+    2300030: Platte
+    2300032: Platte 1
+    2300034: Rad
+    2300036: Ring16Segments
+    2300038: Ring16Segments2
+    2300040: Ring16Segments3
+    2300042: Ring16Segments4
+    2300044: Ring16Top1
+    2300046: Ring16Top2
+    2300048: RingGlass
+    2300050: RingPipe
+    2300052: Schienen
+    2300054: SpiralEckig
+    2300056: Stange
+    2300058: Stange 1
+    2300060: Stange2
+    2300062: Stange2 1
+    2300064: Stange3
+    2300066: Stange3 1
+    2300068: Stange4
+    2300070: Stange4 1
+    2300072: Stange5
+    2300074: Stange5 1
+    2300076: Stange6
+    2300078: Stange6 1
+    2300080: Stange7
+    2300082: Stange7 1
+    2300084: Stange8
+    2300086: Stange8 1
+    2300088: Stutze
+    2300090: Stutze 1
+    2300092: Stutze2
+    2300094: Stutze2 1
+    2300096: Stutze3
+    2300098: Stutze3 1
+    2300100: Stutze4
+    2300102: Stutze4 1
+    3300000: Block16Segments11
+    3300002: Block16Segments21
+    3300004: Block16Segments31
+    3300006: Block16Segments32
+    3300008: Container
+    3300010: Container1
+    3300012: Floor
+    3300014: Gewebe
+    3300016: Glass 1
+    3300018: GlassFrame
+    3300020: GlassFrame 1
+    3300022: Karre
+    3300024: Pipe 1
+    3300026: Plank1
+    3300028: Plank2
+    3300030: Platte
+    3300032: Platte 1
+    3300034: Rad
+    3300036: Ring16Segments
+    3300038: Ring16Segments2
+    3300040: Ring16Segments3
+    3300042: Ring16Segments4
+    3300044: Ring16Top1
+    3300046: Ring16Top2
+    3300048: RingGlass
+    3300050: RingPipe
+    3300052: Schienen
+    3300054: SpiralEckig
+    3300056: Stange
+    3300058: Stange 1
+    3300060: Stange2
+    3300062: Stange2 1
+    3300064: Stange3
+    3300066: Stange3 1
+    3300068: Stange4
+    3300070: Stange4 1
+    3300072: Stange5
+    3300074: Stange5 1
+    3300076: Stange6
+    3300078: Stange6 1
+    3300080: Stange7
+    3300082: Stange7 1
+    3300084: Stange8
+    3300086: Stange8 1
+    3300088: Stutze
+    3300090: Stutze 1
+    3300092: Stutze2
+    3300094: Stutze2 1
+    3300096: Stutze3
+    3300098: Stutze3 1
+    3300100: Stutze4
+    3300102: Stutze4 1
+    4300000: Gewebe
+    4300002: GlassFrame
+    4300004: Ring16Segments
+    4300006: Ring16Segments2
+    4300008: Ring16Segments3
+    4300010: Ring16Segments4
+    4300012: Ring16Top1
+    4300014: Ring16Top2
+    4300016: Block16Segments11
+    4300018: Block16Segments21
+    4300020: Block16Segments31
+    4300022: Block16Segments32
+    4300024: SpiralEckig
+    4300026: Schienen
+    4300028: Floor
+    4300030: RingPipe
+    4300032: Pipe
+    4300034: Glass
+    4300036: GlassFrame
+    4300038: RingGlass
+    4300040: Stange
+    4300042: Platte
+    4300044: Stutze
+    4300046: Stutze2
+    4300048: Stutze3
+    4300050: Stutze4
+    4300052: Stange2
+    4300054: Stange3
+    4300056: Stange4
+    4300058: Stange5
+    4300060: Stange6
+    4300062: Stange7
+    4300064: Stange8
+    4300066: Container
+    4300068: Container1
+    4300070: Karre
+    4300072: Rad
+    4300074: Stange
+    4300076: Platte
+    4300078: Stutze
+    4300080: Stutze2
+    4300082: Stutze3
+    4300084: Stutze4
+    4300086: Stange2
+    4300088: Stange3
+    4300090: Stange4
+    4300092: Stange5
+    4300094: Stange6
+    4300096: Stange7
+    4300098: Stange8
+    4300100: Plank1
+    4300102: Plank2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 500
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
