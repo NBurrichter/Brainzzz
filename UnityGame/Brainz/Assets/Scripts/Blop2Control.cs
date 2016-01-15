@@ -13,7 +13,6 @@ public class Blop2Control : MonoBehaviour
 
     private Vector3 vMoveDirection;
 
-    public Material matBlop2;
 
     private List<GameObject> listGameObjectsInTrigger = new List<GameObject>();
     private List<bool> listPreviousKinematicStatus = new List<bool>();
@@ -114,7 +113,7 @@ public class Blop2Control : MonoBehaviour
             // Destroy previous Blops
             DeletePreviousBlops();
 
-            BlopGun.BlopGunSingelton.ChangeTexture(matBlop2);
+
 
             // Add Tag and Components to the attachement
             c.gameObject.tag = "Blop2_Attachment";

@@ -13,8 +13,6 @@ public class Blop1Control : MonoBehaviour
     private GameObject particleObject;
     private GameObject sparkObjcet;
 
-    public Material matBlop1;
-
     private Vector3 vMoveDirection;
 
     private List<GameObject> listGameObjectsInTrigger = new List<GameObject>();
@@ -130,7 +128,7 @@ public class Blop1Control : MonoBehaviour
                 return;
             }
 
-            BlopGun.BlopGunSingelton.ChangeTexture(matBlop1);
+
 
             // Delete previous Blops
             DeletePreviousBlops();
