@@ -6,6 +6,8 @@ public class BlopGun : MonoBehaviour {
 	public GameObject Blop1Prefab;
 	public GameObject Blop2Prefab;
 
+    public GameObject BlopGunSymbol;
+
     private bool bIsCharged;
     /// <summary>
     /// time since last shot
@@ -17,28 +19,17 @@ public class BlopGun : MonoBehaviour {
     public float fRechargeTime;
 
     private Renderer renCurrent;
-    private Material matCharged;
+    public Color colorBlopOneShot;
+    public Color colorBlopTwoShot;
+    public Color colorSynapsing;
 
-    private ParticleSystem psGun;
-    private float fXRotation = 90f;
-    private float fYRotation;
-    private float fZRotation;
+
 
     public static BlopGun BlopGunSingelton;
 
-    /// <summary>
-    /// the factor the weapon should move while reloading
-    /// </summary>
-    public float fMovingFactor;
 
-    /// <summary>
-    /// the factor how far the object should rotate
-    /// </summary>
-    public float fRotationFactor;
 
-    private Vector3 vOldPosition;
 
-    private Vector3 localPos;
 
     private Animator playerAnim;
 
@@ -49,8 +40,7 @@ public class BlopGun : MonoBehaviour {
         BlopGunSingelton = this;
         bIsCharged = true;
         fRechargeTimer = 0.0f;
-        renCurrent = GetComponent<Renderer>();
-        psGun = GetComponentInChildren<ParticleSystem>();
+        renCurrent = BlopGunSymbol.GetComponent<Renderer>();
         
 
 	}
@@ -59,12 +49,7 @@ public class BlopGun : MonoBehaviour {
 	void Update ()
     {
         
-        transform.LookAt(AimingControl.aimingControlSingleton.GetHitPointPosition());
-        Quaternion qRotation; 
-        transform.Rotate(new Vector3(90, 0, 0));
-        fXRotation = transform.localRotation.eulerAngles.x;
-        fYRotation = transform.localRotation.eulerAngles.y;
-        fZRotation = transform.localRotation.eulerAngles.z;
+
 
         if (bIsCharged==false)
         {
@@ -73,31 +58,16 @@ public class BlopGun : MonoBehaviour {
             {
                 fRechargeTimer = 0.0f;
                 bIsCharged = true;
-                psGun.Stop();
-                transform.localPosition = localPos;
-                //renCurrent.material = matCharged;
+
+                
 
             }
             else
             {
-                //move weapon while recharging
-                if (fRechargeTimer < fRechargeTime / 2)
-                {
-                    transform.position -= (transform.up * Time.smoothDeltaTime) * fMovingFactor;
-                    fXRotation -= Time.deltaTime * fRotationFactor;
-
-                }
-                else
-                {
-                    transform.position += (transform.up * Time.smoothDeltaTime) * fMovingFactor;
-                    fXRotation += Time.deltaTime * fRotationFactor;
-                }
 
                 fRechargeTimer += Time.deltaTime;
             }
 
-            qRotation = Quaternion.Euler(fXRotation, fYRotation, fZRotation);
-            transform.localRotation = qRotation;
 
         }
 
@@ -113,9 +83,8 @@ public class BlopGun : MonoBehaviour {
                 Debug.DrawLine(Vector3.zero, transform.parent.root.transform.position, Color.red, 5);
 
 
-                //renCurrent.material = matRecharging;
-                psGun.Play();
-                localPos = transform.localPosition;
+                ChangeTexture(colorBlopOneShot);
+
 
                 playerAnim.SetTrigger("Shoot");
                 StartCoroutine(StartIsShooting());
@@ -132,18 +101,17 @@ public class BlopGun : MonoBehaviour {
             {
                 Instantiate(Blop2Prefab, transform.position + AimingControl.aimingControlSingleton.GetSpawnPosition(), Quaternion.identity);
                 bIsCharged = false;
-                //renCurrent.material = matRecharging;
-                psGun.Play();
-                localPos = transform.localPosition;
+                ChangeTexture(colorBlopTwoShot);
+
 
                 playerAnim.SetTrigger("Shoot");
             }
         }
 	}
 
-    public void ChangeTexture(Material mat)
+    public void ChangeTexture(Color col)
     {
-        renCurrent.material = mat;
+        renCurrent.material.color = col;
     }
 
     IEnumerator StartIsShooting()

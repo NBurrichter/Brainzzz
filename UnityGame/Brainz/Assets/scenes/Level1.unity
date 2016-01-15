@@ -205,7 +205,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 19966512}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -365,7 +365,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 30498904}
   serializedVersion: 2
-  m_Mass: 100
+  m_Mass: 1.79999995
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -496,9 +496,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Blop1Prefab: {fileID: 148576, guid: 23ffe2036a47e6f4fa0fcea996f27aa2, type: 2}
   Blop2Prefab: {fileID: 173570, guid: 4a9bdd55003d6e3498cab051c958b4ac, type: 2}
+  BlopGunSymbol: {fileID: 0}
   fRechargeTime: .200000003
-  fMovingFactor: 1.79999995
-  fRotationFactor: 450
+  colorBlopOneShot: {r: 0, g: 0, b: 0, a: 0}
+  colorBlopTwoShot: {r: 0, g: 0, b: 0, a: 0}
+  colorSynapsing: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &63390392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1057,7 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57911669962db8c41a09f879a0e94677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fShotSpeed: 22
+  fShotSpeed: 35
 --- !u!1001 &177102184
 Prefab:
   m_ObjectHideFlags: 0
@@ -3224,7 +3226,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 289278370}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 3
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -3285,7 +3287,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 295507570}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -6047,9 +6049,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Blop1Prefab: {fileID: 148576, guid: 23ffe2036a47e6f4fa0fcea996f27aa2, type: 2}
   Blop2Prefab: {fileID: 173570, guid: 4a9bdd55003d6e3498cab051c958b4ac, type: 2}
+  BlopGunSymbol: {fileID: 0}
   fRechargeTime: 0
-  fMovingFactor: 0
-  fRotationFactor: 0
+  colorBlopOneShot: {r: 0, g: 0, b: 0, a: 0}
+  colorBlopTwoShot: {r: 0, g: 0, b: 0, a: 0}
+  colorSynapsing: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &468716594
 GameObject:
   m_ObjectHideFlags: 0
@@ -10978,7 +10982,7 @@ Transform:
   - {fileID: 1583149619}
   - {fileID: 1338417227}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
 --- !u!1 &994606758 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 163296, guid: e7c3d4076664b794198f17cab9c548d2, type: 2}
@@ -14262,9 +14266,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Blop1Prefab: {fileID: 148576, guid: 23ffe2036a47e6f4fa0fcea996f27aa2, type: 2}
   Blop2Prefab: {fileID: 173570, guid: 4a9bdd55003d6e3498cab051c958b4ac, type: 2}
+  BlopGunSymbol: {fileID: 2128715019}
   fRechargeTime: .200000003
-  fMovingFactor: 1.79999995
-  fRotationFactor: 450
+  colorBlopOneShot: {r: .926470578, g: .0272491612, b: .0272491612, a: 1}
+  colorBlopTwoShot: {r: .930932999, g: .985294104, b: 0, a: 1}
+  colorSynapsing: {r: .308808625, g: .25118947, b: .742647052, a: 1}
 --- !u!23 &1096258902
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15202,9 +15208,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Blop1Prefab: {fileID: 148576, guid: 23ffe2036a47e6f4fa0fcea996f27aa2, type: 2}
   Blop2Prefab: {fileID: 173570, guid: 4a9bdd55003d6e3498cab051c958b4ac, type: 2}
+  BlopGunSymbol: {fileID: 0}
   fRechargeTime: 0
-  fMovingFactor: 0
-  fRotationFactor: 0
+  colorBlopOneShot: {r: 0, g: 0, b: 0, a: 0}
+  colorBlopTwoShot: {r: 0, g: 0, b: 0, a: 0}
+  colorSynapsing: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &1212931542
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18829,7 +18837,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1427841537}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 4
   m_Drag: 0
   m_AngularDrag: .0500000007
   m_UseGravity: 1
@@ -22004,7 +22012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87184ae42d21cbb4da8de14bd9edfaa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fMerginForceMultiplier: 150
+  fMerginForceMultiplier: 350
   noFrictionMaterial: {fileID: 13400000, guid: a2a14661879064946903178d74a1eb1e, type: 2}
   mask:
     serializedVersion: 2
@@ -24206,9 +24214,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Blop1Prefab: {fileID: 148576, guid: 23ffe2036a47e6f4fa0fcea996f27aa2, type: 2}
   Blop2Prefab: {fileID: 173570, guid: 4a9bdd55003d6e3498cab051c958b4ac, type: 2}
+  BlopGunSymbol: {fileID: 0}
   fRechargeTime: 0
-  fMovingFactor: 0
-  fRotationFactor: 0
+  colorBlopOneShot: {r: 0, g: 0, b: 0, a: 0}
+  colorBlopTwoShot: {r: 0, g: 0, b: 0, a: 0}
+  colorSynapsing: {r: 0, g: 0, b: 0, a: 0}
 --- !u!23 &1824223991
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -27036,6 +27046,10 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.3376236, y: 17.1062546, z: 1}
   m_Center: {x: -2.07546234, y: 8.05312729, z: 0}
+--- !u!1 &2128715019 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100278, guid: 433faa2ff9617f4469db5e06eef44da2, type: 3}
+  m_PrefabInternal: {fileID: 1927229466}
 --- !u!1 &2129780386
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,8 +13,6 @@ public class Blop1Control : MonoBehaviour
     private GameObject particleObject;
     private GameObject sparkObjcet;
 
-    public Material matBlop1;
-
     private Vector3 vMoveDirection;
 
     private List<GameObject> listGameObjectsInTrigger = new List<GameObject>();
@@ -130,7 +128,7 @@ public class Blop1Control : MonoBehaviour
                 return;
             }
 
-            BlopGun.BlopGunSingelton.ChangeTexture(matBlop1);
+
 
             // Delete previous Blops
             DeletePreviousBlops();
@@ -205,32 +203,10 @@ public class Blop1Control : MonoBehaviour
         //add boolean or similare to avoid an object being saved multiple times
         if (attachedObject == null)
         {
-            if(collider.gameObject.GetComponent<CubeControl>()!= null)
+            if (collider.gameObject.GetComponent<CubeControl>() != null)
             {
-                
+
                 if (collider.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
-                {
-                    return;
-                }
-
-                for (int i = 0; i< listGameObjectsInTrigger.Count; i++)
-                {
-                    // Return if object is already in list
-                    
-                    if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
-                        return;
-                }
-                         
-                listGameObjectsInTrigger.Add(collider.gameObject);
-
-                listPreviousKinematicStatus.Add(collider.gameObject.GetComponent<Rigidbody>().isKinematic);
-
-                collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            }
-            else if(collider.gameObject.transform.parent.GetComponent<CubeControl>() != null)
-            {
-                
-                if (collider.gameObject.transform.parent.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
                 {
                     return;
                 }
@@ -238,16 +214,41 @@ public class Blop1Control : MonoBehaviour
                 for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
                 {
                     // Return if object is already in list
-                    
-                    if (listGameObjectsInTrigger[i].name == collider.gameObject.transform.parent.gameObject.name)
+
+                    if (listGameObjectsInTrigger[i].name == collider.gameObject.name)
                         return;
                 }
-                
-                listGameObjectsInTrigger.Add(collider.gameObject.transform.parent.gameObject);
 
-                listPreviousKinematicStatus.Add(collider.gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic);
+                listGameObjectsInTrigger.Add(collider.gameObject);
 
-                collider.gameObject.GetComponentInParent<Rigidbody>().isKinematic = true;
+                listPreviousKinematicStatus.Add(collider.gameObject.GetComponent<Rigidbody>().isKinematic);
+
+                collider.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            }
+            else if (collider.gameObject.transform.parent != null)
+            {
+                if (collider.gameObject.transform.parent.GetComponent<CubeControl>() != null)
+                {
+
+                    if (collider.gameObject.transform.parent.GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
+                    {
+                        return;
+                    }
+
+                    for (int i = 0; i < listGameObjectsInTrigger.Count; i++)
+                    {
+                        // Return if object is already in list
+
+                        if (listGameObjectsInTrigger[i].name == collider.gameObject.transform.parent.gameObject.name)
+                            return;
+                    }
+
+                    listGameObjectsInTrigger.Add(collider.gameObject.transform.parent.gameObject);
+
+                    listPreviousKinematicStatus.Add(collider.gameObject.transform.parent.GetComponent<Rigidbody>().isKinematic);
+
+                    collider.gameObject.GetComponentInParent<Rigidbody>().isKinematic = true;
+                }
             }
         }
     }

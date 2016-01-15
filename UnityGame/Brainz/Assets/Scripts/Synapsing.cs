@@ -71,6 +71,7 @@ public class Synapsing : MonoBehaviour
         {
             merginCoroutine = Mergin();
             StartCoroutine(merginCoroutine);
+            BlopGun.BlopGunSingelton.ChangeTexture(BlopGun.BlopGunSingelton.colorSynapsing);
             if(Blop1Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
             {
                 Blop1Script.GetAttachedObject().GetComponent<FindTestPath>().StartFlying();

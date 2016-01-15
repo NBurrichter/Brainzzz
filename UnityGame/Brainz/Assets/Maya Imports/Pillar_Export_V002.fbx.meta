@@ -1,0 +1,102 @@
+fileFormatVersion: 2
+guid: 97ea7776bc1e74f4c97cfbdcf45caa07
+timeCreated: 1452857266
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: holder1
+    100002: holder2
+    100004: holder3
+    100006: holder4
+    100008: //RootNode
+    100010: pillar_glass
+    400000: holder1
+    400002: holder2
+    400004: holder3
+    400006: holder4
+    400008: //RootNode
+    400010: pillar_glass
+    2300000: holder1
+    2300002: holder2
+    2300004: holder3
+    2300006: holder4
+    2300008: //RootNode
+    2300010: pillar_glass
+    3300000: holder1
+    3300002: holder2
+    3300004: holder3
+    3300006: holder4
+    3300008: //RootNode
+    3300010: pillar_glass
+    4300000: Pillar
+    4300002: pillar_glass
+    4300004: holder1
+    4300006: holder2
+    4300008: holder3
+    4300010: holder4
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 24
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
