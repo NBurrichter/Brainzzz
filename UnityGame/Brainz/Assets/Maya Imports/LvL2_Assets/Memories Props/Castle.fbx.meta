@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 6a60a8cd80c0ad441a89a6142a939079
+timeCreated: 1453121548
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: BattlementBack
+    100002: BattlementBack 1
+    100004: BattlementBack 2
+    100006: BattlementFront
+    100008: BattlementFront 1
+    100010: BattlementFront 2
+    100012: BattlementLeft
+    100014: BattlementLeft 1
+    100016: BattlementLeft 2
+    100018: BattlementRight
+    100020: BattlementRight 1
+    100022: BattlementRight 2
+    100024: Battlements
+    100026: BattlementsBL
+    100028: BattlementsFL
+    100030: BattlementsFR
+    100032: //RootNode
+    100034: Castle 1
+    100036: Gate
+    100038: OuterRim
+    100040: RimBack
+    100042: RimFront
+    100044: RimLeft
+    100046: RimRight
+    100048: Roof
+    400000: BattlementBack
+    400002: BattlementBack 1
+    400004: BattlementBack 2
+    400006: BattlementFront
+    400008: BattlementFront 1
+    400010: BattlementFront 2
+    400012: BattlementLeft
+    400014: BattlementLeft 1
+    400016: BattlementLeft 2
+    400018: BattlementRight
+    400020: BattlementRight 1
+    400022: BattlementRight 2
+    400024: Battlements
+    400026: BattlementsBL
+    400028: BattlementsFL
+    400030: BattlementsFR
+    400032: //RootNode
+    400034: Castle 1
+    400036: Gate
+    400038: OuterRim
+    400040: RimBack
+    400042: RimFront
+    400044: RimLeft
+    400046: RimRight
+    400048: Roof
+    2300000: BattlementBack
+    2300002: BattlementBack 1
+    2300004: BattlementBack 2
+    2300006: BattlementFront
+    2300008: BattlementFront 1
+    2300010: BattlementFront 2
+    2300012: BattlementLeft
+    2300014: BattlementLeft 1
+    2300016: BattlementLeft 2
+    2300018: BattlementRight
+    2300020: BattlementRight 1
+    2300022: BattlementRight 2
+    2300024: Castle 1
+    2300026: Gate
+    2300028: RimBack
+    2300030: RimFront
+    2300032: RimLeft
+    2300034: RimRight
+    2300036: Roof
+    3300000: BattlementBack
+    3300002: BattlementBack 1
+    3300004: BattlementBack 2
+    3300006: BattlementFront
+    3300008: BattlementFront 1
+    3300010: BattlementFront 2
+    3300012: BattlementLeft
+    3300014: BattlementLeft 1
+    3300016: BattlementLeft 2
+    3300018: BattlementRight
+    3300020: BattlementRight 1
+    3300022: BattlementRight 2
+    3300024: Castle 1
+    3300026: Gate
+    3300028: RimBack
+    3300030: RimFront
+    3300032: RimLeft
+    3300034: RimRight
+    3300036: Roof
+    4300000: Gate
+    4300002: Castle
+    4300004: Roof
+    4300006: RimRight
+    4300008: RimFront
+    4300010: RimLeft
+    4300012: RimBack
+    4300014: BattlementRight
+    4300016: BattlementBack
+    4300018: BattlementLeft
+    4300020: BattlementFront
+    4300022: BattlementRight
+    4300024: BattlementBack
+    4300026: BattlementLeft
+    4300028: BattlementFront
+    4300030: BattlementRight
+    4300032: BattlementBack
+    4300034: BattlementLeft
+    4300036: BattlementFront
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 100
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
