@@ -33,6 +33,8 @@ public class FindTestPath : MonoBehaviour
     //Sound source
     private AudioSource source;
 
+    public AudioClip clipSonWalking;
+
     //bool wait
     public bool wait;
 
@@ -70,6 +72,21 @@ public class FindTestPath : MonoBehaviour
     }
     public void Update()
     {
+        if(wait == false && source.isPlaying == false)
+        {
+            //Stop if other sound was played
+            if (source.clip != clipSonWalking)
+                source.Stop();
+
+            // switch to correct sound and play it
+            source.clip = clipSonWalking;
+            source.Play();
+        }
+        else if(wait == true)
+        {
+            source.Stop();
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             Start();
