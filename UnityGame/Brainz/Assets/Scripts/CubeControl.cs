@@ -25,6 +25,11 @@ public class CubeControl : MonoBehaviour
     //needed for pathfinnding
     private bool finished;
 
+    //Audio Components
+    private AudioSource audioPlayer;
+    private AudioClip clipObjectMoving;
+    private float timer;
+
     // Use this for initialization
     void Start()
     {
@@ -39,13 +44,22 @@ public class CubeControl : MonoBehaviour
         }
 
         finished = false;
+
+        clipObjectMoving = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Soundclips/argh.wav", typeof(AudioClip)) as AudioClip;
+
+        audioPlayer = this.gameObject.AddComponent<AudioSource>();
+        audioPlayer.playOnAwake = false;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        //play sound if neededs
+        PlaySound();
+    
         showSleeping = rbody.IsSleeping();
-
+        
         // Reset if its not an attachment
         if (this.gameObject.tag == "Untagged")
         {
@@ -209,6 +223,16 @@ public class CubeControl : MonoBehaviour
         GetComponent<FindTestPath>().Landed();
         GetComponent<FindTestPath>().ResetFallCicle();
         rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
+
+    void PlaySound()
+    {
+
+        /*
+        check if object is being moved
+        activate sound
+        */
+        
     }
 
 
