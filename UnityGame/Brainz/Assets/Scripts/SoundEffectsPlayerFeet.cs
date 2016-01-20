@@ -6,7 +6,11 @@ public class SoundEffectsPlayerFeet : MonoBehaviour {
     private AudioSource audioPlayer;
 
     public AudioClip clipFootstepsForward;
+    public float fClipPitchForward;
+
     public AudioClip clipFootstepsBackward;
+    public float fClipPitchBackward;
+
     public AudioClip clipFootstepsSidewards;
 
 	// Use this for initialization
@@ -25,7 +29,9 @@ public class SoundEffectsPlayerFeet : MonoBehaviour {
 
             // switch to correct sound and play it
             audioPlayer.clip = clipFootstepsForward;
+            audioPlayer.pitch = fClipPitchForward;
             audioPlayer.Play();
+
         }
         if (Input.GetAxis("Vertical") < 0 && audioPlayer.isPlaying == false)
         {
@@ -35,6 +41,7 @@ public class SoundEffectsPlayerFeet : MonoBehaviour {
 
             // switch to correct sound and play it
             audioPlayer.clip = clipFootstepsBackward;
+            audioPlayer.pitch = fClipPitchBackward;
             audioPlayer.Play();
         }
 
@@ -48,6 +55,7 @@ public class SoundEffectsPlayerFeet : MonoBehaviour {
 
             // switch to correct sound and play it
             audioPlayer.clip = clipFootstepsSidewards;
+            audioPlayer.pitch = 1;
             audioPlayer.Play();
         }
         if (Input.GetAxis("Vertical") == 0 && Input.GetAxis("Horizontal") == 0)

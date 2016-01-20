@@ -4503,11 +4503,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad023c319d3493d49b49c4de82bf4d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipFootstepsForward: {fileID: 8300000, guid: 9a778bc36640e4c4fa78d76c9ad3a9e5,
+  clipFootstepsForward: {fileID: 8300000, guid: 9578eea16ca5bdd4d93bf9e6480e3ed7,
     type: 3}
-  clipFootstepsBackward: {fileID: 8300000, guid: 256ed4b8fb543354f8e0ea7d14a59a7e,
+  fClipPitchForward: 1.10000002
+  clipFootstepsBackward: {fileID: 8300000, guid: f1e0161a3c2b17247aab7e94a3c012d5,
     type: 3}
-  clipFootstepsSidewards: {fileID: 8300000, guid: b281f8613a3d3e445b724e47f8db5283,
+  fClipPitchBackward: 1.39999998
+  clipFootstepsSidewards: {fileID: 8300000, guid: f1e0161a3c2b17247aab7e94a3c012d5,
     type: 3}
 --- !u!82 &418345328
 AudioSource:
@@ -4520,9 +4522,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .469999999
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -4553,7 +4555,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 1
+      value: .379999995
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -9897,7 +9899,7 @@ MonoBehaviour:
   - {fileID: 1180003898}
   walkState: 0
   lookAtDummy: {fileID: 1049805552}
-  clipSonWalking: {fileID: 8300000, guid: d2fedd74762185142985f573fef5b3a3, type: 3}
+  clipSonWalking: {fileID: 8300000, guid: b99c1684928c36946a0849b15e081b8b, type: 3}
   wait: 0
 --- !u!54 &909160186
 Rigidbody:
@@ -10017,9 +10019,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .910000026
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -10050,7 +10052,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: 0
+      value: .899999976
       inSlope: 0
       outSlope: 0
       tangentMode: 0
