@@ -48,7 +48,6 @@ public class SoundEffectsPlayerFeet : MonoBehaviour {
 
         if (Input.GetAxis("Horizontal") != 0 && audioPlayer.isPlaying == false)
         {
-            Debug.LogWarning("play back sound");
             //Stop if other sound was played
             if (audioPlayer.clip != clipFootstepsSidewards)
                 audioPlayer.Stop();

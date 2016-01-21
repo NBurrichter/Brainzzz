@@ -44,11 +44,6 @@ public class Blop2Control : MonoBehaviour
         if (attachedObject == null)
             transform.position += vMoveDirection * Time.smoothDeltaTime;
 
-        if (attachedObject != null)
-        {
-            if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)
-                StopMergin();
-        }
 
         if (Input.GetAxis("XBox Trigger") == 1)
         {

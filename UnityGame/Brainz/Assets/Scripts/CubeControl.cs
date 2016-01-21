@@ -27,8 +27,9 @@ public class CubeControl : MonoBehaviour
 
     //Audio Components
     private AudioSource audioPlayer;
-    private AudioClip clipObjectMoving;
-    private float timer;
+    public AudioClip clipObjectMoving;
+    public float fAudioPitch = 0.6f;
+    private bool bAudioHasPlayed = false;
 
     // Use this for initialization
     void Start()
@@ -45,18 +46,20 @@ public class CubeControl : MonoBehaviour
 
         finished = false;
 
-        clipObjectMoving = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/Soundclips/argh.wav", typeof(AudioClip)) as AudioClip;
-
         audioPlayer = this.gameObject.AddComponent<AudioSource>();
         audioPlayer.playOnAwake = false;
+        audioPlayer.clip = clipObjectMoving;
+        audioPlayer.pitch = fAudioPitch;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        //play sound if neededs
-        PlaySound();
+        if(bIsMergin == true && rbody.isKinematic==false && bAudioHasPlayed==false)
+        {
+            PlaySound();
+        }
     
         showSleeping = rbody.IsSleeping();
         
@@ -115,6 +118,7 @@ public class CubeControl : MonoBehaviour
     {
         //UpdateGraph.S.UpdateGridGraph();
 
+        bIsMergin = false;
         if (blocktype == BlockType.Ramp)
         {
             Debug.Log("Remove Joint");
@@ -227,12 +231,8 @@ public class CubeControl : MonoBehaviour
 
     void PlaySound()
     {
-
-        /*
-        check if object is being moved
-        activate sound
-        */
-        
+        bAudioHasPlayed = true;
+        audioPlayer.Play();
     }
 
 

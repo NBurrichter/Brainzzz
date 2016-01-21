@@ -198,6 +198,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .800000012
 --- !u!54 &19966514
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -358,6 +360,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &30498906
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -870,6 +874,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &116488237
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1515,6 +1521,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!4 &217617305 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400096, guid: 433faa2ff9617f4469db5e06eef44da2, type: 3}
@@ -1861,6 +1869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &233109245
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3229,6 +3239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &249089465
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3409,6 +3421,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!1 &295507570
 GameObject:
   m_ObjectHideFlags: 0
@@ -3442,6 +3456,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .800000012
 --- !u!54 &295507572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3787,6 +3803,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &328053660
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4652,6 +4670,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!64 &419095258
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -5032,6 +5052,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &454723156
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5147,6 +5169,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &456764201
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5434,6 +5458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &482803128
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5951,6 +5977,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &563979351
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6054,6 +6082,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &585909243
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6197,6 +6227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &604116081
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6501,6 +6533,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &661366104
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7380,6 +7414,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &741113879
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7827,6 +7863,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  fAudioPitch: .699999988
 --- !u!54 &780407413
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9712,6 +9750,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &906571178
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9995,6 +10035,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 3
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!114 &909160191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10549,6 +10591,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  fAudioPitch: .479999989
 --- !u!54 &994606764
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13288,6 +13332,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  fAudioPitch: .449999988
 --- !u!54 &1165848830
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13369,6 +13415,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &1175605135
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13547,6 +13595,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &1182668086
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -13725,6 +13775,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &1242286680
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15374,6 +15426,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &1316348431
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15492,6 +15546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!1 &1329804335
 GameObject:
   m_ObjectHideFlags: 0
@@ -15813,6 +15869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!64 &1353726161
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -18581,6 +18639,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  fAudioPitch: .349999994
 --- !u!54 &1427841541
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19271,6 +19331,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &1551956567
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22441,6 +22503,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!114 &2074516967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22829,6 +22893,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &2092868389
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -22889,6 +22955,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!54 &2099089775
 Rigidbody:
   m_ObjectHideFlags: 0
