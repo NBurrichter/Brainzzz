@@ -6,11 +6,11 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: StarBox
-  m_Shader: {fileID: 104, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _SUNDISK_HIGH_QUALITY
+  m_Name: exit_Creativity
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
-  m_CustomRenderQueue: 1000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
@@ -19,7 +19,7 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 361921df61045894ba38b2475bf17711, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -34,13 +34,6 @@ Material:
           name: _DetailNormalMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Tex
-        second:
-          m_Texture: {fileID: 8900000, guid: 5433e0afef193284cb808dd502a31144, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
@@ -85,48 +78,6 @@ Material:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _FrontTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _BackTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _LeftTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _RightTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _UpTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _DownTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
@@ -140,22 +91,6 @@ Material:
         first:
           name: _Cutoff
         second: .5
-      data:
-        first:
-          name: _Exposure
-        second: 1
-      data:
-        first:
-          name: _SunDisk
-        second: 2
-      data:
-        first:
-          name: _SunSize
-        second: .0399999991
-      data:
-        first:
-          name: _AtmosphereThickness
-        second: 1
       data:
         first:
           name: _Parallax
@@ -192,10 +127,6 @@ Material:
         first:
           name: _Metallic
         second: 0
-      data:
-        first:
-          name: _Rotation
-        second: 0
     m_Colors:
       data:
         first:
@@ -205,15 +136,3 @@ Material:
         first:
           name: _Color
         second: {r: 1, g: 1, b: 1, a: 1}
-      data:
-        first:
-          name: _GroundColor
-        second: {r: .368999988, g: .349000007, b: .340999991, a: 1}
-      data:
-        first:
-          name: _SkyTint
-        second: {r: .5, g: .5, b: .5, a: 1}
-      data:
-        first:
-          name: _Tint
-        second: {r: .5, g: .5, b: .5, a: .5}
