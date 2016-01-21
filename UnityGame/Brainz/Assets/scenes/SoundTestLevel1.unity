@@ -360,7 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
-  clipObjectMoving: {fileID: 0}
+  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
   fAudioPitch: .600000024
 --- !u!54 &30498906
 Rigidbody:
@@ -1092,12 +1092,12 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 170340138}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: faf30f3d35bfa9c40801785e3aa6ec3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipGunShot: {fileID: 8300000, guid: b89850d4fe514bc41abda2e1de152689, type: 3}
+  clipGunShot: {fileID: 8300000, guid: a78a87b681105c04f9ebf7e05cf8fabe, type: 3}
 --- !u!82 &170340142
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1110,7 +1110,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
-  m_Pitch: 1
+  m_Pitch: 1.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -3421,7 +3421,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
-  clipObjectMoving: {fileID: 0}
+  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
   fAudioPitch: .600000024
 --- !u!1 &295507570
 GameObject:
@@ -4540,7 +4540,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: .469999999
+  m_Volume: .5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10061,7 +10061,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: .910000026
+  m_Volume: .949999988
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -10094,7 +10094,7 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - time: 0
-      value: .899999976
+      value: .850000024
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -12749,7 +12749,7 @@ MonoBehaviour:
   Blop1Prefab: {fileID: 148576, guid: 23ffe2036a47e6f4fa0fcea996f27aa2, type: 2}
   Blop2Prefab: {fileID: 173570, guid: 4a9bdd55003d6e3498cab051c958b4ac, type: 2}
   BlopGunSymbol: {fileID: 2128715019}
-  fRechargeTime: .200000003
+  fRechargeTime: .300000012
   colorBlopOneShot: {r: .926470578, g: .0272491612, b: .0272491612, a: 1}
   colorBlopTwoShot: {r: .930932999, g: .985294104, b: 0, a: 1}
   colorSynapsing: {r: .308808625, g: .25118947, b: .742647052, a: 1}
@@ -19754,7 +19754,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d8fc394260c81894b93440c5f0edc882, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .100000001
+  m_Volume: .0500000007
   m_Pitch: 1
   Loop: 1
   Mute: 0

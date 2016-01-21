@@ -119,6 +119,7 @@ public class CubeControl : MonoBehaviour
         //UpdateGraph.S.UpdateGridGraph();
 
         bIsMergin = false;
+        bAudioHasPlayed = false;
         if (blocktype == BlockType.Ramp)
         {
             Debug.Log("Remove Joint");
