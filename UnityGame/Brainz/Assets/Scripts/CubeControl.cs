@@ -25,6 +25,12 @@ public class CubeControl : MonoBehaviour
     //needed for pathfinnding
     private bool finished;
 
+    //Audio Components
+    private AudioSource audioPlayer;
+    public AudioClip clipObjectMoving;
+    public float fAudioPitch = 0.6f;
+    private bool bAudioHasPlayed = false;
+
     // Use this for initialization
     void Start()
     {
@@ -39,13 +45,24 @@ public class CubeControl : MonoBehaviour
         }
 
         finished = false;
+
+        audioPlayer = this.gameObject.AddComponent<AudioSource>();
+        audioPlayer.playOnAwake = false;
+        audioPlayer.clip = clipObjectMoving;
+        audioPlayer.pitch = fAudioPitch;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(bIsMergin == true && rbody.isKinematic==false && bAudioHasPlayed==false)
+        {
+            PlaySound();
+        }
+    
         showSleeping = rbody.IsSleeping();
-
+        
         // Reset if its not an attachment
         if (this.gameObject.tag == "Untagged")
         {
@@ -101,6 +118,8 @@ public class CubeControl : MonoBehaviour
     {
         //UpdateGraph.S.UpdateGridGraph();
 
+        bIsMergin = false;
+        bAudioHasPlayed = false;
         if (blocktype == BlockType.Ramp)
         {
             Debug.Log("Remove Joint");
@@ -209,6 +228,12 @@ public class CubeControl : MonoBehaviour
         GetComponent<FindTestPath>().Landed();
         GetComponent<FindTestPath>().ResetFallCicle();
         rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
+
+    void PlaySound()
+    {
+        bAudioHasPlayed = true;
+        audioPlayer.Play();
     }
 
 

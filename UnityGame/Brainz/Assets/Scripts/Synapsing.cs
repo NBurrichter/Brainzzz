@@ -70,8 +70,16 @@ public class Synapsing : MonoBehaviour
         if (bMergeEnabled == true && merginCoroutine == null)
         {
             merginCoroutine = Mergin();
+
+            // set attachments mergin to true
+            Blop1Script.GetAttachedObject().GetComponent<CubeControl>().SetMergin(true);
+            Blop2Script.GetAttachedObject().GetComponent<CubeControl>().SetMergin(true);
+
+            // start the courotine
             StartCoroutine(merginCoroutine);
+
             BlopGun.BlopGunSingelton.ChangeTexture(BlopGun.BlopGunSingelton.colorSynapsing);
+
             if(Blop1Script.GetAttachedObject().GetComponent<CubeControl>().blocktype == CubeControl.BlockType.NPCAStar)
             {
                 Blop1Script.GetAttachedObject().GetComponent<FindTestPath>().StartFlying();
