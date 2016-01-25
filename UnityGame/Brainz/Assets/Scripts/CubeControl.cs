@@ -46,10 +46,13 @@ public class CubeControl : MonoBehaviour
 
         finished = false;
 
-        audioPlayer = this.gameObject.AddComponent<AudioSource>();
-        audioPlayer.playOnAwake = false;
-        audioPlayer.clip = clipObjectMoving;
-        audioPlayer.pitch = fAudioPitch;
+        if (this.gameObject.GetComponent<AudioSource>() == null)
+        {
+            audioPlayer = this.gameObject.AddComponent<AudioSource>();
+            audioPlayer.playOnAwake = false;
+            audioPlayer.clip = clipObjectMoving;
+            audioPlayer.pitch = fAudioPitch;
+        }
         
     }
 
