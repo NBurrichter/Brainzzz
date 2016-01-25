@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: ec33c2c9f0199a545b640ca167892f40
+timeCreated: 1453730295
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: farbe1
+    100002: farbe10
+    100004: farbe2
+    100006: farbe3
+    100008: farbe4
+    100010: farbe5
+    100012: farbe6
+    100014: farbe7
+    100016: farbe8
+    100018: farbe9
+    100020: papier_und_kasten
+    100022: polySurface76
+    100024: polySurface78
+    100026: polySurface80
+    100028: polySurface82
+    100030: polySurface84
+    100032: polySurface86
+    100034: polySurface88
+    100036: polySurface90
+    100038: polySurface92
+    100040: polySurface94
+    100042: //RootNode
+    400000: farbe1
+    400002: farbe10
+    400004: farbe2
+    400006: farbe3
+    400008: farbe4
+    400010: farbe5
+    400012: farbe6
+    400014: farbe7
+    400016: farbe8
+    400018: farbe9
+    400020: papier_und_kasten
+    400022: polySurface76
+    400024: polySurface78
+    400026: polySurface80
+    400028: polySurface82
+    400030: polySurface84
+    400032: polySurface86
+    400034: polySurface88
+    400036: polySurface90
+    400038: polySurface92
+    400040: polySurface94
+    400042: //RootNode
+    2300000: papier_und_kasten
+    2300002: polySurface76
+    2300004: polySurface78
+    2300006: polySurface80
+    2300008: polySurface82
+    2300010: polySurface84
+    2300012: polySurface86
+    2300014: polySurface88
+    2300016: polySurface90
+    2300018: polySurface92
+    2300020: polySurface94
+    3300000: papier_und_kasten
+    3300002: polySurface76
+    3300004: polySurface78
+    3300006: polySurface80
+    3300008: polySurface82
+    3300010: polySurface84
+    3300012: polySurface86
+    3300014: polySurface88
+    3300016: polySurface90
+    3300018: polySurface92
+    3300020: polySurface94
+    4300000: polySurface86
+    4300002: polySurface88
+    4300004: polySurface92
+    4300006: polySurface90
+    4300008: polySurface94
+    4300010: polySurface76
+    4300012: polySurface78
+    4300014: polySurface80
+    4300016: polySurface84
+    4300018: polySurface82
+    4300020: papier_und_kasten
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 250
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
