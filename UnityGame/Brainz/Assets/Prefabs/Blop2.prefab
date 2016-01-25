@@ -133,7 +133,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1a715f5c2bbef54ca63fbcda1ee2629, type: 2}
+  - {fileID: 2100000, guid: 12a35c43454de5643a7385515527890a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -153,7 +153,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173570}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: b78d49b91dba7654b8de7c635c20b4fd, type: 3}
 --- !u!54 &5426878
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -181,11 +181,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  colorMode: 1
+  colorMode: 2
   presetColors:
-  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 0, g: .875862181, b: 1, a: 1}
   - {r: 0, g: 0, b: 1, a: 1}
-  - {r: 0, g: 1, b: 0, a: 1}
+  - {r: .319690734, g: .595588207, b: .595588207, a: 1}
 --- !u!114 &11457864
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -209,7 +209,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7753b53b10917024aa31be350910b100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  matBlop2: {fileID: 2100000, guid: a1a715f5c2bbef54ca63fbcda1ee2629, type: 2}
 --- !u!135 &13553952
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1592,18 +1591,13 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 1
   RotationModule:
-    enabled: 0
+    enabled: 1
     curve:
-      scalar: .785398185
+      scalar: 2.61799383
       maxCurve:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
           value: 1
           inSlope: 0
           outSlope: 0
@@ -1614,12 +1608,7 @@ ParticleSystem:
         serializedVersion: 2
         m_Curve:
         - time: 0
-          value: 0
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-        - time: 1
-          value: 0
+          value: -.357946992
           inSlope: 0
           outSlope: 0
           tangentMode: 0
@@ -2315,7 +2304,7 @@ ParticleSystemRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: a78a6351bebf66c40a609f18883546a0, type: 2}
+  - {fileID: 2100000, guid: dbfc78156669df74b846329850d60c3a, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -2393,6 +2382,14 @@ Prefab:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 0}
+      propertyPath: RotationModule.curve.maxCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RotationModule.curve.minCurve.m_Curve.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: InitialModule.startRotation.maxCurve.m_Curve.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2451,7 +2448,7 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a78a6351bebf66c40a609f18883546a0, type: 2}
+      objectReference: {fileID: 2100000, guid: 12a35c43454de5643a7385515527890a, type: 2}
     - target: {fileID: 0}
       propertyPath: InitialModule.startRotation.scalar
       value: 6.28318501
@@ -2490,7 +2487,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: colorMode
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: SizeBySpeedModule.enabled
@@ -2532,6 +2529,58 @@ Prefab:
       propertyPath: fBlopLifetime
       value: 1.60000002
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: presetColors.Array.data[0].r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: presetColors.Array.data[0].g
+      value: .875862181
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: presetColors.Array.data[0].b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: presetColors.Array.data[2].b
+      value: .595588207
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: presetColors.Array.data[2].r
+      value: .319690734
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: presetColors.Array.data[2].g
+      value: .595588207
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RotationModule.curve.scalar
+      value: 2.61799383
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RotationModule.curve.maxCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RotationModule.curve.maxCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RotationModule.curve.minCurve.m_Curve.Array.data[0].value
+      value: -.357946992
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: RotationModule.curve.minCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: b78d49b91dba7654b8de7c635c20b4fd, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 173570}

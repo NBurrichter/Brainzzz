@@ -46,10 +46,13 @@ public class CubeControl : MonoBehaviour
 
         finished = false;
 
-        audioPlayer = this.gameObject.AddComponent<AudioSource>();
-        audioPlayer.playOnAwake = false;
-        audioPlayer.clip = clipObjectMoving;
-        audioPlayer.pitch = fAudioPitch;
+        if (this.gameObject.GetComponent<AudioSource>() == null)
+        {
+            audioPlayer = this.gameObject.AddComponent<AudioSource>();
+            audioPlayer.playOnAwake = false;
+            audioPlayer.clip = clipObjectMoving;
+            audioPlayer.pitch = fAudioPitch;
+        }
         
     }
 
@@ -81,7 +84,7 @@ public class CubeControl : MonoBehaviour
         }
         if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
-            //Debug.Log("Update GridGraph from Object " + name);
+            Debug.Log("Update GridGraph from Object " + name);
             UpdateGraph.S.UpdateGridGraph();
             saveSleeping = true;
         }

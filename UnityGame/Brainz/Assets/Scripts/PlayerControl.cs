@@ -119,7 +119,7 @@ public class PlayerControl : MonoBehaviour {
         {
             grounded = true;
             anim.SetBool("Grounded", true);
-            Debug.Log(sphereHitInfo.collider.name);
+            //Debug.Log(sphereHitInfo.collider.name);
         }
         else
         {
@@ -235,6 +235,7 @@ public class PlayerControl : MonoBehaviour {
 	{
 		isGrappling = b;
         anim.SetBool("IsGrappling", b);
+        anim.SetTrigger("StartGrapple");
 	}
 
 }

@@ -21,7 +21,7 @@ public class Grapple : MonoBehaviour
 
     //grapple Particles
     private ParticleSystem grapplePaticleSystem;
-    private GameObject grappleParticleObject;
+    public GameObject grappleParticleObject;
     private float dist = 0;
 
     void Start()
@@ -31,13 +31,13 @@ public class Grapple : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         isGrappling = false;
 
-        foreach (Transform child in transform)
+        /*foreach (Transform child in transform)
         {
             if (child.name == "GrappleParticle")
             {
                 grappleParticleObject = child.gameObject;
             }
-        }
+        }*/
         grapplePaticleSystem = grappleParticleObject.GetComponent<ParticleSystem>();
     }
 
