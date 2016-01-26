@@ -29,8 +29,7 @@ public class CubeControl : MonoBehaviour
     private AudioSource audioPlayer;
     public AudioClip clipObjectMoving;
     public float fAudioPitch = 0.6f;
-    private bool bHasElevatorSoundPlayed = false;
-    //private bool bAudioHasPlayed = false;
+    private bool bAudioHasPlayed = false;  // only there cause the sounds are not looping perfectly
 
     // Use this for initialization
     void Start()
@@ -65,7 +64,8 @@ public class CubeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bIsMergin == true && rbody.isKinematic==false && audioPlayer.isPlaying==false && blocktype != BlockType.NPCAStar)
+        if(bIsMergin == true && rbody.isKinematic==false && audioPlayer.isPlaying==false && 
+           blocktype != BlockType.NPCAStar && bAudioHasPlayed == false )
         {
             PlaySound();
         }
@@ -128,6 +128,8 @@ public class CubeControl : MonoBehaviour
     /// </summary>
     public void StopMergin()
     {
+        bAudioHasPlayed = false;
+
         //UpdateGraph.S.UpdateGridGraph();
         if (blocktype == BlockType.NPCAStar)
         {
@@ -246,20 +248,9 @@ public class CubeControl : MonoBehaviour
 
     void PlaySound()
     {
-        if(blocktype == BlockType.Elevator)
-        {
-            if (bHasElevatorSoundPlayed == false)
-            {
-                audioPlayer.Play();
-                bHasElevatorSoundPlayed = true;
-            }
-            else
-            {
-                return;
-            }
-            return;
-        }
         audioPlayer.Play();
+
+        bAudioHasPlayed = true;
     }
 
 
