@@ -9,7 +9,7 @@ public class ChangeTextureOnCollision : MonoBehaviour {
 
     void OnCollisionStay(Collision col)
     {
-        Debug.Log("Paper collision: " + col.gameObject.name);
+        //Debug.Log("Paper collision: " + col.gameObject.name);
         if (col.gameObject == colObject)
         {
             matObject.GetComponent<Renderer>().material.SetTexture("_MainTex", texture);
