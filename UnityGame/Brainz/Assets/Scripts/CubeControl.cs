@@ -93,7 +93,7 @@ public class CubeControl : MonoBehaviour
         {
             if (Time.time > 10)
             {
-                Debug.Log("Update GridGraph from Object " + name);
+                //Debug.Log("Update GridGraph from Object " + name);
                 UpdateGraph.S.UpdateGridGraph();
             }
             saveSleeping = true;
