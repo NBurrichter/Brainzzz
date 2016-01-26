@@ -64,8 +64,9 @@ ModelImporter:
     4300000: pCube11
     4300002: pasted__pCube11
     4300004: pinsel_94940:pCylinder1
-    7400000: Take 001
+    7400000: Staffelei
     9500000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -85,7 +86,83 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Staffelei
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 40
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group
+        weight: 1
+      - path: group/pasted__pCube1
+        weight: 1
+      - path: group/pasted__pCube1/pasted__transform8
+        weight: 1
+      - path: group/pasted__pCube2
+        weight: 1
+      - path: group/pasted__pCube2/pasted__transform7
+        weight: 1
+      - path: group/pasted__pCube3
+        weight: 1
+      - path: group/pasted__pCube3/pasted__transform6
+        weight: 1
+      - path: group/pasted__pCube4
+        weight: 1
+      - path: group/pasted__pCube4/pasted__transform5
+        weight: 1
+      - path: group/pasted__pCube5
+        weight: 1
+      - path: group/pasted__pCube5/pasted__transform4
+        weight: 1
+      - path: group/pasted__pCube6
+        weight: 1
+      - path: group/pasted__pCube6/pasted__transform3
+        weight: 1
+      - path: group/pasted__pCube7
+        weight: 1
+      - path: group/pasted__pCube7/pasted__transform2
+        weight: 1
+      - path: group/pasted__pCube8
+        weight: 1
+      - path: group/pasted__pCube8/pasted__transform1
+        weight: 1
+      - path: group/pasted__pCube9
+        weight: 1
+      - path: group/pasted__pCube9/pasted__transform10
+        weight: 1
+      - path: group/pasted__pCube10
+        weight: 1
+      - path: group/pasted__pCube10/pasted__transform9
+        weight: 1
+      - path: group/pasted__pCube11
+        weight: 1
+      - path: pCube11
+        weight: 1
+      - path: pinsel_94940:pCylinder1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -124,7 +201,7 @@ ModelImporter:
     rootMotionBoneName: 
     hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

@@ -69,6 +69,7 @@ public class CubeControl : MonoBehaviour
         {
             PlaySound();
         }
+
     
         showSleeping = rbody.IsSleeping();
         
@@ -129,6 +130,7 @@ public class CubeControl : MonoBehaviour
     public void StopMergin()
     {
         bAudioHasPlayed = false;
+        audioPlayer.Stop();
 
         //UpdateGraph.S.UpdateGridGraph();
         if (blocktype == BlockType.NPCAStar)

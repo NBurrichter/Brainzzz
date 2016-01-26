@@ -4771,7 +4771,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 387376584}
-  - 95: {fileID: 387376585}
+  - 111: {fileID: 387376585}
   m_Layer: 0
   m_Name: staffelei
   m_TagString: Untagged
@@ -4793,24 +4793,21 @@ Transform:
   - {fileID: 1744715160}
   m_Father: {fileID: 0}
   m_RootOrder: 41
---- !u!95 &387376585
-Animator:
-  serializedVersion: 3
+--- !u!111 &387376585
+Animation:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 9500000, guid: 4d2cb69d6049a65469b6a5ab64ea5622,
-    type: 3}
+  m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 387376583}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 4d2cb69d6049a65469b6a5ab64ea5622, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 4d2cb69d6049a65469b6a5ab64ea5622, type: 3}
+  m_Animations:
+  - {fileID: 7400000, guid: 4d2cb69d6049a65469b6a5ab64ea5622, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!4 &392265383 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400026, guid: 5cebd345792f9274b9a9874f73762714, type: 3}
@@ -21159,7 +21156,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: .0500000007
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
