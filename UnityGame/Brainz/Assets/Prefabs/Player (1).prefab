@@ -6434,7 +6434,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172744}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: -18.8586006, y: .370000005, z: 44.3544464}
+  m_LocalPosition: {x: -19.4200001, y: .370000005, z: 81.9499969}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 450214}
@@ -6786,7 +6786,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 452416}
-  - {fileID: 463696}
   m_Father: {fileID: 449392}
   m_RootOrder: 0
 --- !u!4 &454188
@@ -7233,12 +7232,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 166348}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0189999994, y: 0, z: -0}
+  m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
+  m_LocalPosition: {x: -0, y: -.0189992283, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 448532}
-  m_Father: {fileID: 454168}
+  m_Father: {fileID: 491170}
   m_RootOrder: 1
 --- !u!4 &464016
 Transform:
@@ -8223,6 +8222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 414234}
+  - {fileID: 463696}
   m_Father: {fileID: 493292}
   m_RootOrder: 1
 --- !u!4 &491348
@@ -8801,8 +8801,8 @@ MonoBehaviour:
   Blop2Prefab: {fileID: 173570, guid: 4a9bdd55003d6e3498cab051c958b4ac, type: 2}
   BlopGunSymbol: {fileID: 108890}
   fRechargeTime: .300000012
-  colorBlopOneShot: {r: .926470578, g: .0272491612, b: .0272491612, a: 1}
-  colorBlopTwoShot: {r: .930932999, g: .985294104, b: 0, a: 1}
+  colorBlopOneShot: {r: .721568644, g: .494117647, b: .941176474, a: 1}
+  colorBlopTwoShot: {r: .309803933, g: .890196085, b: .666666687, a: 1}
   colorSynapsing: {r: .308808625, g: .25118947, b: .742647052, a: 1}
 --- !u!114 &11418076
 MonoBehaviour:

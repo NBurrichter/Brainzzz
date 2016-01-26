@@ -7,12 +7,15 @@ public class DamageIndicator : MonoBehaviour
     public float maxHealth;
     private float health;
     public GameObject renderObject;
-    private Renderer rend;
+    public GameObject hair1;
+    public GameObject hair2;
+    public Renderer[] rend;
 
     void Start()
     {
         health = maxHealth;
-        rend = renderObject.GetComponent<Renderer>();
+        rend = renderObject.GetComponentsInChildren<Renderer>();
+
     }
 
     void Update()
@@ -27,7 +30,11 @@ public class DamageIndicator : MonoBehaviour
         {
             health--;
         }
-        rend.material.color = new Color((health/maxHealth),(health / maxHealth),(health / maxHealth));
+        foreach (Renderer rednder in rend)
+        {
+            rednder.material.color = new Color((health / maxHealth), (health / maxHealth), (health / maxHealth));
+        }
+
     }
 
     public float GetHealth()
