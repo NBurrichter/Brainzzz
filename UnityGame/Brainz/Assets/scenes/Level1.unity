@@ -199,7 +199,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  fAudioPitch: .800000012
+  fAudioPitch: .899999976
 --- !u!54 &19966514
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3859,7 +3859,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  fAudioPitch: .800000012
+  fAudioPitch: .899999976
 --- !u!54 &295507572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4792,7 +4792,7 @@ Transform:
   - {fileID: 2011392975}
   - {fileID: 1744715160}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 15
 --- !u!95 &387376585
 Animator:
   serializedVersion: 3
@@ -19721,7 +19721,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  fAudioPitch: .349999994
+  fAudioPitch: .300000012
 --- !u!54 &1427841541
 Rigidbody:
   m_ObjectHideFlags: 0
