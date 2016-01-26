@@ -10,7 +10,8 @@ public class WaypointType : MonoBehaviour {
         elevatorEntrance,
         elevator,
         elevatorExit,
-        walkDirectPath
+        walkDirectPath,
+        endOfPath
     };
 
     public enum SoundType

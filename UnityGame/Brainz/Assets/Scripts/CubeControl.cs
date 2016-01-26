@@ -90,8 +90,11 @@ public class CubeControl : MonoBehaviour
         }
         if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
-            Debug.Log("Update GridGraph from Object " + name);
-            UpdateGraph.S.UpdateGridGraph();
+            if (Time.time > 10)
+            {
+                Debug.Log("Update GridGraph from Object " + name);
+                UpdateGraph.S.UpdateGridGraph();
+            }
             saveSleeping = true;
         }
 
@@ -126,7 +129,10 @@ public class CubeControl : MonoBehaviour
     public void StopMergin()
     {
         //UpdateGraph.S.UpdateGridGraph();
-        audioPlayer.Stop();
+        if (blocktype == BlockType.NPCAStar)
+        {
+            audioPlayer.Stop();
+        }
         bIsMergin = false;
         if (blocktype == BlockType.Ramp)
         {
