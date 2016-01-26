@@ -29,7 +29,7 @@ public class CubeControl : MonoBehaviour
     private AudioSource audioPlayer;
     public AudioClip clipObjectMoving;
     public float fAudioPitch = 0.6f;
-    private bool bAudioHasPlayed = false;
+    //private bool bAudioHasPlayed = false;
 
     // Use this for initialization
     void Start()
@@ -59,7 +59,7 @@ public class CubeControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bIsMergin == true && rbody.isKinematic==false && bAudioHasPlayed==false)
+        if(bIsMergin == true && rbody.isKinematic==false && audioPlayer.isPlaying==false && blocktype != BlockType.NPCAStar)
         {
             PlaySound();
         }
@@ -120,9 +120,8 @@ public class CubeControl : MonoBehaviour
     public void StopMergin()
     {
         //UpdateGraph.S.UpdateGridGraph();
-
+        audioPlayer.Stop();
         bIsMergin = false;
-        bAudioHasPlayed = false;
         if (blocktype == BlockType.Ramp)
         {
             Debug.Log("Remove Joint");
@@ -235,7 +234,6 @@ public class CubeControl : MonoBehaviour
 
     void PlaySound()
     {
-        bAudioHasPlayed = true;
         audioPlayer.Play();
     }
 
