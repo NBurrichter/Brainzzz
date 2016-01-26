@@ -6,7 +6,7 @@ public class CubeControl : MonoBehaviour
 
 
     private bool bIsMergin;
-    public enum BlockType { Cube, Ramp, NPC, NPCAStar };
+    public enum BlockType { Cube, Ramp, NPC, NPCAStar, Elevator};
     public BlockType blocktype;
 
     private Blop1Control Blop1Script;
@@ -29,6 +29,7 @@ public class CubeControl : MonoBehaviour
     private AudioSource audioPlayer;
     public AudioClip clipObjectMoving;
     public float fAudioPitch = 0.6f;
+    private bool bHasElevatorSoundPlayed = false;
     //private bool bAudioHasPlayed = false;
 
     // Use this for initialization
@@ -53,6 +54,11 @@ public class CubeControl : MonoBehaviour
             audioPlayer.clip = clipObjectMoving;
             audioPlayer.pitch = fAudioPitch;
         }
+        else
+        {
+            audioPlayer = this.GetComponent<AudioSource>();
+        }
+        
         
     }
 
@@ -234,6 +240,19 @@ public class CubeControl : MonoBehaviour
 
     void PlaySound()
     {
+        if(blocktype == BlockType.Elevator)
+        {
+            if (bHasElevatorSoundPlayed == false)
+            {
+                audioPlayer.Play();
+                bHasElevatorSoundPlayed = true;
+            }
+            else
+            {
+                return;
+            }
+            return;
+        }
         audioPlayer.Play();
     }
 

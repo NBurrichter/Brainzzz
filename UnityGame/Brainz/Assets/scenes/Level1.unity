@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: faa4820683e69d1479e3b29c50ef5916, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blocktype: 0
+  blocktype: 4
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
   fAudioPitch: .5
@@ -4792,7 +4792,7 @@ Transform:
   - {fileID: 2011392975}
   - {fileID: 1744715160}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 35
 --- !u!95 &387376585
 Animator:
   serializedVersion: 3
@@ -8581,6 +8581,52 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 4300000, guid: 9d6a3a9b5c4224846a5a8a0a97be5914, type: 3}
+--- !u!1 &740263562 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
+  m_PrefabInternal: {fileID: 1423337183}
+--- !u!114 &740263563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 740263562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa4820683e69d1479e3b29c50ef5916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocktype: 0
+  showSleeping: 0
+  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  fAudioPitch: 2
+--- !u!54 &740263564
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 740263562}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &740263565
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 740263562}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: .649999976, y: 6.42751312, z: .176588148}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &741113876 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 104144, guid: e3c997a9da4b51d48a89a6bdecd50e35, type: 2}
@@ -11204,7 +11250,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b99c1684928c36946a0849b15e081b8b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: .949999988
   m_Pitch: 1
@@ -19550,7 +19596,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -34.7900009
+      value: -34.3600006
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -19558,7 +19604,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.9200001
+      value: 20.2800007
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19566,7 +19612,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: .286734223
+      value: .374428421
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_LocalRotation.z
@@ -19574,11 +19620,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_LocalRotation.w
-      value: .958010197
+      value: .927255869
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: ce1251c784d85844986ecaba0ec61c9e, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -24056,6 +24102,9 @@ GameObject:
   - 4: {fileID: 2011392975}
   - 33: {fileID: 2011392977}
   - 23: {fileID: 2011392976}
+  - 65: {fileID: 2011392980}
+  - 54: {fileID: 2011392979}
+  - 114: {fileID: 2011392978}
   m_Layer: 0
   m_Name: pCube11
   m_TagString: Untagged
@@ -24070,7 +24119,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2011392974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: .159999996, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 387376584}
@@ -24108,6 +24157,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2011392974}
   m_Mesh: {fileID: 4300000, guid: 4d2cb69d6049a65469b6a5ab64ea5622, type: 3}
+--- !u!114 &2011392978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2011392974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa4820683e69d1479e3b29c50ef5916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocktype: 0
+  showSleeping: 0
+  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  fAudioPitch: 1.20000005
+--- !u!54 &2011392979
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2011392974}
+  serializedVersion: 2
+  m_Mass: 1.20000005
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2011392980
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2011392974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3900001, y: 11.6099997, z: 7.46999979}
+  m_Center: {x: .438802958, y: 5.9150362, z: .250125825}
 --- !u!1001 &2014797034
 Prefab:
   m_ObjectHideFlags: 0
