@@ -235,6 +235,7 @@ public class PlayerControl : MonoBehaviour {
 	{
 		isGrappling = b;
         anim.SetBool("IsGrappling", b);
+        anim.SetTrigger("StartGrapple");
 	}
 
 }

@@ -45,6 +45,8 @@ public class Blop1Control : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (attachedObject == null)
         {
             transform.position += vMoveDirection * Time.smoothDeltaTime;
@@ -52,13 +54,6 @@ public class Blop1Control : MonoBehaviour
         }
 
 
-        if (attachedObject != null)
-        {
-            if (attachedObject.GetComponent<CubeControl>().GetMerginStatus() == true)
-            {
-                StopMergin();
-            }
-        }
 
         if (Input.GetAxis("XBox Trigger") == -1)
         {

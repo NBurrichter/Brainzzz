@@ -33,8 +33,11 @@ public class FindTestPath : MonoBehaviour
     //Sound source
     private AudioSource source;
 
-    //bool wait
+    public AudioClip clipSonWalking;
+
+    //bool wait and finished
     public bool wait;
+    private bool finished;
 
     //animation controlls
     private Animator anim;
@@ -48,11 +51,12 @@ public class FindTestPath : MonoBehaviour
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
         endOfPathReached = false;
+        finished = false;
     }
 
     public void Start()
     {
-        wait = false;
+        //wait = false;
         //Start a new path to the targetPosition, return the result to the OnPathComplete function
         seeker.StartPath(transform.position, waypoints[activeWaypoint].transform.position, OnPathComplete);
         endOfPathReached = false;
@@ -70,6 +74,26 @@ public class FindTestPath : MonoBehaviour
     }
     public void Update()
     {
+        if (finished)
+        {
+            return;
+        }
+
+        if(wait == false && source.isPlaying == false)
+        {
+            //Stop if other sound was played
+            if (source.clip != clipSonWalking)
+                source.Stop();
+
+            // switch to correct sound and play it
+            source.clip = clipSonWalking;
+            source.Play();
+        }
+        else if(wait == true)
+        {
+            source.Stop();
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             Start();
@@ -77,7 +101,7 @@ public class FindTestPath : MonoBehaviour
 
         if (wait == true)
         {
-            Debug.Log("Wait");
+            //Debug.Log("Wait");
             return;
         }
 
@@ -92,7 +116,7 @@ public class FindTestPath : MonoBehaviour
         //Old Waypoint reaching. Lookw for the point instead of trigger box
         if (Vector3.Distance(transform.position, waypoints[activeWaypoint].transform.position) < 2 && activeWaypoint < waypoints.Length - 1)
         {
-            Debug.Log("Reached waypoit");
+            //Debug.Log("Reached waypoit");
             /*walkState = waypoints[activeWaypoint].GetComponent<WaypointType>().type;
             activeWaypoint++;
             Start();
@@ -159,6 +183,10 @@ public class FindTestPath : MonoBehaviour
                     Debug.DrawLine(transform.position, transform.position + flatDirectDir, Color.yellow);
                     lookAtDummy.transform.LookAt(transform.position + flatDirectDir);
                     break;
+                case WaypointType.Types.endOfPath:
+                    finished = true;
+                    anim.SetBool("IsIdle", true);
+                    break;
 
             }
 
@@ -205,6 +233,10 @@ public class FindTestPath : MonoBehaviour
                     Debug.DrawLine(transform.position, transform.position + flatDirectDir, Color.yellow);
                     lookAtDummy.transform.LookAt(transform.position + flatDirectDir);
                     break;
+                case WaypointType.Types.endOfPath:
+                    finished = true;
+                    anim.SetBool("IsIdle", true);
+                    break;
             }
             return;
         }
@@ -235,17 +267,20 @@ public class FindTestPath : MonoBehaviour
         anim.SetBool("IsIdle", true);
         yield return new WaitForSeconds(seconds);
         wait = false;
-        anim.SetBool("IsIdle", false);
+        if (!finished)
+        {
+            anim.SetBool("IsIdle", false);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.tag);
+        //Debug.Log(other.tag);
         if (other.tag == "Waypoint")
         {
             WaypointType pointType = other.transform.parent.GetComponent<WaypointType>();
-            Debug.Log(activeWaypoint.ToString());
-            Debug.Log(pointType.waypointNumber.ToString());
+            //Debug.Log(activeWaypoint.ToString());
+            //Debug.Log(pointType.waypointNumber.ToString());
 
             if (activeWaypoint == pointType.waypointNumber && activeWaypoint < waypoints.Length - 1)
             {

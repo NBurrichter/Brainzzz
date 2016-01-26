@@ -6,7 +6,7 @@ public class CubeControl : MonoBehaviour
 
 
     private bool bIsMergin;
-    public enum BlockType { Cube, Ramp, NPC, NPCAStar };
+    public enum BlockType { Cube, Ramp, NPC, NPCAStar, Elevator};
     public BlockType blocktype;
 
     private Blop1Control Blop1Script;
@@ -25,6 +25,12 @@ public class CubeControl : MonoBehaviour
     //needed for pathfinnding
     private bool finished;
 
+    //Audio Components
+    private AudioSource audioPlayer;
+    public AudioClip clipObjectMoving;
+    public float fAudioPitch = 0.6f;
+    private bool bAudioHasPlayed = false;  // only there cause the sounds are not looping perfectly
+
     // Use this for initialization
     void Start()
     {
@@ -39,13 +45,34 @@ public class CubeControl : MonoBehaviour
         }
 
         finished = false;
+
+        if (this.gameObject.GetComponent<AudioSource>() == null)
+        {
+            audioPlayer = this.gameObject.AddComponent<AudioSource>();
+            audioPlayer.playOnAwake = false;
+            audioPlayer.clip = clipObjectMoving;
+            audioPlayer.pitch = fAudioPitch;
+        }
+        else
+        {
+            audioPlayer = this.GetComponent<AudioSource>();
+        }
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        showSleeping = rbody.IsSleeping();
+        if(bIsMergin == true && rbody.isKinematic==false && audioPlayer.isPlaying==false && 
+           blocktype != BlockType.NPCAStar && bAudioHasPlayed == false )
+        {
+            PlaySound();
+        }
 
+    
+        showSleeping = rbody.IsSleeping();
+        
         // Reset if its not an attachment
         if (this.gameObject.tag == "Untagged")
         {
@@ -64,8 +91,11 @@ public class CubeControl : MonoBehaviour
         }
         if (!saveSleeping && rbody.IsSleeping() && blocktype != BlockType.NPCAStar)
         {
-            Debug.Log("Update GridGraph from Object " + name);
-            UpdateGraph.S.UpdateGridGraph();
+            if (Time.time > 10)
+            {
+                //Debug.Log("Update GridGraph from Object " + name);
+                UpdateGraph.S.UpdateGridGraph();
+            }
             saveSleeping = true;
         }
 
@@ -99,8 +129,15 @@ public class CubeControl : MonoBehaviour
     /// </summary>
     public void StopMergin()
     {
-        //UpdateGraph.S.UpdateGridGraph();
+        bAudioHasPlayed = false;
+        audioPlayer.Stop();
 
+        //UpdateGraph.S.UpdateGridGraph();
+        if (blocktype == BlockType.NPCAStar)
+        {
+            audioPlayer.Stop();
+        }
+        bIsMergin = false;
         if (blocktype == BlockType.Ramp)
         {
             Debug.Log("Remove Joint");
@@ -209,6 +246,13 @@ public class CubeControl : MonoBehaviour
         GetComponent<FindTestPath>().Landed();
         GetComponent<FindTestPath>().ResetFallCicle();
         rbody.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+    }
+
+    void PlaySound()
+    {
+        audioPlayer.Play();
+
+        bAudioHasPlayed = true;
     }
 
 

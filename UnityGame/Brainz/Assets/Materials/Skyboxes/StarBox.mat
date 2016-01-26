@@ -89,42 +89,42 @@ Material:
         first:
           name: _FrontTex
         second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
+          m_Texture: {fileID: 2800000, guid: eed8c056850ba7f49a61804e5d85f0bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BackTex
         second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
+          m_Texture: {fileID: 2800000, guid: eed8c056850ba7f49a61804e5d85f0bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _LeftTex
         second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
+          m_Texture: {fileID: 2800000, guid: eed8c056850ba7f49a61804e5d85f0bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _RightTex
         second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
+          m_Texture: {fileID: 2800000, guid: eed8c056850ba7f49a61804e5d85f0bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _UpTex
         second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
+          m_Texture: {fileID: 2800000, guid: eed8c056850ba7f49a61804e5d85f0bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _DownTex
         second:
-          m_Texture: {fileID: 2800000, guid: 62855751ee062404f8cc157376806c90, type: 3}
+          m_Texture: {fileID: 2800000, guid: eed8c056850ba7f49a61804e5d85f0bb, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -140,22 +140,6 @@ Material:
         first:
           name: _Cutoff
         second: .5
-      data:
-        first:
-          name: _Exposure
-        second: 1
-      data:
-        first:
-          name: _SunDisk
-        second: 2
-      data:
-        first:
-          name: _SunSize
-        second: .0399999991
-      data:
-        first:
-          name: _AtmosphereThickness
-        second: 1
       data:
         first:
           name: _Parallax
@@ -192,6 +176,22 @@ Material:
         first:
           name: _Metallic
         second: 0
+      data:
+        first:
+          name: _Exposure
+        second: 1
+      data:
+        first:
+          name: _SunDisk
+        second: 2
+      data:
+        first:
+          name: _SunSize
+        second: .0399999991
+      data:
+        first:
+          name: _AtmosphereThickness
+        second: 1
       data:
         first:
           name: _Rotation
