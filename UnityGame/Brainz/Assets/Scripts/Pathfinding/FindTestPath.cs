@@ -162,6 +162,7 @@ public class FindTestPath : MonoBehaviour
                     break;
                 case WaypointType.Types.elevator:
                     GetComponent<Rigidbody>().isKinematic = false;
+                    anim.SetBool("IsIdle", true);
                     controller.enabled = false;
 
                     break;
@@ -214,6 +215,7 @@ public class FindTestPath : MonoBehaviour
                 case WaypointType.Types.elevator:
                     GetComponent<Rigidbody>().isKinematic = false;
                     controller.enabled = false;
+                    anim.SetBool("IsIdle", true);
                     break;
                 case WaypointType.Types.elevatorExit:
                     GetComponent<Rigidbody>().isKinematic = true;
