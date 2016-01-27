@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class CubeControl : MonoBehaviour
 {
@@ -28,6 +29,7 @@ public class CubeControl : MonoBehaviour
     //Audio Components
     private AudioSource audioPlayer;
     public AudioClip clipObjectMoving;
+    public AudioMixerGroup audioMixerGroup;
     public float fAudioPitch = 0.6f;
     private bool bAudioHasPlayed = false;  // only there cause the sounds are not looping perfectly
 
@@ -49,6 +51,7 @@ public class CubeControl : MonoBehaviour
         if (this.gameObject.GetComponent<AudioSource>() == null)
         {
             audioPlayer = this.gameObject.AddComponent<AudioSource>();
+            audioPlayer.outputAudioMixerGroup = audioMixerGroup;
             audioPlayer.playOnAwake = false;
             audioPlayer.clip = clipObjectMoving;
             audioPlayer.pitch = fAudioPitch;

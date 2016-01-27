@@ -256,6 +256,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .899999976
 --- !u!54 &19966514
 Rigidbody:
@@ -419,6 +420,7 @@ MonoBehaviour:
   blocktype: 4
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .5
 --- !u!54 &30498906
 Rigidbody:
@@ -749,6 +751,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &81501278
 MeshCollider:
@@ -1045,6 +1048,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &116488237
 Rigidbody:
@@ -1181,6 +1185,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &131549840
 MeshCollider:
@@ -1788,6 +1793,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &185466056
 MeshCollider:
@@ -2007,6 +2013,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!1 &218154902 stripped
 GameObject:
@@ -2262,6 +2269,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &225235153
 MeshCollider:
@@ -2339,6 +2347,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!65 &229105943
 BoxCollider:
@@ -2504,6 +2513,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &233109245
 Rigidbody:
@@ -3874,6 +3884,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &249089465
 Rigidbody:
@@ -4180,6 +4191,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .600000024
 --- !u!1 &295507570
 GameObject:
@@ -4215,6 +4227,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .899999976
 --- !u!54 &295507572
 Rigidbody:
@@ -4957,6 +4970,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &328053660
 Rigidbody:
@@ -6081,6 +6095,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &419095258
 MeshCollider:
@@ -6634,6 +6649,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &454723156
 Rigidbody:
@@ -6751,6 +6767,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &456764201
 Rigidbody:
@@ -7040,6 +7057,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!65 &481019465
 BoxCollider:
@@ -7134,6 +7152,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &482803128
 Rigidbody:
@@ -9021,6 +9040,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &563979351
 Rigidbody:
@@ -9172,6 +9192,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &585909243
 Rigidbody:
@@ -9337,6 +9358,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &604116081
 Rigidbody:
@@ -9666,6 +9688,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!114 &637917812
 MonoBehaviour:
@@ -9832,6 +9855,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &661366104
 Rigidbody:
@@ -10563,6 +10587,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &715797836
 MeshCollider:
@@ -10965,6 +10990,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: 2
 --- !u!54 &740263564
 Rigidbody:
@@ -11015,6 +11041,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &741113879
 Rigidbody:
@@ -11105,6 +11132,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &744522543
 MeshCollider:
@@ -12310,6 +12338,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .699999988
 --- !u!54 &780407413
 Rigidbody:
@@ -13314,6 +13343,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &906571178
 Rigidbody:
@@ -13600,6 +13630,7 @@ MonoBehaviour:
   blocktype: 3
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!114 &909160191
 MonoBehaviour:
@@ -13628,7 +13659,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: .949999988
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -13638,22 +13669,62 @@ AudioSource:
   MinDistance: 1.09760094
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
+    - time: .00219520181
+      value: 1.02499998
+      inSlope: -455.720459
+      outSlope: -455.720459
+      tangentMode: 0
+    - time: .00439040363
+      value: .616666675
+      inSlope: -113.930115
+      outSlope: -113.930115
+      tangentMode: 0
+    - time: .00878080726
+      value: .366666645
+      inSlope: -28.4825287
+      outSlope: -28.4825287
+      tangentMode: 0
+    - time: .0175616145
+      value: .24166666
+      inSlope: -7.12063217
+      outSlope: -7.12063217
+      tangentMode: 0
+    - time: .035123229
+      value: .17916666
+      inSlope: -1.78015804
+      outSlope: -1.78015804
+      tangentMode: 0
+    - time: .0702464581
+      value: .14791666
+      inSlope: -.445039511
+      outSlope: -.445039511
+      tangentMode: 0
+    - time: .140492916
+      value: .13229166
+      inSlope: -.111259878
+      outSlope: -.111259878
+      tangentMode: 0
+    - time: .280985832
+      value: .12447916
+      inSlope: -.0278149694
+      outSlope: -.0278149694
+      tangentMode: 0
+    - time: .561971664
+      value: .12057291
+      inSlope: -.00695374236
+      outSlope: -.00695374236
       tangentMode: 0
     - time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      value: .118861869
+      inSlope: -.00219608191
+      outSlope: -.00219608191
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -14728,6 +14799,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .479999989
 --- !u!54 &994606764
 Rigidbody:
@@ -14954,6 +15026,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &1026302306
 MeshCollider:
@@ -17096,6 +17169,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &1096162549
 Rigidbody:
@@ -17355,6 +17429,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &1130941479
 Rigidbody:
@@ -17711,6 +17786,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!65 &1143684427
 BoxCollider:
@@ -17940,6 +18016,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .449999988
 --- !u!54 &1165848830
 Rigidbody:
@@ -18023,6 +18100,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &1175605135
 Rigidbody:
@@ -18261,6 +18339,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &1182668086
 Rigidbody:
@@ -18429,7 +18508,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 448846, guid: c3177eb7080335d4188e6496ef154823, type: 2}
       propertyPath: m_RootOrder
-      value: 28
+      value: 31
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3177eb7080335d4188e6496ef154823, type: 2}
@@ -18531,6 +18610,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &1218874537
 MeshCollider:
@@ -18744,6 +18824,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &1242286680
 Rigidbody:
@@ -18979,6 +19060,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &1277436701
 MeshCollider:
@@ -20522,6 +20604,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &1316348431
 Rigidbody:
@@ -20642,6 +20725,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!1 &1329804335
 GameObject:
@@ -20722,6 +20806,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!65 &1334788019
 BoxCollider:
@@ -21072,6 +21157,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &1353726161
 MeshCollider:
@@ -23096,6 +23182,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .300000012
 --- !u!54 &1427841541
 Rigidbody:
@@ -24158,6 +24245,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &1551956567
 Rigidbody:
@@ -24705,7 +24793,8 @@ AudioSource:
   m_GameObject: {fileID: 1623639739}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300001, guid: 2c28514ad2be49b48b276eac6ec1a102,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: d8fc394260c81894b93440c5f0edc882, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -24909,6 +24998,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &1678382581
 MeshCollider:
@@ -25125,6 +25215,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!64 &1695467648
 MeshCollider:
@@ -26802,6 +26893,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &1825524685
 Rigidbody:
@@ -28122,6 +28214,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: 1.20000005
 --- !u!54 &2011392979
 Rigidbody:
@@ -29992,6 +30085,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!114 &2074516967
 MonoBehaviour:
@@ -30432,6 +30526,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &2092868389
 Rigidbody:
@@ -30494,6 +30589,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 0}
+  audioMixerGroup: {fileID: 0}
   fAudioPitch: .600000024
 --- !u!54 &2099089775
 Rigidbody:
