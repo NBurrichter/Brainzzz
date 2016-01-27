@@ -43,6 +43,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 438366}
   - 95: {fileID: 9537318}
+  - 65: {fileID: 6548630}
+  - 114: {fileID: 11411852}
+  - 54: {fileID: 5412676}
+  - 65: {fileID: 6549596}
   m_Layer: 0
   m_Name: memoryblocker
   m_TagString: Untagged
@@ -98,8 +102,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 7.0011735, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: .0399999991, y: 4.8499999, z: -35.4399986}
+  m_LocalScale: {x: .942623854, y: .844304204, z: .834733367}
   m_Children:
   - {fileID: 419956}
   - {fileID: 416514}
@@ -211,6 +215,45 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181886}
   m_Mesh: {fileID: 4300004, guid: d12cfafac74261f4b910a3533bc7358e, type: 3}
+--- !u!54 &5412676
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146484}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &6548630
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.2088203, y: 11.2064724, z: 11.2292891}
+  m_Center: {x: .00314439577, y: 9.88346437e-05, z: .0037062366}
+--- !u!65 &6549596
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.2088203, y: 11.2064724, z: 11.2292891}
+  m_Center: {x: .00314439577, y: 9.88346437e-05, z: .0037062366}
 --- !u!95 &9537318
 Animator:
   serializedVersion: 3
@@ -228,6 +271,21 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &11411852
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 146484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faa4820683e69d1479e3b29c50ef5916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  blocktype: 0
+  showSleeping: 0
+  clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
+  fAudioPitch: .600000024
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
