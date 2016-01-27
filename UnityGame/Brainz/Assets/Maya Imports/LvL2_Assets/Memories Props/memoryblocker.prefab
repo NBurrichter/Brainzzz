@@ -45,8 +45,7 @@ GameObject:
   - 95: {fileID: 9537318}
   - 65: {fileID: 6548630}
   - 114: {fileID: 11411852}
-  - 54: {fileID: 5412676}
-  - 65: {fileID: 6549596}
+  - 54: {fileID: 5436318}
   m_Layer: 0
   m_Name: memoryblocker
   m_TagString: Untagged
@@ -102,7 +101,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .0399999991, y: 4.8499999, z: -35.4399986}
+  m_LocalPosition: {x: .0399999991, y: 5.10220003, z: -35.4399986}
   m_LocalScale: {x: .942623854, y: .844304204, z: .834733367}
   m_Children:
   - {fileID: 419956}
@@ -215,7 +214,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 181886}
   m_Mesh: {fileID: 4300004, guid: d12cfafac74261f4b910a3533bc7358e, type: 3}
---- !u!54 &5412676
+--- !u!54 &5436318
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -231,18 +230,6 @@ Rigidbody:
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &6548630
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146484}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 11.2088203, y: 11.2064724, z: 11.2292891}
-  m_Center: {x: .00314439577, y: 9.88346437e-05, z: .0037062366}
---- !u!65 &6549596
 BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -285,14 +272,18 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
-  fAudioPitch: .600000024
+  fAudioPitch: .400000006
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: fAudioPitch
+      value: .400000006
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146484}
