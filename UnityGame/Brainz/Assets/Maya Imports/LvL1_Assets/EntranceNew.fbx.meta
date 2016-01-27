@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: b4c337e344c7355459fef1a36a94412c
+timeCreated: 1453820167
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Entrance
+    100002: //RootNode
+    100004: ersterRaum
+    100006: Nerv1
+    100008: Nerv2
+    100010: Nerv3
+    100012: Nerv4
+    100014: Nerv5
+    100016: Nerv6
+    100018: Nerv7
+    100020: polySurface1
+    100022: pSphere1
+    100024: "R\xE4ume"
+    100026: Welt1
+    100028: Welt2
+    100030: Window
+    100032: Window2
+    100034: Window3
+    100036: Nerv8
+    100038: Roof
+    100040: Roofleft
+    100042: Welt3
+    100044: Window4
+    100046: Doorway
+    400000: Entrance
+    400002: //RootNode
+    400004: ersterRaum
+    400006: Nerv1
+    400008: Nerv2
+    400010: Nerv3
+    400012: Nerv4
+    400014: Nerv5
+    400016: Nerv6
+    400018: Nerv7
+    400020: polySurface1
+    400022: pSphere1
+    400024: "R\xE4ume"
+    400026: Welt1
+    400028: Welt2
+    400030: Window
+    400032: Window2
+    400034: Window3
+    400036: Nerv8
+    400038: Roof
+    400040: Roofleft
+    400042: Welt3
+    400044: Window4
+    400046: Doorway
+    2300000: Entrance
+    2300002: Nerv1
+    2300004: Nerv2
+    2300006: Nerv3
+    2300008: Nerv4
+    2300010: Nerv5
+    2300012: Nerv6
+    2300014: Nerv7
+    2300016: polySurface1
+    2300018: pSphere1
+    2300020: Welt1
+    2300022: Welt2
+    2300024: Window
+    2300026: Window2
+    2300028: Window3
+    2300030: Nerv8
+    2300032: Roof
+    2300034: Roofleft
+    2300036: Welt3
+    2300038: Window4
+    2300040: Doorway
+    3300000: Entrance
+    3300002: Nerv1
+    3300004: Nerv2
+    3300006: Nerv3
+    3300008: Nerv4
+    3300010: Nerv5
+    3300012: Nerv6
+    3300014: Nerv7
+    3300016: polySurface1
+    3300018: pSphere1
+    3300020: Welt1
+    3300022: Welt2
+    3300024: Window
+    3300026: Window2
+    3300028: Window3
+    3300030: Nerv8
+    3300032: Roof
+    3300034: Roofleft
+    3300036: Welt3
+    3300038: Window4
+    3300040: Doorway
+    4300000: polySurface1
+    4300002: Entrance
+    4300004: Window
+    4300006: Nerv1
+    4300008: Window2
+    4300010: Nerv3
+    4300012: Nerv2
+    4300014: Window3
+    4300016: Nerv4
+    4300018: pSphere1
+    4300020: Welt1
+    4300022: Nerv5
+    4300024: Welt2
+    4300026: Nerv6
+    4300028: Nerv7
+    4300030: Roof
+    4300032: Roofleft
+    4300034: Window4
+    4300036: Nerv8
+    4300038: Welt3
+    4300040: Doorway
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 250
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

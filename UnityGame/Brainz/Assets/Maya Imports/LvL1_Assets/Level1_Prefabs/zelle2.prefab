@@ -807,8 +807,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5707d88ffea0e324f9f089b2becd0b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  amplification: .25
+  speed: 3
+  amplification: .800000012
+  offset: 1
 --- !u!114 &11469138
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -822,6 +823,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
+  clipObjectMoving: {fileID: 0}
+  fAudioPitch: .600000024
 --- !u!135 &13513528
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -904,6 +907,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Convex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: offset
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: amplification
+      value: .800000012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
