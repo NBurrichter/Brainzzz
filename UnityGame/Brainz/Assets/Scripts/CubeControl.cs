@@ -10,10 +10,13 @@ public class CubeControl : MonoBehaviour
     public enum BlockType { Cube, Ramp, NPC, NPCAStar, Elevator};
     public BlockType blocktype;
 
+    // Needed to acces the other Scripts
     private Blop1Control Blop1Script;
     private Blop2Control Blop2Script;
 
     private Rigidbody rbody;
+
+    private string stOldTag;
 
     //Only needed for NPC
     private NavmeshTestNavigation navigation;
@@ -76,8 +79,8 @@ public class CubeControl : MonoBehaviour
     
         showSleeping = rbody.IsSleeping();
         
-        // Reset if its not an attachment
-        if (this.gameObject.tag == "Untagged")
+        // Reset if object was an attachment in the previous frame and is no attachment now
+        if (this.gameObject.tag == "Untagged" && stOldTag !="Untagged")
         {
             ResetObject();
         }
@@ -112,6 +115,9 @@ public class CubeControl : MonoBehaviour
                 finished = false;
             }
         }
+
+        // Get the Tag of the Object
+        stOldTag = this.gameObject.tag;
     }
 
     /// <summary>
