@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: faa4820683e69d1479e3b29c50ef5916
-timeCreated: 1453806456
+timeCreated: 1453988386
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
   - clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
+  - audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

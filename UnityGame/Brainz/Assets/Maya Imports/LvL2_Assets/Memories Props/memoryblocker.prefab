@@ -272,6 +272,7 @@ MonoBehaviour:
   blocktype: 0
   showSleeping: 0
   clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .400000006
 --- !u!1001 &100100000
 Prefab:
@@ -284,6 +285,11 @@ Prefab:
       propertyPath: fAudioPitch
       value: .400000006
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: audioMixerGroup
+      value: 
+      objectReference: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 146484}
