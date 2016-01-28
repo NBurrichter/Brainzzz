@@ -58,6 +58,7 @@ public class PlayerControl : MonoBehaviour {
 		player = this.gameObject;
 		qRotation = player.transform.rotation;
 		isGrappling=false;
+        fXRotation = 180;
 	}
 	
 	void Update ()
