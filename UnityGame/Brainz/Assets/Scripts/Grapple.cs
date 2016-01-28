@@ -76,6 +76,7 @@ public class Grapple : MonoBehaviour
 
         }
 
+        
         if(isGrappling)
         {
             // grapple to bBlop 1
@@ -126,6 +127,47 @@ public class Grapple : MonoBehaviour
 
     }
 
+    void LateUpdate()
+    {
+        if (isGrappling)
+        {
+            // grapple to bBlop 1
+            if (iBlopToDragTo == 1)
+            {
+                grappleParticleObject.transform.LookAt(goBlopOne.transform.position);
+                dist = Vector3.Distance(transform.position, goBlopOne.transform.position);
+                float lifetime = dist / grapplePaticleSystem.startSpeed;
+                grapplePaticleSystem.startLifetime = lifetime;
+                grapplePaticleSystem.Play(true);
+            }
+            // Grapple to Blop 2
+            if (iBlopToDragTo == 2)
+            {
+                grappleParticleObject.transform.LookAt(goBlopTwo.transform.position);
+                dist = Vector3.Distance(transform.position, goBlopTwo.transform.position);
+                float lifetime = dist / grapplePaticleSystem.startSpeed;
+                grapplePaticleSystem.startLifetime = lifetime;
+                grapplePaticleSystem.Play(true);
+            }
+
+
+            ParticleSystem.Particle[] particleList = new ParticleSystem.Particle[grapplePaticleSystem.particleCount];
+            grapplePaticleSystem.GetParticles(particleList);
+            for (int n = 0; n < particleList.Length; n++)
+            {
+                Debug.DrawLine(grappleParticleObject.transform.TransformPoint(particleList[n].position), Vector3.zero);
+                if (Vector3.Distance(grappleParticleObject.transform.TransformPoint(particleList[n].position), transform.position) > dist)
+                {
+
+                    particleList[n].size = 0;
+
+                }
+            }
+
+            grapplePaticleSystem.SetParticles(particleList, grapplePaticleSystem.particleCount);
+
+        }
+    }
 
     /// <summary>
     /// searches for the two blops and stores them in their respective variables
