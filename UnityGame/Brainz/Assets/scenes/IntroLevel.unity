@@ -3839,6 +3839,10 @@ Prefab:
       propertyPath: grounded
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 172744, guid: c3177eb7080335d4188e6496ef154823, type: 2}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3177eb7080335d4188e6496ef154823, type: 2}
   m_IsPrefabParent: 0
