@@ -11520,8 +11520,9 @@ MonoBehaviour:
   - {fileID: 1052389435}
   walkState: 0
   lookAtDummy: {fileID: 1049805552}
-  clipSonWalking: {fileID: 0}
+  clipSonWalking: {fileID: 8300000, guid: b99c1684928c36946a0849b15e081b8b, type: 3}
   wait: 0
+  finished: 0
 --- !u!54 &909160186
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11646,7 +11647,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b99c1684928c36946a0849b15e081b8b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .949999988
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
