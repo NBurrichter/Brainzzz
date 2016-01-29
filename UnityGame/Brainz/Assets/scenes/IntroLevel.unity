@@ -269,8 +269,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
-  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  audioMixerGroup: {fileID: 0}
+  clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .600000024
 --- !u!54 &250908225
 Rigidbody:
@@ -1413,8 +1413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
-  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  audioMixerGroup: {fileID: 0}
+  clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .600000024
 --- !u!54 &463876294
 Rigidbody:
@@ -1460,8 +1460,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
-  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  audioMixerGroup: {fileID: 0}
+  clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .600000024
 --- !u!54 &531548829
 Rigidbody:
@@ -2432,8 +2432,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
-  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  audioMixerGroup: {fileID: 0}
+  clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .600000024
 --- !u!54 &1181031015
 Rigidbody:
@@ -2495,8 +2495,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
-  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  audioMixerGroup: {fileID: 0}
+  clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .600000024
 --- !u!54 &1305470974
 Rigidbody:
@@ -3718,8 +3718,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocktype: 0
   showSleeping: 0
-  clipObjectMoving: {fileID: 8300000, guid: dd6b97694117d084c977ceab22d8dcd9, type: 3}
-  audioMixerGroup: {fileID: 0}
+  clipObjectMoving: {fileID: 8300000, guid: 14d2b2e6c1f106c41a52eaf9c9a6b3b3, type: 3}
+  audioMixerGroup: {fileID: 24300001, guid: 50e9a38b0a72f8f429f11b518c785082, type: 2}
   fAudioPitch: .600000024
 --- !u!54 &1691707061
 Rigidbody:
