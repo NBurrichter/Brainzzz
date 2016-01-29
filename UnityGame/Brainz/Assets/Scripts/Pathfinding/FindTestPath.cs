@@ -37,7 +37,7 @@ public class FindTestPath : MonoBehaviour
 
     //bool wait and finished
     public bool wait;
-    private bool finished;
+    public bool finished;
 
     //animation controlls
     private Animator anim;
@@ -74,6 +74,16 @@ public class FindTestPath : MonoBehaviour
     }
     public void Update()
     {
+        if(Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            speed += 0.1f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            speed -= 0.1f;
+        }
+
         if (finished)
         {
             return;
@@ -277,7 +287,7 @@ public class FindTestPath : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //Debug.Log(other.tag);
+        Debug.Log(other.tag);
         if (other.tag == "Waypoint")
         {
             WaypointType pointType = other.transform.parent.GetComponent<WaypointType>();
