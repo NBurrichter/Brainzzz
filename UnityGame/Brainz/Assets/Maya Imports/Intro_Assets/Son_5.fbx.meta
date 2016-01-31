@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 78a5ea7a0dc90d6449c279f5b51d31b6
+timeCreated: 1454256280
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: SON6:Haare
+    100002: SON6:pCylinder1
+    100004: SON6:polySurface1
+    100006: SON6:polySurface10
+    100008: SON6:polySurface11
+    100010: SON6:polySurface12
+    100012: SON6:polySurface13
+    100014: SON6:polySurface14
+    100016: SON6:polySurface15
+    100018: SON6:polySurface16
+    100020: SON6:polySurface2
+    100022: SON6:polySurface3
+    100024: SON6:polySurface4
+    100026: SON6:polySurface5
+    100028: SON6:polySurface6
+    100030: SON6:polySurface7
+    100032: SON6:polySurface8
+    100034: SON6:polySurface9
+    100036: SON6:Son_LeftEye
+    100038: SON6:Son_Legs
+    100040: SON6:Son_RightEye
+    100042: SON6:Son_UpperBody
+    100044: SON6:transform2
+    100046: //RootNode
+    100048: Son_UpperBody1
+    400000: SON6:Haare
+    400002: SON6:pCylinder1
+    400004: SON6:polySurface1
+    400006: SON6:polySurface10
+    400008: SON6:polySurface11
+    400010: SON6:polySurface12
+    400012: SON6:polySurface13
+    400014: SON6:polySurface14
+    400016: SON6:polySurface15
+    400018: SON6:polySurface16
+    400020: SON6:polySurface2
+    400022: SON6:polySurface3
+    400024: SON6:polySurface4
+    400026: SON6:polySurface5
+    400028: SON6:polySurface6
+    400030: SON6:polySurface7
+    400032: SON6:polySurface8
+    400034: SON6:polySurface9
+    400036: SON6:Son_LeftEye
+    400038: SON6:Son_Legs
+    400040: SON6:Son_RightEye
+    400042: SON6:Son_UpperBody
+    400044: SON6:transform2
+    400046: //RootNode
+    400048: Son_UpperBody1
+    2300000: SON6:polySurface1
+    2300002: SON6:polySurface10
+    2300004: SON6:polySurface11
+    2300006: SON6:polySurface12
+    2300008: SON6:polySurface13
+    2300010: SON6:polySurface14
+    2300012: SON6:polySurface15
+    2300014: SON6:polySurface16
+    2300016: SON6:polySurface2
+    2300018: SON6:polySurface3
+    2300020: SON6:polySurface4
+    2300022: SON6:polySurface5
+    2300024: SON6:polySurface6
+    2300026: SON6:polySurface7
+    2300028: SON6:polySurface8
+    2300030: SON6:polySurface9
+    2300032: SON6:Son_LeftEye
+    2300034: SON6:Son_Legs
+    2300036: SON6:Son_RightEye
+    2300038: SON6:Son_UpperBody
+    2300040: Son_UpperBody1
+    3300000: SON6:polySurface1
+    3300002: SON6:polySurface10
+    3300004: SON6:polySurface11
+    3300006: SON6:polySurface12
+    3300008: SON6:polySurface13
+    3300010: SON6:polySurface14
+    3300012: SON6:polySurface15
+    3300014: SON6:polySurface16
+    3300016: SON6:polySurface2
+    3300018: SON6:polySurface3
+    3300020: SON6:polySurface4
+    3300022: SON6:polySurface5
+    3300024: SON6:polySurface6
+    3300026: SON6:polySurface7
+    3300028: SON6:polySurface8
+    3300030: SON6:polySurface9
+    3300032: SON6:Son_LeftEye
+    3300034: SON6:Son_Legs
+    3300036: SON6:Son_RightEye
+    3300038: SON6:Son_UpperBody
+    3300040: Son_UpperBody1
+    4300000: Son_UpperBody1
+    4300002: SON6:Son_Legs
+    4300004: SON6:Son_LeftEye
+    4300006: SON6:Son_RightEye
+    4300008: SON6:Son_UpperBody
+    4300010: SON6:polySurface1
+    4300012: SON6:polySurface2
+    4300014: SON6:polySurface3
+    4300016: SON6:polySurface4
+    4300018: SON6:polySurface5
+    4300020: SON6:polySurface6
+    4300022: SON6:polySurface7
+    4300024: SON6:polySurface8
+    4300026: SON6:polySurface9
+    4300028: SON6:polySurface10
+    4300030: SON6:polySurface11
+    4300032: SON6:polySurface12
+    4300034: SON6:polySurface13
+    4300036: SON6:polySurface14
+    4300038: SON6:polySurface15
+    4300040: SON6:polySurface16
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 250
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
