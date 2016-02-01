@@ -5,10 +5,14 @@ public class BlopLifetime : MonoBehaviour {
 
 
     public float fBlopLifetime; // the Lifetime of the Blop
+    public GameObject goBlopDestructionParticlePrefab;
+
     private float fTimer;
 
     private Blop1Control ScriptBlop1;
     private Blop2Control ScriptBlop2;
+    private GameObject Blop1DesructionParticle;
+    private GameObject Blop2DestructionParticle;
 
     private bool isUsed;
 
@@ -43,11 +47,22 @@ public class BlopLifetime : MonoBehaviour {
         {
             if(ScriptBlop1!=null)
             {
+                Blop1DesructionParticle = Instantiate(goBlopDestructionParticlePrefab, this.transform.position, Quaternion.identity) as GameObject;
+                Debug.LogWarning(Blop1DesructionParticle.name);
+                Destroy(Blop1DesructionParticle, 1.5f);
+                Debug.LogWarning("Destroy Particle");
                 ScriptBlop1.DestroyThisBlop();
+                
+                
+
             }
             else
             {
+                Blop2DestructionParticle = Instantiate(goBlopDestructionParticlePrefab, this.transform.position, Quaternion.identity) as GameObject;
                 ScriptBlop2.DestroyThisBlop();
+                Destroy(Blop2DestructionParticle,1.5f);
+
+
             }
         }
 	}

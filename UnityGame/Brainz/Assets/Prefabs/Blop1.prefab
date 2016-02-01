@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fBlopLifetime: 1.60000002
+  goBlopDestructionParticlePrefab: {fileID: 111068, guid: f5f0404fbcc61fe468f15a93c16ce402,
+    type: 2}
 --- !u!114 &11443706
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2622,6 +2624,10 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 4300000, guid: b78d49b91dba7654b8de7c635c20b4fd, type: 3}
+    - target: {fileID: 0}
+      propertyPath: goBlopDestructionParticlePrefab
+      value: 
+      objectReference: {fileID: 111068, guid: f5f0404fbcc61fe468f15a93c16ce402, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 148576}
