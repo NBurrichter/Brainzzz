@@ -10,11 +10,12 @@ public class DamageIndicator : MonoBehaviour
     public GameObject hair1;
     public GameObject hair2;
     public Renderer[] rend;
+    public GameObject[] nonDamage;
 
     void Start()
     {
         health = maxHealth;
-        rend = renderObject.GetComponentsInChildren<Renderer>();
+        //rend = renderObject.GetComponentsInChildren<Renderer>();
 
     }
 
@@ -26,7 +27,17 @@ public class DamageIndicator : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.name);
-        if (health > 0)
+
+        bool takeDamage = true;
+        foreach(GameObject obj in nonDamage)
+        {
+            if(obj == collision.gameObject)
+            {
+                takeDamage = false;
+            }
+        }
+
+        if (takeDamage && health > 0)
         {
             health--;
         }

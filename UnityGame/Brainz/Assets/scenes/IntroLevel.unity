@@ -468,6 +468,7 @@ MonoBehaviour:
   hair1: {fileID: 1670188664}
   hair2: {fileID: 946753812}
   rend: []
+  nonDamage: []
 --- !u!114 &280517117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2073,6 +2074,7 @@ MonoBehaviour:
   hair1: {fileID: 0}
   hair2: {fileID: 0}
   rend: []
+  nonDamage: []
 --- !u!1 &946753812 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100282, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
@@ -3110,19 +3112,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400160, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -.173470512
+      value: -.173470497
       objectReference: {fileID: 0}
     - target: {fileID: 400160, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
       propertyPath: m_LocalRotation.y
-      value: .686147511
+      value: .686147451
       objectReference: {fileID: 0}
     - target: {fileID: 400160, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -.639828205
+      value: -.639828146
       objectReference: {fileID: 0}
     - target: {fileID: 400160, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -.299549013
+      value: -.299548984
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
       propertyPath: m_Controller
@@ -3928,6 +3930,18 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e68212a8496917241a6e533fb74802b9, type: 2}
+    - target: {fileID: 13700044, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fdbc4aeb0f2071043ac6e100d9cab5ad, type: 2}
+    - target: {fileID: 13700042, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41749e08cc0cbaf4fa4efff169ea2885, type: 2}
+    - target: {fileID: 13700046, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41749e08cc0cbaf4fa4efff169ea2885, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
   m_IsPrefabParent: 0
@@ -3973,6 +3987,14 @@ Prefab:
     - target: {fileID: 100008, guid: 97ea7776bc1e74f4c97cfbdcf45caa07, type: 3}
       propertyPath: m_Name
       value: Pillar_Export_V002 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: 97ea7776bc1e74f4c97cfbdcf45caa07, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300010, guid: 97ea7776bc1e74f4c97cfbdcf45caa07, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 97ea7776bc1e74f4c97cfbdcf45caa07, type: 3}
