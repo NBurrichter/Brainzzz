@@ -22,6 +22,7 @@ public class StartScreenButtonControl : MonoBehaviour {
 
         if (Input.anyKeyDown && bStartGameEnabled == true)
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Cursor.SetCursor(t2DCrosshair, vTextureOffset, CursorMode.Auto);
             Application.LoadLevel(1);
         }
