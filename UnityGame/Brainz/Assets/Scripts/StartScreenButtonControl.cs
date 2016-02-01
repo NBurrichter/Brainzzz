@@ -23,14 +23,14 @@ public class StartScreenButtonControl : MonoBehaviour {
         if (Input.anyKeyDown && bStartGameEnabled == true)
         {
             Cursor.SetCursor(t2DCrosshair, vTextureOffset, CursorMode.Auto);
-            Application.LoadLevel(2);
+            Application.LoadLevel(1);
         }
 	}
 
 
     public void StartButtonpressed()
     {
-       Application.LoadLevel(2);
+       Application.LoadLevel(1);
     } 
 
     public void QuitButtonPressed()
