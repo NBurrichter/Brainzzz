@@ -29,6 +29,7 @@ ModelImporter:
     100042: Welt3
     100044: Window4
     100046: Doorway
+    100048: Outside
     400000: Entrance
     400002: //RootNode
     400004: ersterRaum
@@ -53,6 +54,7 @@ ModelImporter:
     400042: Welt3
     400044: Window4
     400046: Doorway
+    400048: Outside
     2300000: Entrance
     2300002: Nerv1
     2300004: Nerv2
@@ -74,6 +76,7 @@ ModelImporter:
     2300036: Welt3
     2300038: Window4
     2300040: Doorway
+    2300042: Outside
     3300000: Entrance
     3300002: Nerv1
     3300004: Nerv2
@@ -95,6 +98,7 @@ ModelImporter:
     3300036: Welt3
     3300038: Window4
     3300040: Doorway
+    3300042: Outside
     4300000: polySurface1
     4300002: Entrance
     4300004: Window
@@ -116,6 +120,7 @@ ModelImporter:
     4300036: Nerv8
     4300038: Welt3
     4300040: Doorway
+    4300042: Outside
     9500000: //RootNode
   materials:
     importMaterials: 1
