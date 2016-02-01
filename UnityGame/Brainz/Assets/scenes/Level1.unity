@@ -612,6 +612,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 63199353}
+  - 33: {fileID: 63199356}
+  - 23: {fileID: 63199355}
+  - 64: {fileID: 63199354}
   m_Layer: 0
   m_Name: Waypoints
   m_TagString: Untagged
@@ -648,6 +651,49 @@ Transform:
   - {fileID: 1893612530}
   m_Father: {fileID: 0}
   m_RootOrder: 87
+--- !u!64 &63199354
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63199352}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300040, guid: c07d26df243ce7049a29e6523ae2a12b, type: 3}
+--- !u!23 &63199355
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63199352}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!33 &63199356
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63199352}
+  m_Mesh: {fileID: 4300040, guid: c07d26df243ce7049a29e6523ae2a12b, type: 3}
 --- !u!1 &63390390
 GameObject:
   m_ObjectHideFlags: 0
@@ -12620,6 +12666,14 @@ Prefab:
       propertyPath: m_Layer
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 13700046, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41749e08cc0cbaf4fa4efff169ea2885, type: 2}
+    - target: {fileID: 13700042, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 41749e08cc0cbaf4fa4efff169ea2885, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ff5fc114e4c16db4dbda7c55e2179458, type: 3}
   m_IsPrefabParent: 0
@@ -25989,7 +26043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cd25de5d809ae740ae62d32f8ac5bd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t2DCrosshair: {fileID: 2800000, guid: 4dbf1f12050c0a74784e65d4d7cd6833, type: 3}
+  t2DCrosshair: {fileID: 2800000, guid: 48de09f123062344380a472eddb03e60, type: 3}
 --- !u!114 &1623639742
 MonoBehaviour:
   m_ObjectHideFlags: 0
