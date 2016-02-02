@@ -3,11 +3,19 @@ using System.Collections;
 
 public class SoundTrigger : MonoBehaviour {
 
-    public int soundClipNumber;
-
     private bool played;
 
-	void Start ()
+    private AudioSource source;
+
+    public AudioClip soundClips;
+
+
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    void Start ()
     {
         played = false;
 	}
@@ -17,9 +25,10 @@ public class SoundTrigger : MonoBehaviour {
         Debug.Log(col.name);
         if (col.name == "Son" && !played)
         {
+            Debug.Log("PlayFrom : " + name);
             played = true;
+            source.PlayOneShot(soundClips);
 
-            PlaySoundlines.S.PlayWeightedSounds(soundClipNumber);
         }
     }
 

@@ -4,7 +4,9 @@ using UnityEngine.Audio;
 
 public class CubeControl : MonoBehaviour
 {
+    public static AudioClip hitSound;
 
+    public AudioClip hitSoundAssign;
 
     private bool bIsMergin;
     public enum BlockType { Cube, Ramp, NPC, NPCAStar, Elevator};
@@ -39,6 +41,10 @@ public class CubeControl : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        if(hitSoundAssign != null)
+        {
+            hitSound = hitSoundAssign;
+        }
         bIsMergin = false;
 
         saveSleeping = false;
@@ -58,6 +64,7 @@ public class CubeControl : MonoBehaviour
             audioPlayer.playOnAwake = false;
             audioPlayer.clip = clipObjectMoving;
             audioPlayer.pitch = fAudioPitch;
+            //audioPlayer.spatialBlend = 1;
         }
         else
         {
@@ -76,7 +83,6 @@ public class CubeControl : MonoBehaviour
             PlaySound();
         }
 
-    
         showSleeping = rbody.IsSleeping();
         
         // Reset if object was an attachment in the previous frame and is no attachment now
@@ -200,6 +206,8 @@ public class CubeControl : MonoBehaviour
 
     void OnCollisionEnter(Collision c)
     {
+
+        //audioPlayer.PlayOneShot(hitSound);
 
         // collision with other attachment
         if (this.gameObject.tag == "Blop1_Attachment" && c.gameObject.tag == "Blop2_Attachment")
