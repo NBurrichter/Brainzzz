@@ -14,9 +14,8 @@ public class PlaySoundlines : MonoBehaviour {
     public float damagedBorder;
     public float retardedBorder;
 
-    public AudioClip[] normalClips;
-    public AudioClip[] damagedClips;
-    public AudioClip[] retardedClips;
+    public AudioClip[] soundClips;
+
 
     void Awake()
     {
@@ -28,21 +27,15 @@ public class PlaySoundlines : MonoBehaviour {
     {
         sonDamageScript = GameObject.Find("Son").GetComponent<DamageIndicator>();
 	}
-	
-	void Update ()
-    {
-        /*
-        int i = Random.Range(0, 10);
-        if (i == 1)
-        {
-            PlayWeightedSounds(1);
-        }
-        */
-    }
+
 
     public void PlayWeightedSounds(int clipNumber)
     {
-        float damagePercentage = 1- ( sonDamageScript.GetHealth() / sonDamageScript.maxHealth);
+        Debug.Log("Playsound");
+        source.PlayOneShot(soundClips[clipNumber]);
+
+        //Legacy Sounds
+        /*float damagePercentage = 1- ( sonDamageScript.GetHealth() / sonDamageScript.maxHealth);
         Debug.Log(sonDamageScript.GetHealth().ToString()+ "  " + sonDamageScript.maxHealth.ToString());
         Debug.Log(damagePercentage.ToString());
 
@@ -69,6 +62,6 @@ public class PlaySoundlines : MonoBehaviour {
                     source.PlayOneShot(retardedClips[clipNumber]);
                 }
             }
-        }
+        }*/
     }
 }
