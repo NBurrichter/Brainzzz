@@ -41,7 +41,7 @@ RenderSettings:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -66,7 +66,8 @@ LightmapSettings:
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
     m_ReflectionCompression: 2
-  m_LightmapSnapshot: {fileID: 0}
+  m_LightmapSnapshot: {fileID: 112000001, guid: 1063b2c29f4345b45b26c66373c3013a,
+    type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &4
 NavMeshSettings:
@@ -193,13 +194,12 @@ AudioSource:
   m_GameObject: {fileID: 306064951}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 24300001, guid: 2c28514ad2be49b48b276eac6ec1a102,
-    type: 2}
-  m_audioClip: {fileID: 8300000, guid: 10bcc0077255e08418af5ee841abbaeb, type: 3}
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: a665334593af45243bae950c61220d92, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
+  m_Volume: .699999988
+  m_Pitch: .550000012
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -499,7 +499,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83c8720da9a7870429dba561a8a19498, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movie: {fileID: 15200000, guid: a19387e94533882498f903ff2d2e13ba, type: 3}
+  movieBackground: {fileID: 15200000, guid: a19387e94533882498f903ff2d2e13ba, type: 3}
+  movieIntro: {fileID: 15200000, guid: 500a74da5f42f174bb8d8577488061ec, type: 3}
+  Image: {fileID: 590556870}
+  buttonExit: {fileID: 2074256418}
 --- !u!1 &1333657964
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,14 +664,14 @@ RectTransform:
   m_GameObject: {fileID: 2074256418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .432711691, y: 1, z: 1}
+  m_LocalScale: {x: .335722744, y: .775857806, z: .775857806}
   m_Children:
   - {fileID: 521836559}
   m_Father: {fileID: 477702474}
   m_RootOrder: 1
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 320, y: -181}
+  m_AnchoredPosition: {x: 344, y: -191}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &2074256420
@@ -742,7 +745,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 7b81e81690f6a1340afb1ef791be6bfc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 38ef6510a14fb7b448384cc72bf31638, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
