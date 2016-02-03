@@ -8950,7 +8950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focusPoint: {fileID: 192914}
-  offset: {x: 0, y: 0, z: -2}
+  offset: {x: 0, y: 0, z: -1.5}
   rotationSpeed: 40
   speedOffsetAmplification: .200000003
 --- !u!114 &11459728

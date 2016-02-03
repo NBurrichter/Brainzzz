@@ -1665,7 +1665,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_RootOrder: 56
 --- !u!1 &146142582
 GameObject:
   m_ObjectHideFlags: 0
@@ -10252,7 +10252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 45
 --- !u!1 &585909241
 GameObject:
   m_ObjectHideFlags: 0
@@ -20303,6 +20303,10 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 11457772, guid: c3177eb7080335d4188e6496ef154823, type: 2}
+      propertyPath: offset.z
+      value: -2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3177eb7080335d4188e6496ef154823, type: 2}
   m_IsPrefabParent: 0
@@ -20386,7 +20390,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 56
+  m_RootOrder: 57
 --- !u!1 &1212931539
 GameObject:
   m_ObjectHideFlags: 0
@@ -25795,7 +25799,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 52
 --- !u!1001 &1475712344
 Prefab:
   m_ObjectHideFlags: 0
@@ -27196,7 +27200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d55fe4d67a5cfb4a9ee8dd5d10c5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fRotationSpeed: 100
+  fRotationSpeed: 40
   focusPoint: {fileID: 1113308922}
   cameraPositionPoint: {fileID: 1269908287}
   cameraOffset: {x: 0, y: 0, z: -4.5}

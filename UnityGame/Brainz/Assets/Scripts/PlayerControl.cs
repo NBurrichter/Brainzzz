@@ -104,6 +104,11 @@ public class PlayerControl : MonoBehaviour {
 
     }
 
+    void LateUpdate()
+    {
+        player.transform.rotation = qRotation;
+    }
+
     void FixedUpdate()
     {
 

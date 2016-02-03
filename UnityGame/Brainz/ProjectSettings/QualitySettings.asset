@@ -145,7 +145,7 @@ QualitySettings:
     softVegetation: 1
     realtimeReflectionProbes: 1
     billboardsFaceCameraPosition: 1
-    vSyncCount: 1
+    vSyncCount: 0
     lodBias: 2
     maximumLODLevel: 0
     particleRaycastBudget: 4096
@@ -153,7 +153,7 @@ QualitySettings:
   m_PerPlatformDefaultQuality:
     Android: 0
     Samsung TV: 0
-    Standalone: 0
+    Standalone: 5
     Tizen: 0
     WP8: 0
     Web: 0
