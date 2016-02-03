@@ -101,6 +101,7 @@ public class Blop2Control : MonoBehaviour
 
             if (c.gameObject.GetComponent<CubeControl>() == null)
             {
+                this.GetComponent<BlopLifetime>().PlayDestructionParticles2();
                 Destroy(this.gameObject);
                 return;
             }

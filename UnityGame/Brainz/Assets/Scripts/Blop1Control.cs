@@ -119,6 +119,7 @@ public class Blop1Control : MonoBehaviour
         {
             if (c.gameObject.GetComponent<CubeControl>() == null)
             {
+                this.GetComponent<BlopLifetime>().PlayDestructionParticles1();
                 Destroy(this.gameObject);
                 return;
             }
