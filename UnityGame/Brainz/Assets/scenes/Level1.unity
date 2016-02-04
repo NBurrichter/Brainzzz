@@ -10252,7 +10252,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 49
 --- !u!1 &585909241
 GameObject:
   m_ObjectHideFlags: 0
@@ -20303,10 +20303,6 @@ Prefab:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 11457772, guid: c3177eb7080335d4188e6496ef154823, type: 2}
-      propertyPath: offset.z
-      value: -2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c3177eb7080335d4188e6496ef154823, type: 2}
   m_IsPrefabParent: 0
@@ -25799,7 +25795,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 52
+  m_RootOrder: 53
 --- !u!1001 &1475712344
 Prefab:
   m_ObjectHideFlags: 0
@@ -27200,7 +27196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d55fe4d67a5cfb4a9ee8dd5d10c5ac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fRotationSpeed: 40
+  fRotationSpeed: 100
   focusPoint: {fileID: 1113308922}
   cameraPositionPoint: {fileID: 1269908287}
   cameraOffset: {x: 0, y: 0, z: -4.5}
