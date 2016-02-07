@@ -9,4 +9,5 @@ To add the missing assets back into the game, the Unitypackage needs to be reimp
 The game needs to be run with Unity 5.2.2f1
 
 # Opening the project
-Opening the project for the first time, can take a while. Espacially the videos may be wrongly imported. The latest Quicktime Version is needed to import the videos. If the start scene only shows a black or white screen, the videos need to be reimported. 
+Opening the project for the first time can take a while. Espacially the videos may be wrongly imported. The latest Quicktime Version is needed to import the videos. 
+If the start scene only shows a black or white screen, the videos need to be reimported. 
